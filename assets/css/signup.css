@@ -322,7 +322,8 @@ justify-content: space-between;
 -webkit-flex-wrap: wrap;
 flex-wrap:wrap;
 position: relative;
-min-height: 90vh;
+min-height: 98vh;
+
 }
 h1.error {
     text-align: center;
@@ -367,7 +368,7 @@ h1.error {
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
 }
-.form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"], .form-left-to-w3l input[type="text"] {
+.form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"], .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="number"] {
     -webkit-flex-basis: 90%;
     flex-basis: 90%;
     width: 100%;
@@ -555,7 +556,7 @@ h1.error {
     font-size: 49px;
 }	
 .img-right-side, .txt-left-side {
-    padding: 3.5em 4em 3em;
+    padding: 0.7em 4em 0.1em;
 }
 .copyrigh-wthree {
     padding: 3em 0em 4.5em;
@@ -924,7 +925,6 @@ h1.error {
    /* advertise START*/
 .advertise {
     background: #fff;
-    border-right: 1px solid #c7bbbb;
     line-height: 24px;
 }
 

@@ -553,9 +553,24 @@ hr {
 }
 
  .test span a {
-	
 	position: absolute;
     color: green;
     top: 20px;
-    left: -62px;
+     left: -86px;
+    padding: 0 6px;
+    width: 54px;
+    height: 40px;
+    background: rgba(0, 0, 0, .25);
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
 }
+
+ .test span a.styhome {
+	  width: 66px;
+ }
+
+ .test span a:hover { 
+ color:green !important;
+ }

@@ -11,6 +11,15 @@
 })(jQuery)
 
 
+	$('.menu a').click(function() {
+		
+		$('html, body').animate({
+			scrollTop: $('#' + $(this).data('value')).offset().top
+		}, 1000);
+	});
+	
+
+
 
 // HOST START
 			$(".host .register").click(function(){

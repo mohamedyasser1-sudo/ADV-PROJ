@@ -1,6 +1,6 @@
 <?php
 
-$conn=mysqli_connect('localhost', 'root','' , 'project' );
+$conn=mysqli_connect('localhost', 'root', '' , 'project' );
 $name="SET NAMES utf8";
 mysqli_query($conn,$name);
 if (mysqli_connect_errno())

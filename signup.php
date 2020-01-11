@@ -64,10 +64,16 @@ include 'form_handlers/register.php';
 		
 		<!-- Menu button -->
 		<div class="test"><i id="menuToggle" class="fa fa-bars"></i>
-		<!--<span><a href="login_signup.html">Login</a></span>-->
+		<span><a href="login.php">Login</a></span>
 		</div>
 	</nav>
 	
+    
+    
+                        <?php
+                        echo $message;
+                    ?>
+    
     <div class="w3layouts-two-grids">
         <div class="mid-class">
 		
@@ -94,14 +100,14 @@ include 'form_handlers/register.php';
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-user" aria-hidden="true"></span>
-                        <input type="text" name="username" placeholder="User Name" required="" value="<?= (isset ($username)) ? $username :'' ?>">
+                        <input type="text" name="username" placeholder="User Name"  value="<?= (isset ($username)) ? $username :'' ?>">
 
                         <div class="clear"></div>
                     </div>
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="pass" placeholder="Password" required="">
+                        <input type="password" name="pass" placeholder="Password" >
 
                         <div class="clear"></div>
                     </div>
@@ -116,7 +122,7 @@ include 'form_handlers/register.php';
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-paperclip" aria-hidden="true"></span>
-                        <input type="text" name="first_name" placeholder="First Name " required="" value="<?= (isset ($first_name)) ? $first_name :'' ?>">
+                        <input type="text" name="first_name" placeholder="First Name "  value="<?= (isset ($first_name)) ? $first_name :'' ?>">
 
                         <div class="clear"></div>
                     </div>
@@ -124,7 +130,7 @@ include 'form_handlers/register.php';
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-paperclip" aria-hidden="true"></span>
-                        <input type="text" name="second_name" placeholder="Second Name" required="" value="<?= (isset ($second_name)) ? $second_name :'' ?>">
+                        <input type="text" name="second_name" placeholder="Second Name"  value="<?= (isset ($second_name)) ? $second_name :'' ?>">
 
                         <div class="clear"></div>
                     </div>
@@ -132,7 +138,7 @@ include 'form_handlers/register.php';
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                        <input type="email" name="email" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
+                        <input type="email" name="email" placeholder="Email"  value="<?= (isset ($email)) ? $email :'' ?>">
 
                         <div class="clear"></div>
                     </div>
@@ -140,7 +146,7 @@ include 'form_handlers/register.php';
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                        <input type="email" name="confirmemail" placeholder="Confirm Email" required="" value="<?= (isset ($confirmemail)) ? $confirmemail :'' ?>">
+                        <input type="email" name="confirmemail" placeholder="Confirm Email"  value="<?= (isset ($confirmemail)) ? $confirmemail :'' ?>">
 
                         <div class="clear"></div>
                     </div>
@@ -421,12 +427,12 @@ include 'form_handlers/register.php';
                     <div class="form-left-to-w3l ">
 
                         <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="number" name="phone" placeholder="Phone" required="" value="<?= (isset ($phone)) ? $phone :'' ?>">
+                        <input type="number" name="phone" placeholder="Phone"  value="<?= (isset ($phone)) ? $phone :'' ?>">
                         <div class="clear"></div>
                     </div>
                 
                     <div class="btnn">
-                        <button type="submit" name="submithost" class="submit-btn">Login </button>
+                        <button type="submit" name="submithost" class="submit-btn" class="submit-btn">Sign Up</button>
                     </div>
                 </form>
 				
@@ -458,21 +464,21 @@ include 'form_handlers/register.php';
 
                         <div class="form-left-to-w3l">
                             <span class="fa fa-user" aria-hidden="true"></span>
-                            <input type="text" name="username" placeholder="User Name" required="" value="<?= (isset ($username)) ? $username :'' ?>">
+                            <input type="text" name="usernamea" placeholder="User Name" required="" value="<?= (isset ($username)) ? $username :'' ?>">
     
                             <div class="clear"></div>
                         </div>
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-lock" aria-hidden="true"></span>
-                            <input type="password" name="pass" placeholder="Password" required="">
+                            <input type="password" name="passa" placeholder="Password" required="">
     
                             <div class="clear"></div>
                         </div>
                         
                                             <div class="form-left-to-w3l">
                             <span class="fa fa-lock" aria-hidden="true"></span>
-                            <input type="password" name="confirmpass" placeholder="Confirm Password" required="">
+                            <input type="password" name="confirmpassa" placeholder="Confirm Password" required="">
     
                             <div class="clear"></div>
                         </div>
@@ -480,7 +486,7 @@ include 'form_handlers/register.php';
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-paperclip" aria-hidden="true"></span>
-                            <input type="text" name="first_name" placeholder="First Name " required="" value="<?= (isset ($first_name)) ? $first_name :'' ?>">
+                            <input type="text" name="first_namea" placeholder="First Name " required="" value="<?= (isset ($first_name)) ? $first_name :'' ?>">
     
                             <div class="clear"></div>
                         </div>
@@ -488,7 +494,7 @@ include 'form_handlers/register.php';
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-paperclip" aria-hidden="true"></span>
-                            <input type="text" name="second_name" placeholder="Second Name" required="" value="<?= (isset ($second_name)) ? $second_name :'' ?>">
+                            <input type="text" name="second_namea" placeholder="Second Name" required="" value="<?= (isset ($second_name)) ? $second_name :'' ?>">
     
                             <div class="clear"></div>
                         </div>
@@ -496,7 +502,7 @@ include 'form_handlers/register.php';
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                            <input type="email" name="email" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
+                            <input type="email" name="emaila" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
     
                             <div class="clear"></div>
                         </div>
@@ -504,7 +510,7 @@ include 'form_handlers/register.php';
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                            <input type="email" name="confirmemail" placeholder="Confirm Email" required="" value="<?= (isset ($confirmemail)) ? $confirmemail :'' ?>">
+                            <input type="email" name="confirmemaila" placeholder="Confirm Email" required="" value="<?= (isset ($confirmemail)) ? $confirmemail :'' ?>">
     
                             <div class="clear"></div>
                         </div>
@@ -512,7 +518,7 @@ include 'form_handlers/register.php';
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-plane" aria-hidden="true"></span>
-                            <select name="country" id="country" value="<?= (isset ($country)) ? $country :''?>">
+                            <select name="countrya" id="country" value="<?= (isset ($country)) ? $country :''?>">
                                 <option value="0" label="Select a country … " selected="selected">Select a country …       </option>
                                 <optgroup id="country-optgroup-Africa" label="Africa">
                                 <option value="DZ" label="Algeria">Algeria</option>
@@ -785,12 +791,13 @@ include 'form_handlers/register.php';
                         <div class="form-left-to-w3l ">
     
                             <span class="fa fa-lock" aria-hidden="true"></span>
-                            <input type="number" name="phone" placeholder="Phone" required="" value="<?= (isset ($phone)) ? $phone :'' ?>">
+                            <input type="number" name="phonea" placeholder="Phone" required="" value="<?= (isset ($phone)) ? $phone :'' ?>">
                             <div class="clear"></div>
                         </div>
                     
                         <div class="btnn">
-                            <button type="submit" name="submitadvertise" class="submit-btn">Login </button>
+                            <button type="submit" name="submitadvertise" class="submit-btn">Sign Up </button>
+							   <!--<input type="submit" name="submithost" value="Sign Up" placeholder="Sign Up" class="submit-btn">-->
                         </div>
                     </form>
                     

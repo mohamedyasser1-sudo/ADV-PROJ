@@ -50,10 +50,9 @@ include 'form_handlers/login.php';
 			<h1 class="logo"><a href="index.html#home">LINK</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
 			<a href="index.html">Home</a>
-			<a href="services.html">Services</a>
-			<a href="portfolio.html">Portfolio</a>
-			<a href="about.html">About</a>
-			<a href="#contact">Contact</a>
+			<a href="index.html#howwork">How Work</a>
+			<a href="index.html#about">About</a>
+			<a href="index.html#contact">Contact</a>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-dribbble"></i></a>
@@ -94,8 +93,8 @@ include 'form_handlers/login.php';
                         </div>
                     </div>
                     <div class="btnn">
-                       <!--  <button type="submit">Login </button> -->
-                        <input type="submit" name="login" value="Sign Up" placeholder="Sign Up" class="button">
+                         <button type="submit" name="login" class="button">Login </button> 
+                      <!--  <input type="submit" name="login" value="Sign Up" placeholder="Sign Up" class="button">-->
                     </div>
                         <?php
         echo '<div class="text-center p-t-46 p-b-20"><span class="txt2">'.$message.'</span></div>';
@@ -103,7 +102,7 @@ include 'form_handlers/login.php';
                 </form>
                 <div class="w3layouts_more-buttn">
                     <h3>Don't Have an account..?
-                        <a href="signup.html">Register Here
+                        <a href="signup.php">Register Here
                         </a>
                     </h3>
                 </div>

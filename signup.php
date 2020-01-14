@@ -76,7 +76,7 @@ include 'form_handlers/login.php';
             <?php if(isset($_SESSION['email'])): ?>
   <a href="logout.php" class="stysignup">Logout</a>
 <?php else: ?>
-  <a href="login.php" class="styhome">Login</a>
+  <a href="login.php" class="stysignup">Login</a>
 <?php endif; ?> 
             </span>
 		</div>

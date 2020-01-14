@@ -92,7 +92,7 @@ include 'form_handlers/login.php';
 		 <span>
              
 <?php if(isset($_SESSION['email'])): ?>
-  <a href="logout.php" class="styhome">Logout</a>
+  <a href="./form_handlers/logout.php" class="styhome">Logout</a>
 <?php else: ?>
   <a href="login.php" class="styhome">Login</a>
 <?php endif; ?>         

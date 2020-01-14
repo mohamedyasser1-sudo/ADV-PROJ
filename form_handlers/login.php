@@ -3,7 +3,7 @@ session_start();
 include 'connect/connect.php';
 $message ="";
 if(isset($_SESSION['email'])){
-  // header("Location: index.php"); 
+   //header("Location: /index.php"); 
 }else{
 	if (isset($_POST['login'])){	
 		$email        =$_POST['email'];
@@ -25,7 +25,7 @@ if(isset($_SESSION['email'])){
 		else{
 			  // $_SESSION['email'] = true;
 			  $_SESSION['email'] = $email;
-			 // header("Location: index.php");
+			  header("Location: index.php");
 
 		} 
 	}

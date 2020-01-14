@@ -173,6 +173,9 @@ body.politics_version .section-title {}
 body.politics_version .message-box h2,
 body.politics_version .section-title h3 {
     font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
 }
 
 body.politics_version .participate-wrap {

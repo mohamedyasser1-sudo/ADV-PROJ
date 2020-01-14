@@ -1,0 +1,31 @@
+.alert {
+    
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+
+ .custom-alert {
+	    max-width: 100%;
+	    display: none;
+         max-width: 100%;
+    position: relative;
+    top: -15px;
+    left: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+
+.notify {
+         margin: 13px auto 0;
+    position: relative;
+}
+
+.notify .alert {
+          text-align: center;
+    height: 80px;
+    line-height: 40px;
+        opacity: 0.8;
+}

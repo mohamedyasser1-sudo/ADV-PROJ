@@ -236,8 +236,14 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	background: #fff;
+	background: #f2f3f5;
 font-family: 'Open Sans', sans-serif;
+
+   background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat;
+  background-size: cover;
+ /* height:100%;*/
+
+
 }
 
 body a {
@@ -304,11 +310,11 @@ ul {
 /*--background --*/
 body {
     box-sizing: border-box;
-    background: #f1f1f1;
+    
     min-height: 100vh;
 }
 .w3layouts-two-grids {
-      width: 62%;
+      width: 68%;
     margin: 0em auto;
     -webkit-box-shadow:-2px 7px 37px 8px rgba(167, 167, 167, 0.52);
     -moz-box-shadow:-2px 7px 37px 8px rgba(167, 167, 167, 0.52);
@@ -323,6 +329,8 @@ justify-content: space-between;
 flex-wrap:wrap;
 position: relative;
 min-height: 98vh;
+margin: 44px auto;
+
 
 }
 h1.error {
@@ -331,8 +339,8 @@ h1.error {
     text-transform: uppercase;
 }
 .img-right-side, .txt-left-side {
-    flex-basis: 50%;
-    -webkit-flex-basis: 50%;
+    flex-basis: 49%;
+    -webkit-flex-basis: 49%;
     box-sizing: border-box;
     text-align: center;
     position: relative;
@@ -350,12 +358,23 @@ h1.error {
     color: #000;
     letter-spacing: 0px;
 }
-.txt-left-side h2{color:#60baaf;}
+.txt-left-side h2{
+	
+	/*color:#60baaf;*/
+	    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 30px !important;
+	    padding: 20px 0 0;
+	
+	}
+
 .img-right-side p, .txt-left-side p {
     color: #908c8c;
     letter-spacing: 0.3px;
 }
 .txt-left-side p{color:#bdbdbd;}
+
 /*.txt-left-side {background:#3a3d6e;}*/
 .form-left-to-w3l {
     display: flex;
@@ -367,6 +386,9 @@ h1.error {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
+	    background-color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+	position: relative;
 }
 .form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"], .form-left-to-w3l input[type="text"], .form-left-to-w3l input[type="number"] {
     -webkit-flex-basis: 90%;
@@ -393,7 +415,7 @@ h1.error {
     -webkit-flex-basis: 90%;
     flex-basis: 90%;
     width: 100%;
-    color: #fff;
+    color: #bcbcbc;
     font-size: 14px;
     border: none; 
     outline: none;
@@ -428,7 +450,8 @@ h1.error {
     -ms-transition: 0.5s all;
 }
 button[type=submit] {
-    background: #000000;
+    /*background: #000000;*/
+	background: #f44336;
     outline: none;
     color: #fff;
     font-size: 14px;
@@ -444,7 +467,22 @@ button[type=submit] {
     -moz-transition: 0.5s all;
     -ms-transition: 0.5s all;
 }
-button[type=submit]:hover,a.for:hover,.w3layouts_more-buttn a:hover{opacity:0.8;}
+button[type=submit]:hover{
+	
+	    opacity:0.8;
+    background: #076799;
+	
+	}
+	
+	
+	a.for:hover,.w3layouts_more-buttn a:hover{
+	
+	    opacity:0.8;
+    background: #076799;
+	
+	}
+	
+	
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
      color: #fff;
 	 background:transparent;
@@ -875,8 +913,9 @@ h1.error {
 
 /* HOST START*/
 .host {
-    background: #fff;
-    border-right: 1px solid #c7bbbb;
+    /*background: #fff;*/
+	    background-color: rgba(72,72,72,0.4);
+    /*border-right: 1px solid #c7bbbb;*/
     line-height: 24px;
 }
 
@@ -897,9 +936,10 @@ h1.error {
     position: relative;   
     width: 100px;
     height: 50px;
-    background: red;
-    padding: 6px 36px;
-    border-radius: 6px 12px;
+        color: #ffffff;
+    background: #f44336;
+      padding: 10px 40px;
+    border-radius: 3px;
     cursor: pointer;
     -webkit-transition: all 1s; /* Safari prior 6.1 */
   transition: all 1s;
@@ -908,7 +948,8 @@ h1.error {
 
 
    .host .register:hover {    
-    background: green;
+    color: #ffffff;
+    background: #076799;
    }
 
    .host .backstep {
@@ -917,6 +958,14 @@ h1.error {
     right: 20px;
     cursor: pointer;
     font-size: 28px;
+	color: #f44336;
+	
+   }
+   
+      .host .backstep:hover {
+	    opacity: 0.8;
+    color: #076799;
+	
    }
 
    /* HOST END*/
@@ -924,7 +973,8 @@ h1.error {
 
    /* advertise START*/
 .advertise {
-    background: #fff;
+    /*background: #fff;*/
+	background-color: rgba(72,72,72,0.4);
     line-height: 24px;
 }
 
@@ -941,21 +991,24 @@ h1.error {
    }
 
    .advertise .register {
-    position: relative;   
+     position: relative;   
     width: 100px;
     height: 50px;
-    background: red;
-    padding: 6px 36px;
-    border-radius: 6px 12px;
+        color: #ffffff;
+    background: #f44336;
+      padding: 10px 40px;
+    border-radius: 3px;
     cursor: pointer;
     -webkit-transition: all 1s; /* Safari prior 6.1 */
   transition: all 1s;
+
 
    }
 
 
    .advertise .register:hover {    
-    background: green;
+    color: #ffffff;
+    background: #076799;
    }
 
    .advertise .backstep {
@@ -964,6 +1017,24 @@ h1.error {
     right: 20px;
     cursor: pointer;
     font-size: 28px;
+	color: #f44336;
+   }
+   
+   
+      .advertise .backstep:hover {
+	    opacity: 0.8;
+    color: #076799;
+	
    }
 
    /* advertise END*/
+   
+   
+   
+   .asterisx{
+    font-size: 28px;
+    color: red !important;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}

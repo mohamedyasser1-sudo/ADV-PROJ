@@ -1,6 +1,12 @@
+
+<?php 
+include 'connect/connect.php';
+include 'form_handlers/login.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
@@ -49,7 +55,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -71,7 +77,7 @@
 		<div class="menu-wrap">
 			<h1 class="logo"><a href="index.html#home">LINK</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
-			<a href="index.html">Home</a>
+			<a href="index.php">Home</a>
 			<a data-value="howwork" href="#">How Work</a>
 			<a data-value="about" href="#">About</a> 
 			<a data-value="contact" href="#">Contact</a>
@@ -83,7 +89,15 @@
 		
 		<!-- Menu button -->
 		<div class="test"><i id="menuToggle" class="fa fa-bars"></i>
-		 <span><a href="login.php" class="styhome">Login</a></span>
+		 <span>
+             
+<?php if(isset($_SESSION['email'])): ?>
+  <a href="logout.php" class="styhome">Logout</a>
+<?php else: ?>
+  <a href="login.php" class="styhome">Login</a>
+<?php endif; ?>         
+            
+            </span>
 		</div>
 	</nav>
 
@@ -91,27 +105,27 @@
 		<div data-src="assets/uploads/slide-6.jpg">
 			<div class="camera_caption">
 				<div class="container">
-					<h1 class="wow fadeInUp animated">World is greater than five #ELPolitic</h1>
-					<p class="wow fadeInUp animated" data-wow-delay="0.2s">With ELPolitic responsive landing page template, you can showcase your next politics & politician websites!</p>
-					<a data-scroll href="#" class="btn btn-light btn-radius btn-brd grd1">DONATE</a>
+					<h1 class="wow fadeInUp animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
+					<p class="wow fadeInUp animated" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+					<a data-scroll href="signup.php" class="btn btn-light btn-radius btn-brd grd1">REGISTER</a>
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>
 		<div data-src="assets/uploads/slide-5.jpg">
 			<div class="camera_caption">
 				<div class="container">
-					<h1 class="wow fadeInUp animated">World is greater than five #ELPolitic</h1>
-					<p class="wow fadeInUp animated" data-wow-delay="0.2s">With ELPolitic responsive landing page template, you can showcase your next politics & politician websites!</p>
-					<a data-scroll href="#" class="btn btn-light btn-radius btn-brd grd1">DONATE</a>
+					<h1 class="wow fadeInUp animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
+					<p class="wow fadeInUp animated" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+					<a data-scroll href="signup.php" class="btn btn-light btn-radius btn-brd grd1">REGISTER</a>
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>
 		<div data-src="assets/uploads/slide-4.jpg">
 			<div class="camera_caption">
 				<div class="container">
-					<h1 class="wow fadeInUp animated">World is greater than five #ELPolitic</h1>
-					<p class="wow fadeInUp animated" data-wow-delay="0.2s">With ELPolitic responsive landing page template, you can showcase your next politics & politician websites!</p>
-					<a data-scroll href="#" class="btn btn-light btn-radius btn-brd grd1">DONATE</a>
+					<h1 class="wow fadeInUp animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
+					<p class="wow fadeInUp animated" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
+					<a data-scroll href="signup.php" class="btn btn-light btn-radius btn-brd grd1">REGISTER</a>
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>
@@ -141,7 +155,8 @@
                 </div><!-- end col -->
             </div><!-- end row -->
 
-            <hr class="hr1"> 
+            <!--<hr class="hr1"> -->
+			<br />
 
             <div class="row text-center">
                 <div class="col-md-6 col-sm-6 col-xs-12">

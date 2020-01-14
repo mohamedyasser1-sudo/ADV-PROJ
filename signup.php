@@ -1,6 +1,7 @@
 <?php 
 include 'connect/connect.php';
 include 'form_handlers/register.php';
+include 'form_handlers/login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,9 @@ include 'form_handlers/register.php';
         addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
     </script>
     <!-- Meta tags -->
+    
+     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- font-awesome icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- //font-awesome icons -->
@@ -32,6 +36,8 @@ include 'form_handlers/register.php';
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <link href="assets/css/custom-bootstrap.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -49,13 +55,12 @@ include 'form_handlers/register.php';
 <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">LINK</a></h1>
+			<h1 class="logo"><a href="index.php#home">LINK</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
-			<a href="index.html">Home</a>
-			<a href="services.html">Services</a>
-			<a href="portfolio.html">Portfolio</a>
-			<a href="about.html">About</a>
-			<a href="#contact">Contact</a>
+		    <a href="index.php">Home</a>
+			<a href="index.php#howwork">How Work</a>
+			<a href="index.php#about">About</a>
+			<a href="index.php#contact">Contact</a>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-dribbble"></i></a>
@@ -64,15 +69,32 @@ include 'form_handlers/register.php';
 		
 		<!-- Menu button -->
 		<div class="test"><i id="menuToggle" class="fa fa-bars"></i>
-		<span><a href="login.php">Login</a></span>
+		<span>
+            
+            
+            
+            <?php if(isset($_SESSION['email'])): ?>
+  <a href="logout.php" class="stysignup">Logout</a>
+<?php else: ?>
+  <a href="login.php" class="styhome">Login</a>
+<?php endif; ?> 
+            </span>
 		</div>
 	</nav>
 	
     
     
-                        <?php
+                       
+    <div class="notify">
+     <div class="alert alert-success alert-dismissible fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>
+          <?php
                         echo $message;
                     ?>
+        </strong>
+  </div>
+    </div>
     
     <div class="w3layouts-two-grids">
         <div class="mid-class">
@@ -85,7 +107,7 @@ include 'form_handlers/register.php';
                      <span class="register">Register</span>
                      <br>
                      <br>
-                     <img src="https://via.placeholder.com/250" class="img-fluid" alt="">
+                     <img src="assets/img/b11.png" class="img-fluid" alt="">
                  </div>
    
                  
@@ -96,29 +118,46 @@ include 'form_handlers/register.php';
                 <h2> Register Here </h2>
                
               
-                <form action="#" method="post">
+                <form class="host-contact-form" action="" method="post">
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-user" aria-hidden="true"></span>
-                        <input type="text" name="username" placeholder="User Name"  value="<?= (isset ($username)) ? $username :'' ?>">
-
+                        <input type="text" name="username" placeholder="User Name" required  value="<?= (isset ($username)) ? $username :'' ?>">
+<span class="asterisx">*</span>
                         <div class="clear"></div>
-                    </div>
+                        
+                      
+					
+					
+		
+     </div>
+                    
+                      <div class="alert alert-danger custom-alert usernamealert">
+			Username must be more than <strong>3</strong>  letter
+		</div>
+                   
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="pass" placeholder="Password" >
-
+                        <input type="password" name="pass" placeholder="Password" required>
+<span class="asterisx">*</span>
                         <div class="clear"></div>
                     </div>
+                    
+                     <div class="alert alert-danger custom-alert passwordlert">
+			Password must be more than <strong>3</strong>  letter
+		</div>
 					
 					                    <div class="form-left-to-w3l">
                         <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="confirmpass" placeholder="Confirm Password" required="">
-
+                        <input type="password" name="confirmpass" placeholder="Confirm Password" required>
+<span class="asterisx">*</span>
                         <div class="clear"></div>
                     </div>
 
+                      <div class="alert alert-danger custom-alert cpasswordlert">
+			Password must be match witch <strong>above</strong>
+		</div>
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-paperclip" aria-hidden="true"></span>
@@ -138,18 +177,25 @@ include 'form_handlers/register.php';
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                        <input type="email" name="email" placeholder="Email"  value="<?= (isset ($email)) ? $email :'' ?>">
-
+                        <input type="email" name="email" placeholder="Email" required  value="<?= (isset ($email)) ? $email :'' ?>">
+<span class="asterisx">*</span>
                         <div class="clear"></div>
                     </div>
 
-
+  <div class="alert alert-danger custom-alert emaillert">
+			Email must be more than <strong>5</strong>  letter
+		</div>
+                    
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                        <input type="email" name="confirmemail" placeholder="Confirm Email"  value="<?= (isset ($confirmemail)) ? $confirmemail :'' ?>">
-
+                        <input type="email" name="confirmemail" required placeholder="Confirm Email"  value="<?= (isset ($confirmemail)) ? $confirmemail :'' ?>">
+<span class="asterisx">*</span>
                         <div class="clear"></div>
                     </div>
+                    
+                      <div class="alert alert-danger custom-alert cemaillert">
+			Email must be match with the <strong>above</strong>
+		</div>
 
 
                     <div class="form-left-to-w3l">
@@ -432,7 +478,7 @@ include 'form_handlers/register.php';
                     </div>
                 
                     <div class="btnn">
-                        <button type="submit" name="submithost" class="submit-btn" class="submit-btn">Sign Up</button>
+                        <button type="submit" name="submithost" class="submit-btn" class="submit-btn" id="xxx">Sign Up</button>
                     </div>
                 </form>
 				
@@ -465,23 +511,35 @@ include 'form_handlers/register.php';
                         <div class="form-left-to-w3l">
                             <span class="fa fa-user" aria-hidden="true"></span>
                             <input type="text" name="usernamea" placeholder="User Name" required="" value="<?= (isset ($username)) ? $username :'' ?>">
-    
+    <span class="asterisx">*</span>
                             <div class="clear"></div>
                         </div>
+                        
+                         <div class="alert alert-danger custom-alert usernamealerta">
+			Username must be more than <strong>3</strong>  letter
+		</div>
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-lock" aria-hidden="true"></span>
                             <input type="password" name="passa" placeholder="Password" required="">
-    
+    <span class="asterisx">*</span>
                             <div class="clear"></div>
                         </div>
                         
+                        
+                        <div class="alert alert-danger custom-alert passwordlerta">
+			Password must be more than <strong>3</strong>  letter
+		</div>
                                             <div class="form-left-to-w3l">
                             <span class="fa fa-lock" aria-hidden="true"></span>
                             <input type="password" name="confirmpassa" placeholder="Confirm Password" required="">
-    
+    <span class="asterisx">*</span>
                             <div class="clear"></div>
                         </div>
+                        
+                        <div class="alert alert-danger custom-alert cpasswordlerta">
+			Password must be match witch <strong>above</strong>
+		</div>
     
     
                         <div class="form-left-to-w3l">
@@ -503,19 +561,24 @@ include 'form_handlers/register.php';
                         <div class="form-left-to-w3l">
                             <span class="fa fa-envelope-o" aria-hidden="true"></span>
                             <input type="email" name="emaila" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
-    
+    <span class="asterisx">*</span>
                             <div class="clear"></div>
                         </div>
-    
+     <div class="alert alert-danger custom-alert emaillerta">
+			Email must be more than <strong>5</strong>  letter
+		</div>
+                        
     
                         <div class="form-left-to-w3l">
                             <span class="fa fa-envelope-o" aria-hidden="true"></span>
                             <input type="email" name="confirmemaila" placeholder="Confirm Email" required="" value="<?= (isset ($confirmemail)) ? $confirmemail :'' ?>">
-    
+    <span class="asterisx">*</span>
                             <div class="clear"></div>
                         </div>
     
-    
+     <div class="alert alert-danger custom-alert cemaillerta">
+			Email must be match with the <strong>above</strong>
+		</div>
                         <div class="form-left-to-w3l">
                             <span class="fa fa-plane" aria-hidden="true"></span>
                             <select name="countrya" id="country" value="<?= (isset ($country)) ? $country :''?>">
@@ -818,6 +881,10 @@ include 'form_handlers/register.php';
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <script src="assets/js/jquery-3.2.1.min"></script> 
+
+<script src="assets/js/bootstrap.min.js"></script>
 
 </body>
 

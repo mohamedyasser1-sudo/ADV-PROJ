@@ -5,7 +5,7 @@ include 'form_handlers/login.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Allied Login Form a Flat Responsive Widget Template :: w3layouts </title>
+    <title>Login</title>
     <!-- Meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -31,7 +31,7 @@ include 'form_handlers/login.php';
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -47,12 +47,12 @@ include 'form_handlers/login.php';
 <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">LINK</a></h1>
+			<h1 class="logo"><a href="index.php#home">LINK</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
-			<a href="index.html">Home</a>
-			<a href="index.html#howwork">How Work</a>
-			<a href="index.html#about">About</a>
-			<a href="index.html#contact">Contact</a>
+			<a href="index.php">Home</a>
+			<a href="index.php#howwork">How Work</a>
+			<a href="index.php#about">About</a>
+			<a href="index.php#contact">Contact</a>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-dribbble"></i></a>
@@ -70,7 +70,7 @@ include 'form_handlers/login.php';
             <div class="txt-left-side">
                 <h2> Login Here </h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
-                <form action="#" method="post">
+                <form action="" method="post">
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
                         <input type="email" name="email" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
@@ -109,7 +109,7 @@ include 'form_handlers/login.php';
 
             </div>
             <div class="img-right-side">
-                <h3>Welcome To Allied Login Form</h3>
+                <h3>Welcome To Project Login Form</h3>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
                 <img src="assets/img/b11.png" class="img-fluid" alt="">
             </div>

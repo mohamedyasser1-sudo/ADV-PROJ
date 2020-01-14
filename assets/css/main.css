@@ -1,8 +1,10 @@
-
+*{
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: Raleway;
     font-weight: 300;
     color: #333;
+	
 }
 p {
     line-height: 28px;
@@ -97,7 +99,8 @@ hr {
     margin-top: 20px;
 }
 .menu h1.logo a:hover {
-    color: #1abc9c;
+    /*color: #1abc9c;*/
+	color: #076799;
 }
 .menu img.logo {
     margin: 20px 0;
@@ -554,23 +557,26 @@ hr {
 
  .test span a {
 	position: absolute;
-    color: green;
+    color: white;
     top: 20px;
      left: -86px;
     padding: 0 6px;
     width: 54px;
     height: 40px;
     background: rgba(0, 0, 0, .25);
-    -webkit-transition: all .1s ease-in-out;
-    -moz-transition: all .1s ease-in-out;
-    -ms-transition: all .1s ease-in-out;
-    -o-transition: all .1s ease-in-out;
+   -webkit-transition: all 0.4s; /* Safari prior 6.1 */
+    transition: all 0.4s;
 }
 
  .test span a.styhome {
 	  width: 66px;
  }
 
+ .test span a.stysignup {
+	  width: 59px;
+     left: -79px;
+ }
+
  .test span a:hover { 
- color:green !important;
+ color:#076799 !important;
  }

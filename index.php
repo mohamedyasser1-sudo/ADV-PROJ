@@ -262,7 +262,7 @@ include 'form_handlers/login.php';
 		<div class="container">
 			<div class="section-title text-center">
 				<!--<span>Latest news</span>-->
-                <h3>Offers/ News</h3>
+                <h3>Offers</h3>
                 <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.<br> Sed a tellus quis mi rhoncus dignissim.</p>
             </div><!-- end title -->
 			
@@ -386,8 +386,8 @@ include 'form_handlers/login.php';
                         <a href="#">Faq</a>
                         <a href="#">Contact</a>
                     </p>
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2019 <a href="#">El Project</a> Design By : 
-					<a href="https://html.design/">html design</a></p>
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2019 <a href="#">El Project</a> Developed By : 
+					<a href="https://html.design/">Team</a></p>
                 </div>
 
              

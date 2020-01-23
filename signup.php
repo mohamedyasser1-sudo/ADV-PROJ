@@ -78,23 +78,14 @@ include 'form_handlers/login.php';
 <?php else: ?>
   <a href="login.php" class="stysignup">Login</a>
 <?php endif; ?> 
+            
+            
             </span>
 		</div>
 	</nav>
 	
     
-    
-                       
-    <div class="notify">
-     <div class="alert alert-success alert-dismissible fade in">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>
-          <?php
-                        echo $message;
-                    ?>
-        </strong>
-  </div>
-    </div>
+
     
     <div class="w3layouts-two-grids">
         <div class="mid-class">
@@ -102,6 +93,8 @@ include 'form_handlers/login.php';
             <div class="txt-left-side host">
 
                 <div class="face front active">
+                    
+                    
                     <h3>Welcome To HOST Registration</h3>
                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
                      <span class="register">Register</span>
@@ -118,7 +111,7 @@ include 'form_handlers/login.php';
                 <h2> Register Here </h2>
                
               
-                <form class="host-contact-form" action="" method="post">
+                <form class="host-contact-form" action="#" method="post">
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-user" aria-hidden="true"></span>
@@ -474,9 +467,12 @@ include 'form_handlers/login.php';
 
                         <span class="fa fa-lock" aria-hidden="true"></span>
                         <input type="number" name="phone" placeholder="Phone"  value="<?= (isset ($phone)) ? $phone :'' ?>">
+                       
                         <div class="clear"></div>
                     </div>
                 
+                   
+                    
                     <div class="btnn">
                         <button type="submit" name="submithost" class="submit-btn" class="submit-btn" id="xxx">Sign Up</button>
                     </div>
@@ -581,7 +577,7 @@ include 'form_handlers/login.php';
 		</div>
                         <div class="form-left-to-w3l">
                             <span class="fa fa-plane" aria-hidden="true"></span>
-                            <select name="countrya" id="country" value="<?= (isset ($country)) ? $country :''?>">
+                            <select name="countrya" id="countrya" value="<?= (isset ($country)) ? $country :''?>">
                                 <option value="0" label="Select a country … " selected="selected">Select a country …       </option>
                                 <optgroup id="country-optgroup-Africa" label="Africa">
                                 <option value="DZ" label="Algeria">Algeria</option>
@@ -855,8 +851,11 @@ include 'form_handlers/login.php';
     
                             <span class="fa fa-lock" aria-hidden="true"></span>
                             <input type="number" name="phonea" placeholder="Phone" required="" value="<?= (isset ($phone)) ? $phone :'' ?>">
+                         
                             <div class="clear"></div>
                         </div>
+                        
+                        
                     
                         <div class="btnn">
                             <button type="submit" name="submitadvertise" class="submit-btn">Sign Up </button>

@@ -60,6 +60,7 @@ include 'form_handlers/login.php';
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+     <link rel="stylesheet" href="assets/css/gl-custom.css">
 
 </head>
 <body class="politics_version">
@@ -105,9 +106,10 @@ include 'form_handlers/login.php';
 		<div data-src="assets/uploads/slide-6.jpg">
 			<div class="camera_caption">
 				<div class="container">
-					<h1 class="wow fadeInUp animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
-					<p class="wow fadeInUp animated" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
-					<a data-scroll href="signup.php" class="btn btn-light btn-radius btn-brd grd1">REGISTER</a>
+					<h1 data-scroll class="fadeInUp animated">Register as </h1>
+					<p class="wow fadeInUp animated" data-wow-delay="0.2s"></p>
+					<a data-scroll href="host_regis.php" class="btn btn-light btn-radius btn-brd grd1 cus-btn">HOST</a>
+                    <a data-scroll href="advis_regis.php" class="btn btn-light btn-radius btn-brd grd1 cus-btn">ADVERTISE </a>
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>

@@ -102,14 +102,25 @@ include 'form_handlers/login.php';
 		</div>
 	</nav>
 
+    
+
+    
+    
 	<div id="main-banner" class="banner-one" data-scroll-index="0">
 		<div data-src="assets/uploads/slide-6.jpg">
 			<div class="camera_caption">
 				<div class="container">
-					<h1 data-scroll class="fadeInUp animated">Register as </h1>
+				                <?php if(isset($_SESSION['email'])): ?>
+                    <h1 data-scroll class="fadeInUp animated">Welcome </h1>
+ 
+<?php else: ?>
+    
+    
+                    <h1 data-scroll class="fadeInUp animated">Register as </h1>
 					<p class="wow fadeInUp animated" data-wow-delay="0.2s"></p>
 					<a data-scroll href="host_regis.php" class="btn btn-light btn-radius btn-brd grd1 cus-btn">HOST</a>
                     <a data-scroll href="advis_regis.php" class="btn btn-light btn-radius btn-brd grd1 cus-btn">ADVERTISE </a>
+<?php endif; ?> 
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>

@@ -13,10 +13,10 @@ include 'form_handlers/login.php';
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Allied Login Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
     />
-    <script>
+<!--     <script>
         addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
     </script>
-    <!-- Meta tags -->
+ -->    <!-- Meta tags -->
     
      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     
@@ -68,6 +68,7 @@ include 'form_handlers/login.php';
 		</div>
 		
 		<!-- Menu button -->
+
 		<div class="test"><i id="menuToggle" class="fa fa-bars"></i>
 		<span>
             
@@ -85,16 +86,11 @@ include 'form_handlers/login.php';
     
     
                        
-    <div class="notify">
-     <div class="alert alert-success alert-dismissible fade in">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>
-          <?php
-                        echo $message;
-                    ?>
-        </strong>
-  </div>
-    </div>
+
+    
+
+        
+ 
     
     <div class="w3layouts-two-grids">
         <div class="mid-class">
@@ -104,6 +100,14 @@ include 'form_handlers/login.php';
                 <div class="face front active">
                     <h3>Welcome To HOST Registration</h3>
                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
+                             <?php 
+            if ($message !== ""){
+                echo '<div class="notify">
+     <div class="alert alert-success alert-dismissible fade in">'.$message.'
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> </div>
+    </div>';
+            }
+        ?>
                      <span class="register">Register</span>
                      <br>
                      <br>

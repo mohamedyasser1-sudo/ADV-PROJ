@@ -102,7 +102,7 @@ include 'form_handlers/login.php';
                 </form>
                 <div class="w3layouts_more-buttn">
                     <h3>Don't Have an account..?
-                        <a href="signup.php">Register Here
+                        <a href="index.php#home">Register Here
                         </a>
                     </h3>
                 </div>

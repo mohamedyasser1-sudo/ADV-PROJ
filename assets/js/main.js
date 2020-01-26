@@ -234,6 +234,8 @@ if ($('[name~=' + obj+']').val() === null || $('[name~=' + obj+']').val().length
 			checkEmpty('username', 3, 'usernamealert');
 			checkEmpty('pass', 4, 'passwordlert');	
 		    checkEmpty('email', 5, 'emaillert');
+           // checkEmpty('phone', 11, 'phonealert');
+
 			checkEquilty('confirmemail', 'email', 'cemaillert');
 			checkEquilty('confirmpass', 'pass', 'cpasswordlert');
 			
@@ -241,6 +243,8 @@ if ($('[name~=' + obj+']').val() === null || $('[name~=' + obj+']').val().length
 			checkEmpty('usernamea', 3, 'usernamealerta');
 			checkEmpty('passa', 4, 'passwordlerta');	
 		    checkEmpty('emaila', 5, 'emaillerta');
+            //checkEmpty('phonea', 11, 'phonealerta');
+
 			checkEquilty('confirmemaila', 'emaila', 'cemaillerta');
 			checkEquilty('confirmpassa', 'passa', 'cpasswordlerta');
 			
@@ -248,23 +252,6 @@ if ($('[name~=' + obj+']').val() === null || $('[name~=' + obj+']').val().length
 			
 			
 			
-			
-$('.host-contact-form').submit( function (e) {
-
-
-   if(emptyError === true || qualityError === true) {
-		e.preventDefault();
-		
-			
-	}
-	else
-	{
-	
-	}
-
-});
-
-
 
 
 			

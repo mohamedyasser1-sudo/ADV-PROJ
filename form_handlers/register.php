@@ -64,8 +64,8 @@ $message	  ="";
 				$result =mysqli_stmt_store_result($stmt);
 				//$result=mysqli_query($conn,$sql);
 				if($result){
-                    //header('location: index.html');
-					$message = "you are registered, now you can <a href='login.php'>Sign In</a>";
+                    header('location: index.php');
+					//$message = "you are registered, now you can <a href='login.php'>Sign In</a>";
 				}
 				else{
 					$message = "error, TRY again ". mysqli_error($conn);

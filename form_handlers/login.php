@@ -19,9 +19,7 @@ if(isset($_SESSION['email'])){
 		if(mysqli_stmt_num_rows($stmt) != 1 ){
 			$message = "your information is not correct please write the correct information or <a href='signup.php'>Sign Up</a>";
 		}
-		// $checkuser=mysqli_query($conn,"SELECT * FROM `users` WHERE BINARY `email` = BINARY '$email' AND BINARY `password` = BINARY '$pass'");
-		// if(mysqli_num_rows($checkuser) != 1 ){
-		// 	$message = "your information is not correct please write the correct information or <a href='signup.php'>Sign Up</a>";
+
 		else{
 			  // $_SESSION['email'] = true;
 			  $_SESSION['email'] = $email;

@@ -1,3 +1,7 @@
+<?php
+include 'redirect.php'; 
+include '../connect/connect.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>

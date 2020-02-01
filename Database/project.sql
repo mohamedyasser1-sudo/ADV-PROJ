@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2020 at 01:38 PM
+-- Generation Time: Feb 01, 2020 at 09:29 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
-  `password` varchar(25) NOT NULL,
+  `password` varchar(150) NOT NULL,
   `type` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `type`) VALUES
-(1, 'admin', 'admin', 0);
+(1, 'admin', '$2y$10$qtd8X2CkvutIBUg3x3HIgu.hegTinyo7ek27xIDnLcujH.pfT4mT6', 0);
 
 -- --------------------------------------------------------
 

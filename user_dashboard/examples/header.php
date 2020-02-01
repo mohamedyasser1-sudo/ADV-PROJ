@@ -1,3 +1,10 @@
+<?php
+session_start();
+include '../../connect/connect.php';
+$user = $_SESSION['email'];
+$advertise = new User ($conn,$user);
+$user_id = $advertise->getUserId();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

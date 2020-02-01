@@ -16,6 +16,12 @@ class User {
 		return $this->user['id'];
 	}
 
+	public function getUserPendingAds($conn,$id){
+		$this->conn= $conn;
+		$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$id' AND status=1");
+		$this->add = mysqli_fetch_array($addsquery);
+	}
+
 	public function getNumberOfFriendRequests() {
 		$username = $this->user['username'];
 		$query = mysqli_query($this->con, "SELECT * FROM friend_requests WHERE user_to='$username'");

@@ -1,5 +1,6 @@
 <?php 
 	include 'header.php'; 
+$row = $advertise->getUserPendingAds($conn,$user_id);
 	
 ?>
       <div class="content">
@@ -37,7 +38,7 @@
                       <tbody>
                         <tr>
                           <td>
-                            1
+                            <?=$row['id']; ?>
                           </td>
                           <td>
                             Dakota Rice

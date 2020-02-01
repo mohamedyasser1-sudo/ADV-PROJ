@@ -23,7 +23,7 @@ if(isset($_SESSION['email'])){
 		else{
 			  // $_SESSION['email'] = true;
 			  $_SESSION['email'] = $email;
-			  header("Location: index.php");
+			  header("Location: ./user_dashboard/examples/dashboard.php");
 
 		} 
 	}

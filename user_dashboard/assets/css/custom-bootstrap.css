@@ -1,0 +1,40 @@
+.card form {
+    
+    padding: 0 30px;
+}
+
+
+.form-row-cus {
+  
+    padding: 17px 5px;
+}
+
+
+.toast-cus {
+    position: absolute;
+    z-index: 1050;
+    top: 10px;
+left: 17px;
+}
+
+.btn-lg-cus {
+    
+        border: 0;
+        padding: 11px;
+    margin-top: 15px;
+}
+
+.table.table-hover tbody tr:hover {
+   cursor: pointer
+}
+
+
+
+.form-control-cus {
+    background-image: linear-gradient(to top, #9c27b0 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #e54747 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+
+.fixed-plugin {
+	display:none
+}

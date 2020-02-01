@@ -1,4 +1,7 @@
-
+<?php 
+	include '../../form_handlers/redirect.php'; 
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +43,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.php">
+            <a class="nav-link" href="./index.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -96,7 +99,7 @@
     </div>
 	
 	
-    <div class="main-panel">
+     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
@@ -110,8 +113,18 @@
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-           
+            <form class="navbar-form">
+              
+            </form>
             <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.php">
+                  <i class="material-icons">dashboard</i>
+                  <p class="d-lg-none d-md-block">
+                    Stats
+                  </p>
+                </a>
+              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
@@ -147,7 +160,6 @@
         </div>
       </nav>
       <!-- End Navbar -->
-	  
 	  
         
    

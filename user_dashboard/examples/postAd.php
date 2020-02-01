@@ -14,7 +14,7 @@
                
                
                <div class="">
-                  <form>
+                 
                     <div class="row">
                 
                       <div class="col-md-2 ">
@@ -44,11 +44,11 @@
             
                   
                     <div class="clearfix"></div>
-                  </form>
+                
                 </div>
                
                 <div id="show">
-	<form>
+	
         
         
                             <div class="row">
@@ -277,7 +277,7 @@
                    
                     <button type="submit" class="btn btn-primary pull-right" id="Proceed" >Proceed</button>
                     <div class="clearfix"></div>
-                  </form>
+                  
         
                 </div>
                

@@ -1,6 +1,6 @@
 <?php 
 include 'connect/connect.php';
-include 'form_handlers/register.php';
+include 'form_handlers/host_regis.php';
 include 'form_handlers/login.php';
 ?>
 <!DOCTYPE html>
@@ -15,6 +15,7 @@ include 'form_handlers/login.php';
 <!-- jS --> 
 <script src="assets/js/jquery.min.js"></script> 
 <script src="assets/js/script.js"></script> 
+
 <!-- //js -->
 
 
@@ -43,6 +44,7 @@ include 'form_handlers/login.php';
     <![endif]-->
     
     <script src="assets/js/modernizr.custom.js"></script>
+   
 </head>
 <body>
 
@@ -108,34 +110,31 @@ include 'form_handlers/login.php';
 					<div class="clear"> </div>
 				</div>	-->
 			</form>
-			
-			 <?php
-        echo '<div class="text-center p-t-46 p-b-20"><span class="txt2">'.$message.'</span></div>';
-    ?>
+
 	
 			<!-- //Sign In Form -->
 			<!-- Sign up Form-->
-			<form id="signin" action="#" method="post">
+			<form class="form-signin" method="post" id="signin">
 				<div class="ribbon"><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Login</a></div>
 				<h3>Register as a Host</h3>
 				
-				<input type="text" name="username" placeholder="User Name" required=""/>
+				<input type="text" name="username" id="username"  placeholder="User Name" />
 				
-				<input type="password" name="pass" placeholder="Password" required=""/>
+				<input type="password" name="pass" id="pass" placeholder="Password" />
 				
-				<input type="password" name="confirmpass" placeholder="Confirm Password" required=""/>	
-				
-					
-				<input type="text" name="first_name" placeholder="First Name" required=""/>
+				<input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm Password" />	
 				
 					
-				<input type="text" name="second_name" placeholder="Second Name" required=""/>
+				<input type="text" name="first_name" id="first_name" placeholder="First Name"  />
 				
 					
-				<input type="email" name="email" placeholder="Email Address" required=""/>
+				<input type="text" name="second_name" id="second_name" placeholder="Second Name"  />
 				
 					
-				 <select name="country" id="country" >
+				<input type="email" name="email" id="email" placeholder="Email Address"  />
+				
+					
+				 <select name="country" id="country">
                             <option value="0" label="Select a country … " selected="selected">Select a country … </option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
                             <option value="DZ" label="Algeria">Algeria</option>
@@ -403,14 +402,15 @@ include 'form_handlers/login.php';
                             </select>
 				
 					
-				<input type="number" name="phone" placeholder="Phone" required=""/>
+				<input type="number" name="phone" id="phone" placeholder="Phone"  />
 				
 					
-				<input type="text" name="chanel" placeholder="Your chanel" required=""/>
+				
 				
 				<input type="checkbox" id="brand1" value="">
 				<label for="brand1"><span></span>I accept the terms of use</label> 
-				<input type="submit" value="SIGN UP"> 
+                
+				<button type="submit" class="btn btn-default" name="btn-save" id="btn-submit" >Sign Up</button>
 			</form>
 			<!-- Sign up Form-->
 		</div>
@@ -418,11 +418,14 @@ include 'form_handlers/login.php';
 	</div>	
 	<!-- //main --> 
 	
+    
 	 
 	      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+     <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/register.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

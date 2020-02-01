@@ -1,3 +1,6 @@
+
+ console.log("Insideeee Proccesed JS Page");
+
 $("#Proceed").click(function(){
     
     console.log("Clicked Proccesed");
@@ -64,7 +67,7 @@ $("#Proceed").click(function(){
        }
     else {
         
-        btnProcced.setAttribute("disabled", null);
+        //btnProcced.setAttribute("disabled", null);
         
          $('#modalClick').modal('show')
     }

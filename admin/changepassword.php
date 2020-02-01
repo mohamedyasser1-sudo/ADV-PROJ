@@ -6,10 +6,11 @@
 	$message = "";
 
 	if (isset($_POST['changepassword'])) {
-		$admin		 = $_SESSION['admin'];
+		$admin		 = $_SESSION['username'];
 		$oldpassword = $_POST['oldpassword'];
 		$newpassword = $_POST['newpassword'];
 		$conpassword = $_POST['conpassword'];
+		$ehab		 = "ehab";
 
 		if( empty($oldpassword) || empty($newpassword) || empty($conpassword)){
 			$message = " you can't leave fileds empty ";
@@ -22,14 +23,18 @@
 			$result = mysqli_query($conn,$checkquery);
 			if(mysqli_num_rows($result) == 1){
 				while($row = mysqli_fetch_assoc($result))
-				$verify = password_verify($oldpassword,$row['password']);
-				if($verify){
+				if(password_verify($oldpassword,$row['password'])){
+			
+					
 				$hashedpassword= password_hash($newpassword, PASSWORD_DEFAULT);
 				$update ="UPDATE admin SET password ='$hashedpassword' WHERE username = '$admin'";
-        		$sql = mysqli_query($conn,$update);
-        		if ($sql) {$message = " yes"; }else {$message= " error". mysqli_error($conn); }
-        		//header("Location: login.php");
-
+    	   		$sql = mysqli_query($conn,$update);
+         		if ($sql){
+         			$message = " success";
+         			header("Location: logout.php"); 
+         		}else {
+         			$message= " error". mysqli_error($conn);
+         		}
 				} 
 			}else{
 				$message = " your old password is not correct";

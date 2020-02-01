@@ -2,8 +2,8 @@
 include '../connect/connect.php';
 session_start();
 $message ="";
-if(isset($_SESSION['admin'])){
-   header("Location: /index.php"); 
+if(isset($_SESSION['username'])){
+   header("Location: index.php"); 
 }else{
 	if (isset($_POST['login'])){	
 		$username     =$_POST['username'];
@@ -27,8 +27,8 @@ if(isset($_SESSION['admin'])){
 		}else{
 			while($row = $result->fetch_assoc()){
  	       if(password_verify($pass, $row['password'])){
-        	  $_SESSION['admin'] = $username;
-			  $admin = $_SESSION['admin'];
+        	  $_SESSION['username'] = $username;
+			   $admin = $_SESSION['username'];
 			  header("Location: index.php");
  	       	$message =  "yes";
         }else{

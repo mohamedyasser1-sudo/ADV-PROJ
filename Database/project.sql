@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2020 at 09:29 AM
+-- Generation Time: Feb 01, 2020 at 05:39 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `type`) VALUES
-(1, 'admin', '$2y$10$qtd8X2CkvutIBUg3x3HIgu.hegTinyo7ek27xIDnLcujH.pfT4mT6', 0);
+(1, 'admin', '$2y$10$aTIVamBYDu5ErryWqNL31efE4JxF2tGdZz8kgYMh84IiiYi63RGQS', 0);
 
 -- --------------------------------------------------------
 
@@ -70,6 +70,19 @@ CREATE TABLE `advertise` (
   `price` int(11) NOT NULL,
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `advertise`
+--
+
+INSERT INTO `advertise` (`id`, `post_id`, `pagetype`, `pagename`, `pageurl`, `pagedescription`, `description1`, `image1`, `description2`, `image2`, `description3`, `image3`, `description4`, `image4`, `requiredcat1`, `requiredcat2`, `clicks`, `period`, `price`, `status`) VALUES
+(1, 0, 'hide', '', '', '', '', 'C:xampp	mpphp27D0.tmp', '', '', '', '', '', '', 'd', '', 0, 0, 50, 1),
+(2, 0, 'hide', 'sjsj', '', '', '', 'C:xampp	mpphp9856.tmp', '', '', '', '', '', '', 'wedfdlsklfl;s', '', 0, 0, 50, 1),
+(3, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, 1),
+(4, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, 1),
+(5, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, 1),
+(6, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', 'C:xampp	mpphp5621.tmp', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, 1),
+(7, 37, 'YouTube', 'ehab', 'mohamed', 'ehab', 'ehab', 'C:xampp	mpphp6CE9.tmp', 'bob', 'C:xampp	mpphp6CEA.tmp', 'bob', 'C:xampp	mpphp6CFB.tmp', 'ehab', 'C:xampp	mpphp6CFC.tmp', 'ehabelshamy', 'ehabelshamy', 300, 2, 50, 1);
 
 -- --------------------------------------------------------
 
@@ -225,7 +238,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `advertise`
 --
 ALTER TABLE `advertise`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `hostpages`

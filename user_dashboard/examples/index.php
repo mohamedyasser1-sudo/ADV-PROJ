@@ -1,7 +1,9 @@
 <?php 
+include '../../form_handlers/redirect.php'; 
 	include 'header.php'; 
 	
 ?>
+
 	  
       <div class="content">
         <div class="container-fluid">
@@ -13,14 +15,14 @@
                     <i class="material-icons">content_copy</i>
                   </div>
                   <p class="card-category">Current Ads</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
+                  <h3 class="card-title">49
+                    <small>Ads</small>
                   </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
                     <i class="material-icons">library_books</i>
-                    <a href="#pablo">Get More Details...</a>
+                    <a href="currentAds.php">Get More Details...</a>
                   </div>
                 </div>
               </div>

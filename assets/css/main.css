@@ -580,3 +580,7 @@ hr {
  .test span a:hover { 
  color:#076799 !important;
  }
+
+.form-signin label {
+    color: wheat !important;
+}

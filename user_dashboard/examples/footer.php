@@ -530,7 +530,7 @@ $('.fileLoad').change(function () {
     
     
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/postAd.js"></script>
+    <script  src="../assets/js/postAd2.js"></script>
 </body>
 
 </html>

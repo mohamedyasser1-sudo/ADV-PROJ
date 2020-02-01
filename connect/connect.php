@@ -1,5 +1,4 @@
 <?php
-
 $conn=mysqli_connect('localhost', 'root', '' , 'project' );
 $name="SET NAMES utf8";
 mysqli_query($conn,$name);

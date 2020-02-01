@@ -43,9 +43,9 @@ $("#Proceed").click(function(){
     
 
     
-  /*  if(isEmpty(pageCatVal) || isEmpty(pageNameVal) || isEmpty(pageURLVal) || isEmpty(pageDescVal) || isEmpty(adDesc1Val) || isEmpty(pageImg1Val)  || isEmpty(adDesc2Val) || isEmpty(pageImg2Val) || isEmpty(adDesc3Val) || isEmpty(pageImg3Val))
-        */
-    if(isEmpty(pageCatVal))
+    if(isEmpty(pageCatVal) || isEmpty(pageNameVal) || isEmpty(pageURLVal) || isEmpty(pageDescVal) || isEmpty(adDesc1Val) || isEmpty(pageImg1Val)  || isEmpty(adDesc2Val) || isEmpty(pageImg2Val) || isEmpty(adDesc3Val) || isEmpty(pageImg3Val))
+        
+    //if(isEmpty(pageCatVal))
         
        {
         console.log("Inside if");

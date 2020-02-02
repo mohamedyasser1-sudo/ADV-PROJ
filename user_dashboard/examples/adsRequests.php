@@ -54,7 +54,13 @@ $userObj = new User($conn, $userEmail);
                           $catQueryResult = mysqli_query($conn,$catQuery) or die ("Error in query: $query " . mysql_error());
                           
                           $userCatData = mysqli_fetch_row($catQueryResult);
+                          $num_CatData = mysqli_num_rows($catQueryResult);
+                         
+                           $userCat = '';
+                           if ($num_CatData > 0){ 
+                              
                           $userCat = $userCatData[0];
+                           }
                        
                          $num_results = mysqli_num_rows($result);
 
@@ -65,8 +71,11 @@ $userObj = new User($conn, $userEmail);
                                    if ($num_results > 0){ 
                                        
                         while ($row = mysqli_fetch_array($result)){
-                            if($row['requiredcat1'] == $userCat || $row['requiredcat2'] == $userCat ) {
+                            if ($num_CatData > 0){ 
+                            if($row['requiredcat1'] === $userCat || $row['requiredcat2'] === $userCat ) {
+                       
                           ?>
+                          
                           
                           <tr>
                           <td>
@@ -96,7 +105,7 @@ $userObj = new User($conn, $userEmail);
                         <?php 
                         } 
  }
-    }                       else{
+    }   }                    else{
 echo '<tr><td colspan="6" class="text-center text-danger h4">No Ads Requests Right Now.</td><tr>';
 }
                          ?>

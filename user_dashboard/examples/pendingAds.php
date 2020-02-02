@@ -1,7 +1,5 @@
 <?php 
-	include 'header.php'; 
-$row = $advertise->getUserPendingAds($conn,$user_id);
-	
+include 'header.php';	
 ?>
       <div class="content">
         <div class="container-fluid">
@@ -36,126 +34,36 @@ $row = $advertise->getUserPendingAds($conn,$user_id);
                         </th>
                       </thead>
                       <tbody>
-                        <tr>
+                      <?php
+                      $sql = "SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1";
+                      $result = mysqli_query($conn,$sql);
+                        while ($row = mysqli_fetch_array($result)){
+                          ?>
+                          <tr>
                           <td>
-                            <?=$row['id']; ?>
+                            <?= $row['id']; ?>
                           </td>
                           <td>
-                            Dakota Rice
+                            <?= $row['description1']; ?>
                           </td>
                           <td>
-                            Niger
+                             <?= $row['description1']; ?>
                           </td>
                           <td>
-                            Oud-Turnhout
+                             <?= $row['description1']; ?>
                           </td>
                           <td class="text-primary">
-                            $36,738
+                            <?= $row['description1']; ?>
                           </td>
                              <td class="text-info">
                            Details
                           </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Minerva Hooper
-                          </td>
-                          <td>
-                            Curaçao
-                          </td>
-                          <td>
-                            Sinaai-Waas
-                          </td>
-                          <td class="text-primary">
-                            $23,789
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            3
-                          </td>
-                          <td>
-                            Sage Rodriguez
-                          </td>
-                          <td>
-                            Netherlands
-                          </td>
-                          <td>
-                            Baileux
-                          </td>
-                          <td class="text-primary">
-                            $56,142
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            4
-                          </td>
-                          <td>
-                            Philip Chaney
-                          </td>
-                          <td>
-                            Korea, South
-                          </td>
-                          <td>
-                            Overland Park
-                          </td>
-                          <td class="text-primary">
-                            $38,735
-                          </td>
-                              <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            Doris Greene
-                          </td>
-                          <td>
-                            Malawi
-                          </td>
-                          <td>
-                            Feldkirchen in Kärnten
-                          </td>
-                          <td class="text-primary">
-                            $63,542
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            6
-                          </td>
-                          <td>
-                            Mason Porter
-                          </td>
-                          <td>
-                            Chile
-                          </td>
-                          <td>
-                            Gloucester
-                          </td>
-                          <td class="text-primary">
-                            $78,615
-                          </td>
-                              <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
+                        </tr> 
+                        <?php 
+                        } 
+
+                         ?>
+                       
                       </tbody>
                     </table>
                   </div>

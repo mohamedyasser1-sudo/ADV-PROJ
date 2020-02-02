@@ -1,9 +1,11 @@
 <?php
 session_start();
 include '../../connect/connect.php';
+include '../../classes/User.php';
 $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
+$row = $advertise->getUserPendingAdsnum($conn,$user_id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +77,7 @@ $user_id = $advertise->getUserId();
             <a class="nav-link" href="./pendingAds.php">
               <i class="material-icons">bubble_chart</i>
               <p>Pending Ads</p>
-                <span class="notify-no">55</span>
+                <span class="notify-no"><?php echo $row; ?></span>
             </a>
           </li>
                    <li class="nav-item ">

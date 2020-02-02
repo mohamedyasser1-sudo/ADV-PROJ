@@ -1,6 +1,12 @@
 <?php 
-include '../../form_handlers/redirect.php'; 
-	include 'header.php'; 
+// include '../../form_handlers/redirect.php'; 
+if(isset($_SESSION['email'])){
+  echo " yes session";  
+
+}else{
+  echo " no";
+}
+include 'header.php'; 
 	
 ?>
 

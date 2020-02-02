@@ -16,11 +16,13 @@ class User {
 		return $this->user['id'];
 	}
 
-	public function getUserPendingAds($conn,$id){
+
+	public function getUserPendingAdsnum($conn,$user_id){
 		$this->conn= $conn;
-		$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$id' AND status=1");
-		$this->add = mysqli_fetch_array($addsquery);
-	}
+		$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1");
+		$add = mysqli_fetch_array($addsquery);
+		return mysqli_num_rows($addsquery);
+		}
 
 	public function getNumberOfFriendRequests() {
 		$username = $this->user['username'];

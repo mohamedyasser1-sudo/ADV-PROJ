@@ -1,6 +1,6 @@
 <?php
 include '../../connect/connect.php';
-include '../../classes/User.php';
+//include '../../classes/User.php';
 $user = $_SESSION['email'];
 $advertise = new User($conn,$user);
 $user_id = $advertise->getUserId();

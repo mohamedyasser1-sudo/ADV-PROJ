@@ -63,21 +63,27 @@ $row = $advertise->getUserPendingAdsnum($conn,$user_id);
             <a class="nav-link" href="./postAd.php">
               <i class="material-icons">content_paste</i>
               <p>Post Ad</p>
-                <span class="notify-no">55</span>
+                <!--<span class="notify-no">55</span>-->
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./currentAds.php">
               <i class="material-icons">library_books</i>
               <p>Current Ads</p>
-                <span class="notify-no">55</span>
+               <!-- <span class="notify-no">55</span>-->
             </a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./pendingAds.php">
               <i class="material-icons">bubble_chart</i>
               <p>Pending Ads</p>
-                <span class="notify-no"><?php echo $row; ?></span>
+                <?php 
+                if(!($row == 0))
+                {
+               echo '<span class="notify-no">'. $row .'</span>' ;
+                }
+                ?>
+                
             </a>
           </li>
                    <li class="nav-item ">

@@ -1,5 +1,16 @@
 <?php 
 include 'header.php';	
+
+if(!$_SESSION['email']) {
+    
+    echo 'Yasser';
+}
+
+$userEmail = $_SESSION['email'];
+
+$adverObj = new User($conn, $userEmail);
+    
+    
 ?>
       <div class="content">
         <div class="container-fluid">
@@ -15,16 +26,16 @@ include 'header.php';
                     <table class="table table-hover">
                       <thead class=" text-primary">
                         <th>
-                          ID
+                          Ad ID
                         </th>
                         <th>
-                          Ad Name
+                          Page Name
                         </th>
                         <th>
-                          Country
+                           Page URL
                         </th>
                         <th>
-                          Host
+                          Page Description
                         </th>
                         <th>
                           Status
@@ -36,24 +47,37 @@ include 'header.php';
                       <tbody>
                       <?php
                       $sql = "SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1";
-                      $result = mysqli_query($conn,$sql);
+                      $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());;
+                         
+                       
+                         $num_results = mysqli_num_rows($result);
+
+                            
+                           if ($num_results > 0){ 
                         while ($row = mysqli_fetch_array($result)){
                           ?>
+                          
                           <tr>
                           <td>
                             <?= $row['id']; ?>
                           </td>
                           <td>
-                            <?= $row['description1']; ?>
+                            <?= $row['pagename']; ?>
                           </td>
                           <td>
-                             <?= $row['description1']; ?>
+                              
+                              
+                             <?= $row['pageurl']; ?>
                           </td>
                           <td>
-                             <?= $row['description1']; ?>
+                             <?= $row['pagedescription']; ?>
                           </td>
                           <td class="text-primary">
-                            <?= $row['description1']; ?>
+                              
+                              
+                            <?php
+                              if($row['status'] == 1)
+                              echo 'Pending'; ?>
                           </td>
                              <td class="text-info">
                            Details
@@ -61,7 +85,10 @@ include 'header.php';
                         </tr> 
                         <?php 
                         } 
-
+ }
+                           else{
+echo '<tr><td colspan="6" class="text-center text-danger h4">No Pending Right Now.</td><tr>';
+}
                          ?>
                        
                       </tbody>

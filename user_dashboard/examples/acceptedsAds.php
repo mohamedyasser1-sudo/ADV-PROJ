@@ -19,8 +19,8 @@ $adverObj = new User($conn, $userEmail);
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Pending Ads</h4>
-                  <p class="card-category">Pending Ads Info</p>
+                  <h4 class="card-title ">Accepted Ads</h4>
+                  <p class="card-category">Accepted Ads Info</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">

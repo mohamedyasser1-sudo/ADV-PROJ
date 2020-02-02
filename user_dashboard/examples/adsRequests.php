@@ -19,8 +19,8 @@ $userObj = new User($conn, $userEmail);
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Pending Ads</h4>
-                  <p class="card-category">Pending Ads Info</p>
+                  <h4 class="card-title ">Ads Requests</h4>
+                  <p class="card-category">Ads Requests Info</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">

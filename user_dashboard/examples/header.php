@@ -1,11 +1,17 @@
 <?php
-session_start();
+//session_start();
+ include '../../form_handlers/redirect.php'; 
 include '../../connect/connect.php';
 include '../../classes/User.php';
 $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $row = $advertise->getUserPendingAdsnum($conn,$user_id);
+
+$userType = $advertise->getUserType($conn,$user_id);
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,13 +65,57 @@ $row = $advertise->getUserPendingAdsnum($conn,$user_id);
                  
             </a>
           </li>
-         <li class="nav-item ">
+        <?php 
+            
+            if(($userType[0] == 1))
+            {
+                echo ' <li class="nav-item ">
+            <a class="nav-link" href="./adsRequests.php">
+              <i class="material-icons">content_paste</i>
+              <p>Ads Requests</p>
+                <!--<span class="notify-no">55</span>-->
+            </a>
+          </li>';
+                        echo ' <li class="nav-item ">
+            <a class="nav-link" href="./acceptedsAds.php">
+              <i class="material-icons">content_paste</i>
+              <p> Accepted Ads</p>
+                <!--<span class="notify-no">55</span>-->
+            </a>
+          </li>';
+                
+            }
+            elseif (($userType[0] == 2)) {
+                echo '<li class="nav-item ">
             <a class="nav-link" href="./postAd.php">
               <i class="material-icons">content_paste</i>
               <p>Post Ad</p>
                 <!--<span class="notify-no">55</span>-->
             </a>
-          </li>
+          </li>';
+                ?>
+                <?php
+          echo '<li class="nav-item ">
+            <a class="nav-link" href="./pendingAds.php">
+              <i class="material-icons">bubble_chart</i>
+                
+              <p>Pending Ads</p>';
+              ?>
+                <?php 
+                if(!($row == 0))
+                {
+               echo '<span class="notify-no">'. $row .'</span>' ;
+                }
+                ?>
+        <?php        
+           echo '</a> </li>';
+        ?>
+            <?php
+            }
+            ?>
+                    
+            
+         
           <li class="nav-item">
             <a class="nav-link" href="./currentAds.php">
               <i class="material-icons">library_books</i>
@@ -73,19 +123,7 @@ $row = $advertise->getUserPendingAdsnum($conn,$user_id);
                <!-- <span class="notify-no">55</span>-->
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./pendingAds.php">
-              <i class="material-icons">bubble_chart</i>
-              <p>Pending Ads</p>
-                <?php 
-                if(!($row == 0))
-                {
-               echo '<span class="notify-no">'. $row .'</span>' ;
-                }
-                ?>
-                
-            </a>
-          </li>
+            
                    <li class="nav-item ">
             <a class="nav-link" href="#">
               <i class="material-icons">location_ons</i>

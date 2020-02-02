@@ -38,3 +38,10 @@ left: 17px;
 .fixed-plugin {
 	display:none
 }
+
+.alert-cus {
+    
+    position: absolute;
+    top: 17px;
+    left: 26%;
+}

@@ -83,6 +83,8 @@ $("#Proceed").click(function(){
 
 
 
+
+
 function isEmpty (property) {
     
     if(property === null || property === "" || typeof property === "undefined"){
@@ -91,3 +93,13 @@ function isEmpty (property) {
     
     return false
 }
+
+
+
+ 
+
+setInterval(function(){
+    
+   $(".alert-cus").hide();
+
+}, 5000);

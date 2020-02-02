@@ -9,7 +9,7 @@ if(!$_SESSION['email']) {
 
 $userEmail = $_SESSION['email'];
 
-$adverObj = new User($conn, $userEmail);
+$userObj = new User($conn, $userEmail);
     
     
 ?>
@@ -38,8 +38,8 @@ $adverObj = new User($conn, $userEmail);
                         <th>
                           Page Description
                         </th>
-                        <th>
-                          Status
+                        <th colspan="2" class="text-center">
+                          Action
                         </th>
                            <th>
                           Show
@@ -47,15 +47,25 @@ $adverObj = new User($conn, $userEmail);
                       </thead>
                       <tbody>
                       <?php
-                      $sql = "SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1";
-                      $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());;
-                         
+                      $sql = "SELECT * FROM advertise WHERE  status=1";
+                      $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());
+                        
+                       $catQuery = "SELECT category FROM hostpages WHERE user_id = '$user_id'";   
+                          $catQueryResult = mysqli_query($conn,$catQuery) or die ("Error in query: $query " . mysql_error());
+                          
+                          $userCatData = mysqli_fetch_row($catQueryResult);
+                          $userCat = $userCatData[0];
                        
                          $num_results = mysqli_num_rows($result);
 
-                            
-                           if ($num_results > 0){ 
+                         
+                          
+                           
+                               
+                                   if ($num_results > 0){ 
+                                       
                         while ($row = mysqli_fetch_array($result)){
+                            if($row['requiredcat1'] == $userCat || $row['requiredcat2'] == $userCat ) {
                           ?>
                           
                           <tr>
@@ -73,22 +83,21 @@ $adverObj = new User($conn, $userEmail);
                           <td>
                              <?= $row['pagedescription']; ?>
                           </td>
-                          <td class="text-primary">
-                              
-                              
-                            <?php
-                              if($row['status'] == 1)
-                              echo 'Pending'; ?>
+                      <td class="text-success">
+                           Accept
                           </td>
-                             <td class="text-info">
-                           Details
+                             <td class="text-danger">
+                           Reject
+                          </td>
+                              <td class="text-info">
+                            Details 
                           </td>
                         </tr> 
                         <?php 
                         } 
  }
-                           else{
-echo '<tr><td colspan="6" class="text-center text-danger h4">No Pending Right Now.</td><tr>';
+    }                       else{
+echo '<tr><td colspan="6" class="text-center text-danger h4">No Ads Requests Right Now.</td><tr>';
 }
                          ?>
                        

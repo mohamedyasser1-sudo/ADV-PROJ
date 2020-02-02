@@ -16,6 +16,8 @@ class User {
 		return $this->user['id'];
 	}
 
+    
+    
 
 	public function getUserPendingAdsnum($conn,$user_id){
 		$this->conn= $conn;
@@ -23,6 +25,36 @@ class User {
 		$add = mysqli_fetch_array($addsquery);
 		return mysqli_num_rows($addsquery);
 		}
+    
+    	public function getUserType($conn,$user_id){
+		$this->conn= $conn;
+		$userTypequery=mysqli_query($conn,"SELECT type FROM users WHERE id = '$user_id'");
+		$userType = mysqli_fetch_row($userTypequery);
+		return $userType;
+		}
+    
+    public function getFullName($conn,$user_id){
+		$this->conn= $conn;
+		$userFullquery=mysqli_query($conn,"SELECT first_name, second_name FROM users WHERE id = '$user_id'");
+		$userFullname = mysqli_fetch_row($userFullquery);
+        
+        $fname = $userFullname[0];
+        $lname = $userFullname[1];
+        $fullName = $fname . ' ' . $lname;
+        
+		return $fullName;
+		}
+    
+    
+    	public function getAdsByCat($conn,$user_id){
+		$this->conn= $conn;
+		$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1");
+		$add = mysqli_fetch_array($addsquery);
+		return mysqli_num_rows($addsquery);
+		}
+    
+    
+    
 
 	public function getNumberOfFriendRequests() {
 		$username = $this->user['username'];

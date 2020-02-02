@@ -10,6 +10,8 @@ $row = $advertise->getUserPendingAdsnum($conn,$user_id);
 
 $userType = $advertise->getUserType($conn,$user_id);
 
+$fname = $advertise->getFullName($conn,$user_id);
+
 
 
 ?>
@@ -197,7 +199,7 @@ $userType = $advertise->getUserType($conn,$user_id);
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="user.php">Profile</a>
+                  <a class="dropdown-item" href="user.php"><?php echo $fname;?></a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="../../form_handlers/logout.php">Log out</a>

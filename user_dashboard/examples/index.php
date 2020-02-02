@@ -26,27 +26,6 @@ if(isset($_SESSION['email'])){
 
       <div class="content">
         <div class="container-fluid">
-            <?php
-set_time_limit(0);
-if(isset($_SESSION['email'])){
-echo ' <div class="col-md-6 alert-cus">
-			<div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">close</i>
-                    </button>
-                    <span>
-                      <b> Your login Success - </b> Welcome';
-    ?>
-            <?php
-    echo $fname;
-    ?>
-            <?php
-    echo '</span></div></div>';
-			  ?>
-            <?php
-}
-
-?>
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">

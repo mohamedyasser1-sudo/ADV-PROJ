@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2020 at 05:39 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Feb 02, 2020 at 01:19 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -82,7 +82,9 @@ INSERT INTO `advertise` (`id`, `post_id`, `pagetype`, `pagename`, `pageurl`, `pa
 (4, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, 1),
 (5, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, 1),
 (6, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', 'C:xampp	mpphp5621.tmp', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, 1),
-(7, 37, 'YouTube', 'ehab', 'mohamed', 'ehab', 'ehab', 'C:xampp	mpphp6CE9.tmp', 'bob', 'C:xampp	mpphp6CEA.tmp', 'bob', 'C:xampp	mpphp6CFB.tmp', 'ehab', 'C:xampp	mpphp6CFC.tmp', 'ehabelshamy', 'ehabelshamy', 300, 2, 50, 1);
+(7, 37, 'YouTube', 'ehab', 'mohamed', 'ehab', 'ehab', 'C:xampp	mpphp6CE9.tmp', 'bob', 'C:xampp	mpphp6CEA.tmp', 'bob', 'C:xampp	mpphp6CFB.tmp', 'ehab', 'C:xampp	mpphp6CFC.tmp', 'ehabelshamy', 'ehabelshamy', 300, 2, 50, 1),
+(10, 42, 'Facebook', 'eeeeYASSER', 'eee', 'ee', 'ee', 'C:xampp	mpphp535B.tmp', 'ee', 'C:xampp	mpphp535C.tmp', 'ee', 'C:xampp	mpphp535D.tmp', 'ee', 'C:xampp	mpphp536E.tmp', 'wwww', 'wwww', 1000000, 55, 50, 1),
+(11, 43, 'Facebook', 'qq', 'qq', 'qq', 'qq', 'C:xampp	mpphpAE5D.tmp', 'rr', 'C:xampp	mpphpAE5E.tmp', 'rr', 'C:xampp	mpphpAE5F.tmp', 'rr', 'C:xampp	mpphpAE6F.tmp', 't', 'wwww', 1000000, 55, 50, 1);
 
 -- --------------------------------------------------------
 
@@ -117,6 +119,13 @@ CREATE TABLE `hostpages` (
   `category` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `hostpages`
+--
+
+INSERT INTO `hostpages` (`id`, `user_id`, `name`, `url`, `followers`, `description`, `category`) VALUES
+(1, 42, '', '', 0, '', 't');
+
 -- --------------------------------------------------------
 
 --
@@ -128,6 +137,19 @@ CREATE TABLE `lookups` (
   `pagetypes` varchar(25) NOT NULL,
   `prices` int(11) NOT NULL,
   `category` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lookups_table`
+--
+
+CREATE TABLE `lookups_table` (
+  `ID` int(11) NOT NULL,
+  `LOOKUP_TYPE` varchar(50) DEFAULT NULL,
+  `LOOKUP_LABEL` varchar(50) DEFAULT NULL,
+  `LOOKUP_VALUE` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -176,7 +198,9 @@ INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `pa
 (37, 'ehab', 'ehab', 'ehab', 'ehab_elshamy82@yahoo.com', 'ehabehab', 'Egypt', 1141513524, 1, '2020-01-07', 7427, 0),
 (39, 'ehab', 'ehab', 'ehab', 'ehab@ehab.com', 'ehabehab', 'ER', 1141513524, 1, '2020-01-11', 0, 0),
 (40, 'ehab', 'ehab', 'ehab', 'ehabm@ehab.com', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 2, 0),
-(41, 'ehabelshamy', 'ehab', 'ehab', 'Ehab.M168647@te.eg', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 0, 0);
+(41, 'ehabelshamy', 'ehab', 'ehab', 'Ehab.M168647@te.eg', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 0, 0),
+(42, 'myasser', 'Mohamed', 'Yasser', 'm.yasser@aseel-group.com', '123456789', 'EG', 1158309246, 1, '2020-02-01', 0, 0),
+(43, 'm.yasser@aseel-group.com', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 2, '2020-02-02', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -238,13 +262,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `advertise`
 --
 ALTER TABLE `advertise`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `hostpages`
 --
 ALTER TABLE `hostpages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `lookups`
@@ -262,7 +286,7 @@ ALTER TABLE `userpages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

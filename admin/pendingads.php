@@ -18,18 +18,75 @@
 										</div>
 										<div class="table-responsive">
 											<table class="table table-bordered">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-													</tr>
-												</thead>
-												<tbody>
+                      <thead class=" text-primary">
+                        <th>
+                          Ad ID
+                        </th>
+                        <th>
+                          Page Name
+                        </th>
+                        <th>
+                           Page URL
+                        </th>
+                        <th>
+                          Page Description
+                        </th>
+                        <th>
+                          Status
+                        </th>
+                           <th>
+                          Show
+                        </th>
+                      </thead>
+												                      <tbody>
+                      <?php
+                      $sql = "SELECT * FROM advertise WHERE status=1";
+                      $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());;
+                         
+                       
+                         $num_results = mysqli_num_rows($result);
+
+                            
+                           if ($num_results > 0){ 
+                        while ($row = mysqli_fetch_array($result)){
+                          ?>
+                          
+                          <tr>
+                          <td>
+                            <?= $row['id']; ?>
+                          </td>
+                          <td>
+                            <?= $row['pagename']; ?>
+                          </td>
+                          <td>
+                              
+                              
+                             <?= $row['pageurl']; ?>
+                          </td>
+                          <td>
+                             <?= $row['pagedescription']; ?>
+                          </td>
+                          <td class="text-primary">
+                              
+                              
+                            <?php
+                              if($row['status'] == 1)
+                              echo 'Pending'; ?>
+                          </td>
+                             <td class="text-info">
+                           Details
+                          </td>
+                        </tr> 
+                        <?php 
+                        } 
+ }
+                           else{
+echo '<tr><td colspan="6" class="text-center text-danger h4">No Pending Right Now.</td><tr>';
+}
+                         ?>
+                       
+                      </tbody>
+<!-- 												<tbody>
 													<tr>
 														<th scope="row">1</th>
 														<td>Table cell</td>
@@ -39,25 +96,7 @@
 														<td>Table cell</td>
 														<td>Table cell</td>
 													</tr>
-													<tr>
-														<th scope="row">2</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
-													<tr>
-														<th scope="row">3</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
-												</tbody>
+												</tbody> -->
 											</table>
 										</div>
 									</div>

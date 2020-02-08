@@ -35,8 +35,100 @@ class User {
 
 		}	
 	 	return  $array; 
+		}
+
+		public function getPageTypes($conn){
+		$array = array();
+		$result=mysqli_query($conn,"SELECT * FROM lookups_table WHERE LOOKUP_TYPE = 'PAGE_TYPE'");
+		while ($row = mysqli_fetch_array($result)){	
+			$array[]=$row;
 		}	
-    
+	 	return  $array; 
+		}	
+
+		public function getClickCounts($conn){
+		$array = array();
+		$result=mysqli_query($conn,"SELECT * FROM lookups_table WHERE LOOKUP_TYPE = 'CLICK_COUNTS'");
+		while ($row = mysqli_fetch_array($result)){	
+			$array[]=$row;
+		}	
+	 	return  $array; 
+		}
+		
+
+		public function getAdsDuration($conn){
+		$array = array();
+		$result=mysqli_query($conn,"SELECT * FROM lookups_table WHERE LOOKUP_TYPE = 'ADS_DURATION'");
+		while ($row = mysqli_fetch_array($result)){	
+			$array[]=$row;
+		}	
+	 	return  $array; 
+		}
+
+		public function getPageCategories($conn){
+		$array = array();
+		$result=mysqli_query($conn,"SELECT * FROM lookups_table WHERE LOOKUP_TYPE = 'PAGE_CATEGORIES'");
+		while ($row = mysqli_fetch_array($result)){	
+			$array[]=$row;
+		}	
+	 	return  $array; 
+		}
+
+		public function getHostAdds($conn,$user_id){
+			$array = array();
+			$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
+			while($row = mysqli_fetch_array($query)){
+			$followerscatregory = $row['followers_cat'];
+			$pagecategory       = $row['category'];
+
+			if($followerscatregory == 'A'){
+				$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND clicks IN (500,1000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+				while ($row = mysqli_fetch_array($result)){	
+					$array[]=$row;
+				}	
+	 			return  $array;
+			}elseif($followerscatregory == 'B'){
+				$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND clicks IN (1000,2000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+				while ($row = mysqli_fetch_array($result)){	
+					$array[]=$row;
+				}	
+	 			return  $array;				
+			}elseif($followerscatregory == 'C'){
+				$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 ");
+				while ($row = mysqli_fetch_array($result)){	
+					$array[]=$row;
+				}	
+	 			return  $array;
+		}
+		}	
+		}
+
+		public function getHostAddsnum($conn,$user_id){
+			$array = array();
+			$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
+			while($row = mysqli_fetch_array($query)){
+			$followerscatregory = $row['followers_cat'];
+			$pagecategory       = $row['category'];
+
+			if($followerscatregory == 'A'){
+				$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND clicks IN (500,1000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+	 			$num = mysqli_num_rows($result);
+	 			return $num;
+			}elseif($followerscatregory == 'B'){
+				$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND clicks IN (1000,2000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+	 			$num = mysqli_num_rows($result);
+	 			return $num;			
+			}elseif($followerscatregory == 'C'){
+				$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 ");
+	 			$num = mysqli_num_rows($result);
+	 			return $num;
+		}
+		}	
+		}    
+
+
+
+
     	public function getUserType($conn,$user_id){
 		$this->conn= $conn;
 		$userTypequery=mysqli_query($conn,"SELECT type FROM users WHERE id = '$user_id'");

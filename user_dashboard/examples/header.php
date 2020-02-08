@@ -10,6 +10,12 @@ $row = $advertise->getUserPendingAdsnum($conn,$user_id);
 
 $userType = $advertise->getUserType($conn,$user_id);
 $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
+$pagetype = $advertise->getPageTypes($conn);
+$clickcounts = $advertise->getClickCounts($conn);
+$adsdurations = $advertise->getAdsDuration($conn);
+$categories = $advertise->getPageCategories($conn);
+$singleuseradds =$advertise->getHostAdds($conn,$user_id);
+$singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 
 
 
@@ -74,7 +80,7 @@ $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
             <a class="nav-link" href="./adsRequests.php">
               <i class="material-icons">content_paste</i>
               <p>Ads Requests</p>
-                <!--<span class="notify-no">55</span>-->
+                <span class="notify-no">'.$singleuseraddsnum.'</span>
             </a>
           </li>';
                         echo ' <li class="nav-item ">

@@ -37,18 +37,22 @@ $message = "";
                 <?php echo $message; ?>
                 
                 <select id="pageCat" class="form-control" name="pagetype" onchange="test(this)">
-                  <option value="hide">-- Select --</option>
-                  <option value="Facebook">Facebook P age</option>
-                  <option value="YouTube">YouTube Channel</option>
-                  <option value="Instagram">Instagram Account</option>
-                  <option value="Website">Website</option>
+                  <?php
+                  foreach($pagetype as $type){ 
+                  ?>
+                  <option value='<?= $type['LOOKUP_VALUE']; ?>'><?= $type['LOOKUP_LABEL']; ?>
+                    
+                  </option>
+                  <?php 
+                    }
+                  ?>
                 </select>
                 
                 
               </div>
             </div>
             
-            
+
             
             <div class="clearfix"></div>
             
@@ -269,13 +273,29 @@ $message = "";
                   
                   <div class="form-row form-row-cus">
                     <div class="col-5">
-                      <input type="text" name="clickcount" class="form-control" placeholder="No. of clicks">
+                  <select  name="pagetype" onchange="test(this)">
+                  <?php
+                  foreach($clickcounts as $clickcount){ 
+                  ?>
+                  <option value='<?= $clickcount['LOOKUP_VALUE']; ?>'><?= $clickcount['LOOKUP_LABEL']; ?></option>
+                  <?php 
+                    }
+                  ?>
+                </select>
                     </div>
                     <div class="col">
                       <span class="form-control">In</span>
                     </div>
                     <div class="col-5">
-                      <input type="text" name="days" class="form-control" placeholder="Enter days">
+                  <select  name="pagetype" onchange="test(this)">
+                  <?php
+                  foreach($adsdurations as $adsduration){ 
+                  ?>
+                  <option value='<?= $adsduration['LOOKUP_VALUE']; ?>'><?= $adsduration['LOOKUP_LABEL']; ?></option>
+                  <?php 
+                    }
+                  ?>
+                </select>
                     </div>
                     <div class="col">
                       <span class="form-control">Days</span>
@@ -283,7 +303,15 @@ $message = "";
                   </div>
                   <div class="form-row">
                     <div class="col-12">
-                      <input type="text" name="category" class="form-control" placeholder="Select Category">
+                  <select  name="pagetype" onchange="test(this)">
+                  <?php
+                  foreach($categories as $category){ 
+                  ?>
+                  <option value='<?= $category['LOOKUP_VALUE']; ?>'><?= $category['LOOKUP_LABEL']; ?></option>
+                  <?php 
+                    }
+                  ?>
+                </select>
                     </div>
                     
                   </div>

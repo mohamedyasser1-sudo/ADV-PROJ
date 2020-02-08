@@ -47,50 +47,27 @@ $userObj = new User($conn, $userEmail);
                       </thead>
                       <tbody>
                       <?php
-                      $sql = "SELECT * FROM advertise WHERE  status=1";
-                      $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());
-                        
-                       $catQuery = "SELECT category FROM hostpages WHERE user_id = '$user_id'";   
-                          $catQueryResult = mysqli_query($conn,$catQuery) or die ("Error in query: $query " . mysql_error());
-                          
-                          $userCatData = mysqli_fetch_row($catQueryResult);
-                          $num_CatData = mysqli_num_rows($catQueryResult);
-                         
-                           $userCat = '';
-                           if ($num_CatData > 0){ 
-                              
-                          $userCat = $userCatData[0];
-                           }
-                       
-                         $num_results = mysqli_num_rows($result);
 
-                         
-                          
-                           
-                               
-                                   if ($num_results > 0){ 
-                                       
-                        while ($row = mysqli_fetch_array($result)){
-                            if ($num_CatData > 0){ 
-                            if($row['requiredcat1'] === $userCat || $row['requiredcat2'] === $userCat ) {
+                      
+                        foreach($singleuseradds as $addsdata){
                        
                           ?>
                           
                           
                           <tr>
                           <td>
-                            <?= $row['id']; ?>
+                            <?= $addsdata['id']; ?>
                           </td>
                           <td>
-                            <?= $row['pagename']; ?>
+                            <?= $addsdata['pagename']; ?>
                           </td>
                           <td>
                               
                               
-                             <?= $row['pageurl']; ?>
+                             <?= $addsdata['pageurl']; ?>
                           </td>
                           <td>
-                             <?= $row['pagedescription']; ?>
+                             <?= $addsdata['pagedescription']; ?>
                           </td>
                       <td class="text-success">
                            Accept
@@ -104,10 +81,6 @@ $userObj = new User($conn, $userEmail);
                         </tr> 
                         <?php 
                         } 
- }
-    }   }                    else{
-echo '<tr><td colspan="6" class="text-center text-danger h4">No Ads Requests Right Now.</td><tr>';
-}
                          ?>
                        
                       </tbody>

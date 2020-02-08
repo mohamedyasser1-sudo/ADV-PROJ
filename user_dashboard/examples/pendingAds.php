@@ -47,49 +47,28 @@ $adverObj = new User($conn, $userEmail);
                       </thead>
                       <tbody>
                       <?php
-                      $sql = "SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1";
-                      $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());;
-                         
-                       
-                         $num_results = mysqli_num_rows($result);
 
-                            
-                           if ($num_results > 0){ 
-                        while ($row = mysqli_fetch_array($result)){
+                      foreach($userdata as $adddata){
+                    
                           ?>
                           
                           <tr>
-                          <td>
-                            <?= $row['id']; ?>
-                          </td>
-                          <td>
-                            <?= $row['pagename']; ?>
-                          </td>
-                          <td>
-                              
-                              
-                             <?= $row['pageurl']; ?>
-                          </td>
-                          <td>
-                             <?= $row['pagedescription']; ?>
-                          </td>
-                          <td class="text-primary">
-                              
-                              
+                          <td><?= $adddata['post_id']; ?></td>
+                          <td><?= $adddata['pagename']; ?></td>
+                          <td><?= $adddata['pageurl']; ?></td>
+                          <td><?= $adddata['pagedescription']; ?></td>
+                          <td class="text-primary">  
                             <?php
-                              if($row['status'] == 1)
-                              echo 'Pending'; ?>
+                              if($adddata['status'] == 1){
+                              echo 'Pending'; }
+                              ?>
                           </td>
                              <td class="text-info">
                            Details
                           </td>
                         </tr> 
-                        <?php 
-                        } 
- }
-                           else{
-echo '<tr><td colspan="6" class="text-center text-danger h4">No Pending Right Now.</td><tr>';
-}
+                        <?php           
+                          }
                          ?>
                        
                       </tbody>

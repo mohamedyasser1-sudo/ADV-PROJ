@@ -1,6 +1,6 @@
 <?php
 //session_start();
- include '../../form_handlers/redirect.php'; 
+include '../../form_handlers/redirect.php'; 
 include '../../connect/connect.php';
 include '../../classes/User.php';
 $user = $_SESSION['email'];
@@ -9,6 +9,7 @@ $user_id = $advertise->getUserId();
 $row = $advertise->getUserPendingAdsnum($conn,$user_id);
 
 $userType = $advertise->getUserType($conn,$user_id);
+$userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
 
 
 

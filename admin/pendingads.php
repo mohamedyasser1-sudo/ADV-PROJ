@@ -38,7 +38,7 @@
                           Show
                         </th>
                       </thead>
-												                      <tbody>
+						<tbody>
                       <?php
                       $sql = "SELECT * FROM advertise WHERE status=1";
                       $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());;

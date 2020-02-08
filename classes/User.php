@@ -19,12 +19,23 @@ class User {
     
     
 
-	public function getUserPendingAdsnum($conn,$user_id){
+		public function getUserPendingAdsnum($conn,$user_id){
 		$this->conn= $conn;
 		$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1");
 		$add = mysqli_fetch_array($addsquery);
 		return mysqli_num_rows($addsquery);
 		}
+
+		public function getUserPendingAdsdata($conn,$user_id){
+		$array = array();
+		$result=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1");
+		while ($row = mysqli_fetch_array($result)){
+			
+			$array[]=$row;
+
+		}	
+	 	return  $array; 
+		}	
     
     	public function getUserType($conn,$user_id){
 		$this->conn= $conn;

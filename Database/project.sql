@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2020 at 12:16 PM
+-- Generation Time: Feb 08, 2020 at 08:47 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -79,10 +79,10 @@ CREATE TABLE `advertise` (
 INSERT INTO `advertise` (`id`, `post_id`, `pagetype`, `pagename`, `pageurl`, `pagedescription`, `description1`, `image1`, `description2`, `image2`, `description3`, `image3`, `description4`, `image4`, `requiredcat1`, `requiredcat2`, `clicks`, `period`, `price`, `status`, `count`) VALUES
 (1, 0, 'hide', '', '', '', '', 'C:xampp	mpphp27D0.tmp', '', '', '', '', '', '', 'd', '', 0, 0, 50, '1', 0),
 (2, 0, 'hide', 'sjsj', '', '', '', 'C:xampp	mpphp9856.tmp', '', '', '', '', '', '', 'wedfdlsklfl;s', '', 0, 0, 50, '1', 0),
-(3, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, '1', 0),
-(4, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, '1', 0),
-(5, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, '1', 0),
-(6, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', 'C:xampp	mpphp5621.tmp', 'ehab', '', 'ehab', '', 'ehab', 'ehab', 500, 2, 50, '1', 0),
+(3, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'Sports', 'ehab', 500, 2, 50, '1', 0),
+(4, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'Sports', 500, 2, 50, '1', 0),
+(5, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'Sports', 'Sport', 1000, 2, 50, '1', 0),
+(6, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', 'C:xampp	mpphp5621.tmp', 'ehab', '', 'ehab', '', 'ehab', 'Sports', 2000, 2, 50, '1', 0),
 (7, 37, 'YouTube', 'ehab', 'mohamed', 'ehab', 'ehab', 'C:xampp	mpphp6CE9.tmp', 'bob', 'C:xampp	mpphp6CEA.tmp', 'bob', 'C:xampp	mpphp6CFB.tmp', 'ehab', 'C:xampp	mpphp6CFC.tmp', 'ehabelshamy', 'ehabelshamy', 300, 2, 50, '1', 0),
 (10, 42, 'Facebook', 'eeeeYASSER', 'eee', 'ee', 'ee', 'C:xampp	mpphp535B.tmp', 'ee', 'C:xampp	mpphp535C.tmp', 'ee', 'C:xampp	mpphp535D.tmp', 'ee', 'C:xampp	mpphp536E.tmp', 'wwww', 'wwww', 1000000, 55, 50, '1', 0),
 (11, 43, 'Facebook', 'qq', 'qq', 'qq', 'qq', 'C:xampp	mpphpAE5D.tmp', 'rr', 'C:xampp	mpphpAE5E.tmp', 'rr', 'C:xampp	mpphpAE5F.tmp', 'rr', 'C:xampp	mpphpAE6F.tmp', 't', 'wwww', 1000000, 55, 50, '1', 0);
@@ -118,7 +118,7 @@ CREATE TABLE `hostpages` (
   `followers` int(11) NOT NULL,
   `followers_cat` varchar(1) NOT NULL,
   `description` varchar(200) NOT NULL,
-  `category` varchar(1) NOT NULL
+  `category` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `hostpages` (
 --
 
 INSERT INTO `hostpages` (`id`, `user_id`, `name`, `url`, `followers`, `followers_cat`, `description`, `category`) VALUES
-(1, 42, '', '', 0, '', '', 't');
+(1, 35, '', '', 0, 'A', '', 'Sports');
 
 -- --------------------------------------------------------
 
@@ -159,7 +159,34 @@ CREATE TABLE `lookups_table` (
 --
 
 INSERT INTO `lookups_table` (`ID`, `LOOKUP_TYPE`, `LOOKUP_LABEL`, `LOOKUP_VALUE`) VALUES
-(1, 'PAGE_TYPE', 'Facebook Page', 'FACEBOOK');
+(1, 'PAGE_TYPE', 'Facebook Page', 'FACEBOOK'),
+(2, 'PAGE_TYPE', 'Youtube Channel', 'YOUTUBE'),
+(3, 'PAGE_TYPE', 'Instagram Account', 'INSTAGRAM'),
+(4, 'PAGE_TYPE', 'Website', 'WEBSITE'),
+(5, 'CLICK_COUNTS', '500', '500'),
+(6, 'CLICK_COUNTS', '1000', '1000'),
+(7, 'CLICK_COUNTS', '2000', '2000'),
+(8, 'CLICK_COUNTS', '5000', '5000'),
+(9, 'ADS_DURATION', '1', '1'),
+(10, 'ADS_DURATION', '2', '2'),
+(11, 'PAGE_CATEGORIES', 'Autos & Vechicles', 'AUTOS&VECHICLES'),
+(12, 'PAGE_CATEGORIES', 'Pets & Animals', 'PETS&ANIMALS'),
+(13, 'PAGE_CATEGORIES', 'Sports', 'SPORTS'),
+(14, 'PAGE_CATEGORIES', 'Travel & Events', 'TRAVEL&EVENTS'),
+(15, 'PAGE_CATEGORIES', 'Gaming', 'GAMING'),
+(16, 'PAGE_CATEGORIES', 'People & Blogs', 'PEOPLE & BLOGS'),
+(17, 'PAGE_CATEGORIES', 'Comedy', 'COMEDY'),
+(18, 'PAGE_CATEGORIES', 'Business & Brands', 'BUSINESS&BRANDS'),
+(19, 'PAGE_CATEGORIES', 'Entertainment', 'ENTERTAINMENT'),
+(20, 'PAGE_CATEGORIES', 'News & Politics', 'NEWS&POLITICS'),
+(21, 'PAGE_CATEGORIES', 'Howto & Style', 'HOWTO&STYLE'),
+(22, 'PAGE_CATEGORIES', 'Education', 'EDUCATION'),
+(23, 'PAGE_CATEGORIES', 'Science & Technology', 'SCIENCE&TECHNOLOGY'),
+(24, 'PAGE_CATEGORIES', 'Nonprofits & Activism', 'NONPROFITS&ACTIVISM'),
+(25, 'CLICK_PRICE', '50$', '50'),
+(26, 'CLICK_PRICE', '90$', '90'),
+(27, 'CLICK_PRICE', '160$', '160'),
+(28, 'CLICK_PRICE', '200$', '200');
 
 -- --------------------------------------------------------
 
@@ -295,7 +322,7 @@ ALTER TABLE `lookups`
 -- AUTO_INCREMENT for table `lookups_table`
 --
 ALTER TABLE `lookups_table`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `userpages`

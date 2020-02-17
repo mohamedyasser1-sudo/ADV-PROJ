@@ -3,6 +3,7 @@
 include '../../form_handlers/redirect.php'; 
 include '../../connect/connect.php';
 include '../../classes/User.php';
+include '../../form_handlers/updateprofile.php';
 $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
@@ -16,7 +17,9 @@ $categories = $advertise->getPageCategories($conn);
 $singleuseradds =$advertise->getHostAdds($conn,$user_id);
 $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
-include '../../form_handlers/updateprofile.php';
+$fname = $advertise->getFullName($conn,$user_id);
+
+
 
 
 ?>
@@ -40,6 +43,9 @@ include '../../form_handlers/updateprofile.php';
   <link href="../assets/demo/demo.css" rel="stylesheet" />
        <link href="../assets/css/custom.css" rel="stylesheet" />
        <link href="../assets/css/custom-bootstrap.css" rel="stylesheet" />
+     
+    <link href="../assets/css/select2.min.css" rel="stylesheet" />
+    <link href="../assets/css/postAd.css" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -204,7 +210,7 @@ include '../../form_handlers/updateprofile.php';
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="user.php">Profile</a>
+                  <a class="dropdown-item" href="user.php"><?php echo $fname;?></a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="../../form_handlers/logout.php">Log out</a>

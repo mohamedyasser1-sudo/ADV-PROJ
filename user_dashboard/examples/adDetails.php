@@ -14,8 +14,8 @@ $message = "";
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title">Posting Ad Process</h4>
-        <p class="card-category">Here you will post you Ad for you [Page category] page</p>
+        <h4 class="card-title">Ad Details</h4>
+        <p class="card-category">Here you find your Ad Details</p>
       </div>
       <br>
       <div class="card-body">
@@ -28,25 +28,13 @@ $message = "";
               <div class="col-md-2 ">
                 <div class="form-group">
                   
-                  <h4 class="card-title">Post Your Ad For</h4>
+                  <h4 class="card-title">Ad For</h4>
                   
                 </div>
               </div>
               
               <div class="col-md-4">
-                <?php echo $message; ?>
-                
-                <select id="pageCat" class="form-control" name="pagetype" onChange="myFunction()">
-                  <?php
-                  foreach($pagetype as $type){ 
-                  ?>
-                  <option value='<?= $type['LOOKUP_VALUE']; ?>'><?= $type['LOOKUP_LABEL']; ?>
-                    
-                  </option>
-                  <?php 
-                    }
-                  ?>
-                </select>
+          <input type="text" class="form-control" disabled placeholder="Af for">
                 
                 
               </div>
@@ -72,7 +60,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="pagename" id="pageName" class="form-control" placeholder="Write your page name">
+                 <input type="text" class="form-control" disabled placeholder="Page Name">
                 </div>
               </div>
               
@@ -90,7 +78,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="pageurl" id="pageURL" class="form-control" placeholder="Enter your page URL">
+                  <input type="text" class="form-control" disabled placeholder="Page URL">
                 </div>
               </div>
               
@@ -111,7 +99,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="pagedesc" id="pageDesc" class="form-control" placeholder="What is your page description">
+                  <input type="text" class="form-control" disabled placeholder="Page Description">
                 </div>
               </div>
               
@@ -128,7 +116,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="desc1" id="adDesc1" class="form-control" placeholder="What is your page description">
+                  <input type="text" class="form-control" disabled placeholder="Description">
                 </div>
               </div>
               
@@ -141,13 +129,13 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="pageImg1" name="image1" multiple class="fileLoad"/>
+                  <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/>
                 </div>
               </div>
             </div>
             
             
-            <div class="pageDesBloc pageDesBloc1">
+            <div class=" pageDesBloc1">
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
@@ -158,7 +146,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="What is your page description">
+                  <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="What is your page description" disabled>
                 </div>
               </div>
               
@@ -176,14 +164,14 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="pageImg2" name="image2" multiple class="fileLoad"/>
+                  <input type="file" id="pageImg2" name="image2" multiple class="fileLoad" disabled/>
                 </div>
               </div>
             </div>
             
             </div>
             
-              <div class="pageDesBloc pageDesBloc2">
+              <div class=" pageDesBloc2">
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
@@ -194,7 +182,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="What is your page description">
+                  <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="What is your page description" disabled>
                 </div>
               </div>
               
@@ -209,13 +197,13 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="pageImg3" name="image3" multiple class="fileLoad"/>
+                  <input type="file" id="pageImg3" name="image3" multiple class="fileLoad" disabled/>
                 </div>
               </div>
             </div>
              </div>
               
-            <div class="pageDesBloc pageDesBloc3">
+            <div class=" pageDesBloc3">
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
@@ -226,7 +214,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="desc4" class="form-control" placeholder="What is your page description">
+                  <input type="text" name="desc4" class="form-control" placeholder="What is your page description" disabled>
                 </div>
               </div>
               
@@ -243,42 +231,63 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="file4" name="image4" multiple class="fileLoad"/>
+                  <input type="file" id="file4" name="image4" multiple class="fileLoad" disabled/>
                 </div>
               </div>
             </div>
             </div>
               
               
-              
-                        <div class="">
-            <div class="row">
+               <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
-                 
+                  <label class="bmd-label-floating">No. Clicks</label>
                   
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="form-group">
                   
-                   <span  class="btn btn-primary pull-right adMore adMoreactive adMore1" >Add More</span>
-                    <span  class="btn btn-primary pull-right adMore adMore2" >Add More</span>
-                    <span  class="btn btn-primary pull-right adMore adMore3" >Add More</span>
-                    <span  class="btn btn-primary pull-right removeMore  removeMore1" >Remove</span>
-                    <span  class="btn btn-primary pull-right removeMore  removeMore2" >Remove</span>
-                    <span  class="btn btn-primary pull-right removeMore  removeMore3" >Remove</span>
+                  <input type="text" class="form-control" disabled placeholder="No. Clicks">
                 </div>
               </div>
               
             </div>
-       
+              
+              
+               <div class="row">
+              <div class="col-md-2">
+                <div class="form-group ">
+                  <label class="bmd-label-floating">Days</label>
+                  
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  
+                  <input type="text" class="form-control" disabled placeholder="Days">
+                </div>
+              </div>
+              
             </div>
-            
-            <span  class="btn btn-primary pull-right" id="Proceed" >Proceed</span>
-            <div class="clearfix"></div>
-            
-            
+              
+              
+               <div class="row">
+              <div class="col-md-2">
+                <div class="form-group ">
+                  <label class="bmd-label-floating">Categories</label>
+                  
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  
+                  <input type="text" class="form-control" disabled placeholder="Categories">
+                </div>
+              </div>
+              
+            </div>
+                                     
           </div>
           
           

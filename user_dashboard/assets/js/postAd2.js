@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
  console.log("Insideeee Proccesed JS Page");
 
 $("#Proceed").click(function(){
@@ -43,7 +43,7 @@ $("#Proceed").click(function(){
     
 
     
-    if(isEmpty(pageCatVal) || isEmpty(pageNameVal) || isEmpty(pageURLVal) || isEmpty(pageDescVal) || isEmpty(adDesc1Val) || isEmpty(pageImg1Val)  || isEmpty(adDesc2Val) || isEmpty(pageImg2Val) || isEmpty(adDesc3Val) || isEmpty(pageImg3Val))
+    if(isEmpty(pageCatVal) || isEmpty(pageNameVal) || isEmpty(pageURLVal) || isEmpty(pageDescVal) || isEmpty(adDesc1Val) || isEmpty(pageImg1Val))
         
     //if(isEmpty(pageCatVal))
         
@@ -80,11 +80,116 @@ $("#Proceed").click(function(){
 
 
 });
+    
+    
+    
+    
+$(".adMore1").click(function(){
+    
 
+    
+    if(!$(".pageDesBloc1").hasClass('pageDesBlocActive')) {
+        
+        $(".pageDesBloc1").addClass('pageDesBlocActive');
+        
+        
+    }
+    
+    $(".adMore1").removeClass('adMoreactive');
+    $(".adMore2").addClass('adMoreactive');
+    
+});
+    
+    
+    $(".adMore2").click(function(){
+    
 
+    
+    if(!$(".pageDesBloc2").hasClass('pageDesBlocActive')) {
+        
+        $(".pageDesBloc2").addClass('pageDesBlocActive');
+        
+        
+    }
+    
+    $(".adMore2").removeClass('adMoreactive');
+    $(".adMore3").addClass('adMoreactive');
+    
+});
+    
+        $(".adMore3").click(function(){
+    
 
+    
+    if(!$(".pageDesBloc3").hasClass('pageDesBlocActive')) {
+        
+        $(".pageDesBloc3").addClass('pageDesBlocActive');
+        
+        
+    }
+    
+    $(".adMore3").removeClass('adMoreactive');
+    $(".removeMore3").addClass('removeMoreActive');
+    
+});
+    
+    
+    
+         $(".removeMore3").click(function(){
+    
 
+    
+    if($(".pageDesBloc3").hasClass('pageDesBlocActive')) {
+        
+        $(".pageDesBloc3").removeClass('pageDesBlocActive');
+        
+        
+    }
+    
+    $(".removeMore3").removeClass('removeMoreActive');
+    $(".removeMore2").addClass('removeMoreActive');
+    
+});   
+    
+    
+    
+            $(".removeMore2").click(function(){
+    
 
+    
+    if($(".pageDesBloc2").hasClass('pageDesBlocActive')) {
+        
+        $(".pageDesBloc2").removeClass('pageDesBlocActive');
+        
+        
+    }
+    
+    $(".removeMore2").removeClass('removeMoreActive');
+    $(".removeMore1").addClass('removeMoreActive');
+    
+});  
+    
+    
+    
+    
+                $(".removeMore1").click(function(){
+    
+
+    
+    if($(".pageDesBloc1").hasClass('pageDesBlocActive')) {
+        
+        $(".pageDesBloc1").removeClass('pageDesBlocActive');
+        
+        
+    }
+    
+    $(".removeMore1").removeClass('removeMoreActive');
+     $(".adMore1").addClass('adMoreactive');
+    
+});  
+    
+    
+    
 function isEmpty (property) {
     
     if(property === null || property === "" || typeof property === "undefined"){
@@ -96,10 +201,21 @@ function isEmpty (property) {
 
 
 
- 
 
-setInterval(function(){
+
+//Js Code
+ console.log("before change");
+function myFunction() {
+     console.log("insde change");
+  var x = document.getElementById("pageCat").value;
+    alert(x);
+}
+
     
-   $(".alert-cus").hide();
+    
+     $('#page-cat-basic-single').select2();
 
-}, 5000);
+});
+
+
+

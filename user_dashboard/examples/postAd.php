@@ -36,7 +36,7 @@ $message = "";
               <div class="col-md-4">
                 <?php echo $message; ?>
                 
-                <select id="pageCat" class="form-control" name="pagetype" onchange="test(this)">
+                <select id="pageCat" class="form-control" name="pagetype" onChange="myFunction()">
                   <?php
                   foreach($pagetype as $type){ 
                   ?>
@@ -147,7 +147,7 @@ $message = "";
             </div>
             
             
-            
+            <div class="pageDesBloc pageDesBloc1">
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
@@ -181,8 +181,9 @@ $message = "";
               </div>
             </div>
             
+            </div>
             
-            
+              <div class="pageDesBloc pageDesBloc2">
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
@@ -212,8 +213,9 @@ $message = "";
                 </div>
               </div>
             </div>
-            
-            
+             </div>
+              
+            <div class="pageDesBloc pageDesBloc3">
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
@@ -245,7 +247,33 @@ $message = "";
                 </div>
               </div>
             </div>
-            
+            </div>
+              
+              
+              
+                        <div class="">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="form-group ">
+                 
+                  
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  
+                   <span  class="btn btn-primary pull-right adMore adMoreactive adMore1" >Add More</span>
+                    <span  class="btn btn-primary pull-right adMore adMore2" >Add More</span>
+                    <span  class="btn btn-primary pull-right adMore adMore3" >Add More</span>
+                    <span  class="btn btn-primary pull-right removeMore  removeMore1" >Remove</span>
+                    <span  class="btn btn-primary pull-right removeMore  removeMore2" >Remove</span>
+                    <span  class="btn btn-primary pull-right removeMore  removeMore3" >Remove</span>
+                </div>
+              </div>
+              
+            </div>
+       
+            </div>
             
             <span  class="btn btn-primary pull-right" id="Proceed" >Proceed</span>
             <div class="clearfix"></div>
@@ -273,7 +301,7 @@ $message = "";
                   
                   <div class="form-row form-row-cus">
                     <div class="col-5">
-                  <select  name="pagetype" onchange="test(this)">
+                  <select  name="pagetype"  class="form-control"> 
                   <?php
                   foreach($clickcounts as $clickcount){ 
                   ?>
@@ -287,7 +315,7 @@ $message = "";
                       <span class="form-control">In</span>
                     </div>
                     <div class="col-5">
-                  <select  name="pagetype" onchange="test(this)">
+                  <select  name="pagetype" class="form-control">
                   <?php
                   foreach($adsdurations as $adsduration){ 
                   ?>
@@ -303,7 +331,7 @@ $message = "";
                   </div>
                   <div class="form-row">
                     <div class="col-12">
-                  <select  name="pagetype" onchange="test(this)">
+                  <select id="page-cat-basic-single" class="form-control "  name="pagetype" multiple="multiple">
                   <?php
                   foreach($categories as $category){ 
                   ?>

@@ -42,6 +42,9 @@ $fname = $advertise->getFullName($conn,$user_id);
   <link href="../assets/demo/demo.css" rel="stylesheet" />
        <link href="../assets/css/custom.css" rel="stylesheet" />
        <link href="../assets/css/custom-bootstrap.css" rel="stylesheet" />
+     
+    <link href="../assets/css/select2.min.css" rel="stylesheet" />
+    <link href="../assets/css/postAd.css" rel="stylesheet" />
 </head>
 
 <body class="">

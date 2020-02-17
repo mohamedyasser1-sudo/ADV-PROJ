@@ -314,8 +314,10 @@
 /*
 Reference: http://jsfiddle.net/BB3JK/47/
 */
-
+/*
+        
 $('select').each(function () {
+    
   var $this = $(this),numberOfOptions = $(this).children('option').length;
 
   $this.addClass('select-hidden');
@@ -360,6 +362,7 @@ $('select').each(function () {
   });
 
 });
+        */
 //# sourceURL=pen.js
     </script>
     
@@ -520,7 +523,7 @@ console.log(thisID);
 }
 
 $('.fileLoad').change(function () {
-  prevIMG(this);
+  //prevIMG(this);
 });
   
 
@@ -530,7 +533,9 @@ $('.fileLoad').change(function () {
     
     
     <!--<script src="../assets/js/bootstrap.min.js"></script>-->
+  
     <script  src="../assets/js/postAd2.js"></script>
+<script  src="../assets/js/select2.min.js"></script>
 </body>
 
 </html>

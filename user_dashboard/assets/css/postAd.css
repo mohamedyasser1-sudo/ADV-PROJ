@@ -1,0 +1,28 @@
+.pageDesBloc {
+    display: none
+}
+
+.pageDesBlocActive {
+    display: block
+}
+
+.adMore {
+     display: none
+}
+
+.adMoreactive {
+     display: block
+}
+
+
+.removeMore {
+     display: none
+}
+
+.removeMoreActive {
+     display: block
+}
+/*
+.select2-container {
+        display: inline;
+}*/

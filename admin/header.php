@@ -1,6 +1,11 @@
 <?php
 include 'redirect.php'; 
 include '../connect/connect.php';
+include '../classes/User.php';
+$user = $_SESSION['username'];
+$adminobj = new User($conn,$user);
+$advertisedata =$adminobj->getAdvertiseDataForAdmin($conn);
+
 ?>
 <!DOCTYPE html>
 <html>

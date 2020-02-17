@@ -1,6 +1,5 @@
 <?php 
-	include 'header.php'; 
-	
+include 'header.php';
 ?>
       <div class="content">
         <div class="container-fluid">
@@ -12,81 +11,71 @@
                   <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="#" method="post">
                     <div class="row">
-                      <div class="col-md-5">
+                      <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Company (disabled)</label>
-                          <input type="text" class="form-control" disabled>
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control">
+                          <label>Username</label><br>
+                          <input type="text" name="username" placeholder="<?php foreach($userprofiledata as $profiledata){ echo $profiledata['username']; } ?>" class="form-control">
+                          <br><br>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Fist Name</label>
-                          <input type="text" class="form-control">
+                          <label>First Name</label><br>
+                          <input type="text" name= "firstname" placeholder="<?php foreach($userprofiledata as $profiledata){ echo $profiledata['first_name']; } ?>"  class="form-control">
+                          <br><br>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
+                          <label>Last Name</label><br>
+                          <input type="text" name= "secondname" placeholder="<?php foreach($userprofiledata as $profiledata){ echo $profiledata['second_name']; } ?>"  class="form-control">
+                          <br><br>
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <button type="submit" name="updateprofile" class="btn btn-primary pull-right">Update Profile</button>
+                    </div>
+                      <?php echo $message; ?>
                     <div class="row">
                       <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Adress</label>
-                          <input type="text" class="form-control">
-                        </div>
+                          <hr>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">City</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Country</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
+                  </form>
+                  <form method="post" action="#">
+                  <h4 class="card-title">Edit password</h4>
+                  <br><br>
+                      <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label>About Me</label>
-                          <div class="form-group">
-                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                            <textarea class="form-control" rows="5"></textarea>
-                          </div>
+                          <label class="bmd-label-floating">Old Password</label>
+                          <input type="text" name="oldpassword" class="form-control">
+                          <br><br>
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">new password</label>
+                          <input type="text" name="newpassword" class="form-control">
+                          <br><br>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">confirm new password </label>
+                          <input type="text" name="confirmpassword" class="form-control">
+                          <br><br>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" name="updatepassword" class="btn btn-primary pull-right">Update password</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

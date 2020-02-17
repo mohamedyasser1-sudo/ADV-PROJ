@@ -7,7 +7,6 @@ $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $row = $advertise->getUserPendingAdsnum($conn,$user_id);
-
 $userType = $advertise->getUserType($conn,$user_id);
 $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
 $pagetype = $advertise->getPageTypes($conn);
@@ -16,7 +15,8 @@ $adsdurations = $advertise->getAdsDuration($conn);
 $categories = $advertise->getPageCategories($conn);
 $singleuseradds =$advertise->getHostAdds($conn,$user_id);
 $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
-
+$userprofiledata= $advertise->getUserProfileData($conn,$user_id);
+include '../../form_handlers/updateprofile.php';
 
 
 ?>

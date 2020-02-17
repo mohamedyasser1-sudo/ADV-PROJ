@@ -63,8 +63,9 @@ $adverObj = new User($conn, $userEmail);
                               echo 'Pending'; }
                               ?>
                           </td>
-                             <td class="text-info">
-                           Details
+                             <td>
+                                 <a href="./adDetails.php" class="text-info">Details</a>
+                           
                           </td>
                         </tr> 
                         <?php           

@@ -20,10 +20,14 @@ if (isset($_POST['submitbtn']) ){
 	$clickcount = $_POST['clickcount'];
 	$days		= $_POST['days'];
 	$category   = $_POST['category'];
-	$category1   = $_POST['category'];
+	$category1  = $_POST['category'];
 	$price		= 50;
 
-	if(empty($pagetype) || empty($pagename) || empty($pageurl) || empty($pagedesc) || empty($desc1) || empty($desc2) || empty($desc3) || empty($desc4) || empty($clickcount) || empty($days) || empty($category) || empty($price)){
+	$image2 = "";
+	$image3 = ""; 
+	$image4 = "";
+
+	if(empty($pagetype) || empty($pagename) || empty($pageurl) || empty($pagedesc) || empty($desc1) || empty($clickcount) || empty($days) || empty($category) || empty($price)){
 		$message = "you can't leave fields empty ";
 	}else { 
 
@@ -42,12 +46,6 @@ if (isset($_POST['submitbtn']) ){
         echo "File is not an image.";
         $uploadOk = 0;
     }
-	}
-	// Check if file already exists
-	if (file_exists($target_file)) {
-	    echo "Sorry, file already exists.";
-	    $uploadOk = 0;
-	}
 	// Check file size
 	if ($_FILES["image1"]["size"] > 500000) {
 	    echo "Sorry, your file is too large.";
@@ -65,16 +63,17 @@ if (isset($_POST['submitbtn']) ){
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["image1"]["tmp_name"], $target_file)) {
-	    	$image1 = $_FILES['image1']['tmp_name'];
+	    	$image1 = $_FILES['image1']['name'];
 	
 	        //echo "The file ". basename( $_FILES["image1"]["name"]). " has been uploaded.";
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
-
+	}
+}
 // second image 
 	
-	if(isset($_FILES['image2']['name'])){
+	elseif(isset($_FILES['image2']['name'])){
 	$target_dir = "../../uploads/images";
 	$target_file = $target_dir . basename($_FILES["image2"]["name"]);
 	$uploadOk = 1;
@@ -87,13 +86,7 @@ if (isset($_POST['submitbtn']) ){
     } else {
         echo "File is not an image.";
         $uploadOk = 0;
-    }
-	}
-	// Check if file already exists
-	if (file_exists($target_file)) {
-	    echo "Sorry, file already exists.";
-	    $uploadOk = 0;
-	}
+    }	
 	// Check file size
 	if ($_FILES["image2"]["size"] > 500000) {
 	    echo "Sorry, your file is too large.";
@@ -116,10 +109,11 @@ if (isset($_POST['submitbtn']) ){
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
-
+}
+}
 	// third image 
 	
-	if(isset($_FILES['image3']['name'])){
+	elseif(isset($_FILES['image3']['name'])){
 	$target_dir = "../../uploads/images";
 	$target_file = $target_dir . basename($_FILES["image3"]["name"]);
 	$uploadOk = 1;
@@ -134,12 +128,7 @@ if (isset($_POST['submitbtn']) ){
         echo "File is not an image.";
         $uploadOk = 0;
     }
-	}
-	// Check if file already exists
-	if (file_exists($target_file)) {
-	    echo "Sorry, file already exists.";
-	    $uploadOk = 0;
-	}
+	
 	// Check file size
 	if ($_FILES["image3"]["size"] > 500000) {
 	    echo "Sorry, your file is too large.";
@@ -162,10 +151,11 @@ if (isset($_POST['submitbtn']) ){
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
-
+}
+}
 	// fourth image 
 	
-	if(isset($_FILES['image4']['name'])){
+	elseif(isset($_FILES['image4']['name'])){
 	$target_dir = "../../uploads/images";
 	$target_file = $target_dir . basename($_FILES["image4"]["name"]);
 	$uploadOk = 1;
@@ -179,12 +169,6 @@ if (isset($_POST['submitbtn']) ){
         echo "File is not an image.";
         $uploadOk = 0;
     }
-	}
-	// Check if file already exists
-	if (file_exists($target_file)) {
-	    echo "Sorry, file already exists.";
-	    $uploadOk = 0;
-	}
 	// Check file size
 	if ($_FILES["image4"]["size"] > 500000) {
 	    echo "Sorry, your file is too large.";
@@ -208,7 +192,8 @@ if (isset($_POST['submitbtn']) ){
 	     else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }        
-
+}
+}
 
 	    $insertsql = "INSERT INTO `advertise`(`post_id`, `pagetype`, `pagename`, `pageurl`, `pagedescription`, `description1`, `image1`, `description2`, `image2`, `description3`, `image3`, `description4`, `image4`, `requiredcat1`, `requiredcat2`, `clicks`, `period`, `price`, `status`) VALUES ('$user_id','$pagetype','$pagename','$pageurl','$pagedesc','$desc1','$image1','$desc2','$image2','$desc3','$image3','$desc4','$image4','$category','$category1','$clickcount','$days','$price',1)";
 	    $result = mysqli_query($conn,$insertsql);
@@ -217,32 +202,10 @@ if (isset($_POST['submitbtn']) ){
 		}else{
 		echo " error ". mysqli_error($conn);
 
-}
-
-
-	}
 
 }
 }
 }
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>

@@ -301,11 +301,11 @@ $message = "";
                   
                   <div class="form-row form-row-cus">
                     <div class="col-5">
-                  <select  name="pagetype"  class="form-control"> 
+                  <select name="clickcount" class="form-control"> 
                   <?php
                   foreach($clickcounts as $clickcount){ 
                   ?>
-                  <option value='<?= $clickcount['LOOKUP_VALUE']; ?>'><?= $clickcount['LOOKUP_LABEL']; ?></option>
+                  <option  value='<?= $clickcount['LOOKUP_VALUE']; ?>'><?= $clickcount['LOOKUP_LABEL']; ?></option>
                   <?php 
                     }
                   ?>
@@ -315,11 +315,11 @@ $message = "";
                       <span class="form-control">In</span>
                     </div>
                     <div class="col-5">
-                  <select  name="pagetype" class="form-control">
+                  <select name="days"  class="form-control">
                   <?php
                   foreach($adsdurations as $adsduration){ 
                   ?>
-                  <option value='<?= $adsduration['LOOKUP_VALUE']; ?>'><?= $adsduration['LOOKUP_LABEL']; ?></option>
+                  <option  value='<?= $adsduration['LOOKUP_VALUE']; ?>'><?= $adsduration['LOOKUP_LABEL']; ?></option>
                   <?php 
                     }
                   ?>
@@ -331,11 +331,11 @@ $message = "";
                   </div>
                   <div class="form-row">
                     <div class="col-12">
-                  <select id="page-cat-basic-single" class="form-control "  name="pagetype" multiple="multiple">
+                  <select name="category" id="page-cat-basic-single" class="form-control " multiple="multiple">
                   <?php
                   foreach($categories as $category){ 
                   ?>
-                  <option value='<?= $category['LOOKUP_VALUE']; ?>'><?= $category['LOOKUP_LABEL']; ?></option>
+                  <option  value='<?= $category['LOOKUP_VALUE']; ?>'><?= $category['LOOKUP_LABEL']; ?></option>
                   <?php 
                     }
                   ?>

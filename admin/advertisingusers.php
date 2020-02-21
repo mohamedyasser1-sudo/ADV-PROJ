@@ -46,11 +46,11 @@
 														if($blockestatus == 0 ){
 								
 														echo
-														"<a href='blockuser.php?id=$useridforblock' ><button class='btn btn-success'>Unblock</button> </a>";
+														"<a href='unblockuser.php?advid=$useridforblock' ><button class='btn btn-success'>Unblock</button> </a>";
 													}
 													elseif($blockestatus == 1){
 														echo
-														"<a href='blockuser.php?id=$useridforblock' ><button class='btn btn-danger'>Block</button> </a>";
+														"<a href='blockuser.php?advid=$useridforblock' ><button class='btn btn-danger'>Block</button> </a>";
 													}
 															?>
 														</td>

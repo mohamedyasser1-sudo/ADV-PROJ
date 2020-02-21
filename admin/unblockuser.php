@@ -5,7 +5,7 @@ if(isset($_GET['advid'])){
 $useridforblock = $_GET['advid'];
 
     $sql="UPDATE  users
-          SET active=0 WHERE id = '$useridforblock'";
+          SET active=1 WHERE id = '$useridforblock'";
 
    $res=mysqli_query($conn,$sql);
 
@@ -20,7 +20,7 @@ $useridforblock = $_GET['advid'];
 $useridforblock = $_GET['hostid'];
 
    $sql="UPDATE  users
-          SET active=0 WHERE id = '$useridforblock'";
+          SET active=1 WHERE id = '$useridforblock'";
 
    $res=mysqli_query($conn,$sql);
 

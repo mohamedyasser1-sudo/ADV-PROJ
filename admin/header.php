@@ -5,6 +5,8 @@ include '../classes/User.php';
 $user = $_SESSION['username'];
 $adminobj = new User($conn,$user);
 $advertisedata =$adminobj->getAdvertiseDataForAdmin($conn);
+$hostdata =$adminobj->getHostDataForAdmin($conn);
+$pendingaddsdata =$adminobj->getAdminPendingAdsdata($conn);
 
 ?>
 <!DOCTYPE html>

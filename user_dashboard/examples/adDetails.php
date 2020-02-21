@@ -1,6 +1,4 @@
 <?php
-
-//session_start();
 include 'header.php';
 if(!isset($_SESSION['email'])){
 header("Location: ../../login.php");
@@ -8,6 +6,10 @@ header("Location: ../../login.php");
 include 'postadvhandler.php';
 
 $message = "";
+$adv_id= $_GET['adv_id'];
+$advdetails = $advertise->getAdvData($conn,$adv_id);
+$imagedir= "../../uploads/";
+
 
 ?>
 <div class="content">
@@ -32,9 +34,11 @@ $message = "";
                   
                 </div>
               </div>
-              
+              <?php 
+                foreach($advdetails as $advdetail){ 
+              ?>
               <div class="col-md-4">
-          <input type="text" class="form-control" disabled placeholder="Af for">
+          <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagetype']; ?>">
                 
                 
               </div>
@@ -60,7 +64,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                 <input type="text" class="form-control" disabled placeholder="Page Name">
+                 <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagename']; ?>">
                 </div>
               </div>
               
@@ -78,7 +82,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" class="form-control" disabled placeholder="Page URL">
+                  <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pageurl']; ?>">
                 </div>
               </div>
               
@@ -99,7 +103,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" class="form-control" disabled placeholder="Page Description">
+                  <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagedescription']; ?>">
                 </div>
               </div>
               
@@ -116,7 +120,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" class="form-control" disabled placeholder="Description">
+                  <input type="text" class="form-control" disabled placeholder="<?= $advdetail['description1']; ?>">
                 </div>
               </div>
               
@@ -129,7 +133,8 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/>
+                  <img src="<?= $imagedir.$advdetail['image1']; ?>">
+                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->
                 </div>
               </div>
             </div>
@@ -146,7 +151,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="What is your page description" disabled>
+                  <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="<?= $advdetail['description2']; ?>" disabled>
                 </div>
               </div>
               
@@ -164,8 +169,9 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="pageImg2" name="image2" multiple class="fileLoad" disabled/>
-                </div>
+                  <img src="<?= $imagedir.$advdetail['image2']; ?>">
+                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->               
+                   </div>
               </div>
             </div>
             
@@ -182,7 +188,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="What is your page description" disabled>
+                  <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="<?= $advdetail['description3']; ?>" disabled>
                 </div>
               </div>
               
@@ -197,8 +203,9 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="pageImg3" name="image3" multiple class="fileLoad" disabled/>
-                </div>
+                  <img src="<?= $imagedir.$advdetail['image3']; ?>">
+                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->               
+                   </div>
               </div>
             </div>
              </div>
@@ -214,7 +221,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="desc4" class="form-control" placeholder="What is your page description" disabled>
+                  <input type="text" name="desc4" class="form-control" placeholder="<?= $advdetail['description4']; ?>" disabled>
                 </div>
               </div>
               
@@ -231,8 +238,9 @@ $message = "";
               <div class="col-md-8">
                 
                 <div class="custom-file-upload">
-                  <input type="file" id="file4" name="image4" multiple class="fileLoad" disabled/>
-                </div>
+                  <img src="<?= $imagedir.$advdetail['image3']; ?>">
+                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->               
+                   </div>
               </div>
             </div>
             </div>
@@ -248,7 +256,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" class="form-control" disabled placeholder="No. Clicks">
+                  <input type="text" class="form-control" disabled placeholder="<?= $advdetail['clicks']; ?>">
                 </div>
               </div>
               
@@ -265,7 +273,7 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" class="form-control" disabled placeholder="Days">
+                  <input type="text" class="form-control" disabled placeholder="<?= $advdetail['period']; ?>">
                 </div>
               </div>
               
@@ -282,10 +290,10 @@ $message = "";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" class="form-control" disabled placeholder="Categories">
+                  <input type="text" class="form-control" disabled placeholder="<?= $advdetail['requiredcat1'] ." & ". $advdetail['requiredcat2']; ?>">
                 </div>
               </div>
-              
+              <?php } ?>
             </div>
                                      
           </div>

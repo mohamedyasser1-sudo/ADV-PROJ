@@ -25,6 +25,17 @@ class User {
  	return  $array; 
 	}
 
+	public function getHostDataForAdmin($conn){
+	$array = array();
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=2");
+	while ($row = mysqli_fetch_array($result)){	
+		$array[]=$row;
+	}	
+ 	return  $array; 
+	}
+
+	
+
 	public function getUserProfileData($conn,$user_id){
 	$array = array();
 	$result=mysqli_query($conn,"SELECT * FROM users WHERE id = '$user_id'");
@@ -44,6 +55,22 @@ class User {
 	public function getUserPendingAdsdata($conn,$user_id){
 	$array = array();
 	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1");
+	while ($row = mysqli_fetch_array($result)){	
+		$array[]=$row;
+	}	
+ 	return  $array; 
+	}
+
+	public function getAdminPendingAdsnum($conn){
+	$this->conn= $conn;
+	$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1");
+	$add = mysqli_fetch_array($addsquery);
+	return mysqli_num_rows($addsquery);
+	}
+
+	public function getAdminPendingAdsdata($conn){
+	$array = array();
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1");
 	while ($row = mysqli_fetch_array($result)){	
 		$array[]=$row;
 	}	
@@ -81,6 +108,15 @@ class User {
 	public function getPageCategories($conn){
 	$array = array();
 	$result=mysqli_query($conn,"SELECT * FROM lookups_table WHERE LOOKUP_TYPE = 'PAGE_CATEGORIES'");
+	while ($row = mysqli_fetch_array($result)){	
+		$array[]=$row;
+	}	
+ 	return  $array; 
+	}
+
+	public function getAdvData($conn,$adv_id){
+	$array = array();
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE id = '$adv_id'");
 	while ($row = mysqli_fetch_array($result)){	
 		$array[]=$row;
 	}	

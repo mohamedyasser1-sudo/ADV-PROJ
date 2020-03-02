@@ -4,13 +4,10 @@ if(!isset($_SESSION['email'])){
 header("Location: ../../login.php");
 }
 include 'postadvhandler.php';
-
 $message = "";
 $adv_id= $_GET['adv_id'];
 $advdetails = $advertise->getAdvData($conn,$adv_id);
-$imagedir= "../../uploads/";
-
-
+$imagedir= "../../uploads/images/";
 ?>
 <div class="content">
   <div class="container-fluid">
@@ -34,17 +31,22 @@ $imagedir= "../../uploads/";
                   
                 </div>
               </div>
-              <?php 
-                foreach($advdetails as $advdetail){ 
+              <?php
+              foreach($advdetails as $advdetail){
+              $image1= $advdetail['image1'];
+              $image2= $advdetail['image2'];
+              $image3= $advdetail['image3'];
+              $image4= $advdetail['image4'];
+              $desc1 = $advdetail['description1'];
+              $desc2 = $advdetail['description2'];
+              $desc3 = $advdetail['description3'];
+              $desc4 = $advdetail['description4'];
               ?>
               <div class="col-md-4">
-          <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagetype']; ?>">
-                
-                
+                <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagetype']; ?>">            
               </div>
             </div>
             
-
             
             <div class="clearfix"></div>
             
@@ -64,7 +66,7 @@ $imagedir= "../../uploads/";
               <div class="col-md-4">
                 <div class="form-group">
                   
-                 <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagename']; ?>">
+                  <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagename']; ?>">
                 </div>
               </div>
               
@@ -90,9 +92,6 @@ $imagedir= "../../uploads/";
             
             
             
-            
-            
-            
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
@@ -113,140 +112,115 @@ $imagedir= "../../uploads/";
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
-                  <label class="bmd-label-floating">Description</label>
-                  
+                  <label class="bmd-label-floating">Description</label>                  
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="form-group">
-                  
+                <div class="form-group">            
                   <input type="text" class="form-control" disabled placeholder="<?= $advdetail['description1']; ?>">
                 </div>
               </div>
-              
+              <?php //$imagedir.$image1; ?>
             </div>
             <div class="row">
               <div class="col-md-2">
-                
               </div>
-              
               <div class="col-md-8">
-                
-                <div class="custom-file-upload">
-                  <img src="<?= $imagedir.$advdetail['image1']; ?>">
-                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->
+                <div class="custom-file-upload">                            
+                  <img style="max-width: 100px; height: 100px;" src="<?= $imagedir.$image1; ?>">
                 </div>
               </div>
             </div>
             
-            
-            <div class=" pageDesBloc1">
+        <?php 
+        if(!empty($desc2) & !empty($image2)){
+          echo '<div class=" pageDesBloc1">
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="form-group ">
+                    <label class="bmd-label-floating">Description</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    
+                    <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="<?= $decs2 ?>" disabled>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-2">                 
+                </div>                
+                <div class="col-md-8">                 
+                  <div class="custom-file-upload">
+                    <img src="<?= $imagedir.$image2; ?>">
+                  </div>
+                </div>
+              </div>
+            </div>';
+        }
+         ?>
+
+          <?php 
+          if(!empty($desc3) & !empty($image3)){  
+            echo '<div class=" pageDesBloc2">
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="form-group ">
+                    <label class="bmd-label-floating">Description</label>            
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">          
+                    <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="<?= $desc3; ?>" disabled>
+                  </div>
+                </div>               
+              </div>             
+              <div class="row">
+                <div class="col-md-2">        
+                </div>              
+                <div class="col-md-8">                 
+                  <div class="custom-file-upload">
+                    <img src="<?= $imagedir.$image3; ?>">
+                  </div>
+                </div>
+              </div>
+            </div>';
+          }
+            ?>
+
+        <?php 
+          if(!empty($desc4) & !empty($image4)){  
+            echo '<div class=" pageDesBloc2">
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="form-group ">
+                    <label class="bmd-label-floating">Description</label>            
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">          
+                    <input type="text" name="desc4" id="adDesc4" class="form-control" placeholder="<?= $desc4; ?>" disabled>
+                  </div>
+                </div>               
+              </div>             
+              <div class="row">
+                <div class="col-md-2">        
+                </div>              
+                <div class="col-md-8">                 
+                  <div class="custom-file-upload">
+                    <img  src="<?= $imagedir.$image4; ?>">
+                  </div>
+                </div>
+              </div>
+            </div>';
+          }
+            ?>
+
+
+                      
             <div class="row">
-              <div class="col-md-2">
-                <div class="form-group ">
-                  <label class="bmd-label-floating">Description</label>
-                  
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  
-                  <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="<?= $advdetail['description2']; ?>" disabled>
-                </div>
-              </div>
-              
-            </div>
-            
-            
-            
-            
-            
-            <div class="row">
-              <div class="col-md-2">
-                
-              </div>
-              
-              <div class="col-md-8">
-                
-                <div class="custom-file-upload">
-                  <img src="<?= $imagedir.$advdetail['image2']; ?>">
-                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->               
-                   </div>
-              </div>
-            </div>
-            
-            </div>
-            
-              <div class=" pageDesBloc2">
-            <div class="row">
-              <div class="col-md-2">
-                <div class="form-group ">
-                  <label class="bmd-label-floating">Description</label>
-                  
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  
-                  <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="<?= $advdetail['description3']; ?>" disabled>
-                </div>
-              </div>
-              
-            </div>
-            
-            
-            <div class="row">
-              <div class="col-md-2">
-                
-              </div>
-              
-              <div class="col-md-8">
-                
-                <div class="custom-file-upload">
-                  <img src="<?= $imagedir.$advdetail['image3']; ?>">
-                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->               
-                   </div>
-              </div>
-            </div>
-             </div>
-              
-            <div class=" pageDesBloc3">
-            <div class="row">
-              <div class="col-md-2">
-                <div class="form-group ">
-                  <label class="bmd-label-floating">Description</label>
-                  
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group">
-                  
-                  <input type="text" name="desc4" class="form-control" placeholder="<?= $advdetail['description4']; ?>" disabled>
-                </div>
-              </div>
-              
-            </div>
-            
-            
-            
-            
-            <div class="row">
-              <div class="col-md-2">
-                
-              </div>
-              
-              <div class="col-md-8">
-                
-                <div class="custom-file-upload">
-                  <img src="<?= $imagedir.$advdetail['image3']; ?>">
-                  <!-- <input type="file" id="pageImg1" name="image1" multiple class="fileLoad" disabled/> -->               
-                   </div>
-              </div>
-            </div>
-            </div>
-              
-              
-               <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
                   <label class="bmd-label-floating">No. Clicks</label>
@@ -261,9 +235,9 @@ $imagedir= "../../uploads/";
               </div>
               
             </div>
-              
-              
-               <div class="row">
+            
+            
+            <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
                   <label class="bmd-label-floating">Days</label>
@@ -278,9 +252,9 @@ $imagedir= "../../uploads/";
               </div>
               
             </div>
-              
-              
-               <div class="row">
+            
+            
+            <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
                   <label class="bmd-label-floating">Categories</label>
@@ -295,7 +269,7 @@ $imagedir= "../../uploads/";
               </div>
               <?php } ?>
             </div>
-                                     
+            
           </div>
           
           
@@ -318,29 +292,29 @@ $imagedir= "../../uploads/";
                   
                   <div class="form-row form-row-cus">
                     <div class="col-5">
-                  <select  name="pagetype"  class="form-control"> 
-                  <?php
-                  foreach($clickcounts as $clickcount){ 
-                  ?>
-                  <option value='<?= $clickcount['LOOKUP_VALUE']; ?>'><?= $clickcount['LOOKUP_LABEL']; ?></option>
-                  <?php 
-                    }
-                  ?>
-                </select>
+                      <select  name="pagetype"  class="form-control">
+                        <?php
+                        foreach($clickcounts as $clickcount){
+                        ?>
+                        <option value='<?= $clickcount['LOOKUP_VALUE']; ?>'><?= $clickcount['LOOKUP_LABEL']; ?></option>
+                        <?php
+                        }
+                        ?>
+                      </select>
                     </div>
                     <div class="col">
                       <span class="form-control">In</span>
                     </div>
                     <div class="col-5">
-                  <select  name="pagetype" class="form-control">
-                  <?php
-                  foreach($adsdurations as $adsduration){ 
-                  ?>
-                  <option value='<?= $adsduration['LOOKUP_VALUE']; ?>'><?= $adsduration['LOOKUP_LABEL']; ?></option>
-                  <?php 
-                    }
-                  ?>
-                </select>
+                      <select  name="pagetype" class="form-control">
+                        <?php
+                        foreach($adsdurations as $adsduration){
+                        ?>
+                        <option value='<?= $adsduration['LOOKUP_VALUE']; ?>'><?= $adsduration['LOOKUP_LABEL']; ?></option>
+                        <?php
+                        }
+                        ?>
+                      </select>
                     </div>
                     <div class="col">
                       <span class="form-control">Days</span>
@@ -348,15 +322,15 @@ $imagedir= "../../uploads/";
                   </div>
                   <div class="form-row">
                     <div class="col-12">
-                  <select id="page-cat-basic-single" class="form-control "  name="pagetype" multiple="multiple">
-                  <?php
-                  foreach($categories as $category){ 
-                  ?>
-                  <option value='<?= $category['LOOKUP_VALUE']; ?>'><?= $category['LOOKUP_LABEL']; ?></option>
-                  <?php 
-                    }
-                  ?>
-                </select>
+                      <select id="page-cat-basic-single" class="form-control "  name="pagetype" multiple="multiple">
+                        <?php
+                        foreach($categories as $category){
+                        ?>
+                        <option value='<?= $category['LOOKUP_VALUE']; ?>'><?= $category['LOOKUP_LABEL']; ?></option>
+                        <?php
+                        }
+                        ?>
+                      </select>
                     </div>
                     
                   </div>
@@ -398,11 +372,7 @@ $imagedir= "../../uploads/";
     </div>
   </div>
 </div>
-
-
-
-
 <?php
-  include 'footer.php';
-  
+include 'footer.php';
+
 ?>

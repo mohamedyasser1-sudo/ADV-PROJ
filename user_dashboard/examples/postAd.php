@@ -7,7 +7,7 @@ header("Location: ../../login.php");
 }
 include 'postadvhandler.php';
 
-$message = "";
+//$message = "";
 
 ?>
 <div class="content">
@@ -367,7 +367,7 @@ $message = "";
               </div>
             </div>
           </div>
-          
+          <?= $message; ?>
         </form>
         
         

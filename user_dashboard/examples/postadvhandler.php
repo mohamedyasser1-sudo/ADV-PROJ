@@ -23,6 +23,7 @@ if (isset($_POST['submitbtn']) ){
 	$category1  = $_POST['category'];
 	$price		= 50;
 
+	$image1 = "";
 	$image2 = "";
 	$image3 = ""; 
 	$image4 = "";
@@ -33,7 +34,7 @@ if (isset($_POST['submitbtn']) ){
 
 	//first image 	
 	if(isset($_FILES['image1']['name'])){
-	$target_dir = "../../uploads/images";
+	$target_dir = "../../uploads/images/";
 	$target_file = $target_dir . basename($_FILES["image1"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -63,9 +64,7 @@ if (isset($_POST['submitbtn']) ){
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["image1"]["tmp_name"], $target_file)) {
-	    	$image1 = $_FILES['image1']['name'];
-	
-	        //echo "The file ". basename( $_FILES["image1"]["name"]). " has been uploaded.";
+	    	$image1 = $_FILES['image1']['name'];	
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
@@ -73,13 +72,13 @@ if (isset($_POST['submitbtn']) ){
 }
 // second image 
 	
-	elseif(isset($_FILES['image2']['name'])){
+	if(isset($_FILES['image2']['name'])){
 	$target_dir = "../../uploads/images";
 	$target_file = $target_dir . basename($_FILES["image2"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	// Check if image file is a actual image or fake image
-
+	if(!empty($_FILES['image4']['tmp_name'])){
     $check = getimagesize($_FILES["image2"]["tmp_name"]);
     if($check !== false) {
         $uploadOk = 1;
@@ -104,25 +103,24 @@ if (isset($_POST['submitbtn']) ){
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["image2"]["tmp_name"], $target_file)) {
-	    	$image2 = $_FILES['image2']['tmp_name'];
-	        //echo "The file ". basename( $_FILES["image1"]["name"]). " has been uploaded.";
+	    	$image2 = $_FILES['image2']['name'];
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
 }
 }
+}
 	// third image 
 	
-	elseif(isset($_FILES['image3']['name'])){
-	$target_dir = "../../uploads/images";
+	if(isset($_FILES['image3']['name'])){
+	$target_dir = "../../uploads/images/";
 	$target_file = $target_dir . basename($_FILES["image3"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	// Check if image file is a actual image or fake image
-
+	if(!empty($_FILES['image3']['tmp_name'])){
     $check = getimagesize($_FILES["image3"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
@@ -146,22 +144,22 @@ if (isset($_POST['submitbtn']) ){
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["image3"]["tmp_name"], $target_file)) {
-	    	$image3 = $_FILES['image3']['tmp_name'];
-	        //echo "The file ". basename( $_FILES["image1"]["name"]). " has been uploaded.";
+	    	$image3 = $_FILES['image3']['name'];
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
 }
 }
+}
 	// fourth image 
 	
-	elseif(isset($_FILES['image4']['name'])){
-	$target_dir = "../../uploads/images";
+	if(isset($_FILES['image4']['name'])){
+	$target_dir = "../../uploads/images/";
 	$target_file = $target_dir . basename($_FILES["image4"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	// Check if image file is a actual image or fake image
-
+	if(!empty($_FILES['image4']['tmp_name'])){
     $check = getimagesize($_FILES["image4"]["tmp_name"]);
     if($check !== false) {
         $uploadOk = 1;
@@ -186,12 +184,12 @@ if (isset($_POST['submitbtn']) ){
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["image4"]["tmp_name"], $target_file)) {
-	    	$image4 = $_FILES['image4']['tmp_name'];
+	    	$image4 = $_FILES['image4']['name'];
 	}
-	        //echo "The file ". basename( $_FILES["image1"]["name"]). " has been uploaded.";
 	     else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }        
+}
 }
 }
 

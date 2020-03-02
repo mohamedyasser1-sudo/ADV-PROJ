@@ -24,34 +24,24 @@ $adverObj = new User($conn, $userEmail);
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-hover">
+                    <?php
+                      if($row ==0){
+                        echo "No Pending Adds Available yet "; 
+                      }else {
+                      echo '<table class="table table-hover">
                       <thead class=" text-primary">
                         <th>
-                          Ad ID
-                        </th>
-                        <th>
-                          Page Name
-                        </th>
-                        <th>
-                           Page URL
-                        </th>
-                        <th>
-                          Page Description
-                        </th>
-                        <th>
-                          Status
-                        </th>
-                           <th>
-                          Show
-                        </th>
+                          Ad ID</th>
+                        <th>Page Name</th>
+                        <th>Page URL</th>
+                        <th>Page Description</th>
+                        <th>Status</th>
+                        <th>Show</th>
                       </thead>
-                      <tbody>
-                      <?php
-
-                      foreach($userdata as $adddata){
+                      <tbody>'; 
+                            foreach($userdata as $adddata){
                             $adv_id= $adddata['id'];
                           ?>
-                          
                           <tr>
                           <td><?= $adddata['post_id']; ?></td>
                           <td><?= $adddata['pagename']; ?></td>
@@ -64,12 +54,13 @@ $adverObj = new User($conn, $userEmail);
                               ?>
                           </td>
                              <td>
-                                 <a href="adDetails.php?adv_id=<?= $adv_id ?>" class="text-info">Details</a>
+                                <a href="adDetails.php?adv_id=<?= $adv_id ?>" class="text-info">Details</a>
                            
                           </td>
                         </tr> 
                         <?php           
                           }
+                        }
                          ?>
                        
                       </tbody>

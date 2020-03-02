@@ -28,59 +28,25 @@ $userObj = new User($conn, $userEmail);
 
                       if ($singleuseraddsnum == 0 ){
                         echo " No Pending adds yet ";
-                        }else {
-                        foreach($singleuseradds as $addsdata){
-                       
-                          ?>
-                    <table class="table table-hover">
+                        }else { echo ' 
+                      <table class="table table-hover">
                       <thead class=" text-primary">
-                        <th>
-                          Ad ID
-                        </th>
-                        <th>
-                          Page Name
-                        </th>
-                        <th>
-                           Page URL
-                        </th>
-                        <th>
-                          Page Description
-                        </th>
-                        <th colspan="2" class="text-center">
-                          Action
-                        </th>
-                           <th>
-                          Show
-                        </th>
+                        <th>Ad ID</th>
+                        <th>Page Name</th>
+                        <th>Page URL</th>
+                        <th>Page Description</th>
+                        <th colspan="2" class="text-center">Action</th><th>Show</th>
                       </thead>
-                      <tbody>
-
-                          
-                          
+                      <tbody>';
+                        foreach($singleuseradds as $addsdata){?>                      
                           <tr>
-                          <td>
-                            <?= $addsdata['id']; ?>
-                          </td>
-                          <td>
-                            <?= $addsdata['pagename']; ?>
-                          </td>
-                          <td>
-                              
-                              
-                             <?= $addsdata['pageurl']; ?>
-                          </td>
-                          <td>
-                             <?= $addsdata['pagedescription']; ?>
-                          </td>
-                      <td class="text-success">
-                           Accept
-                          </td>
-                             <td class="text-danger">
-                           Reject
-                          </td>
-                              <td class="text-info">
-                            Details 
-                          </td>
+                          <td><?= $addsdata['id']; ?></td>
+                          <td><?= $addsdata['pagename']; ?></td>
+                          <td><?= $addsdata['pageurl']; ?></td>
+                          <td><?= $addsdata['pagedescription'];?></td>
+                          <td class="text-danger"><button class="btn btn-success"> Accept</button></td>
+                          <td class="text-danger"><button class="btn btn-danger"> Reject</button></td>
+                          <td class="text-info"><a href="adDetails.php?adv_id=<?= $addsdata['id'] ?>"><button class="btn btn-primary">Details </button></a></td>
                         </tr> 
                         <?php 
                         }

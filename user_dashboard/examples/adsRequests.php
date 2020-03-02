@@ -24,6 +24,14 @@ $userObj = new User($conn, $userEmail);
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
+                  <?php
+
+                      if ($singleuseraddsnum == 0 ){
+                        echo " No Pending adds yet ";
+                        }else {
+                        foreach($singleuseradds as $addsdata){
+                       
+                          ?>
                     <table class="table table-hover">
                       <thead class=" text-primary">
                         <th>
@@ -46,12 +54,7 @@ $userObj = new User($conn, $userEmail);
                         </th>
                       </thead>
                       <tbody>
-                      <?php
 
-                      
-                        foreach($singleuseradds as $addsdata){
-                       
-                          ?>
                           
                           
                           <tr>
@@ -80,6 +83,7 @@ $userObj = new User($conn, $userEmail);
                           </td>
                         </tr> 
                         <?php 
+                        }
                         } 
                          ?>
                        

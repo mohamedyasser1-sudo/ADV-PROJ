@@ -49,7 +49,7 @@ $adverObj = new User($conn, $userEmail);
                       <?php
 
                       foreach($userdata as $adddata){
-                    
+                            $adv_id= $adddata['id'];
                           ?>
                           
                           <tr>
@@ -64,7 +64,7 @@ $adverObj = new User($conn, $userEmail);
                               ?>
                           </td>
                              <td>
-                                 <a href="./adDetails.php" class="text-info">Details</a>
+                                 <a href="adDetails.php?adv_id=<?= $adv_id ?>" class="text-info">Details</a>
                            
                           </td>
                         </tr> 

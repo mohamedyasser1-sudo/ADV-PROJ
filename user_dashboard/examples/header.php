@@ -82,6 +82,15 @@ $fname = $advertise->getFullName($conn,$user_id);
             
             if(($userType[0] == 1))
             {
+              if ($singleuseraddsnum == 0 ){
+                echo ' <li class="nav-item ">
+            <a class="nav-link" href="./adsRequests.php">
+              <i class="material-icons">content_paste</i>
+              <p>Ads Requests</p>
+                
+            </a>
+          </li>';
+              }else {
                 echo ' <li class="nav-item ">
             <a class="nav-link" href="./adsRequests.php">
               <i class="material-icons">content_paste</i>
@@ -89,7 +98,8 @@ $fname = $advertise->getFullName($conn,$user_id);
                 <span class="notify-no">'.$singleuseraddsnum.'</span>
             </a>
           </li>';
-                        echo ' <li class="nav-item ">
+        }
+            echo ' <li class="nav-item ">
             <a class="nav-link" href="./acceptedsAds.php">
               <i class="material-icons">content_paste</i>
               <p> Accepted Ads</p>

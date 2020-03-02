@@ -36,7 +36,7 @@
 						</div>
 					</div>
 					<ul class="nav">
-					<li class="nav-item active">
+					<li class="nav-item">
 							<a href="index.php">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>

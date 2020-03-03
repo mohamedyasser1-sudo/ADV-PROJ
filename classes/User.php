@@ -173,7 +173,46 @@ class User {
  			return $num;
 	}
 	}	
-	}    
+	} 
+
+	// public function getRejectedID($conn,$user_id) {
+	// 	$adv_id=$_GET['adv_id'];
+	// 	$query = mysqli_query($conn, "SELECT * FROM rejected_adds WHERE adv_id = '$adv_id'");
+	// 	$hostsIDResults= mysqli_fetch_array($query);
+	// 	$hostsIDarray = $hostsIDResults['hosts_id'];
+	// 	$Host_ID_explode = explode(",", $hostsIDarray);
+
+	// 	$userIDComma = "," . $user_id;
+
+	// 	if( strstr($hostsIDarray, $userIDComma) ) {
+	// 		return true;		
+	// 	}
+	// 	else {
+	// 		return false;
+			
+	// 	}
+
+	// } 
+
+	// public function getAcceptedID($conn,$user_id) {
+	// 	$adv_id=$_GET['adv_id'];
+	// 	$query = mysqli_query($conn, "SELECT * FROM accepted_adds WHERE add_id = '$adv_id'");
+	// 	$hostsIDResults= mysqli_fetch_array($query);
+	// 	$hostsIDarray = $hostsIDResults['hosts_id'];
+	// 	$Host_ID_explode = explode(",", $hostsIDarray);
+
+	// 	$userIDComma = "," . $user_id;
+
+	// 	if( strstr($hostsIDarray, $userIDComma) ) {
+	// 		return true;
+			
+	// 	}
+	// 	else {
+	// 		return false;
+			
+	// 	}
+
+	// }  
 
 
 
@@ -195,7 +234,7 @@ class User {
         $fullName = $fname . ' ' . $lname;
         
 		return $fullName;
-		}
+	}
     
     
     	public function getAdsByCat($conn,$user_id){
@@ -327,6 +366,9 @@ class User {
 		return $mutualFriends;
 
 	}
+
+
+
 
 
 

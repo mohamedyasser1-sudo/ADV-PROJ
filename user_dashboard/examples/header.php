@@ -18,6 +18,9 @@ $singleuseradds =$advertise->getHostAdds($conn,$user_id);
 $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
 $fname = $advertise->getFullName($conn,$user_id);
+//$isReject = $advertise->getRejectedID($conn,$user_id);
+//$isAccept = $advertise->getAcceptedID($conn,$user_id);
+
 
 
 

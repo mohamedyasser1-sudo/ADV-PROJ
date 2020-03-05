@@ -1,5 +1,4 @@
 <?php
-//session_start();
 include '../../form_handlers/redirect.php'; 
 include '../../connect/connect.php';
 include '../../classes/User.php';
@@ -8,11 +7,9 @@ $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
-if($status == 0 ){
-    header("Location:block.php?id=$user_id");
-}elseif($status == 1){
+if($status == 1){
     header("Location:verify.php?id=$user_id");
-}else{
+}
 $row = $advertise->getUserPendingAdsnum($conn,$user_id);
 $userType = $advertise->getUserType($conn,$user_id);
 $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
@@ -24,7 +21,7 @@ $singleuseradds =$advertise->getHostAdds($conn,$user_id);
 $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
 $fname = $advertise->getFullName($conn,$user_id);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +95,7 @@ $fname = $advertise->getFullName($conn,$user_id);
             <a class="nav-link" href="./adsRequests.php">
               <i class="material-icons">content_paste</i>
               <p>Ads Requests</p>
-                <span class="notify-no">'.$singleuseraddsnum.'</span>
+                <!-- <span class="notify-no">'.$singleuseraddsnum.'</span> -->
             </a>
           </li>';
         }
@@ -130,7 +127,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                 <?php 
                 if(!($row == 0))
                 {
-               echo '<span class="notify-no">'. $row .'</span>' ;
+               echo '<span class="notify-no"></span>' ;
                 }
                 ?>
         <?php        
@@ -233,11 +230,31 @@ $fname = $advertise->getFullName($conn,$user_id);
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
-	  
-        
-   
-     
-    
 
+            <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">BLOCKED</h4>
+                  <p class="card-category">Blocked User</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                      <span>OH! You are Blocked</span>
+                      <span> Contact admin for more information : admin@topad.net</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+         
+            </div>
+        </div>
+      </div>
+          
+        <?php 
+  include 'footer.php'; 
   
+?>

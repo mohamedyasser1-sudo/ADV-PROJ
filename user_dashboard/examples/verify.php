@@ -1,5 +1,4 @@
 <?php
-//session_start();
 include '../../form_handlers/redirect.php'; 
 include '../../connect/connect.php';
 include '../../classes/User.php';
@@ -8,11 +7,11 @@ $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
-if($status == 0 ){
+if($status == 0){
     header("Location:block.php?id=$user_id");
-}elseif($status == 1){
-    header("Location:verify.php?id=$user_id");
-}else{
+}elseif($status == 2){
+  header("Location:index.php");
+}
 $row = $advertise->getUserPendingAdsnum($conn,$user_id);
 $userType = $advertise->getUserType($conn,$user_id);
 $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
@@ -24,7 +23,23 @@ $singleuseradds =$advertise->getHostAdds($conn,$user_id);
 $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
 $fname = $advertise->getFullName($conn,$user_id);
+$message= "";
+if(isset($_POST['verify'])){
+    $code = $_POST['code'];
+    $query = mysqli_query($conn, "SELECT * FROM hostpages WHERE user_id = '$user_id' AND status = 1");
+    $pageData = mysqli_fetch_array($query);
+    $activation_code = $pageData['verification'];
+    $status = $pageData['status'];
+
+    if($code == $activation_code){
+      $updatePageStatus= mysqli_query($conn,"UPDATE hostpages SET status = 0 WHERE user_id = '$user_id'");
+      $updateUserStatus= mysqli_query($conn,"UPDATE users SET active = 2 WHERE id='$user_id'");
+      header("Location:index.php");
+    }else{
+      $message = "invalid verification code!, Try Again";
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +113,7 @@ $fname = $advertise->getFullName($conn,$user_id);
             <a class="nav-link" href="./adsRequests.php">
               <i class="material-icons">content_paste</i>
               <p>Ads Requests</p>
-                <span class="notify-no">'.$singleuseraddsnum.'</span>
+                <!-- <span class="notify-no">'.$singleuseraddsnum.'</span> -->
             </a>
           </li>';
         }
@@ -130,7 +145,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                 <?php 
                 if(!($row == 0))
                 {
-               echo '<span class="notify-no">'. $row .'</span>' ;
+               echo '<span class="notify-no"></span>' ;
                 }
                 ?>
         <?php        
@@ -233,11 +248,45 @@ $fname = $advertise->getFullName($conn,$user_id);
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
-	  
-        
-   
-     
-    
 
+            <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Verify Your Account</h4>
+                  <p class="card-category"> </p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                      <span>To verify your page you need to enter the verification code that was sent to your page </span>
+ 
+                    <br><br>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <form method="post" action="#">
+                        <label class="bmd-label-floating">Verification Code</label>
+                       <input type="text" name="code" class="form-control"  placeholder="">
+                       <div class="form_groub">
+                       <button class="btn btn-primary pull-right" name="verify">Verify</button>
+                       </div>
+                       <div class="form-group"><span><?= $message; ?></span></div>
+                     <div class="clearfix"></div>
+                   </form>
+                    </div>
+                  </div>                   
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+         
+            </div>
+        </div>
+      </div>
+          
+        <?php 
+  include 'footer.php'; 
   
+?>

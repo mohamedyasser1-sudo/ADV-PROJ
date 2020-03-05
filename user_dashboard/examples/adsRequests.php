@@ -6,9 +6,7 @@ if(!$_SESSION['email']) {
     
     echo 'Yasser';
 }
-
 $userEmail = $_SESSION['email'];
-
 $userObj = new User($conn, $userEmail);
 
    
@@ -59,14 +57,13 @@ $userObj = new User($conn, $userEmail);
                                     $hostsIDarrayReject = $hostsIDResultsReject['hosts_id'];
                                     $Host_ID_explodeReject = explode(",", $hostsIDarrayReject);
 
-                                    $userIDCommaReject = "," . $user_id;
+                                    $userIDCommaReject = ",". $user_id;
 
                                     if( strstr($hostsIDarrayReject, $userIDCommaReject) ) {
                                       $isReject = true;    
                                     }
                                     else {
-                                      $isReject = false;
-                                      
+                                      $isReject = false;                                     
                                     }
                           ?>                      
                           <tr>

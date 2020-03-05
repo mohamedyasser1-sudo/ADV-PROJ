@@ -60,16 +60,13 @@ $imagedir= "../../uploads/images/";
               <div class="col-md-2">
                 <div class="form-group">
                   <label class="bmd-label-floating">Page Name</label>
-                  
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="form-group">
-                  
+                <div class="form-group"> 
                   <input type="text" class="form-control" disabled placeholder="<?= $advdetail['pagename']; ?>">
                 </div>
-              </div>
-              
+              </div>              
             </div>
             
             

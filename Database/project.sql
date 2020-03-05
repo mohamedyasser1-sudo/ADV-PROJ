@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2020 at 08:47 PM
+-- Generation Time: Mar 03, 2020 at 09:43 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -21,6 +21,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accepted_adds`
+--
+
+CREATE TABLE `accepted_adds` (
+  `id` int(11) NOT NULL,
+  `add_id` int(11) NOT NULL,
+  `hosts_id` text NOT NULL,
+  `hosts_count` int(11) NOT NULL,
+  `required_time` int(11) NOT NULL,
+  `time_to_start` datetime NOT NULL,
+  `time_to_end` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -77,15 +93,18 @@ CREATE TABLE `advertise` (
 --
 
 INSERT INTO `advertise` (`id`, `post_id`, `pagetype`, `pagename`, `pageurl`, `pagedescription`, `description1`, `image1`, `description2`, `image2`, `description3`, `image3`, `description4`, `image4`, `requiredcat1`, `requiredcat2`, `clicks`, `period`, `price`, `status`, `count`) VALUES
-(1, 0, 'hide', '', '', '', '', 'C:xampp	mpphp27D0.tmp', '', '', '', '', '', '', 'd', '', 0, 0, 50, '1', 0),
+(1, 0, 'hide', '', '', '', '', 'C:\\xampp\\htdocs\\AdProject\\uploads\\images67074029_1669764639822243_2295324337953046528_n.jpg', '', '', '', '', '', '', 'd', '', 0, 0, 50, '1', 0),
 (2, 0, 'hide', 'sjsj', '', '', '', 'C:xampp	mpphp9856.tmp', '', '', '', '', '', '', 'wedfdlsklfl;s', '', 0, 0, 50, '1', 0),
-(3, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'Sports', 'ehab', 500, 2, 50, '1', 0),
-(4, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', 'Sports', 500, 2, 50, '1', 0),
-(5, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'Sports', 'Sport', 1000, 2, 50, '1', 0),
+(3, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '1.jpg', '', '', '', '', '', '', 'Sports', 'ehab', 500, 2, 50, '1', 0),
+(4, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', '', '', '', '', 'ehab', 'Sports', 500, 2, 50, '1', 0),
+(5, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', '', 'ehab', '', 'ehab', '', 'Sports', 'Sport', 2000, 2, 50, '1', 0),
 (6, 37, 'Facebook', 'ehab', 'ehab', 'ehab', 'ehab', '', 'ehab', 'C:xampp	mpphp5621.tmp', 'ehab', '', 'ehab', '', 'ehab', 'Sports', 2000, 2, 50, '1', 0),
 (7, 37, 'YouTube', 'ehab', 'mohamed', 'ehab', 'ehab', 'C:xampp	mpphp6CE9.tmp', 'bob', 'C:xampp	mpphp6CEA.tmp', 'bob', 'C:xampp	mpphp6CFB.tmp', 'ehab', 'C:xampp	mpphp6CFC.tmp', 'ehabelshamy', 'ehabelshamy', 300, 2, 50, '1', 0),
 (10, 42, 'Facebook', 'eeeeYASSER', 'eee', 'ee', 'ee', 'C:xampp	mpphp535B.tmp', 'ee', 'C:xampp	mpphp535C.tmp', 'ee', 'C:xampp	mpphp535D.tmp', 'ee', 'C:xampp	mpphp536E.tmp', 'wwww', 'wwww', 1000000, 55, 50, '1', 0),
-(11, 43, 'Facebook', 'qq', 'qq', 'qq', 'qq', 'C:xampp	mpphpAE5D.tmp', 'rr', 'C:xampp	mpphpAE5E.tmp', 'rr', 'C:xampp	mpphpAE5F.tmp', 'rr', 'C:xampp	mpphpAE6F.tmp', 't', 'wwww', 1000000, 55, 50, '1', 0);
+(11, 43, 'Facebook', 'qq', 'qq', 'qq', 'qq', 'C:xampp	mpphpAE5D.tmp', 'rr', 'C:xampp	mpphpAE5E.tmp', 'rr', 'C:xampp	mpphpAE5F.tmp', 'rr', 'C:xampp	mpphpAE6F.tmp', 't', 'wwww', 1000000, 55, 50, '1', 0),
+(27, 37, 'INSTAGRAM', 'good', 'goodday', 'gooogyear', 'it will work', '51603173_1353800621427430_1917240089168052224_o.jpg', '', '', '', '', '', '', 'NEWS&POLITICS', 'NEWS&POLITICS', 500, 1, 50, '1', 0),
+(28, 37, 'FACEBOOK', 'kkk', 'kkkk', 'kkk', 'kkk', '51603173_1353800621427430_1917240089168052224_o.jpg', 'lllllll', '82770308_2426012477663071_4082070345572417536_o.jpg', 'sllllsl', 'Capture.PNG', 'kdkdkdkdk', 'logo.png', 'AUTOS&VECHICLES', 'AUTOS&VECHICLES', 500, 1, 50, '1', 0),
+(29, 37, 'FACEBOOK', 'kkk', 'kkkk', 'kkk', 'kkk', '51603173_1353800621427430_1917240089168052224_o.jpg', 'lllllll', '82770308_2426012477663071_4082070345572417536_o.jpg', 'sllllsl', 'Capture.PNG', 'kdkdkdkdk', 'logo.png', 'AUTOS&VECHICLES', 'AUTOS&VECHICLES', 500, 1, 50, '1', 0);
 
 -- --------------------------------------------------------
 
@@ -126,7 +145,7 @@ CREATE TABLE `hostpages` (
 --
 
 INSERT INTO `hostpages` (`id`, `user_id`, `name`, `url`, `followers`, `followers_cat`, `description`, `category`) VALUES
-(1, 35, '', '', 0, 'A', '', 'Sports');
+(1, 35, '', '', 0, 'C', '', 'Sports');
 
 -- --------------------------------------------------------
 
@@ -191,6 +210,18 @@ INSERT INTO `lookups_table` (`ID`, `LOOKUP_TYPE`, `LOOKUP_LABEL`, `LOOKUP_VALUE`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rejected_adds`
+--
+
+CREATE TABLE `rejected_adds` (
+  `id` int(11) NOT NULL,
+  `add_id` int(11) NOT NULL,
+  `hosts_id` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userpages`
 --
 
@@ -230,17 +261,23 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `password`, `country`, `phone`, `type`, `date`, `code`, `active`) VALUES
-(35, 'ehab', 'ehab', 'ehab', 'ehab.elshamy.101@gmail.com', 'ehabehab', 'Western Sahara', 1141513524, 1, '2020-01-07', 0, 0),
-(37, 'ehab', 'ehab', 'ehab', 'ehab_elshamy82@yahoo.com', 'ehabehab', 'Egypt', 1141513524, 2, '2020-01-07', 7427, 0),
-(39, 'ehab', 'ehab', 'ehab', 'ehab@ehab.com', 'ehabehab', 'ER', 1141513524, 1, '2020-01-11', 0, 0),
-(40, 'ehab', 'ehab', 'ehab', 'ehabm@ehab.com', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 2, 0),
-(41, 'ehabelshamy', 'ehab', 'ehab', 'Ehab.M168647@te.eg', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 0, 0),
-(42, 'myasser', 'Mohamed', 'Yasser', 'm.yasser@aseel-group.com', '123456789', 'EG', 1158309246, 1, '2020-02-01', 0, 0),
-(43, 'm.yasser@aseel-group.com', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 2, '2020-02-02', 0, 0);
+(35, 'ehab elshamy', 'ehab', 'elshamy', 'ehab.elshamy.101@gmail.com', 'ehabehab', 'Western Sahara', 1141513524, 1, '2020-01-07', 0, 1),
+(37, 'ehab', 'ehab', 'ehab', 'ehab_elshamy82@yahoo.com', 'ehabehab', 'Egypt', 1141513524, 2, '2020-01-07', 7427, 1),
+(39, 'ehab', 'ehab', 'ehab', 'ehab@ehab.com', 'ehabehab', 'ER', 1141513524, 1, '2020-01-11', 0, 1),
+(40, 'ehab', 'ehab', 'ehab', 'ehabm@ehab.com', 'ehabehab', 'EG', 1141513524, 2, '2020-01-14', 2, 1),
+(41, 'ehabelshamy', 'ehab', 'ehab', 'Ehab.M168647@te.eg', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 0, 1),
+(42, 'myasser', 'Mohamed', 'Yasser', 'm.yasser@aseel-group.com', '123456789', 'EG', 1158309246, 1, '2020-02-01', 0, 1),
+(43, 'm.yasser@aseel-group.com', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 2, '2020-02-02', 0, 1);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `accepted_adds`
+--
+ALTER TABLE `accepted_adds`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `admin`
@@ -279,6 +316,12 @@ ALTER TABLE `lookups_table`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `rejected_adds`
+--
+ALTER TABLE `rejected_adds`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `userpages`
 --
 ALTER TABLE `userpages`
@@ -295,6 +338,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `accepted_adds`
+--
+ALTER TABLE `accepted_adds`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
@@ -304,7 +353,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `advertise`
 --
 ALTER TABLE `advertise`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `hostpages`
@@ -323,6 +372,12 @@ ALTER TABLE `lookups`
 --
 ALTER TABLE `lookups_table`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `rejected_adds`
+--
+ALTER TABLE `rejected_adds`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `userpages`

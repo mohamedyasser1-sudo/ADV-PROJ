@@ -30,8 +30,7 @@ $adverObj = new User($conn, $userEmail);
                       }else {
                       echo '<table class="table table-hover">
                       <thead class=" text-primary">
-                        <th>
-                          Ad ID</th>
+                        <th>Ad ID</th>
                         <th>Page Name</th>
                         <th>Page URL</th>
                         <th>Page Description</th>
@@ -39,7 +38,7 @@ $adverObj = new User($conn, $userEmail);
                         <th>Show</th>
                       </thead>
                       <tbody>'; 
-                            foreach($userdata as $adddata){
+                          foreach($userdata as $adddata){
                             $adv_id= $adddata['id'];
                           ?>
                           <tr>
@@ -50,13 +49,10 @@ $adverObj = new User($conn, $userEmail);
                           <td class="text-primary">  
                             <?php
                               if($adddata['status'] == 1){
-                              echo 'Pending'; }
+                              echo '<button class="btn btn-warring">Pending</button>'; }
                               ?>
                           </td>
-                             <td>
-                                <a href="adDetails.php?adv_id=<?= $adv_id ?>" class="text-info">Details</a>
-                           
-                          </td>
+                      <td><a href="adDetails.php?adv_id=<?= $adv_id ?>" class="text-info"><button class="btn btn-primary">Details</button></a></td>
                         </tr> 
                         <?php           
                           }

@@ -134,6 +134,7 @@ class User {
 
 	public function getHostAdds($conn,$user_id){
 		$array = array();
+		$searchedID= ','.$user_id.',';
 		$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
 		$userpagedata = mysqli_fetch_array($query);
 		$followerscategory  = $userpagedata['followers_cat'];
@@ -145,21 +146,22 @@ class User {
 			switch ($period) {
 					case '1':
 						if($followerscategory == 'A'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 4 AND clicks IN (500,1000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')  SELECT * FROM accepted_adds WHERE hosts_id != '$user_id'");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 4 AND clicks IN (500,1000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%'");
 							while ($row = mysqli_fetch_array($result)){	
-								$adv_id = $row['add_id'];
-								$query = mysqli_query($conn, "SELECT * FROM accepted_adds WHERE add_id = '$adv_id'");
 								$array[]=$row;
 							}	
 				 			return  $array;
 						}elseif($followerscategory == 'B'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION SELECT * FROM advertise WHERE status=1 AND count_for_B < 4 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') ");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION SELECT * FROM advertise WHERE status=1 AND count_for_B < 4 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%' ");
 							while ($row = mysqli_fetch_array($result)){	
 								$array[]=$row;
 							}	
 				 			return  $array;				
 						}elseif($followerscategory == 'C'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 2 ");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 2  AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%'");
 							while ($row = mysqli_fetch_array($result)){	
 								$array[]=$row;
 							}	
@@ -169,19 +171,22 @@ class User {
 
 					case '2':
 						if($followerscategory == 'A'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%'");
 							while ($row = mysqli_fetch_array($result)){	
 								$array[]=$row;
 							}	
 				 			return  $array;
 						}elseif($followerscategory == 'B'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 1 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') ");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 1 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%' ");
 							while ($row = mysqli_fetch_array($result)){	
 								$array[]=$row;
 							}	
 				 			return  $array;				
 						}elseif($followerscategory == 'C'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 1 ");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 1 AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%' ");
 							while ($row = mysqli_fetch_array($result)){	
 								$array[]=$row;
 							}	
@@ -200,6 +205,7 @@ class User {
 	}
 
 	public function getHostAddsnum($conn,$user_id){
+		$searchedID= ','.$user_id.',';
 		$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
 		$userpagedata = mysqli_fetch_array($query);
 		$followerscategory = $userpagedata['followers_cat'];
@@ -210,15 +216,18 @@ class User {
 			switch ($period) {
 					case '1':
 						if($followerscategory == 'A'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 4 AND clicks IN (500,1000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 4 AND clicks IN (500,1000) AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%'");
 							$num= mysqli_num_rows($result);
 							return $num;	
 						}elseif($followerscategory == 'B'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION SELECT * FROM advertise WHERE status=1 AND count_for_B < 4 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') ");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION SELECT * FROM advertise WHERE status=1 AND count_for_B < 4 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%' ");
 							$num= mysqli_num_rows($result);
 							return $num;			
 						}elseif($followerscategory == 'C'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 2 ");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 2 AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%' ");
 							$num= mysqli_num_rows($result);
 							return $num;
 					}
@@ -226,15 +235,17 @@ class User {
 
 					case '2':
 						if($followerscategory == 'A'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_A < 2 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%'");
 							$num= mysqli_num_rows($result);
 							return $num;
 						}elseif($followerscategory == 'B'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 1 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION  SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory')");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND count_for_B < 1 AND clicks = 1000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') UNION  SELECT * FROM advertise WHERE status=1 AND count_for_B < 2 AND clicks = 2000 AND (requiredcat1='$pagecategory' or requiredcat2='$pagecategory') AND hosts_id NOT LIKE '%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%'");
 							$num= mysqli_num_rows($result);
 							return $num;			
 						}elseif($followerscategory == 'C'){
-							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 1 ");
+							$result=mysqli_query($conn,"SELECT * FROM advertise WHERE (requiredcat1 = '$pagecategory' or requiredcat2 ='$pagecategory') AND status=1 AND clicks = 2000 AND count_for_C < 1 AND hosts_id NOT LIKE
+							'%$searchedID%' AND rejects_id NOT LIKE '%$searchedID%'");
 							$num= mysqli_num_rows($result);
 							return $num;					}
 						break;	

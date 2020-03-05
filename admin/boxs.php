@@ -45,7 +45,7 @@
 								<div class="card card-stats card-primary">
 									<div class="card-body ">
 										<div class="row">
-											<div class="col-5">
+											<a href="verifiyhostpages.php"><div class="col-5">
 												<div class="icon-big text-center">
 													<i class="la la-check-circle"></i>
 												</div>
@@ -53,8 +53,8 @@
 											<div class="col-7 d-flex align-items-center">
 												<div class="numbers">
 													<p class="card-category">Verification</p>
-													<h4 class="card-title">#</h4>
-												</div>
+													<h4 class="card-title"><?php echo $verifyPagesNum ?></h4>
+												</div></a>
 											</div>
 										</div>
 									</div>

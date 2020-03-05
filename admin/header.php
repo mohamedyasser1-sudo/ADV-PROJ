@@ -7,6 +7,8 @@ $adminobj = new User($conn,$user);
 $advertisedata =$adminobj->getAdvertiseDataForAdmin($conn);
 $hostdata =$adminobj->getHostDataForAdmin($conn);
 $pendingaddsdata =$adminobj->getAdminPendingAdsdata($conn);
+$hostpagesdata=$adminobj->getHostPagesData($conn);
+$verifyPagesNum=$adminobj->getHostPagesDataNum($conn);
 
 ?>
 <!DOCTYPE html>

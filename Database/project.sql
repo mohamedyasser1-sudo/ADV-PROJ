@@ -95,8 +95,8 @@ CREATE TABLE `advertise` (
   `count_for_A` int(1) NOT NULL,
   `count_for_B` int(11) NOT NULL,
   `count_for_C` int(11) NOT NULL,
-  `hosts_id` text NOT NULL DEFAULT ',',
-  `rejects_id` text NOT NULL DEFAULT ','
+  `hosts_id` text NOT NULL ,
+  `rejects_id` text NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

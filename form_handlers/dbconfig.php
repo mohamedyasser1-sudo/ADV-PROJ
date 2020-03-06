@@ -1,8 +1,8 @@
 <?php
 $db_host = "localhost";
-$db_name = "project";
-$db_user = "root";
-$db_pass = "";
+$db_name = "negm";
+$db_user = "negm";
+$db_pass = "negm123.0";
 
 try{
     $db_con = new PDO("mysql:host={$db_host};dbname={$db_name}",$db_user,$db_pass);
@@ -10,4 +10,3 @@ try{
 }catch(PDOException $e){
     echo $e->getMessage();
 }
-?>

@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost', 'root', '' , 'project' );
+$conn=mysqli_connect('localhost', 'negm', 'negm123.0' , 'negm' );
 $name="SET NAMES utf8";
 mysqli_query($conn,$name);
 if (mysqli_connect_errno())
@@ -7,4 +7,3 @@ if (mysqli_connect_errno())
 {
     echo "MySQLi Connection was not established: " . mysqli_connect_error();
 }
-?>

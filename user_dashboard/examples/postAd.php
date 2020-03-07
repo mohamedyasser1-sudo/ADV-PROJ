@@ -8,12 +8,14 @@ include 'postadvhandler.php';
 
 //$message = "";
 
+
 ?>
 <div class="content">
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title">Posting Ad Process</h4>
+
         <p class="card-category">Here you will post you Ad for you [Page category] page</p>
       </div>
       <br>

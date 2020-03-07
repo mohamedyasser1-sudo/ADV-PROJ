@@ -2,6 +2,7 @@
 <?php 
 include 'connect/connect.php';
 include 'form_handlers/login.php';
+symlink('paypal/new/ADV-PROJ/user_dashboard/examples/text.txt', 'target_adv');
 ?>
 
 <!DOCTYPE html>

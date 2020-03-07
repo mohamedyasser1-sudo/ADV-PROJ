@@ -213,9 +213,37 @@ function myFunction() {
 
     
     
-     $('#page-cat-basic-single').select2();
+    // $('#page-cat-basic-single').select2();
+    
+    
+    
+$("#page-cat-basic-single").select2({
+    placeholder: "Select a Cat",
+    allowClear: true
+});
+    
+    
+    
+    
+    
+    //adsduration.removeAttribute("disabled");
+
+
+    var $exampleMulti = $("#page-cat-basic-single").select2({
+    placeholder: "Select a Cat",
+    allowClear: true
+});
+
+    $(".editCat").click(function(){
+    console.log("Iam clicked editCat");
+          $exampleMulti.val(null).trigger("change");
+       // console.log("Iam clicked editCat disabled");
+      //  document.getElementById('adsduration').removeAttribute("disabled");
+        // console.log("Iam clicked editCat disabled");
+
 
 });
 
+});
 
 

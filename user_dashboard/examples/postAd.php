@@ -35,7 +35,8 @@ include 'postadvhandler.php';
               <div class="col-md-4">
                 <?php echo $message; ?>
                 
-                <select id="pageCat" class="form-control" name="pagetype" onChange="myFunction()">
+                <select id="pageCat" class="form-control" name="pagetype" onchange="changeNamesHandler(event);">
+                    <option value="">Selece a value</option>
                   <?php
                   foreach($pagetype as $type){ 
                   ?>
@@ -64,7 +65,7 @@ include 'postadvhandler.php';
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Page Name</label>
+                  <label class="bmd-label-floating pname">Page Name</label>
                   
                 </div>
               </div>
@@ -82,7 +83,7 @@ include 'postadvhandler.php';
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
-                  <label class="bmd-label-floating">Page URL</label>
+                  <label class="bmd-label-floating purl">Page URL</label>
                   
                 </div>
               </div>
@@ -103,7 +104,7 @@ include 'postadvhandler.php';
             <div class="row">
               <div class="col-md-2">
                 <div class="form-group ">
-                  <label class="bmd-label-floating">Page Description</label>
+                  <label class="bmd-label-floating pdesc">Page Description</label>
                   
                 </div>
               </div>
@@ -300,7 +301,8 @@ include 'postadvhandler.php';
                   
                   <div class="form-row form-row-cus">
                     <div class="col-5">
-                  <select name="clickcount" class="form-control"> 
+                  <select name="clickcount" class="form-control" id="clickcount" onchange="changeClickcountHandler(event);"> 
+                       <option value="">Selece a value</option>
                   <?php
                   foreach($clickcounts as $clickcount){ 
                   ?>
@@ -314,7 +316,8 @@ include 'postadvhandler.php';
                       <span class="form-control">In</span>
                     </div>
                     <div class="col-5">
-                  <select name="days"  class="form-control">
+                  <select name="days"  class="form-control disableElemenet" id="adsduration" onchange="changeAdsdurationHandler(event);" disabled>
+                      <option value="">Selece a value</option>
                   <?php
                   foreach($adsdurations as $adsduration){ 
                   ?>
@@ -329,8 +332,9 @@ include 'postadvhandler.php';
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="col-12">
-                  <select name="category" id="page-cat-basic-single" class="form-control " multiple="multiple">
+                    <div class="col-10">
+                  <select name="category" id="page-cat-basic-single" class="form-control" multiple="multiple" onchange="changeCatHandler(event);" disabled>
+                     
                   <?php
                   foreach($categories as $category){ 
                   ?>
@@ -341,13 +345,17 @@ include 'postadvhandler.php';
                 </select>
                     </div>
                     
+                       <div class="col-2">
+                      <span class="form-control editCat">Edit Cat</span>
+                    </div>
                   </div>
                   
                   
                   <div class="form-row text-center">
                     <div class="col-12">
-                      <button type="submit" name="submitbtn" id="itcost" class="btn btn-primary btn-lg-cus">
-                      It cost 10$
+                      <button type="submit" name="submitbtn" id="itcost" class="btn btn-primary btn-lg-cus" disabled>
+                      It cost 
+                          <span id="price">-</span> $
                       <br>
                       <span>Click to applay</span>
                       </button>
@@ -381,7 +389,7 @@ include 'postadvhandler.php';
   </div>
 </div>
 
-
+  <script  src="../assets/js/managePrice.js"></script>
 
 
 <?php

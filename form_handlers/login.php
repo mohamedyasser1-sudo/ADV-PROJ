@@ -29,14 +29,20 @@ if(isset($_SESSION['email'])){
 			  $user_id = $row['id'];
 			  $user_type = $row['type'];
 			  $user_status = $row['active'];
+			  $Pagequery= mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
+			  $pageDataRowResult = mysqli_num_rows($Pagequery);
+			  if($pageDataRowResult == 0 ){
+			  	header("Location: ./user_dashboard/examples/registerHostPage.php?id=$user_id");
+			  }else{
 			  if($user_status == 0 ){
 			  	echo "you are blocked ";
-			  	header("Location: ./user_dashboard/examples/block.php");
+			  	header("Location: ./user_dashboard/examples/block.php?id=$user_id");
 			  }elseif($user_status == 1 ){
 			  	echo "you need to verify your Account ";
-			  	header("Location: ./user_dashboard/examples/verify.php");
+			  	header("Location: ./user_dashboard/examples/verify.php?id=$user_id");
 			  }else{
 			  header("Location: ./user_dashboard/examples/index.php");
+			}
 			}
 			}else{
 				exit();
@@ -44,6 +50,7 @@ if(isset($_SESSION['email'])){
 
 		} 
 	}
+	
 
 	}
 }	

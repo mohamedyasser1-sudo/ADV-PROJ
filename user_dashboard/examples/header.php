@@ -8,6 +8,10 @@ $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
+$hostPage= $advertise->checkHostPage($conn,$user_id);
+if($hostPage == 0){
+  header ("Location:registerHostPage.php?id=$user_id");
+}else{
 if($status == 0 ){
     header("Location:block.php?id=$user_id");
 }elseif($status == 1){
@@ -24,6 +28,7 @@ $singleuseradds =$advertise->getHostAdds($conn,$user_id);
 $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
 $fname = $advertise->getFullName($conn,$user_id);
+}
 }
 ?>
 <!DOCTYPE html>

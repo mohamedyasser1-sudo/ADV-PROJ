@@ -7,13 +7,13 @@ if($_POST)
         $username     = $_POST['usernamea'];
         $first_name   = $_POST['first_namea'];
         $second_name  = $_POST['second_namea'];
-		$user_email        =$_POST['emaila'];
-		$user_password      =$_POST['passa'];
-        $confirmpass  =$_POST['confirmpassa'];
-        $country      =$_POST['countrya'];
-        $phone		  =$_POST['phonea'];
-        $joining_date 		  =date("Y-m-d H:i:s");
-        $type		  =2;
+		$user_email   = $_POST['emaila'];
+		$user_password= $_POST['passa'];
+        $confirmpass  = $_POST['confirmpassa'];
+        $country      = $_POST['countrya'];
+        $phone		  = $_POST['phonea'];
+        $joining_date = date("Y-m-d H:i:s");
+        $type		  = 2;
 	
 	//password_hash see : http://www.php.net/manual/en/function.password-hash.php
 	//$password 	= password_hash( $user_password, PASSWORD_BCRYPT, array('cost' => 11));

@@ -81,7 +81,7 @@ $('document').ready(function()
                     /*setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("./user_dashboard/examples/index.php"); }); ',5000);
                     */
                     
-                    window.location = "http://localhost:8080/ADV-PROJ/login.php";
+                    window.location = "login.php";
 
                     //alert("Good you registered")
 

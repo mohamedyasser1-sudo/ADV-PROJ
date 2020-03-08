@@ -7,6 +7,10 @@ $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
+$hostPage= $advertise->checkHostPage($conn,$user_id);
+if($hostPage == 0){
+  header ("Location:registerHostPage.php?id=$user_id");
+}else{
 if($status == 0){
     header("Location:block.php?id=$user_id");
 }elseif($status == 2){
@@ -39,7 +43,7 @@ if(isset($_POST['verify'])){
       $message = "invalid verification code!, Try Again";
     }
 }
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

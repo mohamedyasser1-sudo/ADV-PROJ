@@ -325,8 +325,22 @@ class User {
 
 	// }  
 
+	public function checkHostPage($conn,$user_id){
+		$checkQuery = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = $user_id");
+		$num 		= mysqli_num_rows($checkQuery);	
+ 		return $num;
 
+	}
 
+	public function getHostPageFollowersCategory($conn){
+		$array = array();
+		$result=mysqli_query($conn,"SELECT * FROM lookups_table WHERE LOOKUP_TYPE = 'FOLLOWERS'");
+		while ($row = mysqli_fetch_array($result)){	
+			$array[]=$row;
+		}	
+	 	return  $array;
+
+	}
 
 	public function getUserType($conn,$user_id){
 	$this->conn= $conn;

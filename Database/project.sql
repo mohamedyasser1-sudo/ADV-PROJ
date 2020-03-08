@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2020 at 02:10 PM
+-- Generation Time: Mar 08, 2020 at 01:33 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -149,7 +149,8 @@ CREATE TABLE `hostpages` (
 --
 
 INSERT INTO `hostpages` (`id`, `user_id`, `name`, `url`, `followers`, `followers_cat`, `description`, `category`, `verification`, `status`) VALUES
-(1, 35, 'ehab', '', 0, 'A', '', 'Sports', 'ehab', 0);
+(1, 35, 'ehab', '', 0, 'A', '', 'Sports', 'bobo', 1),
+(2, 47, 'ehab', 'facebook.com/ehabelshamy', 250, 'B', 'ehab', 'SCIENCE&TECHNOLOGY', 'bobos', 0);
 
 -- --------------------------------------------------------
 
@@ -209,7 +210,12 @@ INSERT INTO `lookups_table` (`ID`, `LOOKUP_TYPE`, `LOOKUP_LABEL`, `LOOKUP_VALUE`
 (25, 'CLICK_PRICE', '50$', '50'),
 (26, 'CLICK_PRICE', '90$', '90'),
 (27, 'CLICK_PRICE', '160$', '160'),
-(28, 'CLICK_PRICE', '200$', '200');
+(28, 'CLICK_PRICE', '200$', '200'),
+(30, 'FOLLOWERS', '100K - 250K', 'A'),
+(31, 'FOLLOWERS', '250K - 500K', 'B'),
+(32, 'FOLLOWERS', '500K - 750K', 'C'),
+(33, 'FOLLOWERS', '750K-1M', 'D'),
+(34, 'FOLLOWERS', '1M - ', 'E');
 
 -- --------------------------------------------------------
 
@@ -274,11 +280,12 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `password`, `country`, `phone`, `type`, `date`, `code`, `active`) VALUES
 (35, 'ehab elshamy', 'ehab', 'elshamy', 'ehab.elshamy.101@gmail.com', 'ehabehab', 'Western Sahara', 1141513524, 1, '2020-01-07', 0, 2),
 (37, 'ehab', 'ehab', 'ehab', 'ehab_elshamy82@yahoo.com', 'ehabehab', 'Egypt', 1141513524, 2, '2020-01-07', 7427, 2),
-(39, 'ehab', 'ehab', 'ehab', 'ehab@ehab.com', 'ehabehab', 'ER', 1141513524, 1, '2020-01-11', 0, 1),
+(39, 'ehab', 'ehab', 'ehab', 'ehab@ehab.com', 'ehabehab', 'ER', 1141513524, 2, '2020-01-11', 0, 2),
 (40, 'ehab', 'ehab', 'ehab', 'ehabm@ehab.com', 'ehabehab', 'EG', 1141513524, 2, '2020-01-14', 2, 1),
 (41, 'ehabelshamy', 'ehab', 'ehab', 'Ehab.M168647@te.eg', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 0, 1),
 (42, 'myasser', 'Mohamed', 'Yasser', 'm.yasser@aseel-group.com', '123456789', 'EG', 1158309246, 1, '2020-02-01', 0, 1),
-(43, 'm.yasser', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 2, '2020-02-02', 0, 1);
+(43, 'm.yasser', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 1, '2020-02-02', 0, 2),
+(47, 'ehab', 'ehabehab', 'ehabehab', 'ehabehab@ehab.com', 'ehabehab', 'EG', 1141513524, 1, '2020-03-08', 0, 2);
 
 --
 -- Indexes for dumped tables
@@ -370,7 +377,7 @@ ALTER TABLE `advertise`
 -- AUTO_INCREMENT for table `hostpages`
 --
 ALTER TABLE `hostpages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lookups`
@@ -382,7 +389,7 @@ ALTER TABLE `lookups`
 -- AUTO_INCREMENT for table `lookups_table`
 --
 ALTER TABLE `lookups_table`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `rejected_adds`
@@ -400,7 +407,7 @@ ALTER TABLE `userpages`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

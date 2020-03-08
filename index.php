@@ -1,7 +1,7 @@
-
-<?php 
+<?php
+session_start(); 
 include 'connect/connect.php';
-include 'form_handlers/login.php';
+//include 'form_handlers/login.php';
 ?>
 
 <!DOCTYPE html>

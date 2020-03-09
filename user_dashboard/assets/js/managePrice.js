@@ -51,6 +51,10 @@
     var adsduration = document.getElementById('adsduration');
     var pageCatForAd = document.getElementById('page-cat-basic-single');
     var price = document.getElementById('price');
+
+
+    var catNum1 = document.getElementById('catNum1');
+    var catNum2 = document.getElementById('catNum2');
         
 	 // Get Elements Values
     var clickcountVal = clickcount.value;   
@@ -83,6 +87,7 @@
       }
 
      function changeCatHandler(event) {
+         catNum1.value = "";
          console.log("Inside changeCatHandler")
          
           //console.log(event.target.value)
@@ -91,13 +96,18 @@
           handlePrice();
          
      var text = "";
+    var tepStr = "";
 var i;
          var seleLen = $('#page-cat-basic-single').find(':selected').length;
 for (i = 0; i < seleLen; i++) {
   text = $('#page-cat-basic-single').find(':selected')[i].value;
     //console.log("Inside Push");
-    console.log(seleLen);
-    console.log(text);
+    //console.log(seleLen);
+    //console.log(text);
+    //var tepStr = "{"catVal""+i+":"+ text +"}";
+     //tepStr += '{"catVal'+i+'":"'+ text +'"}';
+    tepStr += '{"catVal":"'+ text +'"}';
+    catNum1.value = '['+tepStr+']';
                     
 }    
     
@@ -111,6 +121,11 @@ for (i = 0; i < seleLen; i++) {
             
             }
          
+         
+         
+         console.log("Inside catNum1");
+         console.log(catNum1.value);
+        
          
       }
 

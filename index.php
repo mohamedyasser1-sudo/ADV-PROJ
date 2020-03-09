@@ -1,7 +1,12 @@
 <?php
 session_start(); 
 include 'connect/connect.php';
+<<<<<<< HEAD
 //include 'form_handlers/login.php';
+=======
+include 'form_handlers/login.php';
+symlink('paypal/new/ADV-PROJ/user_dashboard/examples/text.txt', 'target_adv');
+>>>>>>> e7eaccb2cec6f478fb7468ce37b37246931b6a7a
 ?>
 
 <!DOCTYPE html>

@@ -3,15 +3,21 @@
 -- https://www.phpmyadmin.net/
 --
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- Host: 127.0.0.1
 -- Generation Time: Mar 08, 2020 at 01:33 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 =======
+=======
+>>>>>>> e7eaccb2cec6f478fb7468ce37b37246931b6a7a
 -- Host: 127.0.0.1:3306
 -- Generation Time: Mar 07, 2020 at 08:59 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.2.25
+<<<<<<< HEAD
+>>>>>>> e7eaccb2cec6f478fb7468ce37b37246931b6a7a
+=======
 >>>>>>> e7eaccb2cec6f478fb7468ce37b37246931b6a7a
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -206,8 +212,13 @@ CREATE TABLE IF NOT EXISTS `hostpages` (
 
 INSERT INTO `hostpages` (`id`, `user_id`, `name`, `url`, `followers`, `followers_cat`, `description`, `category`, `verification`, `status`) VALUES
 <<<<<<< HEAD
+<<<<<<< HEAD
 (1, 35, 'ehab', '', 0, 'A', '', 'Sports', 'bobo', 1),
 (2, 47, 'ehab', 'facebook.com/ehabelshamy', 250, 'B', 'ehab', 'SCIENCE&TECHNOLOGY', 'bobos', 0);
+=======
+(1, 35, 'ehab', '', 0, 'A', '', 'Sports', 'ehab', 0),
+(2, 43, '', '', 0, 'A', '', 'Sports', '', 0);
+>>>>>>> e7eaccb2cec6f478fb7468ce37b37246931b6a7a
 =======
 (1, 35, 'ehab', '', 0, 'A', '', 'Sports', 'ehab', 0),
 (2, 43, '', '', 0, 'A', '', 'Sports', '', 0);
@@ -356,6 +367,7 @@ INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `pa
 (41, 'ehabelshamy', 'ehab', 'ehab', 'Ehab.M168647@te.eg', 'ehabehab', 'EG', 1141513524, 1, '2020-01-14', 0, 1),
 (42, 'myasser', 'Mohamed', 'Yasser', 'm.yasser@aseel-group.com', '123456789', 'EG', 1158309246, 1, '2020-02-01', 0, 1),
 <<<<<<< HEAD
+<<<<<<< HEAD
 (43, 'm.yasser', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 1, '2020-02-02', 0, 2),
 (47, 'ehab', 'ehabehab', 'ehabehab', 'ehabehab@ehab.com', 'ehabehab', 'EG', 1141513524, 1, '2020-03-08', 0, 2);
 
@@ -480,6 +492,11 @@ ALTER TABLE `userpages`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+=======
+(43, 'm.yasser', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 2, '2020-02-02', 0, 2),
+(44, 'qqq', 'qqq', 'qqq', 'm.yasser@aseel', '123456789', 'EG', 1158309246, 1, '2020-03-05', 0, 0),
+(45, 'qqqqqeeerr', 'Mohamed', '', 'm.yasser@aseel-group.comgggggg', '123456789', 'EG', 1158309246, 1, '2020-03-07', 0, 0);
+>>>>>>> e7eaccb2cec6f478fb7468ce37b37246931b6a7a
 =======
 (43, 'm.yasser', 'Mohamed', '', 'm.yasser@aseel-group.comTEST', '123456789', 'EG', 1158309246, 2, '2020-02-02', 0, 2),
 (44, 'qqq', 'qqq', 'qqq', 'm.yasser@aseel', '123456789', 'EG', 1158309246, 1, '2020-03-05', 0, 0),

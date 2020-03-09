@@ -1,5 +1,6 @@
 <?php
 include '../../connect/connect.php';
+include '../paypal/paypal-checkout.php';
 //include '../../classes/User.php';
 $user = $_SESSION['email'];
 $advertise = new User($conn,$user);
@@ -21,7 +22,8 @@ if (isset($_POST['submitbtn']) ){
 	$days		= $_POST['days'];
 	$category   = $_POST['category'];
 	$category1  = $_POST['category'];
-	$price		= 50;
+	/* here price */
+	$price		= $_POST['clickcount']; //50
 
 	$image1 = "";
 	$image2 = "";
@@ -193,15 +195,15 @@ if (isset($_POST['submitbtn']) ){
 }
 }
 
-	    $insertsql = "INSERT INTO `advertise`(`post_id`, `pagetype`, `pagename`, `pageurl`, `pagedescription`, `description1`, `image1`, `description2`, `image2`, `description3`, `image3`, `description4`, `image4`, `requiredcat1`, `requiredcat2`, `clicks`, `period`, `price`, `status`) VALUES ('$user_id','$pagetype','$pagename','$pageurl','$pagedesc','$desc1','$image1','$desc2','$image2','$desc3','$image3','$desc4','$image4','$category','$category1','$clickcount','$days','$price',1)";
+	    $insertsql = "INSERT INTO `advertise`(`post_id`, `pagetype`, `pagename`, `pageurl`, `pagedescription`, `description1`, `image1`, `description2`, `image2`, `description3`, `image3`, `description4`, `image4`, `requiredcat1`, `requiredcat2`, `clicks`, `period`, `price`, `status`) VALUES ('$user_id','$pagetype','$pagename','$pageurl','$pagedesc','$desc1','$image1','$desc2','$image2','$desc3','$image3','$desc4','$image4','$category','$category1','$clickcount','$days',0,1)";
 	    $result = mysqli_query($conn,$insertsql);
-			if ($result){
-		$message = " your add has been moved to pinding ads, wait till it be published "; 
+		if ($result){
+			   $order_id = mysqli_insert_id($conn);
+			   new paypal_checkout($order_id,$price); 
+		      // $message = " your add has been moved to pinding ads, wait till it be published "; 
 		}else{
 		echo " error ". mysqli_error($conn);
-
-
-}
+        }
 }
 }
 

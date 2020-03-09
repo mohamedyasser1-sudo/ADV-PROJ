@@ -172,7 +172,7 @@ class User {
 		$array = array();
 		$searchedID= ','.$user_id.',';
 		$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
-		$userpagedata = mysqli_fetch_array($query);
+		while ($userpagedata = mysqli_fetch_array($query)) {
 		$followerscategory  = $userpagedata['followers_cat'];
 		$pagecategory       = $userpagedata['category'];
 		$alldataquery       = mysqli_query($conn,"SELECT * FROM advertise");
@@ -239,11 +239,12 @@ class User {
 	
 	}
 	}
+    }
 
 	public function getHostAddsnum($conn,$user_id){
 		$searchedID= ','.$user_id.',';
 		$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
-		$userpagedata = mysqli_fetch_array($query);
+		while ($userpagedata = mysqli_fetch_array($query)){
 		$followerscategory = $userpagedata['followers_cat'];
 		$pagecategory       = $userpagedata['category'];
 		$alldataquery       = mysqli_query($conn,"SELECT * FROM advertise");
@@ -293,6 +294,7 @@ class User {
 	
 	}	
 	} 
+}
 
 	public function getHostPagesData($conn){
 		$array = array();

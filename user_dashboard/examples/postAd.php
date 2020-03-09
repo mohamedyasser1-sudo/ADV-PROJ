@@ -352,6 +352,7 @@ include 'postadvhandler.php';
                     </div>
                   </div>
                   
+                    <input type="hidden" id="catNum1" name="catNum1" value="">
                   
                   <div class="form-row text-center">
                     <div class="col-12">

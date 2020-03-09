@@ -106,8 +106,10 @@ for (i = 0; i < seleLen; i++) {
     //console.log(text);
     //var tepStr = "{"catVal""+i+":"+ text +"}";
      //tepStr += '{"catVal'+i+'":"'+ text +'"}';
-    tepStr += '{"catVal":"'+ text +'"}';
-    catNum1.value = '['+tepStr+']';
+     //tepStr += '"catVal'+i+'":"'+ text +'",';
+    tepStr += ''+ text +',';
+    catNum1.value = ''+tepStr+'';
+
                     
 }    
     

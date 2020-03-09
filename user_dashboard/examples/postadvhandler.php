@@ -18,10 +18,13 @@ if (isset($_POST['submitbtn']) ){
 	$desc3 = $_POST['desc3'];
 	$desc4 = $_POST['desc4'];
 
-	$clickcount = $_POST['clickcount'];
-	$days		= $_POST['days'];
-	$category   = $_POST['category'];
-	$category1  = $_POST['category'];
+	$clickcount  = $_POST['clickcount'];
+	$days		 = $_POST['days'];
+	$categorys   = $_POST['catNum1'];
+	$catToarray  = explode(",",$categorys);
+	$category    = $catToarray[0];
+	$category1   = $catToarray[1];
+
 	/* here price */
 	$price		= $_POST['clickcount']; //50
 
@@ -30,7 +33,7 @@ if (isset($_POST['submitbtn']) ){
 	$image3 = ""; 
 	$image4 = "";
 
-	if(empty($pagetype) || empty($pagename) || empty($pageurl) || empty($pagedesc) || empty($desc1) || empty($clickcount) || empty($days) || empty($category) || empty($price)){
+	if(empty($pagetype) || empty($pagename) || empty($pageurl) || empty($pagedesc) || empty($desc1) || empty($clickcount) || empty($days) || empty($price)){
 		$message = "you can't leave fields empty ";
 	}else { 
 

@@ -25,6 +25,13 @@ class User {
  	return  $array; 
 	}
 
+	public function getAdvertiseNumForAdmin($conn){
+	$array = array();
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=1");
+	$num = mysqli_num_rows($result);	
+ 	return  $num; 
+	}
+
 	public function getHostDataForAdmin($conn){
 	$array = array();
 	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=2");
@@ -32,6 +39,13 @@ class User {
 		$array[]=$row;
 	}	
  	return  $array; 
+	}
+
+	public function getHostNumForAdmin($conn){
+	$array = array();
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=2");
+	$num = mysqli_num_rows($result);	
+ 	return  $num; 
 	}
 
 	public function getsingleHostDataForAdmin($conn,$user_id){
@@ -70,10 +84,8 @@ class User {
  	return  $array; 
 	}
 
-	public function getAdminPendingAdsnum($conn){
-	$this->conn= $conn;
-	$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1");
-	$add = mysqli_fetch_array($addsquery);
+	public function getAdminAllAdsnum($conn){
+	$addsquery=mysqli_query($conn,"SELECT * FROM advertise");
 	return mysqli_num_rows($addsquery);
 	}
 
@@ -84,6 +96,30 @@ class User {
 		$array[]=$row;
 	}	
  	return  $array; 
+	}
+
+	public function getAdminPendingAdsNum($conn){
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1");
+	$num = mysqli_num_rows($result);
+ 	return  $num; 
+	}
+
+	public function getAdminCurrentAdsNum($conn){
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status='current'");
+	$num = mysqli_num_rows($result);
+ 	return  $num; 
+	}
+
+	public function getAdminHistoryAdsNum($conn){
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status='finished'");
+	$num = mysqli_num_rows($result);
+ 	return  $num; 
+	}
+
+	public function getBlockedUsersNum($conn){
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE active=0");
+	$num = mysqli_num_rows($result);
+ 	return  $num; 
 	}
 
 	public function getPageTypes($conn){

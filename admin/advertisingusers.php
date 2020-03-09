@@ -48,7 +48,7 @@
 														echo
 														"<a href='unblockuser.php?advid=$useridforblock' ><button class='btn btn-success'>Unblock</button> </a>";
 													}
-													elseif($blockestatus == 1){
+													elseif($blockestatus == 1 || $blockestatus == 2){
 														echo
 														"<a href='blockuser.php?advid=$useridforblock' ><button class='btn btn-danger'>Block</button> </a>";
 													}

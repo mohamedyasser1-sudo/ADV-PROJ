@@ -8,7 +8,7 @@ ADS-PROJ
 
 #ADMIN->>
 
-1 - Manage Verification.
+1 - //Manage Verification.
 2 - Display Data as Dashboard data like [Ads, Users, etc..].
 3 - Manage currents Ads.
 3 - Manage Ads History.

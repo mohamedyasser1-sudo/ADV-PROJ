@@ -15,7 +15,7 @@
 											<div class="col-7 d-flex align-items-center">
 												<div class="numbers">
 													<p class="card-category">Ads</p>
-													<h4 class="card-title">#</h4>
+													<h4 class="card-title"><?= $alladsnum; ?></h4>
 												</div>
 											</div>
 										</div>
@@ -34,7 +34,7 @@
 											<div class="col-7 d-flex align-items-center">
 												<div class="numbers">
 													<p class="card-category">Users</p>
-													<h4 class="card-title">#</h4>
+													<h4 class="card-title"><?= $advertisenum+$hostnum ?></h4>
 												</div>
 											</div>
 										</div>
@@ -53,7 +53,7 @@
 											<div class="col-7 d-flex align-items-center">
 												<div class="numbers">
 													<p class="card-category">Verification</p>
-													<h4 class="card-title"><?php echo $verifyPagesNum ?></h4>
+													<h4 class="card-title"><?= $verifyPagesNum ?></h4>
 												</div></a>
 											</div>
 										</div>
@@ -73,7 +73,7 @@
 											<div class="col-7 d-flex align-items-center">
 												<div class="numbers">
 													<p class="card-category">Blocked Users</p>
-													<h4 class="card-title">#</h4>
+													<h4 class="card-title"><?= $blockednum ?></h4>
 												</div>
 											</div>
 										</div>
@@ -131,7 +131,7 @@
 											<div class="col-7 d-flex align-items-center">
 												<div class="numbers">
 													<p class="card-category">Pending </p>
-													<h4 class="card-title"># </h4>
+													<h4 class="card-title"><?= $pendingaddsNum  ?> </h4>
 												</div>
 											</div>
 										</div>

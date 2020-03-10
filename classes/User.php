@@ -67,6 +67,24 @@ class User {
  	return  $array; 
 	}
 
+	public function getHostCurrentAds($conn,$user_id){
+		$array = array();
+		$searchedID= ','.$user_id.',';
+		$result = mysqli_query($conn,"SELECT * FROM advertise WHERE status = 'current' AND hosts_id LIKE '%$searchedID%'");
+		while ($row = mysqli_fetch_array($result)){
+			$array[]=$row;
+		}
+		return $array;
+	}
+
+	public function getHostCurrentAdsnum($conn,$user_id){
+		
+		$searchedID= ','.$user_id.',';
+		$result = mysqli_query($conn,"SELECT * FROM advertise WHERE status = 'current' AND hosts_id LIKE '%$searchedID%'");
+		$num = mysqli_num_rows($result);
+		return $num;
+	}
+
 	public function getUserPendingAdsnum($conn,$user_id){
 	$this->conn= $conn;
 	$addsquery=mysqli_query($conn,"SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1 AND price > 0");

@@ -1,6 +1,7 @@
 <?php 
 
-include 'header.php';	
+include 'header.php';
+include 'generate-link.php';	
 
 if(!$_SESSION['email']) {
     
@@ -8,6 +9,7 @@ if(!$_SESSION['email']) {
 }
 $userEmail = $_SESSION['email'];
 $userObj = new User($conn, $userEmail);
+
 
    
     
@@ -98,6 +100,8 @@ $userObj = new User($conn, $userEmail);
                        
                       </tbody>
                     </table>
+
+              <a href="<?php new generate_link(29,52); ?>"> <?php new generate_link(29,52); ?></a>
                   </div>
                 </div>
               </div>

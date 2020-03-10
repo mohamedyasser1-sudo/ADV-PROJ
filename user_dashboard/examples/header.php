@@ -4,6 +4,7 @@ include '../../form_handlers/redirect.php';
 include '../../connect/connect.php';
 include '../../classes/User.php';
 include '../../form_handlers/updateprofile.php';
+include 'generate-link.php';
 $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
@@ -43,6 +44,8 @@ switch ($userType) {
     $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
     $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
     $fname = $advertise->getFullName($conn,$user_id);
+    $currentadds = $advertise->getHostCurrentAds($conn,$user_id);
+    $currentaddsnum=$advertise->getHostCurrentAdsnum($conn,$user_id);
 
 ?>
 <!DOCTYPE html>
@@ -165,7 +168,10 @@ switch ($userType) {
             <a class="nav-link" href="./currentAds.php">
               <i class="material-icons">library_books</i>
               <p>Current Ads</p>
-               <!-- <span class="notify-no">55</span>-->
+              <?php if($currentaddsnum !=0) {
+                echo '<span class="notify-no">'.$currentaddsnum.'</span> ';
+              } ?>
+                <!-- <span class="notify-no"><?=$currentaddsnum; ?></span> -->
             </a>
           </li>
             

@@ -1,6 +1,5 @@
 <?php 
-	include 'header.php'; 
-	
+	include 'header.php'; 	
 ?>
       <div class="content">
         <div class="container-fluid">
@@ -8,153 +7,47 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Currents Ads</h4>
-                  <p class="card-category">Currents Ads Info</p>
+                  <h4 class="card-title ">Current Ads</h4>
+                  <p class="card-category">Current Ads Info and Links</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-hover">
+                    <?php
+                      if($currentaddsnum ==0){
+                        echo "No Current Adds Available yet "; 
+                      }else {
+                      echo '<table class="table table-hover">
                       <thead class=" text-primary">
-                        <th>
-                          ID
-                        </th>
-                        <th>
-                          Ad Name
-                        </th>
-                        <th>
-                          Country
-                        </th>
-                        <th>
-                          Host
-                        </th>
-                        <th>
-                          Status
-                        </th>
-                           <th>
-                          Show
-                        </th>
+                        <th>Ad ID</th>
+                        <th>User ID</th>
+                        <th>Page Name</th>
+                        <th>Page URL</th>
+                        <th>Page Description</th>
+                        <th>Your Link</th>
+                        <th>Actions</th>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            1
+                      <tbody>'; 
+                          foreach($currentadds as $currentadd){
+                            $add_id = $currentadd['id'];
+                            $host_id = $user_id;
+                          ?>
+                          <tr>
+                          <td><?= $currentadd['id']; ?></td>  
+                          <td><?= $currentadd['post_id']; ?></td>
+                          <td><?= $currentadd['pagename']; ?></td>
+                          <td><?= $currentadd['pageurl']; ?></td>
+                          <td><?= $currentadd['pagedescription']; ?></td>
+                          <td class="text-primary">  
+                            
+                            <a href="<?php new generate_link($add_id,$host_id); ?>"> <?php new generate_link($add_id,$host_id); ?></a>
+                            
                           </td>
-                          <td>
-                            Dakota Rice
-                          </td>
-                          <td>
-                            Niger
-                          </td>
-                          <td>
-                            Oud-Turnhout
-                          </td>
-                          <td class="text-primary">
-                            $36,738
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Minerva Hooper
-                          </td>
-                          <td>
-                            Curaçao
-                          </td>
-                          <td>
-                            Sinaai-Waas
-                          </td>
-                          <td class="text-primary">
-                            $23,789
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            3
-                          </td>
-                          <td>
-                            Sage Rodriguez
-                          </td>
-                          <td>
-                            Netherlands
-                          </td>
-                          <td>
-                            Baileux
-                          </td>
-                          <td class="text-primary">
-                            $56,142
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            4
-                          </td>
-                          <td>
-                            Philip Chaney
-                          </td>
-                          <td>
-                            Korea, South
-                          </td>
-                          <td>
-                            Overland Park
-                          </td>
-                          <td class="text-primary">
-                            $38,735
-                          </td>
-                              <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            Doris Greene
-                          </td>
-                          <td>
-                            Malawi
-                          </td>
-                          <td>
-                            Feldkirchen in Kärnten
-                          </td>
-                          <td class="text-primary">
-                            $63,542
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            6
-                          </td>
-                          <td>
-                            Mason Porter
-                          </td>
-                          <td>
-                            Chile
-                          </td>
-                          <td>
-                            Gloucester
-                          </td>
-                          <td class="text-primary">
-                            $78,615
-                          </td>
-                              <td class="text-info">
-                           Details
-                          </td>
-                        </tr>
+                          <td><button class="btn btn-primary">Copy</button></td>
+                        <?php           
+                          }
+                        }
+                         ?>
+                       
                       </tbody>
                     </table>
                   </div>

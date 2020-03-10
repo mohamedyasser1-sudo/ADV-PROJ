@@ -59,6 +59,14 @@ if(isset($_POST['verify'])){
     }
 
 }
+if(isset($_POST['resend'])){
+  $query = mysqli_query($conn,"UPDATE hostpages SET status = 0 WHERE user_id = '$user_id'");
+  if($query){
+    $message = " Request Sent to Admin, Please Wait while you recieve another code"; 
+  }else{
+    $message = " Sorry, but you can't have another code, Please contact admin directly on :  admin@topad.net";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -288,7 +296,8 @@ if(isset($_POST['verify'])){
                         <label class="bmd-label-floating">Verification Code</label>
                        <input type="text" name="code" class="form-control"  placeholder="">
                        <div class="form_groub">
-                       <button class="btn btn-primary pull-right" name="verify">Verify</button>
+                       <button class="btn btn-primary pull-left" name="verify">Verify</button>
+                       <button class="btn btn-primary pull-right" name="resend">resend code</button>
                        </div>
                        
                      <div class="clearfix"></div>

@@ -1,18 +1,11 @@
 <?php 
 
 include 'header.php';
-include 'generate-link.php';	
-
-if(!$_SESSION['email']) {
-    
+if(!$_SESSION['email']) {   
     echo 'Yasser';
 }
 $userEmail = $_SESSION['email'];
-$userObj = new User($conn, $userEmail);
-
-
-   
-    
+$userObj = new User($conn, $userEmail);    
 ?>
       <div class="content">
         <div class="container-fluid">
@@ -42,7 +35,8 @@ $userObj = new User($conn, $userEmail);
                         foreach($singleuseradds as $addsdata){
                           $adv_id = $addsdata['id'];
                             $query = mysqli_query($conn, "SELECT * FROM accepted_adds WHERE add_id = '$adv_id'");
-                              $hostsIDResults= mysqli_fetch_array($query);
+                              
+                              while($hostsIDResults= mysqli_fetch_array($query)){
                               $hostsIDarray = $hostsIDResults['hosts_id'];
                               $Host_ID_explode = explode(",", $hostsIDarray);
 
@@ -55,7 +49,7 @@ $userObj = new User($conn, $userEmail);
                                 $isAccept = false;                             
                               }
                               $queryreject = mysqli_query($conn, "SELECT * FROM rejected_adds WHERE add_id = '$adv_id'");
-                                    $hostsIDResultsReject= mysqli_fetch_array($queryreject);
+                                    while($hostsIDResultsReject= mysqli_fetch_array($queryreject)){
                                     $hostsIDarrayReject = $hostsIDResultsReject['hosts_id'];
                                     $Host_ID_explodeReject = explode(",", $hostsIDarrayReject);
 
@@ -95,13 +89,13 @@ $userObj = new User($conn, $userEmail);
                         </tr> 
                         <?php 
                         }
+                        }
+                        }
                         } 
                          ?>
                        
                       </tbody>
                     </table>
-
-              <a href="<?php new generate_link(29,52); ?>"> <?php new generate_link(29,52); ?></a>
                   </div>
                 </div>
               </div>

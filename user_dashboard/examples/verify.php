@@ -55,6 +55,7 @@ if(isset($_POST['verify'])){
       header("Location:index.php");
     }else{
       $message = "invalid verification code!, Try Again";
+
     }
 
 }
@@ -289,9 +290,10 @@ if(isset($_POST['verify'])){
                        <div class="form_groub">
                        <button class="btn btn-primary pull-right" name="verify">Verify</button>
                        </div>
-                       <div class="form-group"><span><?= $message; ?></span></div>
+                       
                      <div class="clearfix"></div>
                    </form>
+                   <div class="form-group"><span><?= $message; ?></span></div>
                     </div>
                   </div>                   
                   </div>

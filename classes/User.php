@@ -18,7 +18,7 @@ class User {
 
 	public function getAdvertiseDataForAdmin($conn){
 	$array = array();
-	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=1");
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=2");
 	while ($row = mysqli_fetch_array($result)){	
 		$array[]=$row;
 	}	
@@ -27,14 +27,14 @@ class User {
 
 	public function getAdvertiseNumForAdmin($conn){
 	$array = array();
-	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=1");
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=2");
 	$num = mysqli_num_rows($result);	
  	return  $num; 
 	}
 
 	public function getHostDataForAdmin($conn){
 	$array = array();
-	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=2");
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=1");
 	while ($row = mysqli_fetch_array($result)){	
 		$array[]=$row;
 	}	
@@ -43,9 +43,9 @@ class User {
 
 	public function getHostNumForAdmin($conn){
 	$array = array();
-	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=2");
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE type=1");
 	$num = mysqli_num_rows($result);	
- 	return  $num; 
+ 	return  $num;
 	}
 
 	public function getsingleHostDataForAdmin($conn,$user_id){
@@ -58,7 +58,6 @@ class User {
 	}
 
 	
-
 	public function getUserProfileData($conn,$user_id){
 	$array = array();
 	$result=mysqli_query($conn,"SELECT * FROM users WHERE id = '$user_id'");
@@ -172,7 +171,7 @@ class User {
 		$array = array();
 		$searchedID= ','.$user_id.',';
 		$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
-		$userpagedata = mysqli_fetch_array($query);
+		while ( $userpagedata = mysqli_fetch_array($query)){
 		$followerscategory  = $userpagedata['followers_cat'];
 		$pagecategory       = $userpagedata['category'];
 		$alldataquery       = mysqli_query($conn,"SELECT * FROM advertise");
@@ -236,14 +235,14 @@ class User {
 				}	
 		
 
-	
+	}
 	}
 	}
 
 	public function getHostAddsnum($conn,$user_id){
 		$searchedID= ','.$user_id.',';
 		$query = mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
-		$userpagedata = mysqli_fetch_array($query);
+		while($userpagedata = mysqli_fetch_array($query)){
 		$followerscategory = $userpagedata['followers_cat'];
 		$pagecategory       = $userpagedata['category'];
 		$alldataquery       = mysqli_query($conn,"SELECT * FROM advertise");
@@ -291,6 +290,7 @@ class User {
 						break;
 				}		
 	
+	}
 	}	
 	} 
 
@@ -379,9 +379,10 @@ class User {
 	}
 
 	public function getUserType($conn,$user_id){
-	$this->conn= $conn;
-	$userTypequery=mysqli_query($conn,"SELECT type FROM users WHERE id = '$user_id'");
-	$userType = mysqli_fetch_row($userTypequery);
+	$userTypequery=mysqli_query($conn,"SELECT * FROM users WHERE id = '$user_id'");
+	while ($row = mysqli_fetch_array($userTypequery)){
+		$userType = $row['type'];	
+	}
 	return $userType;
 	}
     

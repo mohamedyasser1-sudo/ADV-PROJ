@@ -8,16 +8,32 @@ $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
 $hostPage= $advertise->checkHostPage($conn,$user_id);
-if($hostPage == 0){
-  header ("Location:registerHostPage.php?id=$user_id");
-}else{
-if($status == 0){
-    header("Location:block.php?id=$user_id");
-}elseif($status == 2){
-  header("Location:index.php");
+$userType = $advertise->getUserType($conn,$user_id);
+switch ($userType) {
+  case '1':
+      if($hostPage == 1 & $status == 2 ){
+          header ("Location:index.php");
+      }elseif($hostPage == 0 & $status == 1){
+          header ("Location: registerHostPage.php?id=$user_id");
+      }elseif($status == 0 ){
+          header ("Location:block.php?id=$user_id");
+      }else{
+          header ("Location:index.php");
+      }
+    break;
+
+  case '2':
+      if($status == 0 ){
+          header ("Location:block.php?id=$user_id");
+      }else{
+          header ("Location:index.php");
+      } 
+      break;  
+
+  default:
+    break;
 }
 $row = $advertise->getUserPendingAdsnum($conn,$user_id);
-$userType = $advertise->getUserType($conn,$user_id);
 $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
 $pagetype = $advertise->getPageTypes($conn);
 $clickcounts = $advertise->getClickCounts($conn);
@@ -42,7 +58,7 @@ if(isset($_POST['verify'])){
     }else{
       $message = "invalid verification code!, Try Again";
     }
-}
+
 }
 ?>
 <!DOCTYPE html>

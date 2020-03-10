@@ -13,7 +13,7 @@
 									</div>
 									<div class="card-body">
 										<div class="card-sub">
-											you can see all adverising users here
+											you can see all Hosting users here
 										</div>
 										<div class="table-responsive">
 											<table class="table table-bordered">

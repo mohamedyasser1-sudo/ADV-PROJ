@@ -7,11 +7,29 @@ $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
-if($status == 1){
-    header("Location:verify.php?id=$user_id");
+$userType = $advertise->getUserType($conn,$user_id);
+switch ($userType) {
+  case '1':
+      if($status == 1 ){
+          header ("Location:verify.php?id=$user_id");
+      }elseif($status == 2){
+          header ("Location:index.php");
+      }
+    break;
+
+  case '2':
+      if($status == 1 ){
+          header ("Location:verify.php?id=$user_id");
+      }elseif($status ==2 ){
+          header ("Location:index.php");
+      } 
+      break;  
+
+  default:
+    break;
 }
 $row = $advertise->getUserPendingAdsnum($conn,$user_id);
-$userType = $advertise->getUserType($conn,$user_id);
+
 $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
 $pagetype = $advertise->getPageTypes($conn);
 $clickcounts = $advertise->getClickCounts($conn);

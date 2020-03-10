@@ -3,15 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Mar 09, 2020 at 08:34 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
-=======
--- Generation Time: Mar 09, 2020 at 08:01 PM
+-- Generation Time: Mar 09, 2020 at 08:10 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
->>>>>>> c34b8f87defa385bd256f5f4be112566bf204b92
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -126,18 +120,7 @@ CREATE TABLE `clicks` (
   `adv_id` int(11) NOT NULL,
   `parts` int(11) NOT NULL DEFAULT 2,
   `hosts` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
-<<<<<<< HEAD
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-=======
 ) ;
-
---
--- Dumping data for table `clicks`
---
-
-INSERT INTO `clicks` (`id`, `adv_id`, `parts`, `hosts`, `required`, `part1`, `part2`, `part3`, `part4`, `total`) VALUES
-(13, 51, 1, '{\"22\":2}', NULL, NULL, NULL, NULL, NULL, NULL);
->>>>>>> c34b8f87defa385bd256f5f4be112566bf204b92
 
 -- --------------------------------------------------------
 
@@ -291,15 +274,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `password`, `country`, `phone`, `type`, `date`, `code`, `active`) VALUES
-<<<<<<< HEAD
-(1, 'aass', 'Mohamed', '', 'm.yasser@aseel-group.com', '123456789', 'EG', 1158309246, 1, '2020-03-09', 0, 2),
-(46, 'ehab', 'ehabehab', 'ehabehab', 'ehabehabehab@ehab.com', 'ehabehab', 'EG', 1121213232, 2, '2020-03-09', 0, 2),
-(47, 'mohamed', 'mohamed', 'mohamed', 'mohamed@mohamed.com', 'ehabehab', 'EG', 1141513524, 1, '2020-03-09', 0, 1),
-(48, 'MohamedTest', 'Mohamed', '', 'm.m@m.m', '123456789', 'EG', 1158309246, 2, '2020-03-09', 0, 1);
-=======
 (46, 'ehab', 'ehabehab', 'ehabehab', 'ehabehabehab@ehab.com', 'ehabehab', 'EG', 1121213232, 2, '2020-03-09', 0, 2),
 (47, 'mohamed', 'mohamed', 'mohamed', 'mohamed@mohamed.com', 'ehabehab', 'EG', 1141513524, 1, '2020-03-09', 0, 1);
->>>>>>> c34b8f87defa385bd256f5f4be112566bf204b92
 
 --
 -- Indexes for dumped tables
@@ -382,27 +358,18 @@ ALTER TABLE `advertise`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
-<<<<<<< HEAD
-=======
 -- AUTO_INCREMENT for table `clicks`
 --
 ALTER TABLE `clicks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
->>>>>>> c34b8f87defa385bd256f5f4be112566bf204b92
 -- AUTO_INCREMENT for table `hostpages`
 --
 ALTER TABLE `hostpages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
-<<<<<<< HEAD
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
-=======
 -- AUTO_INCREMENT for table `lookups`
 --
 ALTER TABLE `lookups`
@@ -431,7 +398,6 @@ ALTER TABLE `userpages`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
->>>>>>> c34b8f87defa385bd256f5f4be112566bf204b92
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

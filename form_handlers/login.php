@@ -22,31 +22,45 @@ if(isset($_SESSION['email'])){
 
 		else{
 			  //$_SESSION['email'] = true;
-			  $_SESSION['email'] = $email;
-			  if(isset($_SESSION['email'])){
-			  $user_info= mysqli_query($conn,"SELECT * FROM users WHERE email = '$email'");
-			  $row = mysqli_fetch_array($user_info);
-			  $user_id = $row['id'];
-			  $user_type = $row['type'];
-			  $user_status = $row['active'];
-			  $Pagequery= mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
-			  $pageDataRowResult = mysqli_num_rows($Pagequery);
-			  if($pageDataRowResult == 0 ){
-			  	header("Location: ./user_dashboard/examples/registerHostPage.php?id=$user_id");
-			  }else{
-			  if($user_status == 0 ){
-			  	echo "you are blocked ";
-			  	header("Location: ./user_dashboard/examples/block.php?id=$user_id");
-			  }elseif($user_status == 1 ){
-			  	echo "you need to verify your Account ";
-			  	header("Location: ./user_dashboard/examples/verify.php?id=$user_id");
-			  }else{
-			  header("Location: ./user_dashboard/examples/index.php");
+		  $_SESSION['email'] = $email;
+		  if(isset($_SESSION['email'])){
+		  $user_info= mysqli_query($conn,"SELECT * FROM users WHERE email = '$email'");
+		  while ($row = mysqli_fetch_array($user_info)){
+		  $user_id = $row['id'];
+		  $user_type = $row['type'];
+		  $user_status = $row['active'];
+		  $Pagequery= mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
+		  $pageDataRowResult = mysqli_num_rows($Pagequery);
+		  switch ($user_type) {
+		  	case '2':
+		  		if($pageDataRowResult == 0 ){
+		  			header("Location: ./user_dashboard/examples/registerHostPage.php?id=$user_id");	
+		  		}elseif($user_status == 0 ){
+		  			header("Location: ./user_dashboard/examples/block.php?id=$user_id");
+		  		}elseif($user_status == 1) {
+		  			header("Location: ./user_dashboard/examples/verify.php?id=$user_id");
+		  		}else{
+		  			header("Location: ./user_dashboard/examples/index.php");
+		  		}
+		  		break;
+		  	case '1':
+		  		if($user_status == 0){
+		  			header("Location: ./user_dashboard/examples/block.php?id=$user_id");
+		  		}elseif($user_status == 1){
+		  			header("Location: ./user_dashboard/examples/verify.php?id=$user_id");
+		  		}else{
+		  			header("Location: ./user_dashboard/examples/index.php");
+		  		}
+		  		break;			  	
+		  	default:
+		  		# code...
+		  		break;
+		  }
+
 			}
 			}
-			}else{
-				exit();
-			}
+
+
 
 		} 
 	}

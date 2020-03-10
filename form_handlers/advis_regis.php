@@ -13,7 +13,8 @@ if($_POST)
         $country      = $_POST['countrya'];
         $phone		  = $_POST['phonea'];
         $joining_date = date("Y-m-d H:i:s");
-        $type		  = 2;
+        $type         =2;
+        $active       =1;
 	
 	//password_hash see : http://www.php.net/manual/en/function.password-hash.php
 	//$password 	= password_hash( $user_password, PASSWORD_BCRYPT, array('cost' => 11));
@@ -25,7 +26,7 @@ if($_POST)
         $count = $stmt->rowCount();
 		
         if($count==0){
-            $stmt = $db_con->prepare("INSERT INTO users (username, first_name, second_name, email, password, country, phone, type, date) VALUES (:uname, :fname, :sname, :email, :pass, :country, :phone, :type, :date)");
+            $stmt = $db_con->prepare("INSERT INTO users (username, first_name, second_name, email, password, country, phone, type, date, active) VALUES (:uname, :fname, :sname, :email, :pass, :country, :phone, :type, :date ,:active)");
             
             $stmt->bindParam(":uname",$username);
             $stmt->bindParam(":fname",$first_name);
@@ -36,6 +37,7 @@ if($_POST)
 			$stmt->bindParam(":phone",$phone);
 			$stmt->bindParam(":type",$type);
 			$stmt->bindParam(":date",$joining_date);
+            $stmt->bindParam(":active",$active);
 			
             if($stmt->execute())
             {

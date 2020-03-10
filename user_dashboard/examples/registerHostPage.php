@@ -9,17 +9,35 @@ $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
-$hostPage= $advertise->checkHostPage($conn,$user_id);
-if($hostPage == 1){
-header ("Location:index.php");
-}else{
-if($status == 0 ){
-header("Location:block.php?id=$user_id");
-}elseif($hostPage == 1 && $status == 1){
-header("Location:verify.php?id=$user_id");
-}else{
-$row = $advertise->getUserPendingAdsnum($conn,$user_id);
 $userType = $advertise->getUserType($conn,$user_id);
+$hostPage= $advertise->checkHostPage($conn,$user_id);
+switch ($userType) {
+  case '1':
+      if($hostPage == 1 ){
+          header ("Location:index.php");
+      }elseif($status == 0 ){
+          header ("Location:block.php?id=$user_id");
+      }elseif($status == 1 ){
+          header ("Location:verify.php?id=$user_id");
+      }else{
+          header ("Location:index.php");
+      }   
+    break;
+
+  case '2':
+      if($status == 0 ){
+          header ("Location:block.php?id=$user_id");
+      }elseif($status == 1 ){
+          header ("Location:verify.php?id=$user_id");
+      }else{
+          header ("Location:index.php");
+      } 
+      break;  
+
+  default:
+    break;
+}
+$row = $advertise->getUserPendingAdsnum($conn,$user_id);
 $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
 $pagetype = $advertise->getPageTypes($conn);
 $clickcounts = $advertise->getClickCounts($conn);
@@ -30,8 +48,7 @@ $singleuseradds =$advertise->getHostAdds($conn,$user_id);
 $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
 $fname = $advertise->getFullName($conn,$user_id);
-}
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

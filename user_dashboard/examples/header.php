@@ -9,27 +9,41 @@ $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();
 $status = $advertise->getUserStatus($conn,$user);
 $hostPage= $advertise->checkHostPage($conn,$user_id);
-if($hostPage == 0){
-  header ("Location:registerHostPage.php?id=$user_id");
-}else{
-if($status == 0 ){
-    header("Location:block.php?id=$user_id");
-}elseif($status == 1){
-    header("Location:verify.php?id=$user_id");
-}else{
-$row = $advertise->getUserPendingAdsnum($conn,$user_id);
 $userType = $advertise->getUserType($conn,$user_id);
-$userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
-$pagetype = $advertise->getPageTypes($conn);
-$clickcounts = $advertise->getClickCounts($conn);
-$adsdurations = $advertise->getAdsDuration($conn);
-$categories = $advertise->getPageCategories($conn);
-$singleuseradds =$advertise->getHostAdds($conn,$user_id);
-$singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
-$userprofiledata= $advertise->getUserProfileData($conn,$user_id);
-$fname = $advertise->getFullName($conn,$user_id);
+switch ($userType) {
+  case '1':
+      if($hostPage == 0 ){
+          header ("Location:registerHostPage.php?id=$user_id");
+      }elseif($status == 0 ){
+          header ("Location:block.php?id=$user_id");
+      }elseif($status == 1 ){
+          header ("Location:verify.php?id=$user_id");
+      }   
+    break;
+
+  case '2':
+      if($status == 0 ){
+          header ("Location:block.php?id=$user_id");
+      }elseif($status == 1 ){
+          header ("Location:verify.php?id=$user_id");
+      } 
+      break;  
+
+  default:
+    break;
 }
-}
+    $row = $advertise->getUserPendingAdsnum($conn,$user_id);
+    $userType = $advertise->getUserType($conn,$user_id);
+    $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
+    $pagetype = $advertise->getPageTypes($conn);
+    $clickcounts = $advertise->getClickCounts($conn);
+    $adsdurations = $advertise->getAdsDuration($conn);
+    $categories = $advertise->getPageCategories($conn);
+    $singleuseradds =$advertise->getHostAdds($conn,$user_id);
+    $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
+    $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
+    $fname = $advertise->getFullName($conn,$user_id);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -16,7 +16,7 @@ switch ($userType) {
           header ("Location:registerHostPage.php?id=$user_id");
       }elseif($status == 0 ){
           header ("Location:block.php?id=$user_id");
-      }elseif($status == 1 ){
+      }elseif($hostPage =1 & $status == 1 ){
           header ("Location:verify.php?id=$user_id");
       }   
     break;

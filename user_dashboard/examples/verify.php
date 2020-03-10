@@ -17,16 +17,14 @@ switch ($userType) {
           header ("Location: registerHostPage.php?id=$user_id");
       }elseif($status == 0 ){
           header ("Location:block.php?id=$user_id");
-      }else{
-          header ("Location:index.php");
       }
     break;
 
   case '2':
       if($status == 0 ){
           header ("Location:block.php?id=$user_id");
-      }else{
-          header ("Location:index.php");
+      }elseif ($status == 2 ) {
+      		header ("Location: index.php");
       } 
       break;  
 

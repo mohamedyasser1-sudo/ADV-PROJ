@@ -238,7 +238,7 @@ class User {
 	}
 	}
 	}
-    }
+    
 
 	public function getHostAddsnum($conn,$user_id){
 		$searchedID= ','.$user_id.',';
@@ -294,7 +294,7 @@ class User {
 	}
 	}	
 	} 
-}
+
 
 	public function getHostPagesData($conn){
 		$array = array();

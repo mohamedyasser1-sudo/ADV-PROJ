@@ -11,12 +11,13 @@ $hostPage= $advertise->checkHostPage($conn,$user_id);
 $userType = $advertise->getUserType($conn,$user_id);
 switch ($userType) {
   case '1':
-      if($hostPage == 1 & $status == 2 ){
-          header ("Location:index.php");
+      if($status == 0 ){
+          header ("Location:block.php?id=$user_id");
       }elseif($hostPage == 0 & $status == 1){
           header ("Location: registerHostPage.php?id=$user_id");
-      }elseif($status == 0 ){
-          header ("Location:block.php?id=$user_id");
+      }     
+      elseif($hostPage == 1 & $status == 2 ){
+          header ("Location:index.php");
       }
     break;
 
@@ -287,7 +288,8 @@ if(isset($_POST['resend'])){
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                      <span>To verify your page you need to enter the verification code that was sent to your page </span>
+                      <span>To verify your page you need to enter the verification code that was sent to 
+                        <?= ($userType == 1) ? 'your Page' :' your email' ?> </span>
  
                     <br><br>
                   <div class="col-md-4">

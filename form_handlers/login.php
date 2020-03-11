@@ -32,7 +32,7 @@ if(isset($_SESSION['email'])){
 		  $Pagequery= mysqli_query($conn,"SELECT * FROM hostpages WHERE user_id = '$user_id'");
 		  $pageDataRowResult = mysqli_num_rows($Pagequery);
 		  switch ($user_type) {
-		  	case '2':
+		  	case '1':
 		  		if($pageDataRowResult == 0 ){
 		  			header("Location: ./user_dashboard/examples/registerHostPage.php?id=$user_id");	
 		  		}elseif($user_status == 0 ){
@@ -43,7 +43,7 @@ if(isset($_SESSION['email'])){
 		  			header("Location: ./user_dashboard/examples/index.php");
 		  		}
 		  		break;
-		  	case '1':
+		  	case '2':
 		  		if($user_status == 0){
 		  			header("Location: ./user_dashboard/examples/block.php?id=$user_id");
 		  		}elseif($user_status == 1){

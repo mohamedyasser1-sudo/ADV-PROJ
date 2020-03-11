@@ -13,12 +13,14 @@ $userType = $advertise->getUserType($conn,$user_id);
 $hostPage= $advertise->checkHostPage($conn,$user_id);
 switch ($userType) {
   case '1':
-      if($hostPage == 1 & $status = 2){
-          header ("Location:index.php");
-      }elseif($status == 0 ){
-          header ("Location:block.php?id=$user_id");
-      }elseif($hostPage ==1 & $status == 1 ){
+      if($status == 0){
+          header ("Location:block.php?id=$user_id");      
+      }else{
+      if($status ==1  & $hostPage ==1  ){ 
           header ("Location:verify.php?id=$user_id");
+      }elseif($hostPage ==1 & $status == 2 ){
+          header ("Location:index.php");
+      }
       }  
     break;
 

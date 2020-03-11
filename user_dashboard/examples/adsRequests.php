@@ -34,33 +34,7 @@ $userObj = new User($conn, $userEmail);
                       <tbody>';
                         foreach($singleuseradds as $addsdata){
                           $adv_id = $addsdata['id'];
-                            $query = mysqli_query($conn, "SELECT * FROM accepted_adds WHERE add_id = '$adv_id'");
-                              
-                              while($hostsIDResults= mysqli_fetch_array($query)){
-                              $hostsIDarray = $hostsIDResults['hosts_id'];
-                              $Host_ID_explode = explode(",", $hostsIDarray);
 
-                              $userIDComma = "," . $user_id;
-
-                              if( strstr($hostsIDarray, $userIDComma) ) {
-                                $isAccept =  true; 
-                              }
-                              else {
-                                $isAccept = false;                             
-                              }
-                              $queryreject = mysqli_query($conn, "SELECT * FROM rejected_adds WHERE add_id = '$adv_id'");
-                                    while($hostsIDResultsReject= mysqli_fetch_array($queryreject)){
-                                    $hostsIDarrayReject = $hostsIDResultsReject['hosts_id'];
-                                    $Host_ID_explodeReject = explode(",", $hostsIDarrayReject);
-
-                                    $userIDCommaReject = ",". $user_id;
-
-                                    if( strstr($hostsIDarrayReject, $userIDCommaReject) ) {
-                                      $isReject = true;    
-                                    }
-                                    else {
-                                      $isReject = false;                                     
-                                    }
                           ?>                      
                           <tr>
                           <td><?= $addsdata['id']; ?></td>
@@ -68,29 +42,14 @@ $userObj = new User($conn, $userEmail);
                           <td><?= $addsdata['pageurl']; ?></td>
                           <td><?= $addsdata['pagedescription'];?></td>
 
-                          <?php
-                            if($isAccept){
-                              echo '<td class="text-danger"><button class="btn btn-success disabled"> You have Accepted this Advertisment</button></td>';
-                            }else{
-
-                                if ($isReject){
-                                echo '<td class="text-danger"><button class="btn btn-disabled disabled"> You have Rejected this Advertisment</button></td>';
-                              }else{
-                                 echo '<td class="text-danger"><a href="useracceptadd.php?adv_id='.$adv_id.'"><button class="btn btn-success"> Accept</button></a></td>';
-                                echo '<td class="text-danger"><a href="userrejectadd.php?adv_id='.$adv_id.'"><button class="btn btn-danger"> Reject</button></a></td>';                              
-                              }
-
-                             
-
-                              }
-                           ?>
+                                 <td class="text-danger"><a href="useracceptadd.php?adv_id=<?= $adv_id ?>"><button class="btn btn-success"> Accept</button></a></td>
+                              <td class="text-danger"><a href="userrejectadd.php?adv_id=<?= $adv_id ?>"><button class="btn btn-danger"> Reject</button></a></td>
                           
                           <td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id; ?>"><button class="btn btn-primary">Details </button></a></td>
                         </tr> 
                         <?php 
                         }
-                        }
-                        }
+                        
                         } 
                          ?>
                        

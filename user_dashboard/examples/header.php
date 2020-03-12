@@ -46,6 +46,8 @@ switch ($userType) {
     $fname = $advertise->getFullName($conn,$user_id);
     $currentadds = $advertise->getHostCurrentAds($conn,$user_id);
     $currentaddsnum=$advertise->getHostCurrentAdsnum($conn,$user_id);
+    $acceptedAddsNum = $advertise->getAcceptedAddsNum($conn,$user_id);
+    $acceptedAddsData = $advertise->getAcceptedAdds($conn,$user_id);
 
 ?>
 <!DOCTYPE html>
@@ -124,13 +126,22 @@ switch ($userType) {
             </a>
           </li>';
         }
+        if($acceptedAddsNum == 0 ){
             echo ' <li class="nav-item ">
             <a class="nav-link" href="./acceptedsAds.php">
               <i class="material-icons">content_paste</i>
               <p> Accepted Ads</p>
-                <!--<span class="notify-no">55</span>-->
             </a>
           </li>';
+        }else{
+              echo ' <li class="nav-item ">
+            <a class="nav-link" href="./acceptedsAds.php">
+              <i class="material-icons">content_paste</i>
+              <p> Accepted Ads</p>
+                <span class="notify-no">'.$acceptedAddsNum.'</span>
+            </a>
+          </li>';
+        }
                 
             }
             elseif (($userType[0] == 2)) {

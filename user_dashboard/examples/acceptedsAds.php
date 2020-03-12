@@ -20,76 +20,43 @@ $adverObj = new User($conn, $userEmail);
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title ">Accepted Ads</h4>
-                  <p class="card-category">Accepted Ads Info</p>
+                  <p class="card-category">Your Accepted Ads</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead class=" text-primary">
-                        <th>
-                          Ad ID
-                        </th>
-                        <th>
-                          Page Name
-                        </th>
-                        <th>
-                           Page URL
-                        </th>
-                        <th>
-                          Page Description
-                        </th>
-                        <th>
-                          Status
-                        </th>
-                           <th>
-                          Show
-                        </th>
-                      </thead>
-                      <tbody>
-                      <?php
-                      $sql = "SELECT * FROM advertise WHERE post_id = '$user_id' AND status=1";
-                      $result = mysqli_query($conn,$sql) or die ("Error in query: $query " . mysql_error());;
-                         
-                       
-                         $num_results = mysqli_num_rows($result);
+                  <?php
 
-                            
-                           if ($num_results > 0){ 
-                        while ($row = mysqli_fetch_array($result)){
-                          ?>
-                          
+                      if ($acceptedAddsNum == 0 ){
+                        echo " No Pending adds yet ";
+                        }else { echo ' 
+                      <table class="table table-hover">
+                      <thead class=" text-primary">
+                        <th>Ad ID</th>
+                        <th>Page Name</th>
+                        <th>Page URL</th>
+                        <th>Page Description</th>
+                        <th>AD Duration </th>
+                        <th>Link</th>
+                        <th>Show</th>
+                      </thead>
+                      <tbody>';
+                        foreach($acceptedAddsData as $acceptedAddData){
+                          $adv_id = $acceptedAddData['id'];
+
+                          ?>                      
                           <tr>
-                          <td>
-                            <?= $row['id']; ?>
-                          </td>
-                          <td>
-                            <?= $row['pagename']; ?>
-                          </td>
-                          <td>
-                              
-                              
-                             <?= $row['pageurl']; ?>
-                          </td>
-                          <td>
-                             <?= $row['pagedescription']; ?>
-                          </td>
-                          <td class="text-primary">
-                              
-                              
-                            <?php
-                              if($row['status'] == 1)
-                              echo 'Pending'; ?>
-                          </td>
-                             <td class="text-info">
-                           Details
-                          </td>
+                          <td><?= $acceptedAddData['id']; ?></td>
+                          <td><?= $acceptedAddData['pagename']; ?></td>
+                          <td><?= $acceptedAddData['pageurl']; ?></td>
+                          <td><?= $acceptedAddData['pagedescription'];?></td>
+                          <th><?= $acceptedAddData['period']  ?> Day</th>
+                          <td> Not started Yet</td>                          
+                          <td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id; ?>"><button class="btn btn-primary">Details </button></a></td>
                         </tr> 
                         <?php 
+                        }
+                        
                         } 
- }
-                           else{
-echo '<tr><td colspan="6" class="text-center text-danger h4">No Pending Right Now.</td><tr>';
-}
                          ?>
                        
                       </tbody>
@@ -97,13 +64,10 @@ echo '<tr><td colspan="6" class="text-center text-danger h4">No Pending Right No
                   </div>
                 </div>
               </div>
-            </div>
-              
-         
+            </div>  
             </div>
         </div>
       </div>
-          
           <?php 
 	include 'footer.php'; 
 	

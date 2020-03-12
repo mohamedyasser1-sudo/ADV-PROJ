@@ -309,6 +309,28 @@ class User {
 	}	
 	} 
 
+	public function getAcceptedAdds($conn,$user_id){
+		$array = array();
+		$searchedID= ','.$user_id.',';
+		$AccResult=mysqli_query($conn,"SELECT * FROM accepted_adds WHERE hosts_id LIKE '%$searchedID%'");
+		while ($AccRow = mysqli_fetch_array($AccResult)){
+			$add_id = $AccRow['add_id'];
+		$result=mysqli_query($conn,"SELECT * FROM advertise WHERE id LIKE '$add_id'");
+		while ($row = mysqli_fetch_array($result)){		
+			$array[]=$row;
+		}
+		}	
+ 		return  $array;
+	}
+
+	public function getAcceptedAddsNum($conn,$user_id){
+		$searchedID= ','.$user_id.',';
+		$AccResult=mysqli_query($conn,"SELECT * FROM accepted_adds WHERE hosts_id LIKE '%$searchedID%'");
+		$num = mysqli_num_rows($AccResult);
+		return  $num;
+ 	
+	}
+
 	public function getHostPagesData($conn){
 		$array = array();
 		$result=mysqli_query($conn,"SELECT * FROM hostpages WHERE status = 0");

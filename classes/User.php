@@ -358,6 +358,21 @@ class User {
 		return $user_status;
 	}
 
+	public function getAdsLinksForHost($conn,$user_id,$adv_id){
+		$array = array();
+		$result=mysqli_query($conn,"SELECT * FROM links WHERE adv_id = '$adv_id' AND host_id='$user_id'");
+		while ($row = mysqli_fetch_array($result)){	
+			$array[]=$row;
+		}	
+ 		return  $array;
+	}
+
+	public function getAdsLinksForHostNum($conn,$user_id,$adv_id){
+		$result=mysqli_query($conn,"SELECT * FROM links WHERE adv_id = '$adv_id' AND host_id='$user_id'");
+		$num= mysqli_num_rows($result);	
+ 		return  $num;
+	}
+
 
 	// public function getRejectedID($conn,$user_id) {
 	// 	$adv_id=$_GET['adv_id'];

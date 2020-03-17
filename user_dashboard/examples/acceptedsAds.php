@@ -10,6 +10,7 @@ if(!$_SESSION['email']) {
 $userEmail = $_SESSION['email'];
 
 $adverObj = new User($conn, $userEmail);
+
     
     
 ?>
@@ -41,7 +42,12 @@ $adverObj = new User($conn, $userEmail);
                       </thead>
                       <tbody>';
                         foreach($acceptedAddsData as $acceptedAddData){
-                          $adv_id = $acceptedAddData['id'];
+                          $adv_id = $acceptedAddData['id'];                          
+                          $hostlinksNum = $advertise->getAdsLinksForHostNum($conn,$user_id,$adv_id);
+                          $hostlinks = $advertise->getAdsLinksForHost($conn,$user_id,$adv_id);
+                          foreach($hostlinks as $links){
+                            $hostlink = $links['link'];
+                          }
 
                           ?>                      
                           <tr>
@@ -50,7 +56,13 @@ $adverObj = new User($conn, $userEmail);
                           <td><?= $acceptedAddData['pageurl']; ?></td>
                           <td><?= $acceptedAddData['pagedescription'];?></td>
                           <th><?= $acceptedAddData['period']  ?> Day</th>
-                          <td> Not started Yet</td>                          
+                          <?php 
+                          if($hostlinksNum == 0){
+                            echo "<td> Not started Yet</td>";
+                          }else {
+                            echo "<td> $hostlink </td>";
+                          } ?>
+                                                    
                           <td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id; ?>"><button class="btn btn-primary">Details </button></a></td>
                         </tr> 
                         <?php 

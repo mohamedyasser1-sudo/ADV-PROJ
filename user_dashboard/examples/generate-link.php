@@ -41,4 +41,5 @@ class generate_link{
 		
 		return str_replace('=','',$encrypted_string);
      }
+
 }

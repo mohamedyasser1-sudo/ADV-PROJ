@@ -48,7 +48,6 @@ switch ($userType) {
     $currentaddsnum=$advertise->getHostCurrentAdsnum($conn,$user_id);
     $acceptedAddsNum = $advertise->getAcceptedAddsNum($conn,$user_id);
     $acceptedAddsData = $advertise->getAcceptedAdds($conn,$user_id);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

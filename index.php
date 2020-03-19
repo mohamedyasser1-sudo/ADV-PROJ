@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 include 'connect/connect.php';
+include 'form_handlers/contact_us.php';
 
 //include 'form_handlers/login.php';
 //include 'form_handlers/login.php';
@@ -419,6 +420,8 @@ include 'connect/connect.php';
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/contact_us.js"></script>
     <script src="assets/js/main.js"></script>
 	
     <!-- ALL JS FILES -->

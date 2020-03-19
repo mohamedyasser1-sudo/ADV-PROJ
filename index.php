@@ -65,6 +65,7 @@ include 'connect/connect.php';
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
      <link rel="stylesheet" href="assets/css/gl-custom.css">
+    <link rel="stylesheet" href="theme/theme.css">
 
 </head>
 <body class="politics_version">

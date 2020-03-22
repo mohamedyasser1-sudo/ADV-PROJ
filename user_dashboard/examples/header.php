@@ -5,6 +5,7 @@ include '../../connect/connect.php';
 include '../../classes/User.php';
 include '../../form_handlers/updateprofile.php';
 include 'generate-link.php';
+include 'endadv.php';
 $user = $_SESSION['email'];
 $advertise = new User ($conn,$user);
 $user_id = $advertise->getUserId();

@@ -18,46 +18,36 @@
 										</div>
 										<div class="table-responsive">
 											<table class="table table-bordered">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th scope="row">1</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
-													<tr>
-														<th scope="row">2</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
-													<tr>
-														<th scope="row">3</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
-												</tbody>
+                      <thead class=" text-primary">
+                        <th> Ad ID</th>
+                        <th>Page Name</th>
+                        <th> Page URL</th>
+                        <th>Page Description</th>
+                        <th>Status</th>
+                        <th>Show</th>
+                      </thead>
+						            <tbody>
+                      <?php
+                        foreach ($pendingaddsdata as $row){
+                          $adv_id = $row ['id'];
+                          ?>
+                          
+                        <tr>
+                          <td><?= $row['id']; ?></td>
+                          <td><?= $row['pagename']; ?></td>
+                          <td><?= $row['pageurl']; ?></td>
+                          <td><?= $row['pagedescription']; ?></td>
+                          <td class="text-primary">Pending</td>
+                          <td class="text-info">
+                          <a href="adminadvdetails.php?adv_id=<?php echo $adv_id ;?>"><button class='btn btn-primary'>Details</button> </a></td>
+                        </tr> 
+                        <?php 
+                        
+                          }
+                         ?>
+                       
+                      </tbody>
+
 											</table>
 										</div>
 									</div>

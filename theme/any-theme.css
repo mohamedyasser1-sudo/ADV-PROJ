@@ -1,0 +1,151 @@
+body.politics_version .icon_wrap:hover, body.politics_version .nav-pills > li.active > a, body.politics_version .nav-pills > li.active > a:focus, body.politics_version .nav-pills > li.active > a:hover, body.politics_version .icon-wrapper:hover i, body.politics_version .grd1 {
+        background: #98c913;
+}
+
+
+body.politics_version .icon_wrap, body.politics_version .dmtop:hover, body.politics_version .cac:hover, body.politics_version .features-right li:hover i, body.politics_version .features-left li:hover i, body.politics_version .nav-pills > li:hover > a, body.politics_version .nav-pills > li:focus > a, body.politics_version .nav-pills > li.active > a, body.politics_version .nav-pills > li.active > a:focus, body.politics_version .nav-pills > li.active > a:hover, body.politics_version .divider-bar, body.politics_version .owl-next:hover i, body.politics_version .owl-prev:hover i, body.politics_version .icon-wrapper:hover i:hover, body.politics_version .grd1:hover, body.politics_version .grd1:focus {
+       
+     background: #d3d3d3;
+}
+
+#main-banner.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent {
+    background: #98c913;
+}
+
+
+body.politics_version .participate-wrap small, body.politics_version .message-box h4, body.politics_version .customwidget li i, body.politics_version .navbar-nav span {
+    color: #98c913 !important;
+}
+
+.hover-up {
+    background: #98c913;
+}
+
+
+.hoverbutton {
+    background-color: #d3d3d3;
+
+}
+
+
+.post-box .date {
+    background: #d3d3d3;
+}
+
+
+.participate-wrap figure::before {
+    background-color: #98c913;
+
+}
+
+
+.post-box .post-thumb::before {
+    background-color: rgba(152, 201, 19, 0.80);
+}
+
+.test span a:hover {
+    color: #98c913 !important;
+}
+
+.menu h1.logo a:hover {
+    color: #98c913;
+}
+
+body.politics_version .lead strong, body.politics_version .icon-wrapper:hover a, body.politics_version a:hover, body.politics_version a:focus {
+    color: #98c913;
+}
+
+
+.dmtop {
+    background-color: #98c913;
+}
+
+
+
+.signin-form h2, .signin-form h3 {
+    color: #98c913;
+}
+
+
+.ribbon a {
+
+    background: #98c913;
+
+}
+
+
+.ribbon a::before {
+    border-left: 3px solid #98c913;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #98c913;
+}
+
+
+.ribbon a::after {
+
+    border-left: 3px solid transparent;
+    border-right: 3px solid #98c913;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #98c913;
+}
+
+
+
+.signin-form input[type="submit"], .signin-form button {
+    background: #98c913;
+    border: 1px solid #98c913;
+
+}
+
+.signin-form input[type="submit"]:hover, .signin-form button:hover {
+    color: #d3d3d3;
+}
+
+
+.txt-left-side h2 {
+    color: #98c913;
+
+}
+
+
+button[type=submit] {
+    background: #98c913;
+}
+
+button[type=submit]:hover {
+   
+    background: #98c913;
+}
+
+.section.db {
+    background-color: #f2f3f5;
+}
+
+
+.section.colorsection p, .section.colorsection h3, .section.db h3 {
+    color: #1f1f1f;
+}
+
+
+body.politics_version .contact_form {
+    background-color: rgb(187, 187, 187);
+   
+}
+
+body.politics_version .contact_form .form-control {
+    background-color: rgb(94, 94, 94);
+}
+
+body.politics_version .copyrights {
+    background-color: #3f3b3b;
+    
+}
+
+.footer-links a:hover, .footer a:hover {
+    color: #98c913 !important;
+}
+
+.footer-distributed .footer-company-name a:hover {
+    color: #98c913;
+}

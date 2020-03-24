@@ -1,0 +1,59 @@
+.pageDesBloc {
+    display: none
+}
+
+.pageDesBlocActive {
+    display: block
+}
+
+.adMore {
+     display: none
+}
+
+.adMoreactive {
+     display: block
+}
+
+
+.removeMore {
+     display: none
+}
+
+.removeMoreActive {
+     display: block
+}
+/*
+.select2-container {
+        display: inline;
+}*/
+
+
+
+.disableElemenet {
+    
+        /*background: #eeeeee;*/
+    background-color: #eeeeee !important;
+    border: 1px solid #cbcbcb;
+    border-radius: 7px;
+    height: 40px;
+    padding-left: 6px;
+}
+
+
+.select2-container {
+    
+      width: 100% !important;
+
+}
+
+
+.editCat {
+        background-image: none !important;
+    padding-top: 13px;
+    padding-left: 6px;
+}
+
+
+.editCat:hover {
+   cursor: pointer
+}

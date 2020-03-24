@@ -1,7 +1,11 @@
-
-<?php 
+<?php
+session_start(); 
 include 'connect/connect.php';
-include 'form_handlers/login.php';
+
+//include 'form_handlers/login.php';
+//include 'form_handlers/login.php';
+//symlink('paypal/new/ADV-PROJ/user_dashboard/examples/text.txt', 'target_adv');
+
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +65,7 @@ include 'form_handlers/login.php';
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
      <link rel="stylesheet" href="assets/css/gl-custom.css">
+    <link rel="stylesheet" href="theme/any-theme.css">
 
 </head>
 <body class="politics_version">

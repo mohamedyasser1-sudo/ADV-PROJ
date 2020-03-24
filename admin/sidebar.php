@@ -36,46 +36,46 @@
 						</div>
 					</div>
 					<ul class="nav">
-					<li class="nav-item active">
+					<li class="nav-item">
 							<a href="index.php">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
-								<span class="badge badge-count">5</span>
+								
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="advertisingusers.php">
 								<i class="la la-users"></i>
 								<p>Advertising Users</p>
-								<span class="badge badge-count">5</span>
+								<span class="badge badge-count"><?= $advertisenum; ?></span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="hostingusers.php">
 								<i class="la la-users"></i>
 								<p>Hosting Users</p>
-								<span class="badge badge-count">14</span>
+								<span class="badge badge-count"><?= $hostnum; ?></span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="adshistory.php">
 								<i class="la la-keyboard-o"></i>
 								<p>Ads History</p>
-								<span class="badge badge-count">50</span>
+								<span class="badge badge-count"><?= $historyAdsnum; ?></span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="pendingads.php">
 								<i class="la la-th"></i>
 								<p>Pending Ads</p>
-								<span class="badge badge-count">6</span>
+								<span class="badge badge-count"><?= $pendingaddsNum; ?></span>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="currentads.php">
 								<i class="la la-bell"></i>
 								<p>Current Ads</p>
-								<span class="badge badge-success">3</span>
+								<span class="badge badge-success"><?= $currentAdsnum; ?></span>
 							</a>
 						</li>
 					</ul>

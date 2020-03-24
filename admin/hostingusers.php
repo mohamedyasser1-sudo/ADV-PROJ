@@ -9,53 +9,55 @@
 
 								<div class="card">
 									<div class="card-header">
-										<div class="card-title">Host Table</div>
+										<div class="card-title">Advertisers Table</div>
 									</div>
 									<div class="card-body">
 										<div class="card-sub">
-											you can see all Host users here
+											you can see all Hosting users here
 										</div>
 										<div class="table-responsive">
 											<table class="table table-bordered">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
+														<th>User ID</th>
+														<th>Username</th>
+														<th>Email</th>
+														<th>County</th>
+														<th>Phone</th>
+														<th>Join Data</th>
+														<th>Actions</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
-														<th scope="row">1</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
+														<?php foreach($hostdata as $hostuserdata){
+														$useridforblock = $hostuserdata['id'];
+														$blockestatus = $hostuserdata['active']; ?>
+
+														<th scope="row"><?= $hostuserdata['id']; ?></th>
+														<td><?= $hostuserdata['username']; ?></td>
+														<td><?= $hostuserdata['email']; ?></td>
+														<td><?= $hostuserdata['country']; ?></td>
+														<td><?= $hostuserdata['phone']; ?></td>
+														<td><?= $hostuserdata['date']; ?></td>
+
+														<td>
+															<?php  
+														if($blockestatus == 0 ){
+								
+														echo
+														"<a href='unblockuser.php?hostid=$useridforblock' ><button class='btn btn-success'>Unblock</button> </a>";
+													}
+													elseif($blockestatus == 1){
+														echo
+														"<a href='blockuser.php?hostid=$useridforblock' ><button class='btn btn-danger'>Block</button> </a>";
+													}
+															?>
+														</td>
+											
 													</tr>
-													<tr>
-														<th scope="row">2</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
-													<tr>
-														<th scope="row">3</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
+													<?php } ?>
+
 												</tbody>
 											</table>
 										</div>
@@ -64,7 +66,6 @@
 							</div>
 						</div>
 					</div>
-
 
 
 <?php 

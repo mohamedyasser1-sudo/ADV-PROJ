@@ -1,8 +1,6 @@
 <?php 
 include 'connect/connect.php';
 include 'form_handlers/login.php';
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +39,7 @@ include 'form_handlers/login.php';
     <![endif]-->
     
     <script src="assets/js/modernizr.custom.js"></script>
+     <link rel="stylesheet" href="theme/any-theme.css">
 
 </head>
 

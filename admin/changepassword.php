@@ -2,6 +2,49 @@
 	include 'header.php'; 
 	include 'nav.php';
 	include 'sidebar.php';
+
+	$message = "";
+
+	if (isset($_POST['changepassword'])) {
+		$admin		 = $_SESSION['username'];
+		$oldpassword = $_POST['oldpassword'];
+		$newpassword = $_POST['newpassword'];
+		$conpassword = $_POST['conpassword'];
+		$ehab		 = "ehab";
+
+		if( empty($oldpassword) || empty($newpassword) || empty($conpassword)){
+			$message = " you can't leave fileds empty ";
+		}elseif($newpassword !== $conpassword){
+			$message = " passwords are not matched ";
+		}elseif(strlen($newpassword) < 6){
+			$message = " password can't be less than 6 charachters";
+		}else{    
+			$checkquery ="SELECT * FROM admin WHERE username = '$admin'";
+			$result = mysqli_query($conn,$checkquery);
+			if(mysqli_num_rows($result) == 1){
+				while($row = mysqli_fetch_assoc($result))
+				if(password_verify($oldpassword,$row['password'])){
+			
+					
+				$hashedpassword= password_hash($newpassword, PASSWORD_DEFAULT);
+				$update ="UPDATE admin SET password ='$hashedpassword' WHERE username = '$admin'";
+    	   		$sql = mysqli_query($conn,$update);
+         		if ($sql){
+         			$message = " success";
+         			header("Location: logout.php"); 
+         		}else {
+         			$message= " error". mysqli_error($conn);
+         		}
+				} 
+			}else{
+				$message = " your old password is not correct";
+
+			}
+		}
+
+		}  
+
+	
 ?>
 			<div class="main-panel">
 				<div class="content">
@@ -11,23 +54,26 @@
 									<div class="card-header">
 										<div class="card-title">Change your Password</div>
 									</div>
+									<form method="post" action="#">
 									<div class="card-body">
 										<div class="form-group">
 											<label for="oldpassword">Old Password</label>
-											<input type="email" class="form-control" id="email" placeholder="Old Password">
+											<input name="oldpassword" type="password" class="form-control" id="password" placeholder="Old Password">
 										</div>
 										<div class="form-group">
 											<label for="newpassword">New Password</label>
-											<input type="password" class="form-control" id="password" placeholder="New Password">
+											<input name="newpassword" type="password" class="form-control" id="password" placeholder="New Password">
 										</div>
 										<div class="form-group">
 											<label for="conpassword">confirm Password</label>
-											<input type="password" class="form-control" id="password" placeholder="Confirm New Password">
+											<input name="conpassword" type="password" class="form-control" id="password" placeholder="Confirm New Password">
 										</div>
 										<div class="card-action">
-											<button class="btn btn-success">Submit</button>
+											<button name="changepassword" class="btn btn-success">Submit</button>
 										</div>
+										<?php echo $message; ?>
 									</div>
+								</form>
 						</div>
 
 					</div>

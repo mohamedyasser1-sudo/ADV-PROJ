@@ -1,6 +1,6 @@
 <?php 
 include 'connect/connect.php';
-include 'form_handlers/register.php';
+include 'form_handlers/advis_regis.php';
 include 'form_handlers/login.php';
 ?>
 <!DOCTYPE html>
@@ -15,6 +15,7 @@ include 'form_handlers/login.php';
 <!-- jS --> 
 <script src="assets/js/jquery.min.js"></script> 
 <script src="assets/js/script.js"></script> 
+
 <!-- //js -->
 
 
@@ -43,6 +44,8 @@ include 'form_handlers/login.php';
     <![endif]-->
     
     <script src="assets/js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="theme/any-theme.css">
+   
 </head>
 <body>
 
@@ -71,7 +74,7 @@ include 'form_handlers/login.php';
             <?php if(isset($_SESSION['email'])): ?>
   <a href="./form_handlers/logout.php" class="stysignup">Logout</a>
 <?php else: ?>
- <!-- <a href="login.php" class="stysignup">Login</a>-->
+  <!--<a href="login.php" class="stysignup">Login</a>-->
 <?php endif; ?> 
             
             
@@ -95,8 +98,7 @@ include 'form_handlers/login.php';
 				<input type="password" name="pass" placeholder="Password" required=""/>	 
 				<input type="checkbox" id="brand" value="">
 				<label for="brand"><span></span> Remember me ?</label> 
-				
-                <button type="submit" name="login" class="button">Login </button> 
+				 <button type="submit" name="login" class="button">Login </button> 
 				<div class="signin-agileits-bottom"> 
 					<p><a href="#">Forgot password ?</a></p>    
 				</div> 
@@ -109,34 +111,31 @@ include 'form_handlers/login.php';
 					<div class="clear"> </div>
 				</div>	-->
 			</form>
-			
-			 <?php
-        echo '<div class="text-center p-t-46 p-b-20"><span class="txt2">'.$message.'</span></div>';
-    ?>
+
 	
 			<!-- //Sign In Form -->
 			<!-- Sign up Form-->
-			<form id="signin" action="#" method="post">
+			<form class="form-signin" method="post" id="signin">
 				<div class="ribbon"><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Login</a></div>
 				<h3>Register as Advertise</h3>
 				
-				<input type="text" name="ausername" placeholder="User Name" required=""/>
+				<input type="text" name="usernamea" id="usernamea"  placeholder="User Name" />
 				
-				<input type="password" name="apass" placeholder="Password" required=""/>
+				<input type="password" name="passa" id="passa" placeholder="Password" />
 				
-				<input type="password" name="aconfirmpass" placeholder="Confirm Password" required=""/>	
-				
-					
-				<input type="text" name="afirst_name" placeholder="First Name" required=""/>
+				<input type="password" name="confirmpassa" id="confirmpassa" placeholder="Confirm Password" />	
 				
 					
-				<input type="text" name="asecond_name" placeholder="Second Name" required=""/>
+				<input type="text" name="first_namea" id="first_namea" placeholder="First Name"  />
 				
 					
-				<input type="email" name="aemail" placeholder="Email Address" required=""/>
+				<input type="text" name="second_namea" id="second_namea" placeholder="Second Name"  />
 				
 					
-				 <select name="acountry" id="country" >
+				<input type="email" name="emaila" id="emaila" placeholder="Email Address"  />
+				
+					
+				 <select name="countrya" id="countrya">
                             <option value="0" label="Select a country … " selected="selected">Select a country … </option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
                             <option value="DZ" label="Algeria">Algeria</option>
@@ -404,14 +403,15 @@ include 'form_handlers/login.php';
                             </select>
 				
 					
-				<input type="number" name="aphone" placeholder="Phone" required=""/>
+				<input type="number" name="phonea" id="phonea" placeholder="Phone"  />
 				
 					
-				<input type="text" name="achanel" placeholder="Your chanel" required=""/>
+				
 				
 				<input type="checkbox" id="brand1" value="">
 				<label for="brand1"><span></span>I accept the terms of use</label> 
-				<input type="submit" value="SIGN UP"> 
+                
+				<button type="submit" class="btn btn-default" name="btn-save" id="btn-submit" >Sign Up</button>
 			</form>
 			<!-- Sign up Form-->
 		</div>
@@ -419,11 +419,14 @@ include 'form_handlers/login.php';
 	</div>	
 	<!-- //main --> 
 	
+    
 	 
 	      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+     <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/register_Adver.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

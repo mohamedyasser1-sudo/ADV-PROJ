@@ -19,43 +19,45 @@
 											<table class="table table-bordered">
 												<thead>
 													<tr>
-														<th>#</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
-														<th>Table heading</th>
+														<th>User ID</th>
+														<th>Username</th>
+														<th>Email</th>
+														<th>County</th>
+														<th>Phone</th>
+														<th>Join Data</th>
+														<th>Actions</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
-														<th scope="row">1</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
+														<?php foreach($advertisedata as $advuserdata){
+														$useridforblock = $advuserdata['id'];
+														$blockestatus = $advuserdata['active']; ?>
+
+														<th scope="row"><?= $advuserdata['id']; ?></th>
+														<td><?= $advuserdata['username']; ?></td>
+														<td><?= $advuserdata['email']; ?></td>
+														<td><?= $advuserdata['country']; ?></td>
+														<td><?= $advuserdata['phone']; ?></td>
+														<td><?= $advuserdata['date']; ?></td>
+
+														<td>
+															<?php  
+														if($blockestatus == 0 ){
+								
+														echo
+														"<a href='unblockuser.php?advid=$useridforblock' ><button class='btn btn-success'>Unblock</button> </a>";
+													}
+													elseif($blockestatus == 1 || $blockestatus == 2){
+														echo
+														"<a href='blockuser.php?advid=$useridforblock' ><button class='btn btn-danger'>Block</button> </a>";
+													}
+															?>
+														</td>
+											
 													</tr>
-													<tr>
-														<th scope="row">2</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
-													<tr>
-														<th scope="row">3</th>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-														<td>Table cell</td>
-													</tr>
+													<?php } ?>
+
 												</tbody>
 											</table>
 										</div>

@@ -1,3 +1,23 @@
+<?php
+include 'redirect.php'; 
+include '../connect/connect.php';
+include '../classes/User.php';
+$user = $_SESSION['username'];
+$adminobj = new User($conn,$user);
+$advertisedata =$adminobj->getAdvertiseDataForAdmin($conn);
+$advertisenum =$adminobj->getAdvertiseNumForAdmin($conn);
+$hostdata =$adminobj->getHostDataForAdmin($conn);
+$hostnum =$adminobj->getHostNumForAdmin($conn);
+$pendingaddsdata =$adminobj->getAdminPendingAdsdata($conn);
+$pendingaddsNum =$adminobj->getAdminPendingAdsNum($conn);
+$alladsnum = $adminobj->getAdminAllAdsnum($conn);
+$hostpagesdata=$adminobj->getHostPagesData($conn);
+$verifyPagesNum=$adminobj->getHostPagesDataNum($conn);
+$blockednum = $adminobj->getBlockedUsersNum($conn);
+$currentAdsnum = $adminobj->getAdminCurrentAdsNum($conn);
+$historyAdsnum = $adminobj->getAdminHistoryAdsNum($conn);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,3 +41,5 @@
 				</button>
 				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
 			</div>
+
+

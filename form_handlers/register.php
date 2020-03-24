@@ -11,7 +11,6 @@ $message	  ="";
         $first_name   =mysqli_escape_string($conn,$_POST['first_name']);
         $second_name  =mysqli_escape_string($conn,$_POST['second_name']);
 		$email        =$_POST['email'];
-		$confirmemail =$_POST['confirmemail'];
 		$pass         =$_POST['pass'];
         $confirmpass  =$_POST['confirmpass'];
         $country      =$_POST['country'];
@@ -22,22 +21,8 @@ $message	  ="";
         if(empty($username) || empty($first_name) || empty($second_name) || empty($email)|| empty($confirmemail)|| empty($pass)|| empty($confirmpass) || empty($country) || empty($phone)){
         	$message = " Sorry! but you can't leave fields empty ";
 			}
-		elseif($email !== $confirmemail){
-			$message = " email is not matched ";
-			}
-		elseif ($pass !== $confirmpass) {
-			$message = " Password Does not match ";	
-			}
-		elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-		 	$message= "Sorry, Looks like this is not a valid email";
-			}
-		elseif(strlen($username) < 3 || strlen($pass) < 6 ){
-			$message = "username must be more than three charcters & password must be more than six characters";
-			}
-		elseif(strlen($phone) < 11 ){
-			$message = "You MUST enter you valid phone number";
-			}	
 		else{
+            echo "Yasssssser";
 			$checkmail="SELECT * FROM users WHERE email = ?";
 			$stmt =mysqli_stmt_init($conn);
 			if(!mysqli_stmt_prepare($stmt,$checkmail)){
@@ -64,7 +49,7 @@ $message	  ="";
 				$result =mysqli_stmt_store_result($stmt);
 				//$result=mysqli_query($conn,$sql);
 				if($result){
-                    header('location: index.php');
+                    header('location: ./user_dashboard/examples/index.php');
 					//$message = "you are registered, now you can <a href='login.php'>Sign In</a>";
 				}
 				else{

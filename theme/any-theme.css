@@ -117,3 +117,35 @@ button[type=submit]:hover {
    
     background: #98c913;
 }
+
+.section.db {
+    background-color: #f2f3f5;
+}
+
+
+.section.colorsection p, .section.colorsection h3, .section.db h3 {
+    color: #1f1f1f;
+}
+
+
+body.politics_version .contact_form {
+    background-color: rgb(187, 187, 187);
+   
+}
+
+body.politics_version .contact_form .form-control {
+    background-color: rgb(94, 94, 94);
+}
+
+body.politics_version .copyrights {
+    background-color: #3f3b3b;
+    
+}
+
+.footer-links a:hover, .footer a:hover {
+    color: #98c913 !important;
+}
+
+.footer-distributed .footer-company-name a:hover {
+    color: #98c913;
+}

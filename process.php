@@ -22,6 +22,7 @@ class process_advertisment{
                 $result =$this->get_last_data_of_click_on_advertisment();
                 $row    = $result->fetch_assoc(); 
                 $this->update_value_with_new_click($row);
+                
 		    else:
 		    	$this->insert_value_with_new_click();
 		    endif;

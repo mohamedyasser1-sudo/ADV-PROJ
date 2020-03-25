@@ -37,6 +37,7 @@ $message	  ="";
             else{
 				$selector=md5($date);
             	$token = substr($selector,0,6);
+                $token2 = bin2hex(random_bytes(3));
 				//send_Verification_Code($email,$token);
 				// $sql="INSERT INTO `users`(`username`, `first_name`, `second_name`, `email`, `password`, `country`, `phone`, `type`, `date`,`code`) VALUES ('$username','$first_name','$second_name','$email','$pass','$country','$phone','$type','$date','$token')";
 				$sql="INSERT INTO users (username, first_name, second_name, email, password, country, phone, type,date,code) VALUES (?,?,?,?,?,?,?,?,?,?)";

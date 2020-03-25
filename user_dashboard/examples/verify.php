@@ -25,7 +25,7 @@ switch ($userType) {
       if($status == 0 ){
           header ("Location:block.php?id=$user_id");
       }elseif ($status == 2 ) {
-      		header ("Location: index.php");
+          header ("Location: index.php");
       } 
       break;  
 
@@ -43,6 +43,8 @@ $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
 $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
 $fname = $advertise->getFullName($conn,$user_id);
 $message= "";
+switch ($userType) {
+  case '1':
 if(isset($_POST['verify'])){
     $code = $_POST['code'];
     $query = mysqli_query($conn, "SELECT * FROM hostpages WHERE user_id = '$user_id' AND status = 1");
@@ -67,6 +69,26 @@ if(isset($_POST['resend'])){
   }else{
     $message = " Sorry, but you can't have another code, Please contact admin directly on :  admin@topad.net";
   }
+}
+break;
+    case '2':
+    if(isset($_POST['verify'])){
+    $code = $_POST['code'];
+    $query = mysqli_query($conn, "SELECT * FROM users WHERE id = '$user_id' AND active = 1");
+    while($userData = mysqli_fetch_array($query)){
+    $activation_code = $userData['code'];
+    if($code == $activation_code){
+      $updateUserStatus= mysqli_query($conn,"UPDATE users SET active = 2 WHERE id='$user_id'");
+      header("Location:index.php");
+    }else{
+      $message = "invalid verification code";
+    }
+}
+}
+break;
+  default:
+    break;
+        
 }
 ?>
 <!DOCTYPE html>

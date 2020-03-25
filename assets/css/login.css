@@ -337,6 +337,7 @@ h1.error {
     box-sizing: border-box;
     text-align: center;
 }
+
 .img-right-side {
     background: #fff;
 
@@ -863,5 +864,11 @@ h1.error {
     font-size: 13px;
     line-height: 27px;
 }	
+}
+
+@media (max-width: 415px) {
+    .img-right-side {
+        display: none ;
+    }
 }
 /*--//responsive--*/

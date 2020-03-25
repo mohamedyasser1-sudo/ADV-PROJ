@@ -57,7 +57,6 @@ $('document').ready(function()
         second_name=document.getElementById('second_name').value;
     var regEx = /^[a-zA-Z]$/;
 
-
     if((regEx.test(second_name)==true))
     {
     }

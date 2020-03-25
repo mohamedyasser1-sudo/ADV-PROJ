@@ -49,7 +49,9 @@ include 'form_handlers/login.php';
 </head>
 <body>
 
-
+<!-- LOGO -->
+    <img src="assets/images/logo.png" id='logoId'> 
+	<!-- END LOGO -->
 <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
@@ -90,7 +92,6 @@ include 'form_handlers/login.php';
 		<div id="w3ls_form" class="signin-form">
 			<!-- Sign In Form -->
 			<form id="signup" action="#" method="post">
-				<div class="ribbon"><a href="#" id="flipToRecover" class="flipLink" title="Click Here to SignUp">Register</a></div>
 				<h2>Sign In Form</h2>
 				<p>User Name </p>
 				<input type="email" name="email" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>"/>
@@ -100,7 +101,12 @@ include 'form_handlers/login.php';
 				<label for="brand"><span></span> Remember me ?</label> 
 				 <button type="submit" name="login" class="button">Login </button> 
 				<div class="signin-agileits-bottom"> 
-					<p><a href="#">Forgot password ?</a></p>    
+          <p><a href="#">Forgot password ?</a></p> 
+          <div id="clickhere">
+            <h4>You don't have an account?
+            <div><a href="#" id="flipToRecover" class="flipLink" title="Click Here to SignUp">Register Here</a></div>
+            </h4>
+          </div>    
 				</div> 
 				<!--
 				<div class="social-icons">
@@ -116,7 +122,6 @@ include 'form_handlers/login.php';
 			<!-- //Sign In Form -->
 			<!-- Sign up Form-->
 			<form class="form-signin" method="post" id="signin">
-				<div class="ribbon"><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Login</a></div>
 				<h3>Register as Advertise</h3>
 				
 				<input type="text" name="usernamea" id="usernamea"  placeholder="User Name" />
@@ -411,7 +416,13 @@ include 'form_handlers/login.php';
 				<input type="checkbox" id="brand1" value="">
 				<label for="brand1"><span></span>I accept the terms of use</label> 
                 
-				<button type="submit" class="btn btn-default" name="btn-save" id="btn-submit" >Sign Up</button>
+        <button type="submit" class="btn btn-default" name="btn-save" id="btn-submit" >Sign Up</button>
+        <div id="clickhere">
+            <h4>You already have an account?
+               <div><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Login Here</a></div>
+            </h4>
+        </div> 
+
 			</form>
 			<!-- Sign up Form-->
 		</div>

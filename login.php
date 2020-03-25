@@ -44,7 +44,6 @@ include 'form_handlers/login.php';
 </head>
 
 <body>
-
 <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">

@@ -77,7 +77,9 @@ include 'connect/connect.php';
 		</div>
     </div><!-- end loader -->
     <!-- END LOADER -->
-
+<!-- LOGO -->
+    <img src="assets/images/logo.png" id='logoId'> 
+	<!-- END LOGO -->
     <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
@@ -129,7 +131,7 @@ include 'connect/connect.php';
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>
-		<div data-src="assets/uploads/slide-5.jpg">
+		<div data-src="assets/uploads/slide-6.jpg">
 			<div class="camera_caption">
 				<div class="container">
 					<h1 class="wow fadeInUp animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
@@ -138,7 +140,7 @@ include 'connect/connect.php';
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>
-		<div data-src="assets/uploads/slide-4.jpg">
+		<div data-src="assets/uploads/slide-6.jpg">
 			<div class="camera_caption">
 				<div class="container">
 					<h1 class="wow fadeInUp animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>

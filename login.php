@@ -112,7 +112,7 @@ include 'form_handlers/login.php';
             <div class="img-right-side">
                 <h3>Welcome To Project Login Form</h3>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
-                <img src="assets/img/b11.png" class="img-fluid" alt="">
+                <img src="assets/img/logo.png" class="img-fluid" alt="">
             </div>
         </div>
     </div>

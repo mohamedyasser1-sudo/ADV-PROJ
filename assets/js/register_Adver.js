@@ -1,5 +1,7 @@
 console.log("Insidddeee Register JS");
-
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Enter a Valid Name"); 
 $('document').ready(function()
 {
     /* validation */
@@ -23,6 +25,12 @@ $('document').ready(function()
                 required: true,
                 email: true
             },
+            second_namea:
+            {
+                required: true,
+                minlength: 3,
+                lettersonly: true
+            }
         },
         messages:
         {
@@ -35,7 +43,8 @@ $('document').ready(function()
             confirmpassa:{
                 required: "Retype Your Password",
                 equalTo: "Password Mismatch! Retype"
-            }
+            },
+            second_namea:{required:"Enter a Valid Name"}
         },
         submitHandler: submitForm
     });

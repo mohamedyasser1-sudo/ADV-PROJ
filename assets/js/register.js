@@ -1,7 +1,10 @@
 console.log("Insidddeee Register JS");
-
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Enter a Valid Name"); 
 $('document').ready(function()
 {
+    
     /* validation */
     $("#signin").validate({
         rules:
@@ -23,6 +26,12 @@ $('document').ready(function()
                 required: true,
                 email: true
             },
+            second_name:
+            {
+                required: true,
+                minlength: 3,
+                lettersonly: true
+            }
         },
         messages:
         {
@@ -35,7 +44,8 @@ $('document').ready(function()
             confirmpass:{
                 required: "Retype Your Password",
                 equalTo: "Password Mismatch! Retype"
-            }
+            },
+            second_name:{required:"Enter a Valid Name"}
         },
         submitHandler: submitForm
     });
@@ -44,6 +54,17 @@ $('document').ready(function()
     /* form submit */
     function submitForm()
     {
+        second_name=document.getElementById('second_name').value;
+    var regEx = /^[a-zA-Z]$/;
+
+
+    if((regEx.test(second_name)==true))
+    {
+    }
+    else
+    {
+        window.alert("h");
+    }
         console.log("Inside Submit");
         var data = $("#signin").serialize();
 

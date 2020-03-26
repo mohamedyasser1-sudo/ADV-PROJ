@@ -77,13 +77,17 @@ include 'connect/connect.php';
 		</div>
     </div><!-- end loader -->
     <!-- END LOADER -->
-<!-- LOGO -->
-    <img src="assets/images/logo.png" id='logoId'> 
-	<!-- END LOGO -->
+
+    <!-- LOGO -->
+    <div id="logoW">
+     <img src="assets/images/logo.png" id="logoId"> 
+    </div>
+    <!-- END LOGO -->
+    
     <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">LINK</a></h1>
+			<h1 id="logoHov" class="logo"><a href="index.html#home">LINK</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
 			<a href="index.php">Home</a>
 			<a data-value="howwork" href="#">How Work</a>
@@ -145,7 +149,7 @@ include 'connect/connect.php';
 				<div class="container">
 					<h1 class="wow fadeInUp animated">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
 					<p class="wow fadeInUp animated" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget.</p>
-					<a data-scroll href="signup.php" class="btn btn-light btn-radius btn-brd grd1">REGISTER</a>
+					<a data-scroll href="signup.php" class="btn btn-light btn-radius btn-brd grd1 ">REGISTER</a>
 				</div> <!-- /.container -->
 			</div> <!-- /.camera_caption -->
 		</div>

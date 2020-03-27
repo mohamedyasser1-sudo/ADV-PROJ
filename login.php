@@ -44,6 +44,7 @@ include 'form_handlers/login.php';
 </head>
 
 <body>
+
 <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
@@ -67,7 +68,7 @@ include 'form_handlers/login.php';
 	
     <div class="w3layouts-two-grids">
         <div class="mid-class">
-            <div class="txt-left-side">
+            <div class="txt-left-side" id="txt-left-side">
                 <h2> Login Here </h2>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
                 <form action="" method="post">
@@ -108,10 +109,10 @@ include 'form_handlers/login.php';
                 </div>
 
             </div>
-            <div class="img-right-side">
+            <div class="img-right-side" id="img-right-side">
                 <h3>Welcome To Project Login Form</h3>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
-                <img src="assets/img/logo.png" class="img-fluid" alt="">
+                <img src="assets/images/logo.png" class="img-fluid" alt="">
             </div>
         </div>
     </div>

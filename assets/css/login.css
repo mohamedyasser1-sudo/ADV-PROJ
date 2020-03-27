@@ -337,7 +337,6 @@ h1.error {
     box-sizing: border-box;
     text-align: center;
 }
-
 .img-right-side {
     background: #fff;
 
@@ -826,6 +825,10 @@ h1.error {
     margin-bottom: 20px;
     line-height: 33px;
 }
+.img-right-side
+{
+	display:none !important;
+}
 }
 @media(max-width:384px){
 h1.error {
@@ -865,10 +868,53 @@ h1.error {
     line-height: 27px;
 }	
 }
-
-@media (max-width: 415px) {
-    .img-right-side {
-        display: none ;
-    }
+#txt-left-side
+{
+	background-color:#98C913 !important;
+	
 }
+#txt-left-side h2,txt-left-sideh3 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0 0 1em;
+	font-weight: 900 !important;
+	color: #373b39 !important;
+}
+#txt-left-side input[type="password"],#txt-left-side input[type="email"] 
+{
+	background-color:white !important;
+	border-color:#b5b5b5 !important;
+	color: #373b39 !important;
+}
+#txt-left-side button
+{
+background-color:#373b39 !important;
+color:white;
+transition:background-color;
+}
+.form-left-to-w3l span
+{
+	background-color:#373b39 !important;
+}#txt-left-side p
+{
+	color:white !important;
+}
+#txt-left-side a
+{
+	color:white !important;
+	transition:color;
+}
+#txt-left-side a:hover
+{
+	color:#373b39 !important;
+}
+#txt-left-side button:hover
+{
+	background-color:black !important;
+}
+#img-right-side img
+{
+		padding-top:1rem;
+}
+
 /*--//responsive--*/

@@ -1,3 +1,7 @@
+.preloaderDisplay {
+    display: none !important;
+}
+
 body.politics_version .icon_wrap:hover, body.politics_version .nav-pills > li.active > a, body.politics_version .nav-pills > li.active > a:focus, body.politics_version .nav-pills > li.active > a:hover, body.politics_version .icon-wrapper:hover i, body.politics_version .grd1 {
         background: #98c913;
 }

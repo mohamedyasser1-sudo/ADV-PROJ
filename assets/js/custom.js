@@ -97,20 +97,21 @@
         if (banner.length) {
           banner.camera({ //here I declared some settings, the height and the presence of the thumbnails 
             height: '870px',
-            pagination: true,
+            pagination: false,
             navigation: false,
             thumbnails: false,
             playPause: false,
             pauseOnClick: false,
-            autoPlay:true,
+            autoPlay:false,
             hover: false,
-            overlayer: true,
+            overlayer: false,
             loader: 'none',
             minHeight: '400px',
-            time: 400000,
+            time: 0,
           });
         };
 	
+    banner.cameraStop();
     /* ==============================================
 	LOADER -->
 	=============================================== */

@@ -71,7 +71,7 @@ include 'connect/connect.php';
 <body class="politics_version">
 
     <!-- LOADER -->
-    <div id="preloader">
+    <div id="preloader" class="preloaderDisplay">
         <div id="main-ld">
 			<div id="loader"></div>  
 		</div>

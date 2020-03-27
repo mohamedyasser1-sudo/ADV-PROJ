@@ -143,267 +143,267 @@ include 'form_handlers/login.php';
 				 <select name="country" id="country">
                             <option value="0" label="Select a country … " selected="selected">Select a country … </option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
-                            <option value="DZ" label="Algeria">Algeria</option>
-                            <option value="AO" label="Angola">Angola</option>
-                            <option value="BJ" label="Benin">Benin</option>
-                            <option value="BW" label="Botswana">Botswana</option>
-                            <option value="BF" label="Burkina Faso">Burkina Faso</option>
-                            <option value="BI" label="Burundi">Burundi</option>
-                            <option value="CM" label="Cameroon">Cameroon</option>
-                            <option value="CV" label="Cape Verde">Cape Verde</option>
-                            <option value="CF" label="Central African Republic">Central African Republic</option>
-                            <option value="TD" label="Chad">Chad</option>
-                            <option value="KM" label="Comoros">Comoros</option>
-                            <option value="CG" label="Congo - Brazzaville">Congo - Brazzaville</option>
-                            <option value="CD" label="Congo - Kinshasa">Congo - Kinshasa</option>
-                            <option value="CI" label="Côte d’Ivoire">Côte d’Ivoire</option>
-                            <option value="DJ" label="Djibouti">Djibouti</option>
-                            <option value="EG" label="Egypt">Egypt</option>
-                            <option value="GQ" label="Equatorial Guinea">Equatorial Guinea</option>
-                            <option value="ER" label="Eritrea">Eritrea</option>
-                            <option value="ET" label="Ethiopia">Ethiopia</option>
-                            <option value="GA" label="Gabon">Gabon</option>
-                            <option value="GM" label="Gambia">Gambia</option>
-                            <option value="GH" label="Ghana">Ghana</option>
-                            <option value="GN" label="Guinea">Guinea</option>
-                            <option value="GW" label="Guinea-Bissau">Guinea-Bissau</option>
-                            <option value="KE" label="Kenya">Kenya</option>
-                            <option value="LS" label="Lesotho">Lesotho</option>
-                            <option value="LR" label="Liberia">Liberia</option>
-                            <option value="LY" label="Libya">Libya</option>
-                            <option value="MG" label="Madagascar">Madagascar</option>
-                            <option value="MW" label="Malawi">Malawi</option>
-                            <option value="ML" label="Mali">Mali</option>
-                            <option value="MR" label="Mauritania">Mauritania</option>
-                            <option value="MU" label="Mauritius">Mauritius</option>
-                            <option value="YT" label="Mayotte">Mayotte</option>
-                            <option value="MA" label="Morocco">Morocco</option>
-                            <option value="MZ" label="Mozambique">Mozambique</option>
-                            <option value="NA" label="Namibia">Namibia</option>
-                            <option value="NE" label="Niger">Niger</option>
-                            <option value="NG" label="Nigeria">Nigeria</option>
-                            <option value="RW" label="Rwanda">Rwanda</option>
-                            <option value="RE" label="Réunion">Réunion</option>
-                            <option value="SH" label="Saint Helena">Saint Helena</option>
-                            <option value="SN" label="Senegal">Senegal</option>
-                            <option value="SC" label="Seychelles">Seychelles</option>
-                            <option value="SL" label="Sierra Leone">Sierra Leone</option>
-                            <option value="SO" label="Somalia">Somalia</option>
-                            <option value="ZA" label="South Africa">South Africa</option>
-                            <option value="SD" label="Sudan">Sudan</option>
-                            <option value="SZ" label="Swaziland">Swaziland</option>
-                            <option value="ST" label="São Tomé and Príncipe">São Tomé and Príncipe</option>
-                            <option value="TZ" label="Tanzania">Tanzania</option>
-                            <option value="TG" label="Togo">Togo</option>
-                            <option value="TN" label="Tunisia">Tunisia</option>
-                            <option value="UG" label="Uganda">Uganda</option>
-                            <option value="EH" label="Western Sahara">Western Sahara</option>
-                            <option value="ZM" label="Zambia">Zambia</option>
-                            <option value="ZW" label="Zimbabwe">Zimbabwe</option>
+                            <option data-code="+213" value="DZ" label="Algeria">Algeria</option>
+                            <option data-code="+244" value="AO" label="Angola">Angola</option>
+                            <option data-code="+299" value="BJ" label="Benin">Benin</option>
+                            <option data-code="+267" value="BW" label="Botswana">Botswana</option>
+                            <option data-code="+226" value="BF" label="Burkina Faso">Burkina Faso</option>
+                            <option data-code="+257" value="BI" label="Burundi">Burundi</option>
+                            <option data-code="+237" value="CM" label="Cameroon">Cameroon</option>
+                            <option data-code="+238" value="CV" label="Cape Verde">Cape Verde</option>
+                            <option data-code="+236" value="CF" label="Central African Republic">Central African Republic</option>
+                            <option data-code="+235" value="TD" label="Chad">Chad</option>
+                            <option data-code="+269" value="KM" label="Comoros">Comoros</option>
+                            <option data-code="+242" value="CG" label="Congo - Brazzaville">Congo - Brazzaville</option>
+                            <option data-code="+243" value="CD" label="Congo - Kinshasa">Congo - Kinshasa</option>
+                            <option data-code="+225" value="CI" label="Côte d’Ivoire">Côte d’Ivoire</option>
+                            <option data-code="+253" value="DJ" label="Djibouti">Djibouti</option>
+                            <option data-code="+202" value="EG" label="Egypt">Egypt</option>
+                            <option data-code="+240" value="GQ" label="Equatorial Guinea">Equatorial Guinea</option>
+                            <option data-code="+291" value="ER" label="Eritrea">Eritrea</option>
+                            <option data-code="+251" value="ET" label="Ethiopia">Ethiopia</option>
+                            <option data-code="+241" value="GA" label="Gabon">Gabon</option>
+                            <option data-code="+220" value="GM" label="Gambia">Gambia</option>
+                            <option data-code="+233" value="GH" label="Ghana">Ghana</option>
+                            <option data-code="+224" value="GN" label="Guinea">Guinea</option>
+                            <option data-code="+245" value="GW" label="Guinea-Bissau">Guinea-Bissau</option>
+                            <option data-code="+254" value="KE" label="Kenya">Kenya</option>
+                            <option data-code="+266" value="LS" label="Lesotho">Lesotho</option>
+                            <option data-code="+231" value="LR" label="Liberia">Liberia</option>
+                            <option data-code="+218" value="LY" label="Libya">Libya</option>
+                            <option data-code="+261" value="MG" label="Madagascar">Madagascar</option>
+                            <option data-code="+265" value="MW" label="Malawi">Malawi</option>
+                            <option data-code="+223" value="ML" label="Mali">Mali</option>
+                            <option data-code="+222" value="MR" label="Mauritania">Mauritania</option>
+                            <option data-code="+230" value="MU" label="Mauritius">Mauritius</option>
+                            <option data-code="+262" value="YT" label="Mayotte">Mayotte</option>
+                            <option data-code="+212" value="MA" label="Morocco">Morocco</option>
+                            <option data-code="+258" value="MZ" label="Mozambique">Mozambique</option>
+                            <option data-code="+264" value="NA" label="Namibia">Namibia</option>
+                            <option data-code="+227" value="NE" label="Niger">Niger</option>
+                            <option data-code="+234" value="NG" label="Nigeria">Nigeria</option>
+                            <option data-code="+250" value="RW" label="Rwanda">Rwanda</option>
+                            <option data-code="+974" value="RE" label="Réunion">Réunion</option>
+                            <option data-code="+290" value="SH" label="Saint Helena">Saint Helena</option>
+                            <option data-code="+221" value="SN" label="Senegal">Senegal</option>
+                            <option data-code="+248" value="SC" label="Seychelles">Seychelles</option>
+                            <option data-code="+232" value="SL" label="Sierra Leone">Sierra Leone</option>
+                            <option data-code="+252" value="SO" label="Somalia">Somalia</option>
+                            <option data-code="+27" value="ZA" label="South Africa">South Africa</option>
+                            <option data-code="+249" value="SD" label="Sudan">Sudan</option>
+                            <option data-code="+268" value="SZ" label="Swaziland">Swaziland</option>
+                            <option data-code="+239" value="ST" label="São Tomé and Príncipe">São Tomé and Príncipe</option>
+                            <option data-code="+255" value="TZ" label="Tanzania">Tanzania</option>
+                            <option data-code="+228" value="TG" label="Togo">Togo</option>
+                            <option data-code="+216" value="TN" label="Tunisia">Tunisia</option>
+                            <option data-code="+256" value="UG" label="Uganda">Uganda</option>
+                            <option data-code="+212" value="EH" label="Western Sahara">Western Sahara</option>
+                            <option data-code="+260" value="ZM" label="Zambia">Zambia</option>
+                            <option data-code="+263" value="ZW" label="Zimbabwe">Zimbabwe</option>
                             </optgroup>
                             <optgroup id="country-optgroup-Americas" label="Americas">
-                            <option value="AI" label="Anguilla">Anguilla</option>
-                            <option value="AG" label="Antigua and Barbuda">Antigua and Barbuda</option>
-                            <option value="AR" label="Argentina">Argentina</option>
-                            <option value="AW" label="Aruba">Aruba</option>
-                            <option value="BS" label="Bahamas">Bahamas</option>
-                            <option value="BB" label="Barbados">Barbados</option>
-                            <option value="BZ" label="Belize">Belize</option>
-                            <option value="BM" label="Bermuda">Bermuda</option>
-                            <option value="BO" label="Bolivia">Bolivia</option>
-                            <option value="BR" label="Brazil">Brazil</option>
-                            <option value="VG" label="British Virgin Islands">British Virgin Islands</option>
-                            <option value="CA" label="Canada">Canada</option>
-                            <option value="KY" label="Cayman Islands">Cayman Islands</option>
-                            <option value="CL" label="Chile">Chile</option>
-                            <option value="CO" label="Colombia">Colombia</option>
-                            <option value="CR" label="Costa Rica">Costa Rica</option>
-                            <option value="CU" label="Cuba">Cuba</option>
-                            <option value="DM" label="Dominica">Dominica</option>
-                            <option value="DO" label="Dominican Republic">Dominican Republic</option>
-                            <option value="EC" label="Ecuador">Ecuador</option>
-                            <option value="SV" label="El Salvador">El Salvador</option>
-                            <option value="FK" label="Falkland Islands">Falkland Islands</option>
-                            <option value="GF" label="French Guiana">French Guiana</option>
-                            <option value="GL" label="Greenland">Greenland</option>
-                            <option value="GD" label="Grenada">Grenada</option>
-                            <option value="GP" label="Guadeloupe">Guadeloupe</option>
-                            <option value="GT" label="Guatemala">Guatemala</option>
-                            <option value="GY" label="Guyana">Guyana</option>
-                            <option value="HT" label="Haiti">Haiti</option>
-                            <option value="HN" label="Honduras">Honduras</option>
-                            <option value="JM" label="Jamaica">Jamaica</option>
-                            <option value="MQ" label="Martinique">Martinique</option>
-                            <option value="MX" label="Mexico">Mexico</option>
-                            <option value="MS" label="Montserrat">Montserrat</option>
-                            <option value="AN" label="Netherlands Antilles">Netherlands Antilles</option>
-                            <option value="NI" label="Nicaragua">Nicaragua</option>
-                            <option value="PA" label="Panama">Panama</option>
-                            <option value="PY" label="Paraguay">Paraguay</option>
-                            <option value="PE" label="Peru">Peru</option>
-                            <option value="PR" label="Puerto Rico">Puerto Rico</option>
-                            <option value="BL" label="Saint Barthélemy">Saint Barthélemy</option>
-                            <option value="KN" label="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                            <option value="LC" label="Saint Lucia">Saint Lucia</option>
-                            <option value="MF" label="Saint Martin">Saint Martin</option>
-                            <option value="PM" label="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                            <option value="VC" label="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
-                            <option value="SR" label="Suriname">Suriname</option>
-                            <option value="TT" label="Trinidad and Tobago">Trinidad and Tobago</option>
-                            <option value="TC" label="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                            <option value="VI" label="U.S. Virgin Islands">U.S. Virgin Islands</option>
-                            <option value="US" label="United States">United States</option>
-                            <option value="UY" label="Uruguay">Uruguay</option>
-                            <option value="VE" label="Venezuela">Venezuela</option>
+                            <option data-code="+264" value="AI" label="Anguilla">Anguilla</option>
+                            <option data-code="+268" value="AG" label="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option data-code="+54" value="AR" label="Argentina">Argentina</option>
+                            <option data-code="+297" value="AW" label="Aruba">Aruba</option>
+                            <option data-code="+242" value="BS" label="Bahamas">Bahamas</option>
+                            <option data-code="+246" value="BB" label="Barbados">Barbados</option>
+                            <option data-code="+501" value="BZ" label="Belize">Belize</option>
+                            <option data-code="+441" value="BM" label="Bermuda">Bermuda</option>
+                            <option data-code="+591" value="BO" label="Bolivia">Bolivia</option>
+                            <option data-code="+55" value="BR" label="Brazil">Brazil</option>
+                            <option data-code="+284" value="VG" label="British Virgin Islands">British Virgin Islands</option>
+                            <option data-code="+1" value="CA" label="Canada">Canada</option>
+                            <option data-code="+345" value="KY" label="Cayman Islands">Cayman Islands</option>
+                            <option data-code="+56" value="CL" label="Chile">Chile</option>
+                            <option data-code="+57" value="CO" label="Colombia">Colombia</option>
+                            <option data-code="+506" value="CR" label="Costa Rica">Costa Rica</option>
+                            <option data-code="+53" value="CU" label="Cuba">Cuba</option>
+                            <option data-code="+767" value="DM" label="Dominica">Dominica</option>
+                            <option data-code="+809" value="DO" label="Dominican Republic">Dominican Republic</option>
+                            <option data-code="+593" value="EC" label="Ecuador">Ecuador</option>
+                            <option data-code="+503" value="SV" label="El Salvador">El Salvador</option>
+                            <option data-code="+500" value="FK" label="Falkland Islands">Falkland Islands</option>
+                            <option data-code="+594" value="GF" label="French Guiana">French Guiana</option>
+                            <option data-code="+299"value="GL" label="Greenland">Greenland</option>
+                            <option data-code="+473" value="GD" label="Grenada">Grenada</option>
+                            <option data-code="+590" value="GP" label="Guadeloupe">Guadeloupe</option>
+                            <option data-code="+502"value="GT" label="Guatemala">Guatemala</option>
+                            <option data-code="+592"value="GY" label="Guyana">Guyana</option>
+                            <option data-code="+509"value="HT" label="Haiti">Haiti</option>
+                            <option data-code="+504"value="HN" label="Honduras">Honduras</option>
+                            <option data-code="+876"value="JM" label="Jamaica">Jamaica</option>
+                            <option data-code="+596"value="MQ" label="Martinique">Martinique</option>
+                            <option data-code="+52"value="MX" label="Mexico">Mexico</option>
+                            <option data-code="+596"value="MS" label="Montserrat">Montserrat</option>
+                            <option data-code="+599"value="AN" label="Netherlands Antilles">Netherlands Antilles</option>
+                            <option data-code="+505"value="NI" label="Nicaragua">Nicaragua</option>
+                            <option data-code="+507"value="PA" label="Panama">Panama</option>
+                            <option data-code="+595"value="PY" label="Paraguay">Paraguay</option>
+                            <option data-code="+51"value="PE" label="Peru">Peru</option>
+                            <option data-code="+787"value="PR" label="Puerto Rico">Puerto Rico</option>
+                            <option data-code="+590"value="BL" label="Saint Barthélemy">Saint Barthélemy</option>
+                            <option data-code="+869"value="KN" label="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option data-code="+758"value="LC" label="Saint Lucia">Saint Lucia</option>
+                            <option data-code="+33"value="MF" label="Saint Martin">Saint Martin</option>
+                            <option data-code="+508"value="PM" label="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                            <option data-code="+784"value="VC" label="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                            <option data-code="+597"value="SR" label="Suriname">Suriname</option>
+                            <option data-code="+868"value="TT" label="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option data-code="+649"value="TC" label="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                            <option data-code="+340"value="VI" label="U.S. Virgin Islands">U.S. Virgin Islands</option>
+                            <option data-code="+"value="US" label="United States">United States</option>
+                            <option data-code="+598"value="UY" label="Uruguay">Uruguay</option>
+                            <option data-code="+58" value="VE" label="Venezuela">Venezuela</option>
                             </optgroup>
                             <optgroup id="country-optgroup-Asia" label="Asia">
-                            <option value="AF" label="Afghanistan">Afghanistan</option>
-                            <option value="AM" label="Armenia">Armenia</option>
-                            <option value="AZ" label="Azerbaijan">Azerbaijan</option>
-                            <option value="BH" label="Bahrain">Bahrain</option>
-                            <option value="BD" label="Bangladesh">Bangladesh</option>
-                            <option value="BT" label="Bhutan">Bhutan</option>
-                            <option value="BN" label="Brunei">Brunei</option>
-                            <option value="KH" label="Cambodia">Cambodia</option>
-                            <option value="CN" label="China">China</option>
-                            <option value="CY" label="Cyprus">Cyprus</option>
-                            <option value="GE" label="Georgia">Georgia</option>
-                            <option value="HK" label="Hong Kong SAR China">Hong Kong SAR China</option>
-                            <option value="IN" label="India">India</option>
-                            <option value="ID" label="Indonesia">Indonesia</option>
-                            <option value="IR" label="Iran">Iran</option>
-                            <option value="IQ" label="Iraq">Iraq</option>
-                            <option value="IL" label="Israel">Israel</option>
-                            <option value="JP" label="Japan">Japan</option>
-                            <option value="JO" label="Jordan">Jordan</option>
-                            <option value="KZ" label="Kazakhstan">Kazakhstan</option>
-                            <option value="KW" label="Kuwait">Kuwait</option>
-                            <option value="KG" label="Kyrgyzstan">Kyrgyzstan</option>
-                            <option value="LA" label="Laos">Laos</option>
-                            <option value="LB" label="Lebanon">Lebanon</option>
-                            <option value="MO" label="Macau SAR China">Macau SAR China</option>
-                            <option value="MY" label="Malaysia">Malaysia</option>
-                            <option value="MV" label="Maldives">Maldives</option>
-                            <option value="MN" label="Mongolia">Mongolia</option>
-                            <option value="MM" label="Myanmar [Burma]">Myanmar [Burma]</option>
-                            <option value="NP" label="Nepal">Nepal</option>
-                            <option value="NT" label="Neutral Zone">Neutral Zone</option>
-                            <option value="KP" label="North Korea">North Korea</option>
-                            <option value="OM" label="Oman">Oman</option>
-                            <option value="PK" label="Pakistan">Pakistan</option>
-                            <option value="PS" label="Palestinian Territories">Palestinian Territories</option>
-                            <option value="YD" label="People's Democratic Republic of Yemen">People's Democratic Republic of Yemen</option>
-                            <option value="PH" label="Philippines">Philippines</option>
-                            <option value="QA" label="Qatar">Qatar</option>
-                            <option value="SA" label="Saudi Arabia">Saudi Arabia</option>
-                            <option value="SG" label="Singapore">Singapore</option>
-                            <option value="KR" label="South Korea">South Korea</option>
-                            <option value="LK" label="Sri Lanka">Sri Lanka</option>
-                            <option value="SY" label="Syria">Syria</option>
-                            <option value="TW" label="Taiwan">Taiwan</option>
-                            <option value="TJ" label="Tajikistan">Tajikistan</option>
-                            <option value="TH" label="Thailand">Thailand</option>
-                            <option value="TL" label="Timor-Leste">Timor-Leste</option>
-                            <option value="TR" label="Turkey">Turkey</option>
-                            <option value="™" label="Turkmenistan">Turkmenistan</option>
-                            <option value="AE" label="United Arab Emirates">United Arab Emirates</option>
-                            <option value="UZ" label="Uzbekistan">Uzbekistan</option>
-                            <option value="VN" label="Vietnam">Vietnam</option>
-                            <option value="YE" label="Yemen">Yemen</option>
+                            <option data-code="+93" value="AF" label="Afghanistan">Afghanistan</option>
+                            <option data-code="+374" value="AM" label="Armenia">Armenia</option>
+                            <option data-code="+944" value="AZ" label="Azerbaijan">Azerbaijan</option>
+                            <option data-code="+973" value="BH" label="Bahrain">Bahrain</option>
+                            <option data-code="+880" value="BD" label="Bangladesh">Bangladesh</option>
+                            <option data-code="+975" value="BT" label="Bhutan">Bhutan</option>
+                            <option data-code="+673" value="BN" label="Brunei">Brunei</option>
+                            <option data-code="+855" value="KH" label="Cambodia">Cambodia</option>
+                            <option data-code="+86" value="CN" label="China">China</option>
+                            <option data-code="+357" value="CY" label="Cyprus">Cyprus</option>
+                            <option data-code="+995" value="GE" label="Georgia">Georgia</option>
+                            <option data-code="+852" value="HK" label="Hong Kong SAR China">Hong Kong SAR China</option>
+                            <option data-code="+91" value="IN" label="India">India</option>
+                            <option data-code="+62" value="ID" label="Indonesia">Indonesia</option>
+                            <option data-code="+98" value="IR" label="Iran">Iran</option>
+                            <option data-code="+964" value="IQ" label="Iraq">Iraq</option>
+                            <option data-code="+972" value="IL" label="Israel">Israel</option>
+                            <option data-code="+81" value="JP" label="Japan">Japan</option>
+                            <option data-code="+962" value="JO" label="Jordan">Jordan</option>
+                            <option data-code="+996" value="KZ" label="Kazakhstan">Kazakhstan</option>
+                            <option data-code="+965" value="KW" label="Kuwait">Kuwait</option>
+                            <option data-code="+966" value="KG" label="Kyrgyzstan">Kyrgyzstan</option>
+                            <option data-code="+856" value="LA" label="Laos">Laos</option>
+                            <option data-code="+961" value="LB" label="Lebanon">Lebanon</option>
+                            <option data-code="+" value="MO" label="Macau SAR China">Macau SAR China</option>
+                            <option data-code="+60" value="MY" label="Malaysia">Malaysia</option>
+                            <option data-code="+960" value="MV" label="Maldives">Maldives</option>
+                            <option data-code="+976" value="MN" label="Mongolia">Mongolia</option>
+                            <option data-code="+95" value="MM" label="Myanmar [Burma]">Myanmar [Burma]</option>
+                            <option data-code="+977" value="NP" label="Nepal">Nepal</option>
+                            <option data-code="+" value="NT" label="Neutral Zone">Neutral Zone</option>
+                            <option data-code="+850" value="KP" label="North Korea">North Korea</option>
+                            <option data-code="+968" value="OM" label="Oman">Oman</option>
+                            <option data-code="+92" value="PK" label="Pakistan">Pakistan</option>
+                            <option data-code="+970" value="PS" label="Palestinian Territories">Palestinian Territories</option>
+                            <option data-code="+" value="YD" label="People's Democratic Republic of Yemen">People's Democratic Republic of Yemen</option>
+                            <option data-code="+63" value="PH" label="Philippines">Philippines</option>
+                            <option data-code="+974" value="QA" label="Qatar">Qatar</option>
+                            <option data-code="+966" value="SA" label="Saudi Arabia">Saudi Arabia</option>
+                            <option data-code="+65" value="SG" label="Singapore">Singapore</option>
+                            <option data-code="+82" value="KR" label="South Korea">South Korea</option>
+                            <option data-code="+94" value="LK" label="Sri Lanka">Sri Lanka</option>
+                            <option data-code="+963" value="SY" label="Syria">Syria</option>
+                            <option data-code="+886" value="TW" label="Taiwan">Taiwan</option>
+                            <option data-code="+922" value="TJ" label="Tajikistan">Tajikistan</option>
+                            <option data-code="+66" value="TH" label="Thailand">Thailand</option>
+                            <option data-code="+" value="TL" label="Timor-Leste">Timor-Leste</option>
+                            <option data-code="+90" value="TR" label="Turkey">Turkey</option>
+                            <option data-code="+933" value="™" label="Turkmenistan">Turkmenistan</option>
+                            <option data-code="+971" value="AE" label="United Arab Emirates">United Arab Emirates</option>
+                            <option data-code="+988" value="UZ" label="Uzbekistan">Uzbekistan</option>
+                            <option data-code="+84" value="VN" label="Vietnam">Vietnam</option>
+                            <option data-code="+967" value="YE" label="Yemen">Yemen</option>
                             </optgroup>
                             <optgroup id="country-optgroup-Europe" label="Europe">
-                            <option value="AL" label="Albania">Albania</option>
-                            <option value="AD" label="Andorra">Andorra</option>
-                            <option value="AT" label="Austria">Austria</option>
-                            <option value="BY" label="Belarus">Belarus</option>
-                            <option value="BE" label="Belgium">Belgium</option>
-                            <option value="BA" label="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                            <option value="BG" label="Bulgaria">Bulgaria</option>
-                            <option value="HR" label="Croatia">Croatia</option>
-                            <option value="CY" label="Cyprus">Cyprus</option>
-                            <option value="CZ" label="Czech Republic">Czech Republic</option>
-                            <option value="DK" label="Denmark">Denmark</option>
-                            <option value="DD" label="East Germany">East Germany</option>
-                            <option value="EE" label="Estonia">Estonia</option>
-                            <option value="FO" label="Faroe Islands">Faroe Islands</option>
-                            <option value="FI" label="Finland">Finland</option>
-                            <option value="FR" label="France">France</option>
-                            <option value="DE" label="Germany">Germany</option>
-                            <option value="GI" label="Gibraltar">Gibraltar</option>
-                            <option value="GR" label="Greece">Greece</option>
-                            <option value="GG" label="Guernsey">Guernsey</option>
-                            <option value="HU" label="Hungary">Hungary</option>
-                            <option value="IS" label="Iceland">Iceland</option>
-                            <option value="IE" label="Ireland">Ireland</option>
-                            <option value="IM" label="Isle of Man">Isle of Man</option>
-                            <option value="IT" label="Italy">Italy</option>
-                            <option value="JE" label="Jersey">Jersey</option>
-                            <option value="LV" label="Latvia">Latvia</option>
-                            <option value="LI" label="Liechtenstein">Liechtenstein</option>
-                            <option value="LT" label="Lithuania">Lithuania</option>
-                            <option value="LU" label="Luxembourg">Luxembourg</option>
-                            <option value="MK" label="Macedonia">Macedonia</option>
-                            <option value="MT" label="Malta">Malta</option>
-                            <option value="FX" label="Metropolitan France">Metropolitan France</option>
-                            <option value="MD" label="Moldova">Moldova</option>
-                            <option value="MC" label="Monaco">Monaco</option>
-                            <option value="ME" label="Montenegro">Montenegro</option>
-                            <option value="NL" label="Netherlands">Netherlands</option>
-                            <option value="NO" label="Norway">Norway</option>
-                            <option value="PL" label="Poland">Poland</option>
-                            <option value="PT" label="Portugal">Portugal</option>
-                            <option value="RO" label="Romania">Romania</option>
-                            <option value="RU" label="Russia">Russia</option>
-                            <option value="SM" label="San Marino">San Marino</option>
-                            <option value="RS" label="Serbia">Serbia</option>
-                            <option value="CS" label="Serbia and Montenegro">Serbia and Montenegro</option>
-                            <option value="SK" label="Slovakia">Slovakia</option>
-                            <option value="SI" label="Slovenia">Slovenia</option>
-                            <option value="ES" label="Spain">Spain</option>
-                            <option value="SJ" label="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                            <option value="SE" label="Sweden">Sweden</option>
-                            <option value="CH" label="Switzerland">Switzerland</option>
-                            <option value="UA" label="Ukraine">Ukraine</option>
-                            <option value="SU" label="Union of Soviet Socialist Republics">Union of Soviet Socialist Republics</option>
-                            <option value="GB" label="United Kingdom">United Kingdom</option>
-                            <option value="VA" label="Vatican City">Vatican City</option>
-                            <option value="AX" label="Åland Islands">Åland Islands</option>
+                            <option data-code="+355" value="AL" label="Albania">Albania</option>
+                            <option data-code="+376" value="AD" label="Andorra">Andorra</option>
+                            <option data-code="+43" value="AT" label="Austria">Austria</option>
+                            <option data-code="+375" value="BY" label="Belarus">Belarus</option>
+                            <option data-code="+32" value="BE" label="Belgium">Belgium</option>
+                            <option data-code="+387" value="BA" label="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option data-code="+359" value="BG" label="Bulgaria">Bulgaria</option>
+                            <option data-code="+385" value="HR" label="Croatia">Croatia</option>
+                            <option data-code="+357" value="CY" label="Cyprus">Cyprus</option>
+                            <option data-code="+420" value="CZ" label="Czech Republic">Czech Republic</option>
+                            <option data-code="+45" value="DK" label="Denmark">Denmark</option>
+                            <option data-code="+" value="DD" label="East Germany">East Germany</option>
+                            <option data-code="+372" value="EE" label="Estonia">Estonia</option>
+                            <option data-code="+298" value="FO" label="Faroe Islands">Faroe Islands</option>
+                            <option data-code="+358" value="FI" label="Finland">Finland</option>
+                            <option data-code="+33" value="FR" label="France">France</option>
+                            <option data-code="+49" value="DE" label="Germany">Germany</option>
+                            <option data-code="+350" value="GI" label="Gibraltar">Gibraltar</option>
+                            <option data-code="+30" value="GR" label="Greece">Greece</option>
+                            <option data-code="+441481" value="GG" label="Guernsey">Guernsey</option>
+                            <option data-code="+36" value="HU" label="Hungary">Hungary</option>
+                            <option data-code="+354" value="IS" label="Iceland">Iceland</option>
+                            <option data-code="+353" value="IE" label="Ireland">Ireland</option>
+                            <option data-code="+441624" value="IM" label="Isle of Man">Isle of Man</option>
+                            <option data-code="+39" value="IT" label="Italy">Italy</option>
+                            <option data-code="+441534" value="JE" label="Jersey">Jersey</option>
+                            <option data-code="+371" value="LV" label="Latvia">Latvia</option>
+                            <option data-code="+423" value="LI" label="Liechtenstein">Liechtenstein</option>
+                            <option data-code="+370" value="LT" label="Lithuania">Lithuania</option>
+                            <option data-code="+352" value="LU" label="Luxembourg">Luxembourg</option>
+                            <option data-code="+389" value="MK" label="Macedonia">Macedonia</option>
+                            <option data-code="+356" value="MT" label="Malta">Malta</option>
+                            <option data-code="+" value="FX" label="Metropolitan France">Metropolitan France</option>
+                            <option data-code="+373" value="MD" label="Moldova">Moldova</option>
+                            <option data-code="+377" value="MC" label="Monaco">Monaco</option>
+                            <option data-code="+382" value="ME" label="Montenegro">Montenegro</option>
+                            <option data-code="+31" value="NL" label="Netherlands">Netherlands</option>
+                            <option data-code="+47" value="NO" label="Norway">Norway</option>
+                            <option data-code="+48" value="PL" label="Poland">Poland</option>
+                            <option data-code="+351" value="PT" label="Portugal">Portugal</option>
+                            <option data-code="+40" value="RO" label="Romania">Romania</option>
+                            <option data-code="+7" value="RU" label="Russia">Russia</option>
+                            <option data-code="+" value="SM" label="San Marino">San Marino</option>
+                            <option data-code="+381" value="RS" label="Serbia">Serbia</option>
+                            <option data-code="+" value="CS" label="Serbia and Montenegro">Serbia and Montenegro</option>
+                            <option data-code="+421" value="SK" label="Slovakia">Slovakia</option>
+                            <option data-code="+386" value="SI" label="Slovenia">Slovenia</option>
+                            <option data-code="+34" value="ES" label="Spain">Spain</option>
+                            <option data-code="+47" value="SJ" label="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                            <option data-code="+46" value="SE" label="Sweden">Sweden</option>
+                            <option data-code="+41" value="CH" label="Switzerland">Switzerland</option>
+                            <option data-code="+380" value="UA" label="Ukraine">Ukraine</option>
+                            <option data-code="+" value="SU" label="Union of Soviet Socialist Republics">Union of Soviet Socialist Republics</option>
+                            <option data-code="+" value="GB" label="United Kingdom">United Kingdom</option>
+                            <option data-code="+" value="VA" label="Vatican City">Vatican City</option>
+                            <option data-code="+" value="AX" label="Åland Islands">Åland Islands</option>
                             </optgroup>
                             <optgroup id="country-optgroup-Oceania" label="Oceania">
-                            <option value="AS" label="American Samoa">American Samoa</option>
-                            <option value="AQ" label="Antarctica">Antarctica</option>
-                            <option value="AU" label="Australia">Australia</option>
-                            <option value="BV" label="Bouvet Island">Bouvet Island</option>
-                            <option value="IO" label="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                            <option value="CX" label="Christmas Island">Christmas Island</option>
-                            <option value="CC" label="Cocos [Keeling] Islands">Cocos [Keeling] Islands</option>
-                            <option value="CK" label="Cook Islands">Cook Islands</option>
-                            <option value="FJ" label="Fiji">Fiji</option>
-                            <option value="PF" label="French Polynesia">French Polynesia</option>
-                            <option value="TF" label="French Southern Territories">French Southern Territories</option>
-                            <option value="GU" label="Guam">Guam</option>
-                            <option value="HM" label="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
-                            <option value="KI" label="Kiribati">Kiribati</option>
-                            <option value="MH" label="Marshall Islands">Marshall Islands</option>
-                            <option value="FM" label="Micronesia">Micronesia</option>
-                            <option value="NR" label="Nauru">Nauru</option>
-                            <option value="NC" label="New Caledonia">New Caledonia</option>
-                            <option value="NZ" label="New Zealand">New Zealand</option>
-                            <option value="NU" label="Niue">Niue</option>
-                            <option value="NF" label="Norfolk Island">Norfolk Island</option>
-                            <option value="MP" label="Northern Mariana Islands">Northern Mariana Islands</option>
-                            <option value="PW" label="Palau">Palau</option>
-                            <option value="PG" label="Papua New Guinea">Papua New Guinea</option>
-                            <option value="PN" label="Pitcairn Islands">Pitcairn Islands</option>
-                            <option value="WS" label="Samoa">Samoa</option>
-                            <option value="SB" label="Solomon Islands">Solomon Islands</option>
-                            <option value="GS" label="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
-                            <option value="TK" label="Tokelau">Tokelau</option>
-                            <option value="TO" label="Tonga">Tonga</option>
-                            <option value="TV" label="Tuvalu">Tuvalu</option>
-                            <option value="UM" label="U.S. Minor Outlying Islands">U.S. Minor Outlying Islands</option>
-                            <option value="VU" label="Vanuatu">Vanuatu</option>
-                            <option value="WF" label="Wallis and Futuna">Wallis and Futuna</option>
+                            <option data-code="+1648" value="AS" label="American Samoa">American Samoa</option>
+                            <option data-code="+672" value="AQ" label="Antarctica">Antarctica</option>
+                            <option data-code="+61" value="AU" label="Australia">Australia</option>
+                            <option data-code="+" value="BV" label="Bouvet Island">Bouvet Island</option>
+                            <option data-code="+246" value="IO" label="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                            <option data-code="+61" value="CX" label="Christmas Island">Christmas Island</option>
+                            <option data-code="+61" value="CC" label="Cocos [Keeling] Islands">Cocos [Keeling] Islands</option>
+                            <option data-code="+682" value="CK" label="Cook Islands">Cook Islands</option>
+                            <option data-code="+679" value="FJ" label="Fiji">Fiji</option>
+                            <option data-code="+689" value="PF" label="French Polynesia">French Polynesia</option>
+                            <option data-code="+" value="TF" label="French Southern Territories">French Southern Territories</option>
+                            <option data-code="+1671" value="GU" label="Guam">Guam</option>
+                            <option data-code="+" value="HM" label="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+                            <option data-code="+686" value="KI" label="Kiribati">Kiribati</option>
+                            <option data-code="+692" value="MH" label="Marshall Islands">Marshall Islands</option>
+                            <option data-code="+691" value="FM" label="Micronesia">Micronesia</option>
+                            <option data-code="+674" value="NR" label="Nauru">Nauru</option>
+                            <option data-code="+687" value="NC" label="New Caledonia">New Caledonia</option>
+                            <option data-code="+64" value="NZ" label="New Zealand">New Zealand</option>
+                            <option data-code="+683" value="NU" label="Niue">Niue</option>
+                            <option data-code="+" value="NF" label="Norfolk Island">Norfolk Island</option>
+                            <option data-code="+1670" value="MP" label="Northern Mariana Islands">Northern Mariana Islands</option>
+                            <option data-code="+680" value="PW" label="Palau">Palau</option>
+                            <option data-code="+675" value="PG" label="Papua New Guinea">Papua New Guinea</option>
+                            <option data-code="+" value="PN" label="Pitcairn Islands">Pitcairn Islands</option>
+                            <option data-code="+" value="WS" label="Samoa">Samoa</option>
+                            <option data-code="+677" value="SB" label="Solomon Islands">Solomon Islands</option>
+                            <option data-code="+" value="GS" label="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+                            <option data-code="+690" value="TK" label="Tokelau">Tokelau</option>
+                            <option data-code="+676" value="TO" label="Tonga">Tonga</option>
+                            <option data-code="+688" value="TV" label="Tuvalu">Tuvalu</option>
+                            <option data-code="+" value="UM" label="U.S. Minor Outlying Islands">U.S. Minor Outlying Islands</option>
+                            <option data-code="+678" value="VU" label="Vanuatu">Vanuatu</option>
+                            <option data-code="+681" value="WF" label="Wallis and Futuna">Wallis and Futuna</option>
                             </optgroup>
                             </select>
 				
@@ -439,5 +439,7 @@ include 'form_handlers/login.php';
      <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="assets/js/register.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/phoneCode.js"></script>
+
 </body>
 </html>

@@ -5,13 +5,14 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: Raleway;
     font-weight: 300;
-    color: #333;
+    color: #ffffff;
 	
 }
 p {
     line-height: 28px;
     margin-bottom: 25px;
-    font-size: 18px;
+    /*font-size: 18px;*/
+        font-size: 13px;
 }
 .centered {
     text-align: center;
@@ -163,7 +164,11 @@ hr {
 
 /* hena */
 #theMenu a{
-    color: #98c913;
+    color: #ffffff;
+}
+
+#theMenu a:hover{
+    color: #9acc14 !important;
 }
 
 #theMenu a:hover{
@@ -622,7 +627,7 @@ hr {
 }
 #donate .contact_form
 {
-background-color:#98C913;	
+background-color:#1e2125;	
 }
 #donate .contact_form input,#donate .contact_form textarea
 {

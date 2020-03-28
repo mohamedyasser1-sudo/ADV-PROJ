@@ -29,7 +29,12 @@ img{max-width:100%;}
 /*--end reset--*/
 body {
     font-family: 'Athiti', sans-serif;
-background-color: #f2f3f5;
+/*background-color: #f2f3f5;*/
+  background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
 }
 h1 {
     font-size: 3em;
@@ -85,7 +90,7 @@ h1 {
 	-o-box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
 	-ms-box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
     box-shadow: 9px 9px 10px 1px rgba(12, 46, 49, 0.76);
-	background-color: #98c913;
+	background-color: #1e2125;
     border-color: #151515;
 } 
  
@@ -131,7 +136,7 @@ h1 {
     text-align: center;
     margin: 0 0 1em;
 	font-weight: 900 !important;
-	color: #373b39 !important;
+	color: #ffffff !important;
 }
 
 .signin-form input[type="text"], .signin-form input[type="password"], .signin-form input[type="email"], .signin-form input[type="number"] {
@@ -222,7 +227,7 @@ h1 {
 /*-- //checkbox --*/
 .signin-form button 
 {
-	background-color:#373b39 !important;
+	background-color:#1e2125 !important;
 	color:white;
 	transition:background-color;
 	font-size: 1em;border: 1px solid #e89406;
@@ -292,7 +297,7 @@ h1 {
 }
 .signin-form button:hover
 {
-	background-color:black !important;
+	background-color: rgba(154,204,20,.1) !important;
 }
 
 .signin-form h4{
@@ -301,7 +306,7 @@ h1 {
 .signin-form a
 {
     text-align: center;
-	color:#373b39 !important;
+	color:#ffffff !important;
 	transition: .5s all;
 	-webkit-transition: .5s all;
     -moz-transition: .5s all;
@@ -310,7 +315,7 @@ h1 {
 }
 .signin-form a:hover
 {
-	color:black !important;
+	color: #9acc14 !important;
 }
 /*-- //Buttons & Links --*/ 
 /*-- sign in-bottom --*/
@@ -603,6 +608,6 @@ h1 {
 
 .form-signin
 {
-	background-color:#98C913 !important;
+	background-color:#1e2125 !important;
 }
 /*-- //responsive-design --*/

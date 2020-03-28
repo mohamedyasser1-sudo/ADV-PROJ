@@ -17,7 +17,7 @@ if(isset($_SESSION['email'])){
 		mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
 		if(mysqli_stmt_num_rows($stmt) != 1 ){
-			$message = "your information is not correct please write the correct information or <a href='signup.php'>Sign Up</a>";
+			$message = "your information is not correct please write the correct information or <a href='index.php#home'>Sign Up</a>";
 		}
 
 		else{

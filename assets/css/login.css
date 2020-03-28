@@ -237,7 +237,7 @@ body {
 	padding: 0;
 	margin: 0;
 	/*background: #fff;*/
-	background-color: #f2f3f5;
+	/*background-color: #f2f3f5;*/
 font-family: 'Open Sans', sans-serif;
 }
 
@@ -306,16 +306,21 @@ ul {
 body {
     box-sizing: border-box;
     /*background: #f1f1f1;*/
-    background-color: #f2f3f5;
+    /*background-color: #f2f3f5;*/
     min-height: 90vh;
+      background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
 	
 }
 .w3layouts-two-grids {
       width: 80%;
     margin: 0em auto;
-    -webkit-box-shadow:-2px 7px 37px 8px rgba(167, 167, 167, 0.52);
+   /* -webkit-box-shadow:-2px 7px 37px 8px rgba(167, 167, 167, 0.52);
     -moz-box-shadow:-2px 7px 37px 8px rgba(167, 167, 167, 0.52);
-    box-shadow:-2px 7px 37px 8px rgba(167, 167, 167, 0.52);
+    box-shadow:-2px 7px 37px 8px rgba(167, 167, 167, 0.52);*/
 }
 .mid-class{
 display: -webkit-flex;
@@ -332,13 +337,15 @@ h1.error {
     text-transform: uppercase;
 }
 .img-right-side, .txt-left-side {
-    flex-basis: 50%;
-    -webkit-flex-basis: 50%;
+    flex-basis: 65%;
+    -webkit-flex-basis: 65%;
     box-sizing: border-box;
     text-align: center;
+        margin: 0 auto;
 }
 .img-right-side {
     background: #fff;
+        display: none;
 
 }
 .txt-left-side {
@@ -411,7 +418,7 @@ h1.error {
 }
 button[type=submit] {
     /*background: #000000;*/
-	background: #f44336;
+	background: #1e2125;
     outline: none;
     color: #fff;
     font-size: 14px;
@@ -870,7 +877,7 @@ h1.error {
 }
 #txt-left-side
 {
-	background-color:#98C913 !important;
+	background-color:#1e2125 !important;
 	
 }
 #txt-left-side h2,txt-left-sideh3 {
@@ -878,7 +885,7 @@ h1.error {
     text-align: center;
     margin: 0 0 1em;
 	font-weight: 900 !important;
-	color: #373b39 !important;
+	color: #ffffff !important;
 }
 #txt-left-side input[type="password"],#txt-left-side input[type="email"] 
 {
@@ -888,9 +895,10 @@ h1.error {
 }
 #txt-left-side button
 {
-background-color:#373b39 !important;
+background-color:#1e2125 !important;
 color:white;
 transition:background-color;
+    border: 1px solid #9acc14;
 }
 .form-left-to-w3l span
 {
@@ -906,11 +914,12 @@ transition:background-color;
 }
 #txt-left-side a:hover
 {
-	color:#373b39 !important;
+	color:rgb(154,204,20) !important;
+
 }
 #txt-left-side button:hover
 {
-	background-color:black !important;
+        background-color: rgba(154,204,20,.1) !important;
 }
 #img-right-side img
 {

@@ -153,7 +153,7 @@ h6 a:hover {
 }
 
 a {
-    color: #222222;
+    color: #ffffff;
     text-decoration: none;
     outline: none;
 }
@@ -538,7 +538,8 @@ li.social-links a {
 }
 
 #main-banner .camera_caption > div {
-    background: transparent;
+    /*background: transparent;*/
+    background: rgba(154,204,20,.1);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1271,7 +1272,7 @@ li.social-links a {
 }
 
 .participate-wrap figure figcaption .global-radius{
-	background: #ffffff;
+	background: #1e2125;
 	width: 38px;
 	height: 38px;
 	display: inline-block;
@@ -1371,7 +1372,8 @@ li.social-links a {
 }
 
 .section.wb .hover-up h3{
-	font-size: 32px;
+	/*font-size: 32px;*/
+    font-size: 16px;
 	color: #ffffff;
 }
 
@@ -2545,7 +2547,7 @@ select.mobile-device {
     padding: 10px 40px;
     font-size: 18px;
     border: 2px solid #ffffff !important;
-    color: #ffffff;
+    color: #9acc14 !important;
     background-color: transparent;
 }
 

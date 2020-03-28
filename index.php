@@ -90,9 +90,9 @@ include 'connect/connect.php';
 			<h1 id="logoHov" class="logo"><a href="index.html#home">LINK</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
 			<a href="index.php">Home</a>
-			<a data-value="howwork" href="#">How Work</a>
-			<a data-value="about" href="#">About</a> 
-			<a data-value="contact" href="#">Contact</a>
+			<a data-value="howwork" href="index.php#howwork">How Work</a>
+			<a data-value="about" href="index.php#about">About</a> 
+			<a data-value="contact" href="index.php#contact">Contact</a>
 			<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-dribbble"></i></a>
@@ -118,7 +118,7 @@ include 'connect/connect.php';
     
     
 	<div id="main-banner" class="banner-one" data-scroll-index="0">
-		<div data-src="assets/uploads/slide-6.jpg">
+		<div data-src="assets/uploads/slide-2.jpg">
 			<div class="camera_caption">
 				<div class="container">
 				                <?php if(isset($_SESSION['email'])): ?>

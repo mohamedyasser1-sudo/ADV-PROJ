@@ -3,13 +3,20 @@
 }
 
 body.politics_version .icon_wrap:hover, body.politics_version .nav-pills > li.active > a, body.politics_version .nav-pills > li.active > a:focus, body.politics_version .nav-pills > li.active > a:hover, body.politics_version .icon-wrapper:hover i, body.politics_version .grd1 {
-        background: #98c913;
+        background: none;
+            border: 2px solid #9acc14 !important;
 }
 
 
 body.politics_version .icon_wrap, body.politics_version .dmtop:hover, body.politics_version .cac:hover, body.politics_version .features-right li:hover i, body.politics_version .features-left li:hover i, body.politics_version .nav-pills > li:hover > a, body.politics_version .nav-pills > li:focus > a, body.politics_version .nav-pills > li.active > a, body.politics_version .nav-pills > li.active > a:focus, body.politics_version .nav-pills > li.active > a:hover, body.politics_version .divider-bar, body.politics_version .owl-next:hover i, body.politics_version .owl-prev:hover i, body.politics_version .icon-wrapper:hover i:hover, body.politics_version .grd1:hover, body.politics_version .grd1:focus {
        
-     background: #d3d3d3;
+
+         background-color: rgba(154,204,20,.1);
+}
+
+
+body.politics_version .dmtop:hover {
+    background-color: rgb(154,204,20);
 }
 
 #main-banner.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent {
@@ -22,12 +29,12 @@ body.politics_version .participate-wrap small, body.politics_version .message-bo
 }
 
 .hover-up {
-    background: #98c913;
+    background-color: rgb(154,204,20);
 }
 
 
 .hoverbutton {
-    background-color: #d3d3d3;
+    background-color: #1e2125;
 
 }
 
@@ -48,7 +55,8 @@ body.politics_version .participate-wrap small, body.politics_version .message-bo
 }
 
 .test span a:hover {
-    color: #98c913 !important;
+    color: #9acc14 !important;
+}
 }
 
 .menu h1.logo a:hover {
@@ -61,7 +69,7 @@ body.politics_version .lead strong, body.politics_version .icon-wrapper:hover a,
 
 
 .dmtop {
-    background-color: #98c913;
+    background-color: #1e2125;
 }
 
 
@@ -113,15 +121,6 @@ body.politics_version .lead strong, body.politics_version .icon-wrapper:hover a,
 }
 
 
-button[type=submit] {
-    background: #98c913;
-}
-
-button[type=submit]:hover {
-   
-    background: #98c913;
-}
-
 .section.db {
     background-color: #f2f3f5;
 }
@@ -142,7 +141,7 @@ body.politics_version .contact_form .form-control {
 }
 
 body.politics_version .copyrights {
-    background-color: #3f3b3b;
+    background-color: #1e2125;
     
 }
 
@@ -153,3 +152,14 @@ body.politics_version .copyrights {
 .footer-distributed .footer-company-name a:hover {
     color: #98c913;
 }
+
+
+.txt2 {
+        color: wheat;
+}
+
+@media (min-width: 768px) {
+.col-sm-3 {
+    width: 32% ;
+}}
+

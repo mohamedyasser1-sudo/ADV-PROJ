@@ -436,10 +436,13 @@ include 'form_handlers/login.php';
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-     <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/loadingOverlayScript.js"></script>
+    <script src="assets/js/loadingoverlay.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="assets/js/register_Adver.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/phoneCodea.js"></script>
+
 
 </body>
 </html>

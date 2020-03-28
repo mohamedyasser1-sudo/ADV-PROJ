@@ -37,9 +37,12 @@ include 'form_handlers/login.php';
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-    
+    <link rel="stylesheet" href="theme/any-theme.css">
     <script src="assets/js/modernizr.custom.js"></script>
-     <link rel="stylesheet" href="theme/any-theme.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/loadingOverlayScript.js"></script>
+    <script src="assets/js/loadingoverlay.min.js"></script>
+     
 
 </head>
 
@@ -120,7 +123,7 @@ include 'form_handlers/login.php';
 	        <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
     <script src="assets/js/main.js"></script>
 </body>
 

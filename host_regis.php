@@ -15,7 +15,8 @@ include 'form_handlers/login.php';
 <!-- jS --> 
 <script src="assets/js/jquery.min.js"></script> 
 <script src="assets/js/script.js"></script> 
-
+<script src="assets/js/loadingOverlayScript.js"></script>
+<script src="assets/js/loadingoverlay.min.js"></script>
 <!-- //js -->
 
 
@@ -436,11 +437,12 @@ include 'form_handlers/login.php';
 	      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-     <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+ 
+    <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="assets/js/register.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/phoneCode.js"></script>
+
 
 </body>
 </html>

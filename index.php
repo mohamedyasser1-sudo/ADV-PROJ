@@ -438,6 +438,8 @@ include 'connect/connect.php';
     <!-- ALL PLUGINS -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/jquery.vide.js"></script>
+    <script src="assets/js/loadingOverlayScript.js"></script>
+    <script src="assets/js/loadingoverlay.min.js"></script>
 
 </body>
 </html>

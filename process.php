@@ -21,8 +21,19 @@ class process_advertisment{
 		    if($this->get_last_data_of_click_on_advertisment() != false):
                 $result =$this->get_last_data_of_click_on_advertisment();
                 $row    = $result->fetch_assoc(); 
+                $obtainedClicks = $row['total'];
+
+            $notcountquery=mysqli_query($this->conn,"SELECT * FROM advertise WHERE id = '".$this->real_id_of_advertisment."' " );
+            $count = mysqli_num_rows($notcountquery);
+            $stopcount = mysqli_fetch_array($notcountquery);
+            $count = $stopcount['clicks']; 
+          		if($obtainedClicks < $count ){  
                 $this->update_value_with_new_click($row);
-                
+          			echo $count;
+                }else{
+                	header("location:notvalidlink.php");
+                }
+
 		    else:
 		    	$this->insert_value_with_new_click();
 		    endif;
@@ -97,8 +108,9 @@ class process_advertisment{
 	        $this->hosts = json_encode($array_of_host);
 	        /*check if count of hosts allow to add hosts in table*/
             $this->count_of_hosts = count($array_of_host);
-	     	$insertsql   = "INSERT INTO $this->table_name (adv_id,parts,hosts)
-	     	  VALUES ('$this->real_id_of_advertisment','$this->count_of_hosts','$this->hosts')";
+            $date = date("Y-m-d H:i:s");
+	     	$insertsql   = "INSERT INTO $this->table_name (adv_id,parts,hosts,total,date)
+	     	  VALUES ('$this->real_id_of_advertisment','$this->count_of_hosts','$this->hosts',total+1,'$date')";
 		    $result       = mysqli_query($this->conn,$insertsql);
 			if($result):
 			   $order_id = mysqli_insert_id($this->conn);
@@ -114,7 +126,7 @@ class process_advertisment{
      function update_value_with_new_click($rows_data){
 	        $this->hosts = json_encode( $this->handle_hosts_before_update($rows_data));
 	        
-	     	$updatesql   = "UPDATE $this->table_name SET hosts='$this->hosts' , parts='$this->count_of_hosts' WHERE adv_id='$this->real_id_of_advertisment' ";
+	     	$updatesql   = "UPDATE $this->table_name SET hosts='$this->hosts' , parts='$this->count_of_hosts' , total = total+1 WHERE adv_id='$this->real_id_of_advertisment' ";
 		    $result      = mysqli_query($this->conn,$updatesql);
 			if($result):
 			   $order_id = mysqli_insert_id($this->conn);

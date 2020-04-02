@@ -4,6 +4,7 @@ jQuery.validator.addMethod("lettersonly", function(value, element) {
 }, "Enter a Valid Name"); 
 $('document').ready(function()
 {
+
     /* validation */
     $("#signin").validate({
         rules:
@@ -53,6 +54,7 @@ $('document').ready(function()
     /* form submit */
     function submitForm()
     {
+
         console.log("Inside Submit");
         var data = $("#signin").serialize();
 
@@ -90,7 +92,7 @@ $('document').ready(function()
                     /*setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("./user_dashboard/examples/index.php"); }); ',5000);
                     */
                     
-                    window.location = "login.php";
+                    window.location = "confirmMsg.php";
 
                     //alert("Good you registered")
 

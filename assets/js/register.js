@@ -101,7 +101,7 @@ $('document').ready(function()
                     /*setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("./user_dashboard/examples/index.php"); }); ',5000);
                     */
                     
-                    window.location = "login.php";
+                    window.location = "confirmMsg.php";
 
                     //alert("Good you registered")
 

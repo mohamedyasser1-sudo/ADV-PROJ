@@ -1,7 +1,6 @@
 <?php
+session_start();
 require_once 'dbconfig.php';
-
-
 if($_POST)
 {
         $username     = $_POST['usernamea'];
@@ -45,9 +44,9 @@ if($_POST)
             if($stmt->execute())
             {
                 echo "registered";
-              send_Verification_Code($user_email,$token);
-                 
-              
+                $_SESSION['registered'] = $username;
+              //   send_Verification_Code($user_email,$token);
+            
             }
             else
             {

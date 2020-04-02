@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'dbconfig.php';
 
 
@@ -42,6 +43,7 @@ if($_POST)
             if($stmt->execute())
             {
                 echo "registered";
+                $_SESSION['registered'] = $username;
             }
             else
             {

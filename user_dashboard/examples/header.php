@@ -193,7 +193,7 @@ switch ($userType) {
               <p>Ad History</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <!--<li class="nav-item ">
             <a class="nav-link" href="#">
               <i class="material-icons">notifications</i>
               <p>Statistics</p>
@@ -204,7 +204,7 @@ switch ($userType) {
               <i class="material-icons">notifications</i>
               <p>Setting</p>
             </a>
-          </li>
+          </li>-->
         </ul>
       </div>
     </div>

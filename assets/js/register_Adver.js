@@ -1,4 +1,4 @@
-console.log("Insidddeee Register JS");
+console.log("Insidddeee Register Advertis eJS");
 jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-z]+$/i.test(value);
 }, "Enter a Valid Name"); 
@@ -6,7 +6,7 @@ $('document').ready(function()
 {
 
     /* validation */
-    $("#signin").validate({
+    $("#signina").validate({
         rules:
         {
             usernamea: {
@@ -47,16 +47,27 @@ $('document').ready(function()
             },
             second_namea:{required:"Enter a Valid Name"}
         },
-        submitHandler: submitForm
+        submitHandler: submitForma
     });
     /* validation */
 
     /* form submit */
-    function submitForm()
+    function submitForma()
     {
 
+
+second_namea=document.getElementById('second_namea').value;
+    var regExa = /^[a-zA-Z]$/;
+
+    if((regExa.test(second_namea)==true))
+    {
+    }
+    else
+    {
+       // window.alert("h");
+    }
         console.log("Inside Submit");
-        var data = $("#signin").serialize();
+        var data = $("#signina").serialize();
 
         $.ajax({
 
@@ -72,6 +83,8 @@ $('document').ready(function()
             {
                 console.log("success");
                 console.log(data);
+             window.location = "confirmMsg.php";
+
                 if(data==1){
 
                     $("#error").fadeIn(1000, function(){

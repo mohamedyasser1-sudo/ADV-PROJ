@@ -121,7 +121,7 @@ include 'form_handlers/login.php';
 	
 			<!-- //Sign In Form -->
 			<!-- Sign up Form-->
-			<form class="form-signin" method="post" id="signin">
+			<form class="form-signin" method="post" id="signina">
 				<h3>Register as Advertise</h3>
 				
 				<input type="text" name="usernamea" id="usernamea"  placeholder="User Name" />

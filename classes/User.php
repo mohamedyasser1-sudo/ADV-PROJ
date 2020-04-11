@@ -128,9 +128,17 @@ class User {
 	}
 
 	public function getAdminHistoryAdsNum($conn){
-	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status='finished'");
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=3");
 	$num = mysqli_num_rows($result);
  	return  $num; 
+	}
+
+	public function getAdminHistoryAdsData($conn){
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=3");
+	while ($row = mysqli_fetch_array($result)){	
+		$array[]=$row;
+	}	
+ 	return  $array; 
 	}
 
 	public function getBlockedUsersNum($conn){
@@ -184,6 +192,28 @@ class User {
 	}	
  	return  $array; 
 	}
+
+	public function getUserEmail($conn,$id){
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE id = '$id'");
+	while ($row = mysqli_fetch_array($result)){	
+		$email=$row['email'];
+	}	
+ 	return  $email;
+	}
+
+	
+
+	public function getAdHostsClicks($conn,$adv_id){
+	$array = array();
+	$result=mysqli_query($conn,"SELECT * FROM clicks WHERE adv_id = '$adv_id'");
+	while ($row = mysqli_fetch_array($result)){	
+		$array[]=$row;
+	}	
+ 	return  $array;
+	}
+
+
+
 
 	public function getHostAdds($conn,$user_id){
 		$array = array();

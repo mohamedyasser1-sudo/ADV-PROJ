@@ -16,6 +16,7 @@ $verifyPagesNum=$adminobj->getHostPagesDataNum($conn);
 $blockednum = $adminobj->getBlockedUsersNum($conn);
 $currentAdsnum = $adminobj->getAdminCurrentAdsNum($conn);
 $historyAdsnum = $adminobj->getAdminHistoryAdsNum($conn);
+$historyAdsData = $adminobj->getAdminHistoryAdsData($conn);
 
 ?>
 <!DOCTYPE html>

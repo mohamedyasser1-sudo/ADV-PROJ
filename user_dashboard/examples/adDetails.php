@@ -141,7 +141,7 @@ $imagedir= "../../uploads/images/";
                 <div class="col-md-4">
                   <div class="form-group">
                     
-                    <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="<?= $decs2 ?>" disabled>
+                    <input type="text" name="desc2" id="adDesc2" class="form-control" placeholder="'.$desc2.'" disabled>
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ $imagedir= "../../uploads/images/";
                 </div>                
                 <div class="col-md-8">                 
                   <div class="custom-file-upload">
-                    <img src="<?= $imagedir.$image2; ?>">
+                    <img style="max-width: 100px; height: 100px;" src="'.$imagedir.$image2.'">
                   </div>
                 </div>
               </div>
@@ -170,7 +170,7 @@ $imagedir= "../../uploads/images/";
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">          
-                    <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="<?= $desc3; ?>" disabled>
+                    <input type="text" name="desc3" id="adDesc3" class="form-control" placeholder="'.$desc3.'" disabled>
                   </div>
                 </div>               
               </div>             
@@ -179,7 +179,7 @@ $imagedir= "../../uploads/images/";
                 </div>              
                 <div class="col-md-8">                 
                   <div class="custom-file-upload">
-                    <img src="<?= $imagedir.$image3; ?>">
+                    <img style="max-width: 100px; height: 100px;" src="'.$imagedir.$image3.'">
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ $imagedir= "../../uploads/images/";
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">          
-                    <input type="text" name="desc4" id="adDesc4" class="form-control" placeholder="<?= $desc4; ?>" disabled>
+                    <input type="text" name="desc4" id="adDesc4" class="form-control" placeholder="'.$desc4.'" disabled>
                   </div>
                 </div>               
               </div>             
@@ -207,7 +207,7 @@ $imagedir= "../../uploads/images/";
                 </div>              
                 <div class="col-md-8">                 
                   <div class="custom-file-upload">
-                    <img  src="<?= $imagedir.$image4; ?>">
+                    <img style="max-width: 100px; height: 100px;"  src="'.$imagedir.$image4.'">
                   </div>
                 </div>
               </div>

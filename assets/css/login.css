@@ -383,7 +383,7 @@ h1.error {
 	background-color: #1a1a1a;
     border: 1px solid #1a1a1a;
 }
-.form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"] {
+.form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"],.form-left-to-w3l input[type="text"] {
     -webkit-flex-basis: 90%;
     flex-basis: 90%;
     width: 100%;
@@ -665,7 +665,7 @@ h1.error {
     padding-top: 45px;
     margin-bottom: 34px;
 }
-.form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"] {
+.form-left-to-w3l input[type="email"], .form-left-to-w3l input[type="password"], .form-left-to-w3l input[type="text"] {
     padding: .5em .6em;	
 	}
 .form-left-to-w3l span {
@@ -887,7 +887,7 @@ h1.error {
 	font-weight: 900 !important;
 	color: #ffffff !important;
 }
-#txt-left-side input[type="password"],#txt-left-side input[type="email"] 
+#txt-left-side input[type="password"],#txt-left-side input[type="email"] ,#txt-left-side input[type="text"]
 {
 	background-color:white !important;
 	border-color:#b5b5b5 !important;

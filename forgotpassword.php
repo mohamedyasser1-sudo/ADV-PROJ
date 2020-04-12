@@ -4,9 +4,9 @@ include 'connect/connect.php';
 
 if (isset($_POST['send'])) {
     
-        $selector= bin2hex(random_bytes(8));
-        $token=random_bytes(6);
-        $expires = date("U") + 1800;
+        $selector = bin2hex(random_bytes(8));
+        $token    = random_bytes(6);
+        $expires  = date("U") + 1800;
 
   $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 

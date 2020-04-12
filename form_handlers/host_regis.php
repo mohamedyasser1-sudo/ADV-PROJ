@@ -44,7 +44,7 @@ if($_POST)
             {
                 echo "registered";
                 $_SESSION['registered'] = $username;
-                send_Welcome_Mail($user_email);
+                //send_Welcome_Mail($user_email);
             }
             else
             {

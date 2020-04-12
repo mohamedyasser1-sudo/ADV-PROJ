@@ -19,14 +19,14 @@
               
         if(mysqli_num_rows($res)==1)
             {    
-            $row = mysqli_fetch_assoc($res);
-            $userid=$row['userid'];
-            $email = $row['resetuser'];
+            // $row = mysqli_fetch_assoc($res);
+            // $userid=$row['userid'];
+            // $email = $row['resetuser'];
         if($password !== $repassword){
             $message= " your new passwords are not matched ";
         }else {    
 
-        $updatequery="UPDATE users SET password ='$password' WHERE id='$userid' AND username = '$email'";
+        $updatequery="UPDATE users SET password ='$password' WHERE email = '$email'";
         $updateres=mysqli_query($conn,$updatequery);
         if($updateres){
             $message= " you have successfully reset your password";

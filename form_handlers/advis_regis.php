@@ -45,7 +45,7 @@ if($_POST)
             {
                 echo "registered";
                 $_SESSION['registered'] = $username;
-              //   send_Verification_Code($user_email,$token);
+                send_Verification_Code($user_email,$token);
             
             }
             else

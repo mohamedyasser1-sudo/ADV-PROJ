@@ -8,7 +8,7 @@ if (isset($_POST['send'])) {
         $token=random_bytes(6);
         $expires = date("U") + 1800;
 
-  $email = $_POST['email'];
+  $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
   $query = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
   if(mysqli_num_rows($query) != 1){
@@ -17,7 +17,7 @@ if (isset($_POST['send'])) {
 $sql = mysqli_query($conn,"DELETE FROM passreset WHERE resetuser='$email'");
 $hashed_token = password_hash($token,PASSWORD_DEFAULT);
 $insertsql = mysqli_query($conn,"INSERT INTO `passreset`(`resetuser`, `resetselector`, `token`, `expires`) VALUES ('$email','$selector','$token','$expires')");
-$url="http://http://topad.net/test/ADV-PROJ/reset.php?selector= ".$selector."&email = ".$email."&validator=" .bin2hex($token);
+$url="http://http://topad.net/test/ADV-PROJ/reset.php?selector= ".$selector."&email=".$email."&validator=" .bin2hex($token);
 
  $to = $email;
  $subject= "Reset Your Password";
@@ -31,7 +31,6 @@ $headers .= "From: TopAD  <support@topad.net>"."\r\n";
     
 if(mail($to,$subject, $message,$headers))
 {
-    //header("Location:singggt.php");
      echo "Done";
 
 } 

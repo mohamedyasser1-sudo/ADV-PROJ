@@ -193,7 +193,7 @@ switch ($userType) {
               <p>Ad History</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <!--<li class="nav-item ">
             <a class="nav-link" href="#">
               <i class="material-icons">notifications</i>
               <p>Statistics</p>
@@ -204,7 +204,7 @@ switch ($userType) {
               <i class="material-icons">notifications</i>
               <p>Setting</p>
             </a>
-          </li>
+          </li>-->
         </ul>
       </div>
     </div>
@@ -236,7 +236,7 @@ switch ($userType) {
                   </p>
                 </a>
               </li>
-              <li class="nav-item dropdown">
+              <!--<li class="nav-item dropdown">
                 <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">5</span>
@@ -251,7 +251,7 @@ switch ($userType) {
                   <a class="dropdown-item" href="#">Another Notification</a>
                   <a class="dropdown-item" href="#">Another One</a>
                 </div>
-              </li>
+              </li>-->
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>

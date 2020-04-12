@@ -62,7 +62,7 @@ $('document').ready(function()
     }
     else
     {
-        window.alert("h");
+       // window.alert("h");
     }
         console.log("Inside Submit");
         var data = $("#signin").serialize();
@@ -82,7 +82,7 @@ $('document').ready(function()
                 console.log("success");
                 console.log(data);
                 if(data==1){
-
+ console.log("Inside 111111");
                     $("#error").fadeIn(1000, function(){
 
 
@@ -95,7 +95,7 @@ $('document').ready(function()
                 }
                 else if(data=="registered")
                 {
-
+ console.log("Inside 22222222");
                    // $("#btn-submit").html('Signing Up');
                     
                     /*setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("./user_dashboard/examples/index.php"); }); ',5000);
@@ -107,7 +107,7 @@ $('document').ready(function()
 
                 }
                 else{
-
+ console.log("Inside ELSE");
                     $("#error").fadeIn(1000, function(){
 
                         $("#error").html('<div class="alert alert-danger"><span class="glyphicon glyphicon-info-sign"></span>   '+data+' !</div>');

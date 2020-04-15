@@ -1,3 +1,7 @@
 .sidebar[data-color="purple"] li.active>a {
     background-color: #98c913;
 }
+
+.logo-normal img {
+	width: 60%
+}

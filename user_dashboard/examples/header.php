@@ -58,7 +58,7 @@ switch ($userType) {
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    TopAd
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -87,13 +87,13 @@ switch ($userType) {
     -->
       <div class="logo">
         <a href="index.php" class="simple-text logo-normal">
-          Logo
+          <img src="../assets/img/topAdLogo.png" alt="TopAd">
         </a>
       </div>
         
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item active ">
             <a class="nav-link" href="./index.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>

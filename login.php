@@ -6,15 +6,6 @@ include 'form_handlers/login.php';
 <html lang="en">
 <head>
     <title>Login</title>
-    <!-- Meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Allied Login Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
-    />
-    <script>
-        addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
-    </script>
-    <!-- Meta tags -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- //font-awesome icons -->
@@ -40,8 +31,9 @@ include 'form_handlers/login.php';
     <link rel="stylesheet" href="theme/any-theme.css">
     <script src="assets/js/modernizr.custom.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/loadingOverlayScript.js"></script>
-    <script src="assets/js/loadingoverlay.min.js"></script>
+    <!--<script src="assets/js/loadingOverlayScript.js"></script>
+    <script src="assets/js/loadingoverlay.min.js"></script>-->
+
      
 
 </head>

@@ -401,7 +401,7 @@ include 'connect/connect.php';
     <div class="copyrights">
         <div class="container">
             <div class="footer-distributed">
-                <div class="footer-left">
+                <div class="footer-left" id="footc">
                     <p class="footer-links">
                         <a href="#">Home</a>
                         <a href="#">Blog</a>
@@ -410,8 +410,7 @@ include 'connect/connect.php';
                         <a href="#">Faq</a>
                         <a href="#">Contact</a>
                     </p>
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2019 <a href="#">El Project</a> Developed By : 
-					<a href="https://html.design/">Team</a></p>
+                   
                 </div>
 
              
@@ -438,8 +437,9 @@ include 'connect/connect.php';
     <!-- ALL PLUGINS -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/jquery.vide.js"></script>
-    <script src="assets/js/loadingOverlayScript.js"></script>
-    <script src="assets/js/loadingoverlay.min.js"></script>
+
+    <!--<script src="assets/js/loadingOverlayScript.js"></script>
+    <script src="assets/js/loadingoverlay.min.js"></script>-->
 
 </body>
 </html>

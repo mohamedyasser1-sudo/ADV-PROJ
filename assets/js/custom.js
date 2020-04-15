@@ -168,6 +168,25 @@
     $('[data-toggle="tooltip"]').tooltip()
     $('[data-toggle="popover"]').popover()
 
+
+
+
+       var paraElem = document.createElement("p");
+       paraElem.setAttribute('class', 'footer-company-name');
+       paraElem.innerHTML = 'All Rights Reserved. © 2020 TopAd Developed By : ';
+       var ehabElem = document.createElement("a");
+       ehabElem.setAttribute('href', 'mailto:mohamedyasser71230@gmail.com');
+       ehabElem.innerHTML = 'Ehab El-Shamy';
+       var yasserElem = document.createElement("a");
+       yasserElem.setAttribute('href', 'mailto:mohamedyasser71230@gmail.com');
+       yasserElem.innerHTML = 'Mohamed Yasser';
+       paraElem.appendChild(ehabElem);
+       paraElem.innerHTML += ' And ';
+       paraElem.appendChild(yasserElem);
+       document.getElementById("footc").appendChild(paraElem);
+
+       
+
     /* ==============================================
      CONTACT -->
      =============================================== */
@@ -247,4 +266,8 @@
         });
     });
 
+
+
 })(jQuery);
+
+

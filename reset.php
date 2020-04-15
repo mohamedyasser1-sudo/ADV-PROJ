@@ -1,7 +1,7 @@
 <?php 
     
     if (!isset($_GET['validator'])) {
-        header("Location:index.php");
+      //  header("Location:index.php");
     }   
     include "connect/connect.php";
         $message   = " ";
@@ -83,7 +83,16 @@
     <script src="assets/js/loadingOverlayScript.js"></script>
     <script src="assets/js/loadingoverlay.min.js"></script>
      
+<style type="text/css">
+    
+    .plc::-webkit-input-placeholder {  color: #98c913;
+    font-family: cursive;   }
+.plc:-moz-placeholder { color: #98c913; font-family: cursive; }
+.plc::-moz-placeholder { color: #98c913; font-family: cursive; }
+.plc::-ms-input-placeholder { color: #98c913; font-family: cursive; }
 
+
+</style>
 </head>
 
 <body>
@@ -117,14 +126,14 @@
                 <form action="" method="post">
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                        <input type="text" name="code" placeholder="code" required="" value="">
+                        <input type="text" name="code" placeholder="code" required="" value="" class="plc">
                         <div class="clear"></div>
                     </div>
 
                     <div class="form-left-to-w3l">
                         <span class="fa fa-lock" aria-hidden="true"></span>
                         
-                        <input type="password" name="password" placeholder="password" required="" value="">
+                        <input type="password" name="password" placeholder="password" required="" value="" class="plc">
 
                         <div class="clear"></div>
                     </div>
@@ -132,7 +141,7 @@
                     <div class="form-left-to-w3l">
                         <span class="fa fa-lock" aria-hidden="true"></span>
                         
-                        <input type="password" name="repassword" placeholder="confirm password" required="" value="">
+                        <input type="password" name="repassword" placeholder="confirm password" required="" value="" class="plc">
 
                         <div class="clear"></div>
                     </div>

@@ -173,7 +173,7 @@ include 'connect/connect.php';
 
                 <div class="col-md-6">
                     <div class="post-media wow fadeIn">
-                        <img src="assets/uploads/about_05.jpg" alt="" class="img-responsive img-rounded">
+                        <img src="assets/uploads/placeholderimage.jpg" alt="" class="img-responsive img-rounded">
                         <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
                     </div><!-- end media -->
                 </div><!-- end col -->
@@ -186,8 +186,8 @@ include 'connect/connect.php';
                 <div class="col-md-6 col-sm-6 col-xs-12">
                    <div class="service-widget">
                         <div class="post-media_pp wow fadeIn">
-                            <a href="assets/uploads/politic_07.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                            <img src="assets/uploads/politic_07.jpg" alt="" class="img-responsive">
+                            <a href="assets/uploads/placeholderimage.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                            <img src="assets/uploads/placeholderimage.jpg" alt="" class="img-responsive">
 							<div class="hover-up">
 								<h3>Let's work for a better future</h3>
 								<p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, 
@@ -201,8 +201,8 @@ include 'connect/connect.php';
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="service-widget">
                         <div class="post-media_pp wow fadeIn">
-                            <a href="assets/uploads/politic_07.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                            <img src="assets/uploads/politic_07.jpg" alt="" class="img-responsive">
+                            <a href="assets/uploads/placeholderimage.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                            <img src="assets/uploads/placeholderimage.jpg" alt="" class="img-responsive">
 							<div class="hover-up">
 								<h3>Parliament building was renovated</h3>
 								<p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo 
@@ -233,8 +233,8 @@ include 'connect/connect.php';
                     <div class="participate-wrap">
                         <small>Proccess 1</small>
 						<figure>
-							<img src="assets/uploads/politic_08.jpg" alt="" class="img-responsive">
-							<figcaption><a href="assets/uploads/politic_08.jpg" data-rel="prettyPhoto[gal]" class="global-radius"><i class="flaticon-unlink"></i></a></figcaption>
+							<img src="assets/uploads/placeholderimage.jpg" alt="" class="img-responsive">
+							<figcaption><a href="assets/uploads/placeholderimage.jpg" data-rel="prettyPhoto[gal]" class="global-radius"><i class="flaticon-unlink"></i></a></figcaption>
 							
 						</figure>
 						<div class="event_dit">
@@ -249,8 +249,8 @@ include 'connect/connect.php';
                     <div class="participate-wrap">
                         <small>Proccess 2</small>
 						<figure>
-							<img src="assets/uploads/politic_08.jpg" alt="" class="img-responsive">
-							<figcaption><a href="assets/uploads/politic_08.jpg" data-rel="prettyPhoto[gal]" class="global-radius"> <i class="flaticon-unlink"></i> </a></figcaption>
+							<img src="assets/uploads/placeholderimage.jpg" alt="" class="img-responsive">
+							<figcaption><a href="assets/uploads/placeholderimage.jpg" data-rel="prettyPhoto[gal]" class="global-radius"> <i class="flaticon-unlink"></i> </a></figcaption>
 						</figure>
 						<div class="event_dit">
 							<h4>Integer facilisis elit</h4>
@@ -264,8 +264,8 @@ include 'connect/connect.php';
                     <div class="participate-wrap">
                         <small>Proccess 3</small>
                         <figure>
-							<img src="assets/uploads/politic_08.jpg" alt="" class="img-responsive">
-							<figcaption><a href="assets/uploads/politic_08.jpg" data-rel="prettyPhoto[gal]" class="global-radius"> <i class="flaticon-unlink"></i> </a></figcaption>
+							<img src="assets/uploads/placeholderimage.jpg" alt="" class="img-responsive">
+							<figcaption><a href="assets/uploads/placeholderimage.jpg" data-rel="prettyPhoto[gal]" class="global-radius"> <i class="flaticon-unlink"></i> </a></figcaption>
 						</figure>
                         <div class="event_dit">
 							<h4>Maecenas bibendum tellus</h4>
@@ -294,7 +294,7 @@ include 'connect/connect.php';
 				<div class="col-md-4 col-sm-6 col-lg-4">
 					<div class="post-box">
 						<div class="post-thumb">
-							<img src="assets/uploads/politic_09.jpg" class="img-responsive" alt="post-img" />
+							<img src="assets/uploads/placeholderimage.jpg" class="img-responsive" alt="post-img" />
 							<div class="date">
 								<span>06</span>
 								<span>Aug</span>
@@ -314,7 +314,7 @@ include 'connect/connect.php';
 				<div class="col-md-4 col-sm-6 col-lg-4">
 					<div class="post-box">
 						<div class="post-thumb">
-							<img src="assets/uploads/politic_09.jpg" class="img-responsive" alt="post-img" />
+							<img src="assets/uploads/placeholderimage.jpg" class="img-responsive" alt="post-img" />
 							<div class="date">
 								<span>06</span>
 								<span>Aug</span>
@@ -334,7 +334,7 @@ include 'connect/connect.php';
 				<div class="col-md-4 col-sm-6 col-lg-4">
 					<div class="post-box">
 						<div class="post-thumb">
-							<img src="assets/uploads/politic_09.jpg" class="img-responsive" alt="post-img" />
+							<img src="assets/uploads/placeholderimage.jpg" class="img-responsive" alt="post-img" />
 							<div class="date">
 								<span>06</span>
 								<span>Aug</span>

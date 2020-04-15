@@ -78,10 +78,18 @@ if(mail($to,$subject, $message,$headers))
     <link rel="stylesheet" href="theme/any-theme.css">
     <script src="assets/js/modernizr.custom.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/loadingOverlayScript.js"></script>
-    <script src="assets/js/loadingoverlay.min.js"></script>
+    <!--<script src="assets/js/loadingOverlayScript.js"></script>
+    <script src="assets/js/loadingoverlay.min.js"></script>-->
      
+<style type="text/css">
+    
+    #email::-webkit-input-placeholder {  color: #98c913;  font-family: cursive;  }
+#email:-moz-placeholder { color: #98c913; font-family: cursive; }
+#email::-moz-placeholder { color: #98c913; font-family: cursive; }
+#email::-ms-input-placeholder { color: #98c913; font-family: cursive; }
 
+
+</style>
 </head>
 
 <body>
@@ -112,10 +120,10 @@ if(mail($to,$subject, $message,$headers))
             <div class="txt-left-side" id="txt-left-side">
                 <h2> Forgot Your Password </h2>
                 <p>when you write your address below, you will recieve an email with how to reset your password </p>
-                <form action="" method="post">
+                <form action="" method="post" id="forgetpasswordform">
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                        <input type="email" name="email" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
+                        <input type="email" name="email" placeholder="Email" id="email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
 
                         <div class="clear"></div>
                     </div>
@@ -148,7 +156,8 @@ if(mail($to,$subject, $message,$headers))
 	        <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
+<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="assets/js/register.js"></script>s
     <script src="assets/js/main.js"></script>
 </body>
 

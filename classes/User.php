@@ -361,6 +361,28 @@ class User {
  	
 	}
 
+	public function getHistoryAds($conn,$user_id){
+		$array = array();
+		$searchedID= ','.$user_id.',';
+		$HisResult=mysqli_query($conn,"SELECT * FROM advertise WHERE status = 3 AND hosts_id LIKE '%$searchedID%'");
+		while ($row = mysqli_fetch_array($HisResult)){		
+			$array[]=$row;
+		
+		}	
+ 		return  $array;
+
+	}
+
+	public function getHistoryAdsNum($conn,$user_id){
+		$searchedID= ','.$user_id.',';
+		$HisResult=mysqli_query($conn,"SELECT * FROM advertise WHERE status = 3 AND hosts_id LIKE '%$searchedID%'");
+		$num = mysqli_num_rows($HisResult);
+		return  $num;
+
+	}
+
+
+
 	public function getHostPagesData($conn){
 		$array = array();
 		$result=mysqli_query($conn,"SELECT * FROM hostpages WHERE status = 0");

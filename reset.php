@@ -1,11 +1,60 @@
 <?php 
-include 'connect/connect.php';
-include 'form_handlers/login.php';
+    
+    if (!isset($_GET['validator'])) {
+        header("Location:index.php");
+    }   
+    include "connect/connect.php";
+        $message   = " ";
+    if(isset($_POST['reset'])){
+        $email     =$_GET['email'];
+        $code      =$_POST['code'];
+        $password  =$_POST['password'];
+        $repassword=$_POST['repassword'];
+
+
+        $query="SELECT * FROM passreset WHERE BINARY resetuser= BINARY '$email' AND BINARY token = BINARY '$code'";
+        $res=mysqli_query($conn,$query);
+        if ($res) 
+            {
+              
+        if(mysqli_num_rows($res)==1)
+            {    
+            // $row = mysqli_fetch_assoc($res);
+            // $userid=$row['userid'];
+            // $email = $row['resetuser'];
+        if($password !== $repassword){
+            $message= " your new passwords are not matched ";
+        }else {    
+
+        $updatequery="UPDATE users SET password ='$password' WHERE email = '$email'";
+        $updateres=mysqli_query($conn,$updatequery);
+        if($updateres){
+            $message= " you have successfully reset your password";
+        }
+
+        }
+
+
+
+    }else{
+        $message="your code does not match the code sent to your email, please check again";
+    }
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login</title>
+    <title>Reset Password</title>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Allied Login Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+    />
+    <script>
+        addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
+    </script>
+    <!-- Meta tags -->
     <!-- font-awesome icons -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- //font-awesome icons -->
@@ -31,9 +80,8 @@ include 'form_handlers/login.php';
     <link rel="stylesheet" href="theme/any-theme.css">
     <script src="assets/js/modernizr.custom.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <!--<script src="assets/js/loadingOverlayScript.js"></script>
-    <script src="assets/js/loadingoverlay.min.js"></script>-->
-
+    <script src="assets/js/loadingOverlayScript.js"></script>
+    <script src="assets/js/loadingoverlay.min.js"></script>
      
 
 </head>
@@ -64,44 +112,42 @@ include 'form_handlers/login.php';
     <div class="w3layouts-two-grids">
         <div class="mid-class">
             <div class="txt-left-side" id="txt-left-side">
-                <h2> Login Here </h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
+                <h2> Reset your Password </h2>
+                <p>To reset your password please enter the code that you have received through mail and enter your new password </p>
                 <form action="" method="post">
                     <div class="form-left-to-w3l">
                         <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                        <input type="email" name="email" placeholder="Email" required="" value="<?= (isset ($email)) ? $email :'' ?>">
-
+                        <input type="text" name="code" placeholder="code" required="" value="">
                         <div class="clear"></div>
                     </div>
-                    <div class="form-left-to-w3l ">
 
+                    <div class="form-left-to-w3l">
                         <span class="fa fa-lock" aria-hidden="true"></span>
-                        <input type="password" name="pass" placeholder="Password" required="">
+                        
+                        <input type="password" name="password" placeholder="password" required="" value="">
+
                         <div class="clear"></div>
                     </div>
-                    <div class="main-two-w3ls">
-                        <div class="left-side-forget">
-                            <input type="checkbox" class="checked">
-                            <span class="remenber-me">Remember me </span>
-                        </div>
-                        <div class="right-side-forget">
-                            <a href="forgotpassword.php" class="for">Forgot password...?</a>
-                        </div>
+
+                    <div class="form-left-to-w3l">
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+                        
+                        <input type="password" name="repassword" placeholder="confirm password" required="" value="">
+
+                        <div class="clear"></div>
                     </div>
+
+                                            
+
+
                     <div class="btnn">
-                         <button type="submit" name="login" class="button">Login </button> 
-                      <!--  <input type="submit" name="login" value="Sign Up" placeholder="Sign Up" class="button">-->
+                         <button type="submit" name="reset" class="button">Reset </button> 
                     </div>
                         <?php
         echo '<div class="text-center p-t-46 p-b-20"><span class="txt2">'.$message.'</span></div>';
     ?>
                 </form>
-                <div class="w3layouts_more-buttn">
-                    <h3>Don't Have an account..?
-                        <a href="index.php#home">Register Here
-                        </a>
-                    </h3>
-                </div>
+
 
             </div>
             <div class="img-right-side" id="img-right-side">

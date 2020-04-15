@@ -6,7 +6,7 @@ if(isset($_SESSION['email'])){
    header("Location: ./index.php"); 
 }else{
 	if (isset($_POST['login'])){	
-		$email        =$_POST['email'];
+		$email        =$_POST['email']; 
 		$pass         =$_POST['pass'];
 		$checkuser="SELECT * FROM users WHERE email = ? AND password = ?";
 		$stmt =mysqli_stmt_init($conn);

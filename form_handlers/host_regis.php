@@ -44,6 +44,7 @@ if($_POST)
             {
                 echo "registered";
                 $_SESSION['registered'] = $username;
+                //send_Welcome_Mail($user_email);
             }
             else
             {
@@ -61,4 +62,35 @@ if($_POST)
         echo $e->getMessage();
     }
 }
+?>
+<?php 
+function send_Welcome_Mail($user_email){
+            $to = $user_email;
+            $subject = "Verification Code";
+            $url="http://topad.net/test/ADV-PROJ/user_dashboard/examples/";
+            $message = "<p>Welcome to Top AD we are delighted to have you here, lets begin your journey with us,
+            you will find below a link to  add your Page Details and start accepting Ads </p>";
+            $message .="click this link :  ";
+            $message .='<a href="'.$url.'">Access your account</a></p>';
+            $headers  = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= "Reply-To: Top AD <support@topad.net>"."\r\n";
+            $headers .= "From: top AD  <support@topad.net>"."\r\n";
+
+           
+            if(mail($to,$subject, $message,$headers))
+            {
+               
+                 echo "Done";
+
+            }
+            else
+            {
+              echo'<div class="toast-item toast-type-error"><div class="toast-item-image toast-item-image-error"></div><div class="toast-item-close"></div><p>جدث خطأ يرجى المحاولة لاحقا. </p></div>';
+             
+            }
+            
+           
+            }
+
 ?>

@@ -34,20 +34,22 @@ switch ($userType) {
   default:
     break;
 }
-    $row = $advertise->getUserPendingAdsnum($conn,$user_id);
-    $userType = $advertise->getUserType($conn,$user_id);
-    $userdata = $advertise->getUserPendingAdsdata($conn,$user_id);
-    $pagetype = $advertise->getPageTypes($conn);
-    $clickcounts = $advertise->getClickCounts($conn);
-    $adsdurations = $advertise->getAdsDuration($conn);
-    $categories = $advertise->getPageCategories($conn);
-    $singleuseradds =$advertise->getHostAdds($conn,$user_id);
-    $singleuseraddsnum = $advertise->getHostAddsnum($conn,$user_id);
-    $userprofiledata= $advertise->getUserProfileData($conn,$user_id);
-    $fname = $advertise->getFullName($conn,$user_id);
-    $currentadds = $advertise->getHostCurrentAds($conn,$user_id);
-    $currentaddsnum=$advertise->getHostCurrentAdsnum($conn,$user_id);
-    $acceptedAddsNum = $advertise->getAcceptedAddsNum($conn,$user_id);
+    $row              = $advertise->getUserPendingAdsnum($conn,$user_id);
+    $userType         = $advertise->getUserType($conn,$user_id);
+    $userdata         = $advertise->getUserPendingAdsdata($conn,$user_id);
+    $pagetype         = $advertise->getPageTypes($conn);
+    $clickcounts      = $advertise->getClickCounts($conn);
+    $adsdurations     = $advertise->getAdsDuration($conn);
+    $categories       = $advertise->getPageCategories($conn);
+    $singleuseradds   = $advertise->getHostAdds($conn,$user_id);
+    $singleuseraddsnum= $advertise->getHostAddsnum($conn,$user_id);
+    $userprofiledata  = $advertise->getUserProfileData($conn,$user_id);
+    $fname            = $advertise->getFullName($conn,$user_id);
+    $currentadds      = $advertise->getHostCurrentAds($conn,$user_id);
+    $currentaddsnum   = $advertise->getHostCurrentAdsnum($conn,$user_id);
+    $addhistory       = $advertise->getHistoryAds($conn,$user_id);
+    $addhistorynum    = $advertise->getHistoryAdsnum($conn,$user_id);
+    $acceptedAddsNum  = $advertise->getAcceptedAddsNum($conn,$user_id);
     $acceptedAddsData = $advertise->getAcceptedAdds($conn,$user_id);
 ?>
 <!DOCTYPE html>
@@ -187,10 +189,14 @@ switch ($userType) {
             </a>
           </li>
             
-                   <li class="nav-item ">
-            <a class="nav-link" href="#">
+            <li class="nav-item ">
+            <a class="nav-link" href="./adhistory.php">
               <i class="material-icons">location_ons</i>
               <p>Ad History</p>
+              
+              <?php if($addhistorynum !=0) {
+                echo '<span class="notify-no">'.$addhistorynum.'</span> ';
+              } ?>
             </a>
           </li>
           <!--<li class="nav-item ">

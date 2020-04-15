@@ -87,9 +87,9 @@ include 'connect/connect.php';
     <!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 id="logoHov" class="logo"><a href="index.html#home">LINK</a></h1>
+			<h1 id="logoHov" class="logo"><a href="index.html#home">Home</a></h1>
 			<i class="fa fa-arrow-right menu-close"></i>
-			<a href="index.php">Home</a>
+			<a href="user_dashboard/examples">Dashboard</a>
 			<a data-value="howwork" href="index.php#howwork">How Work</a>
 			<a data-value="about" href="index.php#about">About</a> 
 			<a data-value="contact" href="index.php#contact">Contact</a>

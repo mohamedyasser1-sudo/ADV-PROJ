@@ -14,6 +14,25 @@ $adverObj = new User($conn, $userEmail);
     
     
 ?>
+
+
+<script >
+$(document).ready(function(){
+  $("a[name=copy_pre]").click(function() {
+    var id = $(this).attr('id');
+    var el = document.getElementById(id);
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    document.execCommand('copy');
+    md.showNotification('top','left', 'success', 'Link copied to clipboard.');
+    return false;
+  });
+});
+</script>
+
       <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -30,7 +49,7 @@ $adverObj = new User($conn, $userEmail);
                       if ($acceptedAddsNum == 0 ){
                         echo " No Pending adds yet ";
                         }else { echo ' 
-                      <table class="table table-hover">
+                      <table class="table table-hover" id="acceptedadtableid">
                       <thead class=" text-primary">
                         <th>Ad ID</th>
                         <th>Page Name</th>
@@ -38,7 +57,7 @@ $adverObj = new User($conn, $userEmail);
                         <th>Page Description</th>
                         <th>AD Duration </th>
                         <th>Link</th>
-                        <th>Show</th>
+                        <th>Copy</th>
                       </thead>
                       <tbody>';
                         foreach($acceptedAddsData as $acceptedAddData){
@@ -60,11 +79,15 @@ $adverObj = new User($conn, $userEmail);
                           if($hostlinksNum == 0){
                             echo "<td> Not started Yet</td>";
                           }else {
-                            echo "<td> $hostlink </td>";
+                            echo "<td id='copyContent'> $hostlink </td>";
                           } ?>
                                                     
-                          <td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id; ?>"><button class="btn btn-primary">Details </button></a></td>
+                          <!--<td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id; ?>"><button class="btn btn-primary">Details </button></a></td>
+                        </tr> -->
+
+                            <td class="text-info"><a id="copyContent" href="#" name="copy_pre" ><button class="btn btn-primary">Copy</button></a></td>
                         </tr> 
+
                         <?php 
                         }
                         

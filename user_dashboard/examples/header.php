@@ -75,6 +75,7 @@ switch ($userType) {
      
     <link href="../assets/css/select2.min.css" rel="stylesheet" />
     <link href="../assets/css/postAd2.css" rel="stylesheet" />
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
     <link href="../assets/theme/user-theme.css" rel="stylesheet" />
 </head>
 

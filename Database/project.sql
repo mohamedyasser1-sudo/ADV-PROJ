@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2020 at 01:38 PM
+-- Generation Time: Apr 12, 2020 at 07:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -45,7 +45,7 @@ CREATE TABLE `accepted_adds` (
 INSERT INTO `accepted_adds` (`id`, `add_id`, `hosts_id`, `hosts_count`, `required_time`, `time_to_start`, `time_to_end`) VALUES
 (9, 29, '35,46,', '1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (10, 28, '46,46,', '1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(77, 88, ',47,', '1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(77, 88, ',47,49,', '1', 0, '2020-03-29 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ INSERT INTO `advertise` (`id`, `post_id`, `pagetype`, `pagename`, `pageurl`, `pa
 (27, 37, 'INSTAGRAM', 'good', 'goodday', 'gooogyear', 'it will work', '51603173_1353800621427430_1917240089168052224_o.jpg', '', '', '', '', '', '', 'NEWS&POLITICS', 'NEWS&POLITICS', 500, 1, 50, '1', 0, 0, 0, '', ',', ',', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (28, 37, 'FACEBOOK', 'kkk', 'kkkk', 'kkk', 'kkk', '51603173_1353800621427430_1917240089168052224_o.jpg', 'lllllll', '82770308_2426012477663071_4082070345572417536_o.jpg', 'sllllsl', 'Capture.PNG', 'kdkdkdkdk', 'logo.png', 'AUTOS&VECHICLES', 'Sports', 1000, 1, 50, '1', 1, 0, 0, '', ',35,', ',46,', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (29, 37, 'FACEBOOK', 'kkk', 'kkkk', 'kkk', 'kkk', '51603173_1353800621427430_1917240089168052224_o.jpg', 'lllllll', '82770308_2426012477663071_4082070345572417536_o.jpg', 'sllllsl', 'Capture.PNG', 'kdkdkdkdk', 'logo.png', 'AUTOS&VECHICLES', 'Sports', 1000, 2, 50, '2', 0, 1, 0, ',35,46,', ',', '', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(88, 46, 'YOUTUBE', 'ehab', 'ekwjk', 'dlfl', 'wdlfl', '150px-Flag_of_the_United_States.svg.jpg', '', '', '', '', '', '', 'PETS&ANIMALS', 'SPORTS', 500, 1, 50, '2', 4, 0, 0, ',47,', ',', ',35,46,,35,46,', '1584880269', '1584919869', '1584923469', '1584927069', '1584966669');
+(88, 46, 'YOUTUBE', 'ehab', 'https://www.facebook.com/ehab.elshamy.73', 'dlfl', 'wdlfl', '150px-Flag_of_the_United_States.svg.jpg', '', '', '', '', '', '', 'PETS&ANIMALS', 'SPORTS', 500, 1, 50, '3', 4, 0, 0, '49,,46,', ',', ',35,46,,35,46,', '2020-03-29 | 12:24:17pm', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -127,15 +127,17 @@ CREATE TABLE `clicks` (
   `id` int(11) NOT NULL,
   `adv_id` int(11) NOT NULL,
   `parts` int(11) NOT NULL DEFAULT 2,
-  `hosts` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
+  `hosts` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `total` int(11) NOT NULL,
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `clicks`
 --
 
-INSERT INTO `clicks` (`id`, `adv_id`, `parts`, `hosts`) VALUES
-(1, 88, 1, '{\"35\":1}');
+INSERT INTO `clicks` (`id`, `adv_id`, `parts`, `hosts`, `total`, `date`) VALUES
+(4, 88, 1, '{\"46\":8,\"91\":9}', 402, '2020-03-29 12:57:34');
 
 -- --------------------------------------------------------
 
@@ -162,7 +164,7 @@ CREATE TABLE `hostpages` (
 
 INSERT INTO `hostpages` (`id`, `user_id`, `name`, `url`, `followers`, `followers_cat`, `description`, `category`, `verification`, `status`) VALUES
 (0, 47, 'ehab', 'ehabeha', 100, 'A', 'ehabe', 'PETS&ANIMALS', '1000', 0),
-(3, 46, 'ehabheab', 'ehabehab', 100, 'A', 'ehabehab', 'SPORTS', 'ehabe', 0);
+(3, 49, 'ehabheab', 'ehabehab', 100, 'A', 'ehabehab', 'SPORTS', 'ehabe', 0);
 
 -- --------------------------------------------------------
 
@@ -182,18 +184,8 @@ CREATE TABLE `links` (
 --
 
 INSERT INTO `links` (`id`, `adv_id`, `host_id`, `link`) VALUES
-(8, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(9, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(10, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(11, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(12, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(13, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(14, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(15, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(16, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(17, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(18, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U'),
-(19, 88, 47, 'http://localhost/AdProject/process.php?pub=V3o&sect=W3U');
+(20, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&sect=W3U'),
+(21, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&sect=W3U');
 
 -- --------------------------------------------------------
 
@@ -263,6 +255,27 @@ INSERT INTO `lookups_table` (`ID`, `LOOKUP_TYPE`, `LOOKUP_LABEL`, `LOOKUP_VALUE`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `passreset`
+--
+
+CREATE TABLE `passreset` (
+  `id` int(11) NOT NULL,
+  `resetuser` varchar(100) NOT NULL,
+  `resetselector` varchar(200) NOT NULL,
+  `token` longtext NOT NULL,
+  `expires` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `passreset`
+--
+
+INSERT INTO `passreset` (`id`, `resetuser`, `resetselector`, `token`, `expires`) VALUES
+(1, 'ehab_elshamy82@yahoo.com', '23423848249', '123456', '1291238123');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `rejected_adds`
 --
 
@@ -322,7 +335,19 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `password`, `country`, `phone`, `type`, `date`, `code`, `active`) VALUES
 (46, 'ehab', 'ehabehab', 'ehabehab', 'ehabehabehab@ehab.com', 'ehabehab', 'EG', 1121213232, 2, '2020-03-09', 0, 2),
-(47, 'mohamed', 'mohamed', 'mohamed', 'mohamed@mohamed.com', 'ehabehab', 'EG', 1141513524, 1, '2020-03-09', 0, 2);
+(47, 'mohamed', 'mohamed', 'mohamed', 'mohamed@mohamed.com', 'ehabehab', 'EG', 1141513524, 1, '2020-03-09', 0, 2),
+(48, 'ehab', 'ehabehab', 'ehabehab', 'ehab_elshamy82@yahoo.com', 'ehabehab', 'EG', 2147483647, 1, '2020-03-29', 0, 1),
+(83, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeejjjsss@ehabehab.com', 'ehabehab', 'EG', 2147483647, 1, '2020-04-02', 0, 1),
+(84, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabeeeee@shsshhs.com', 'ehabehab', 'EG', 2147483647, 1, '2020-04-02', 0, 1),
+(85, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeehhhhssssbbbb@hhhh.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 94, 1),
+(86, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehab@gmailss.com', 'ehabehab', 'EG', 2022334441, 2, '2020-04-02', 63, 1),
+(87, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabwwwww@ehab.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 1111, 1),
+(88, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeehhhhssshhh@dhhh.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 0, 1),
+(89, 'ehabehab', 'ehabehab', 'ehabehab', 'ehhhab@hhh.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 2, 1),
+(90, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehabehabehabehab@ehab.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 5, 1),
+(91, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehabehabehabehabehab@ehab.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 0, 1),
+(92, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehab@hoba.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-12', 0, 2),
+(93, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehab@hoba.com', 'ehabehab', 'EG', 2147483647, 1, '2020-04-12', 0, 1);
 
 --
 -- Indexes for dumped tables
@@ -377,6 +402,12 @@ ALTER TABLE `lookups_table`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `passreset`
+--
+ALTER TABLE `passreset`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `rejected_adds`
 --
 ALTER TABLE `rejected_adds`
@@ -420,13 +451,25 @@ ALTER TABLE `advertise`
 -- AUTO_INCREMENT for table `clicks`
 --
 ALTER TABLE `clicks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `links`
 --
 ALTER TABLE `links`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `passreset`
+--
+ALTER TABLE `passreset`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

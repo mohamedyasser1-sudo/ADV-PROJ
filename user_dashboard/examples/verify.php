@@ -114,6 +114,7 @@ break;
      
     <link href="../assets/css/select2.min.css" rel="stylesheet" />
     <link href="../assets/css/postAd2.css" rel="stylesheet" />
+    <link href="../assets/theme/user-theme.css" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -127,7 +128,7 @@ break;
     -->
       <div class="logo">
         <a href="index.php" class="simple-text logo-normal">
-          Logo
+          <img src="../assets/img/topAdLogo.png" alt="TopAd">
         </a>
       </div>
         
@@ -221,18 +222,7 @@ break;
               <p>Ad History</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="#">
-              <i class="material-icons">notifications</i>
-              <p>Statistics</p>
-            </a>
-          </li>
-		            <li class="nav-item ">
-            <a class="nav-link" href="#">
-              <i class="material-icons">notifications</i>
-              <p>Setting</p>
-            </a>
-          </li>
+      
         </ul>
       </div>
     </div>
@@ -264,22 +254,7 @@ break;
                   </p>
                 </a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li>
+      
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>

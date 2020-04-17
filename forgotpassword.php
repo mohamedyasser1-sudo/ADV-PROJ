@@ -1,6 +1,6 @@
 <?php 
 include 'connect/connect.php';
-
+$showmessage = "";
 
 if (isset($_POST['send'])) {
     

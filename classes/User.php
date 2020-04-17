@@ -108,7 +108,7 @@ class User {
 
 	public function getAdminPendingAdsdata($conn){
 	$array = array();
-	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1");
+	$result=mysqli_query($conn,"SELECT * FROM advertise WHERE status=1 AND price > 0");
 	while ($row = mysqli_fetch_array($result)){	
 		$array[]=$row;
 	}	

@@ -40,49 +40,52 @@ if(isset($_SESSION['username'])){
 	}
 }
 }
+
 	
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Login</title>
-<!-- for-mobile-apps -->
+<link href="login2/css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- //for-mobile-apps -->
-<link href="login/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<!--webfonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
 </head>
 <body>
-	<!-- main -->
-		<div class="main">
-			<h1>Admin Login</h1>
-			<div class="input_form">
-				<form method="post" action="#">
-					<input type="text" name="username" id="username" value="User Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" required="">
-					<input type="password"  name="password" id="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-				
-			</div>
-			<div class="ckeck-bg">
-				<div class="checkbox-form">
-					<div class="check-left">
-						<div class="check">
-							<label class="checkbox"><?php echo $message; ?></label>
-						</div>
-					</div>
-					<div class="check-right">
-						<form>
-							<input type="submit" value="Login" name="login">
-						</form>
-					</div>
-					<div class="clearfix"> </div>
+
+<!--/start-login-one-->
+<h1>Login</h1>
+		<div class="login">	
+			<div class="ribbon-wrapper h2 ribbon-red">
+				<div class="ribbon-front">
+					<h2>Admin Login</h2>
 				</div>
+				<div class="ribbon-edge-topleft2"></div>
+				<div class="ribbon-edge-bottomleft"></div>
+			</div>
+			<form method="post" action="#">
+				<ul>
+					<li>
+						<input type="text" class="text" value="Email Address" name="username" id="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}" required=""><a href="#" class=" icon user"></a>
+					</li>
+					 <li>
+						<input type="password" value="Password"  name="password" id="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class=" icon lock"></a>
+					</li>
+				</ul>
+<span class="msgError"><?php echo $message; ?></span>
+			
+			<div class="submit">
+				<input type="submit"value="Log in" name="login">
 			</div>
 			</form>
 		</div>
-		<div class="footer">
-			<p>&copy 2020. All rights reserved | Developed by <a href="http://ehabelshamy.rf.gd/?i=1">Ehab El-shamy</a> and <a href="mailto:mohamedyasser71230@gmail.com">Mohamed Yasser</a></p>
+<!--start-copyright-->
+   		<div class="copy-right">
+				<p>Copyright &copy; 2020 All rights  Reserved | Developed by &nbsp;<a href="http://ehabelshamy.rf.gd/?i=1">Ehab El-shamy</a> and <a href="mailto:mohamedyasser71230@gmail.com">Mohamed Yasser</a></p>
 		</div>
-	<!-- //main -->
+	<!--//end-copyright-->
 </body>
 </html>

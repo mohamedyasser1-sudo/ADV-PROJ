@@ -4,7 +4,7 @@ include 'header.php';
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Edit Profile</h4>
@@ -81,7 +81,7 @@ include 'header.php';
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <!--<div class="col-md-4">
               <div class="card card-profile">
                 <div class="card-avatar">
                   <a href="#pablo">
@@ -97,7 +97,7 @@ include 'header.php';
                   <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
                 </div>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>

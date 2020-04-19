@@ -2,26 +2,18 @@
         <div class="container-fluid" id="footc">
           <nav class="float-left">
             <ul>
-              <li>
-                <a href="#">
+                 <li>
+                <a href="./index.php">
                   TopAd
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="../../index.php#about">
                   About Us
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Licenses
-                </a>
-              </li>
+            
+            
             </ul>
           </nav>
           

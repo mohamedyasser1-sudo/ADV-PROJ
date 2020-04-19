@@ -268,7 +268,7 @@ switch ($userType) {
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                   <a class="dropdown-item" href="user.php"><?php echo $fname;?></a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <!--<a class="dropdown-item" href="user.php">Settings</a>-->
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="../../form_handlers/logout.php">Log out</a>
                 </div>

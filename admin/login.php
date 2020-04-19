@@ -40,49 +40,49 @@ if(isset($_SESSION['username'])){
 	}
 }
 }
-
 	
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>Admin Dashboard</title>
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-	<link rel="stylesheet" href="assets/css/ready.css">
-	<link rel="stylesheet" href="assets/css/demo.css">
+<title>Login</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- //for-mobile-apps -->
+<link href="login/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="main-header">
-			<div class="logo-header">
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+	<!-- main -->
+		<div class="main">
+			<h1>Admin Login</h1>
+			<div class="input_form">
+				<form method="post" action="#">
+					<input type="text" name="username" id="username" value="User Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" required="">
+					<input type="password"  name="password" id="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+				
 			</div>
-	<div class="col-md-9">
-		<div class="card">
-			<div class="card-header">
-				<div class="card-title">Login Form</div>
-			</div>
-			<form method="post" action="#">
-			<div class="card-body">
-				<div class="form-group">
-					<label for="username">username</label>
-					<input type="username" class="form-control" name="username" id="username" placeholder="username">
-				</div>
-				<div class="form-group">
-					<label for="password">Password</label>
-					<input type="password" class="form-control" name="password" id="password" placeholder="Password">
-				</div>
-				<div class="card-action">
-					<button type="submit" name="login" class="btn btn-success">Login</button>
+			<div class="ckeck-bg">
+				<div class="checkbox-form">
+					<div class="check-left">
+						<div class="check">
+							<label class="checkbox"><?php echo $message; ?></label>
+						</div>
+					</div>
+					<div class="check-right">
+						<form>
+							<input type="submit" value="Login" name="login">
+						</form>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
 			</div>
-			<?php echo $message; ?>
-		</form>
-		</div>	
+			</form>
+		</div>
+		<div class="footer">
+			<p>&copy 2020. All rights reserved | Developed by <a href="http://ehabelshamy.rf.gd/?i=1">Ehab El-shamy</a> and <a href="mailto:mohamedyasser71230@gmail.com">Mohamed Yasser</a></p>
+		</div>
+	<!-- //main -->
+</body>
+</html>

@@ -160,7 +160,7 @@ include 'form_handlers/login.php';
                             <option data-code="243" value="CD" label="Congo - Kinshasa">Congo - Kinshasa</option>
                             <option data-code="225" value="CI" label="Côte d’Ivoire">Côte d’Ivoire</option>
                             <option data-code="253" value="DJ" label="Djibouti">Djibouti</option>
-                            <option data-code="202" value="EG" label="Egypt">Egypt</option>
+                            <option data-code="02" value="EG" label="Egypt">Egypt</option>
                             <option data-code="240" value="GQ" label="Equatorial Guinea">Equatorial Guinea</option>
                             <option data-code="291" value="ER" label="Eritrea">Eritrea</option>
                             <option data-code="251" value="ET" label="Ethiopia">Ethiopia</option>

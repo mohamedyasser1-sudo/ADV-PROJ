@@ -201,6 +201,14 @@ class User {
  	return  $email;
 	}
 
+	public function getUserPayPal($conn,$id){
+	$result=mysqli_query($conn,"SELECT * FROM users WHERE id = '$id'");
+	while ($row = mysqli_fetch_array($result)){	
+		$paypal=$row['paypal'];
+	}	
+ 	return  $paypal;
+	}
+
 	
 
 	public function getAdHostsClicks($conn,$adv_id){

@@ -26,6 +26,7 @@ $hostsinad = $adminobj->getAdHostsClicks($conn,$adv_id);
                       <thead class=" text-primary">
                         <th>User ID</th>
                         <th>User email</th>
+                        <th>PayPal Account</th>
                         <th>Obtained Clicks</th>
                         <th>Price</th>
                       </thead>
@@ -49,6 +50,12 @@ $hostsinad = $adminobj->getAdHostsClicks($conn,$adv_id);
                           echo $userEmail; 
                           ?>
                           	
+                          </td>
+                          <td><?php  
+                          $userPayPal = $adminobj->getUserPayPal($conn,$key);
+                          echo $userPayPal; 
+                          ?>
+                            
                           </td>
                           <td><?= $value ?></td>
                           <td class="text-primary">

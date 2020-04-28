@@ -4,7 +4,7 @@ $user = $_SESSION['email'];
 $advertise = new User($conn,$user);
 $user_id = $advertise->getUserId(); 
 if(isset($_POST['submitbtn'])){
-
+	$paypal  = $_POST['paypal'];
 	$pagedesc= $_POST['pagedesc'];
 	$pagename= $_POST['pagename'];
 	$pageurl = $_POST['pageurl'];
@@ -30,6 +30,12 @@ if(isset($_POST['submitbtn'])){
 		default:
 			# code...
 			break;
+	}
+	$updatequery = mysqli_query($conn, "UPDATE users SET paypal ='$paypal' WHERE email = '$user'");
+	if($updatequery){
+		echo " Done ";
+	}else{
+		echo "error ". mysqli_error($conn);
 	}
 	$insertquery = mysqli_query($conn,"INSERT INTO hostpages (user_id, `name`, `url`, `followers`, `followers_cat`, `description`, `category`,`status`) VALUES ('$user_id','$pagename','$pageurl','$followersnum','$followersCat','$pagedesc','$pagecategory',0)");
 	if($insertquery){

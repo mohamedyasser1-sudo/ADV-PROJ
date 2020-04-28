@@ -265,7 +265,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                     <div class="">
                       <div class="col-md-2 ">
                         <div class="form-group">
-                          <h5 class="card-title">your page information</h5>
+                          <h5 class="">your page information</h5>
                         </div>
                       </div>
                       <div class="clearfix"></div>
@@ -338,6 +338,20 @@ $fname = $advertise->getFullName($conn,$user_id);
                             </select>
                           </div>
                         </div>
+
+                        <div class="row">
+                          <div class="col-md-2">
+                            <div class="form-group ">
+                              <label class="bmd-label-floating pdesc">Your Paypal Account or Link</label>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="form-group">
+                              <input type="text" name="paypal" id="paypal" class="form-control" placeholder="paypal.me/example">
+                            </div>
+                          </div>
+                        </div>
+
                           <div class="form-row text-center">
                             <div class="col-12">
                               <button type="submit" name="submitbtn" id="itcost" class="btn btn-primary btn-lg-cus" >

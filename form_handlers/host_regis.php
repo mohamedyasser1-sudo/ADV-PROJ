@@ -44,7 +44,7 @@ if($_POST)
             {
                 echo "registered";
                 $_SESSION['registered'] = $username;
-                //send_Welcome_Mail($user_email);
+                send_Welcome_Mail($user_email);
             }
             else
             {
@@ -66,8 +66,8 @@ if($_POST)
 <?php 
 function send_Welcome_Mail($user_email){
             $to = $user_email;
-            $subject = "Verification Code";
-            $url="http://topad.net/test/ADV-PROJ/user_dashboard/examples/";
+            $subject = "Welcome to TopAD";
+            $url="http://topad.net/preview/user_dashboard/examples/";
             $message = "<p>Welcome to Top AD we are delighted to have you here, lets begin your journey with us,
             you will find below a link to  add your Page Details and start accepting Ads </p>";
             $message .="click this link :  ";

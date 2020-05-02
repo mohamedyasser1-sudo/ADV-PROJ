@@ -17,8 +17,7 @@ if (isset($_POST['send'])) {
 $sql = mysqli_query($conn,"DELETE FROM passreset WHERE resetuser='$email'");
 $hashed_token = password_hash($token,PASSWORD_DEFAULT);
 $insertsql = mysqli_query($conn,"INSERT INTO `passreset`(`resetuser`, `resetselector`, `token`, `expires`) VALUES ('$email','$selector','$token','$expires')");
-$url="http://http://topad.net/test/ADV-PROJ/reset.php?selector= ".$selector."&email=".$email."&validator=" .bin2hex($token);
-
+$url="http://topad.net/preview/reset.php?selector= ".$selector."&email=".$email."&validator=" .bin2hex($token);
  $to = $email;
  $subject= "Reset Your Password";
  $message="<p> you have requested to reset your password, you will find a link below, if that was not you please ignore this email; </p>";

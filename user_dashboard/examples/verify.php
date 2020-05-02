@@ -67,7 +67,7 @@ if(isset($_POST['resend'])){
   if($query){
     $message = " Request Sent to Admin, Please Wait while you recieve another code"; 
   }else{
-    $message = " Sorry, but you can't have another code, Please contact admin directly on :  admin@topad.net";
+    $message = " Sorry, but you can't have another code, Please contact admin directly on :  support@topad.net";
   }
 }
 break;
@@ -84,6 +84,16 @@ break;
       $message = "invalid verification code";
     }
 }
+}
+if(isset($_POST['resend'])){
+  $token        = bin2hex(random_bytes(3));
+  $query = mysqli_query($conn,"UPDATE users SET code = '$token' WHERE id = '$user_id'");
+  if($query){
+    send_Verification_Code($user,$token);
+    $message = " Request Sent to Admin, Please Wait while you recieve another code"; 
+  }else{
+    $message = " Sorry, but you can't have another code, Please contact admin directly on :  support@topad.net";
+  }
 }
 break;
   default:
@@ -317,4 +327,34 @@ break;
         <?php 
   include 'footer.php'; 
   
+?>
+<?php 
+function send_Verification_Code($user_email,$token){
+            $to = $user_email;
+            $subject = "Verification Code";
+            $url="http://topad.net/preview/user_dashboard/examples/verify.php";
+            $message = "<p>you have requested to activate your membership, you will find a link below, if that was not you please ignore this email, if this is true please use this code to verify your email :" . $token. "</p>";
+            $message .="click this link :  ";
+            $message .='<a href="'.$url.'">Verify your account</a></p>';
+            $headers  = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= "Reply-To: Top AD <support@topad.net>"."\r\n";
+            $headers .= "From: top AD  <support@topad.net>"."\r\n";
+
+           
+            if(mail($to,$subject, $message,$headers))
+            {
+                //header("Location:singggt.php");
+                 echo "Done";
+
+            }
+            else
+            {
+              echo'<div class="toast-item toast-type-error"><div class="toast-item-image toast-item-image-error"></div><div class="toast-item-close"></div><p>جدث خطأ يرجى المحاولة لاحقا. </p></div>';
+             
+            }
+            
+           
+            }
+
 ?>

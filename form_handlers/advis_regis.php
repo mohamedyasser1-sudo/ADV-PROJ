@@ -45,7 +45,7 @@ if($_POST)
             {
                 echo "registered";
                 $_SESSION['registered'] = $username;
-              //  send_Verification_Code($user_email,$token);
+                send_Verification_Code($user_email,$token);
             
             }
             else
@@ -70,7 +70,7 @@ if($_POST)
 function send_Verification_Code($user_email,$token){
             $to = $user_email;
             $subject = "Verification Code";
-            $url="http://topad.net/test/ADV-PROJ/user_dashboard/examples/verify.php";
+            $url="http://topad.net/preview/user_dashboard/examples/verify.php";
             $message = "<p>you have requested to activate your membership, you will find a link below, if that was not you please ignore this email, if this is true please use this code to verify your email :" . $token. "</p>";
             $message .="click this link :  ";
             $message .='<a href="'.$url.'">Verify your account</a></p>';

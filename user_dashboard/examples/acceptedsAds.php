@@ -15,7 +15,6 @@ $adverObj = new User($conn, $userEmail);
     
 ?>
 
-
 <script >
 $(document).ready(function(){
   $("a[name=copy_pre]").click(function() {

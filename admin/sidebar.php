@@ -22,11 +22,6 @@
 										</a>
 									</li>
 									<li>
-										<a href="makeadmins.php">
-											<span class="link-collapse">Make Admins</span>
-										</a>
-									</li>
-									<li>
 										<a href="logout.php">
 											<span class="link-collapse">Log Out</span>
 										</a>

@@ -1,13 +1,69 @@
 <?php 
+            include 'connect/connect.php';
+           $advertise_id =  $_GET['sect'];
+            
+            	 function decryption_params($advertise_id){
+     	
+                    /* Store the cipher method in variable*/
+                    $cipher = "AES-128-CTR"; 
+                    /* Get the cipher iv length*/
+                    $iv_length = openssl_cipher_iv_length($cipher); 
+                    $options = 0;  
+                    $iv = '8565825542115032'; 
+                    /* Take the encryption key in a variable*/
+                    $enc_key = "CodeSpeedyKeybj54HH"; 
+                    
+                    $decryption_iv = '8565825542115032'; 
+                    /* Store the decryption key */
+                    $dec_key = "CodeSpeedyKeybj54HH"; 
+                    
+                    /* Use openssl_decrypt() function to decrypt the data */
+                    $decrypted_string=openssl_decrypt ($advertise_id, $cipher, $dec_key, $options, $decryption_iv); 
+                    /* Display the decrypted string */
+                    
+                    return $decrypted_string;
+                    }
+            
+            
+            $fixed_id = decryption_params($advertise_id);
+            
+	        $notcountquery=mysqli_query($conn,"SELECT * FROM advertise WHERE id = '$fixed_id'" );
+            while($stopcount = mysqli_fetch_array($notcountquery)){
+            
+            $pagename = $stopcount['pagename'];
+            $image1 = $stopcount['image1'];
+            $desc1  = $stopcount['description1'];
+            $pagedescription = $stopcount['pagedescription'];
+}
+//header("Location: ./index.php"); 
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta property="og:url"                content="http://topad.net/preview/advertisedata.php?id=<?= $fixed_id ?>" />
+	<meta property="og:type"               content="article" />
+	<meta property="og:title"              content="<?= $pagename ?>" />
+	<meta property="og:description"        content="<?= $desc1; ?> " />
+	<meta property="og:image"              content="http://topad.net/preview/uploads/images/<?=$image1; ?>" />
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+<?php 
 /**
  * process advertisment 
  **/
 class process_advertisment{
     private $real_id_of_advertisment;
     private $last_added_at_click_table;
-    private $db_name  ='project';
-    private $user_name='root';
-    private $user_password = '';
+    private $db_name  ='topadn6_project';
+    private $user_name='topadn6_root';
+    private $user_password = '.)@[4jW.y0B7';
     private $table_name    = 'clicks';   
     private $dvertisment_table='advertise'; 
     private $redirect_url  ='';
@@ -26,6 +82,11 @@ class process_advertisment{
             $notcountquery=mysqli_query($this->conn,"SELECT * FROM advertise WHERE id = '".$this->real_id_of_advertisment."' " );
             $count = mysqli_num_rows($notcountquery);
             $stopcount = mysqli_fetch_array($notcountquery);
+            $pagename = $stopcount['pagename'];
+            $image1 = $stopcount['image1'];
+            $desc1  = $stopcount['desc1'];
+            $pagedescription = $stopcount['pagedescription'];
+
             $count = $stopcount['clicks']; 
           		if($obtainedClicks < $count ){  
                 $this->update_value_with_new_click($row);
@@ -164,3 +225,5 @@ class process_advertisment{
 
 /* here run your code*/
 new process_advertisment();
+?>
+

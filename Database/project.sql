@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 07:22 PM
+-- Generation Time: Apr 28, 2020 at 01:11 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -137,7 +137,7 @@ CREATE TABLE `clicks` (
 --
 
 INSERT INTO `clicks` (`id`, `adv_id`, `parts`, `hosts`, `total`, `date`) VALUES
-(4, 88, 1, '{\"46\":8,\"91\":9}', 402, '2020-03-29 12:57:34');
+(4, 88, 3, '{\"46\":8,\"91\":9}', 411, '2020-03-29 12:57:34');
 
 -- --------------------------------------------------------
 
@@ -163,8 +163,9 @@ CREATE TABLE `hostpages` (
 --
 
 INSERT INTO `hostpages` (`id`, `user_id`, `name`, `url`, `followers`, `followers_cat`, `description`, `category`, `verification`, `status`) VALUES
-(0, 47, 'ehab', 'ehabeha', 100, 'A', 'ehabe', 'PETS&ANIMALS', '1000', 0),
-(3, 49, 'ehabheab', 'ehabehab', 100, 'A', 'ehabehab', 'SPORTS', 'ehabe', 0);
+(1, 47, 'ehab', 'ehabeha', 100, 'A', 'ehabe', 'PETS&ANIMALS', '1000', 0),
+(3, 49, 'ehabheab', 'ehabehab', 100, 'A', 'ehabehab', 'SPORTS', 'ehabe', 0),
+(6, 93, 'ehabehab', 'ehabehab', 500, 'C', 'ehabehab', 'PEOPLE & BLOGS', '', 0);
 
 -- --------------------------------------------------------
 
@@ -186,19 +187,6 @@ CREATE TABLE `links` (
 INSERT INTO `links` (`id`, `adv_id`, `host_id`, `link`) VALUES
 (20, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&sect=W3U'),
 (21, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&sect=W3U');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lookups`
---
-
-CREATE TABLE `lookups` (
-  `id` int(11) NOT NULL,
-  `pagetypes` varchar(25) NOT NULL,
-  `prices` int(11) NOT NULL,
-  `category` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -295,22 +283,6 @@ INSERT INTO `rejected_adds` (`id`, `add_id`, `hosts_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userpages`
---
-
-CREATE TABLE `userpages` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `url` varchar(100) NOT NULL,
-  `followers` int(11) NOT NULL,
-  `description` varchar(200) NOT NULL,
-  `generatedurl` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -320,6 +292,7 @@ CREATE TABLE `users` (
   `first_name` varchar(30) NOT NULL,
   `second_name` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `paypal` varchar(150) NOT NULL,
   `password` varchar(250) NOT NULL,
   `country` varchar(50) NOT NULL,
   `phone` int(11) NOT NULL,
@@ -333,21 +306,21 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `password`, `country`, `phone`, `type`, `date`, `code`, `active`) VALUES
-(46, 'ehab', 'ehabehab', 'ehabehab', 'ehabehabehab@ehab.com', 'ehabehab', 'EG', 1121213232, 2, '2020-03-09', 0, 2),
-(47, 'mohamed', 'mohamed', 'mohamed', 'mohamed@mohamed.com', 'ehabehab', 'EG', 1141513524, 1, '2020-03-09', 0, 2),
-(48, 'ehab', 'ehabehab', 'ehabehab', 'ehab_elshamy82@yahoo.com', 'ehabehab', 'EG', 2147483647, 1, '2020-03-29', 0, 1),
-(83, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeejjjsss@ehabehab.com', 'ehabehab', 'EG', 2147483647, 1, '2020-04-02', 0, 1),
-(84, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabeeeee@shsshhs.com', 'ehabehab', 'EG', 2147483647, 1, '2020-04-02', 0, 1),
-(85, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeehhhhssssbbbb@hhhh.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 94, 1),
-(86, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehab@gmailss.com', 'ehabehab', 'EG', 2022334441, 2, '2020-04-02', 63, 1),
-(87, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabwwwww@ehab.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 1111, 1),
-(88, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeehhhhssshhh@dhhh.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 0, 1),
-(89, 'ehabehab', 'ehabehab', 'ehabehab', 'ehhhab@hhh.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 2, 1),
-(90, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehabehabehabehab@ehab.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 5, 1),
-(91, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehabehabehabehabehab@ehab.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 0, 1),
-(92, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehab@hoba.com', 'ehabehab', 'EG', 2147483647, 2, '2020-04-12', 0, 2),
-(93, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehab@hoba.com', 'ehabehab', 'EG', 2147483647, 1, '2020-04-12', 0, 1);
+INSERT INTO `users` (`id`, `username`, `first_name`, `second_name`, `email`, `paypal`, `password`, `country`, `phone`, `type`, `date`, `code`, `active`) VALUES
+(46, 'ehab', 'ehabehab', 'ehabehab', 'ehabehabehab@ehab.com', 'paypal.me/ehabelshamy10', 'ehabehab', 'EG', 1121213232, 2, '2020-03-09', 0, 2),
+(47, 'mohamed', 'mohamed', 'mohamed', 'mohamed@mohamed.com', '', 'ehabehab', 'EG', 1141513524, 1, '2020-03-09', 0, 2),
+(48, 'ehab', 'ehabehab', 'ehabehab', 'ehab_elshamy82@yahoo.com', '', 'ehabehab', 'EG', 2147483647, 1, '2020-03-29', 0, 1),
+(83, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeejjjsss@ehabehab.com', '', 'ehabehab', 'EG', 2147483647, 1, '2020-04-02', 0, 1),
+(84, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabeeeee@shsshhs.com', '', 'ehabehab', 'EG', 2147483647, 1, '2020-04-02', 0, 1),
+(85, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeehhhhssssbbbb@hhhh.com', '', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 94, 1),
+(86, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehab@gmailss.com', '', 'ehabehab', 'EG', 2022334441, 2, '2020-04-02', 63, 1),
+(87, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabwwwww@ehab.com', '', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 1111, 1),
+(88, 'ehabehab', 'ehabehab', 'ehabehab', 'eeeeeehhhhssshhh@dhhh.com', '', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 0, 1),
+(89, 'ehabehab', 'ehabehab', 'ehabehab', 'ehhhab@hhh.com', '', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 2, 1),
+(90, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehabehabehabehab@ehab.com', '', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 5, 1),
+(91, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehabehabehabehabehab@ehab.com', 'paypal.me/ehabelshamy', 'ehabehab', 'EG', 2147483647, 2, '2020-04-02', 0, 1),
+(92, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehab@hoba.com', '', 'ehabehab', 'EG', 2147483647, 2, '2020-04-12', 0, 2),
+(93, 'ehabehab', 'ehabehab', 'ehabehab', 'ehabehabehab@hoba.com', 'paypal.me/ehabelshamy', 'ehabehab', 'EG', 2147483647, 1, '2020-04-12', 0, 1);
 
 --
 -- Indexes for dumped tables
@@ -390,12 +363,6 @@ ALTER TABLE `links`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lookups`
---
-ALTER TABLE `lookups`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `lookups_table`
 --
 ALTER TABLE `lookups_table`
@@ -411,12 +378,6 @@ ALTER TABLE `passreset`
 -- Indexes for table `rejected_adds`
 --
 ALTER TABLE `rejected_adds`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `userpages`
---
-ALTER TABLE `userpages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -454,6 +415,12 @@ ALTER TABLE `clicks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `hostpages`
+--
+ALTER TABLE `hostpages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `links`
 --
 ALTER TABLE `links`
@@ -464,6 +431,12 @@ ALTER TABLE `links`
 --
 ALTER TABLE `passreset`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `rejected_adds`
+--
+ALTER TABLE `rejected_adds`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`

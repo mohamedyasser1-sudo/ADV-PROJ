@@ -87,7 +87,7 @@ $fname = $advertise->getFullName($conn,$user_id);
         <div class="sidebar-wrapper">
           <ul class="nav">
             <li class="nav-item active  ">
-              <a class="nav-link" href="./index.php">
+              <a class="nav-link" href="./index.php" style="background-color: #98c913;">
                 <i class="material-icons">dashboard</i>
                 <p>Dashboard</p>
               </a>
@@ -174,7 +174,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                   <p>Ad History</p>
                 </a>
               </li>
-              <li class="nav-item ">
+             <!-- <li class="nav-item ">
                 <a class="nav-link" href="#">
                   <i class="material-icons">notifications</i>
                   <p>Statistics</p>
@@ -185,7 +185,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                   <i class="material-icons">notifications</i>
                   <p>Setting</p>
                 </a>
-              </li>
+              </li>-->
             </ul>
           </div>
         </div>
@@ -217,7 +217,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                       </p>
                     </a>
                   </li>
-                  <li class="nav-item dropdown">
+                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="material-icons">notifications</i>
                       <span class="notification">5</span>
@@ -232,7 +232,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                       <a class="dropdown-item" href="#">Another Notification</a>
                       <a class="dropdown-item" href="#">Another One</a>
                     </div>
-                  </li>
+                  </li>-->
                   <li class="nav-item dropdown">
                     <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="material-icons">person</i>
@@ -242,7 +242,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
                       <a class="dropdown-item" href="user.php"><?php echo $fname;?></a>
-                      <a class="dropdown-item" href="#">Settings</a>
+                      <!--<a class="dropdown-item" href="#">Settings</a>-->
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="../../form_handlers/logout.php">Log out</a>
                     </div>
@@ -278,7 +278,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
-                              <input type="text" name="pagename" id="pageName" class="form-control" placeholder="Write your page name">
+                              <input type="text" name="pagename"  required="" id="pageName" class="form-control" placeholder="Write your page name">
                             </div>
                           </div>
                         </div>
@@ -290,7 +290,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
-                              <input type="text" name="pageurl" id="pageURL" class="form-control" placeholder="Enter your page URL">
+                              <input type="text" name="pageurl" required="" id="pageURL" class="form-control" placeholder="Enter your page URL" >
                             </div>
                           </div>
                         </div>
@@ -302,7 +302,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
-                              <input type="text" name="pagedesc" id="pageDesc" class="form-control" placeholder="What is your page description">
+                              <input type="text" name="pagedesc"  required="" id="pageDesc" class="form-control" placeholder="What is your page description">
                             </div>
                           </div>
                         </div>
@@ -314,8 +314,8 @@ $fname = $advertise->getFullName($conn,$user_id);
                           </div>
                           <div class="col-md-4">
                             <?php echo $message; ?>
-                            <select class="form-control" name="category" onchange="changeNamesHandler(event);">
-                              <option value="">Selece a value</option>
+                            <select class="form-control" name="category" required="" onchange="changeNamesHandler(event);">
+                              <option value="" disabled selected>Select a value</option>
                               <?php foreach($categories as $category){  ?>
                               <option value='<?= $category['LOOKUP_VALUE']; ?>'><?= $category['LOOKUP_LABEL']; ?>  </option>
                               <?php } ?>
@@ -330,8 +330,8 @@ $fname = $advertise->getFullName($conn,$user_id);
                           </div>
                           <div class="col-md-4">
                             <?php echo $message; ?>
-                            <select class="form-control" name="followersCat" onchange="changeNamesHandler(event);">
-                              <option value="">Selece a value</option>
+                            <select class="form-control" name="followersCat" required="" onchange="changeNamesHandler(event);">
+                              <option value="" disabled selected>Select  a value</option>
                               <?php foreach($followers as $follower){  ?>
                               <option value='<?= $follower['LOOKUP_VALUE']; ?>'><?= $follower['LOOKUP_LABEL']; ?>  </option>
                               <?php } ?>
@@ -347,7 +347,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                           </div>
                           <div class="col-md-4">
                               <div class="form-group">
-                              <input type="text" name="paypal" id="paypal" class="form-control" placeholder="paypal.me/example">
+                              <input type="email" name="paypal" id="paypal" class="form-control" placeholder="paypal.me/example" required="">
                             </div>
                           </div>
                         </div>
@@ -355,7 +355,7 @@ $fname = $advertise->getFullName($conn,$user_id);
                           <div class="form-row text-center">
                             <div class="col-12">
                               <button type="submit" name="submitbtn" id="itcost" class="btn btn-primary btn-lg-cus" >
-                              <span>Click to Save </span>
+                              <span id="hostPageBtn">Click to Save </span>
                               </button>
                             </div>
                           </div>

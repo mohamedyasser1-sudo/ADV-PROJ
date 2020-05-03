@@ -521,6 +521,7 @@ $('.fileLoad').change(function () {
     <!--<script src="../assets/js/bootstrap.min.js"></script>-->
   
     <script  src="../assets/js/postAd2.js"></script>
+     <script  src="../assets/js/registerHostPage.js"></script>
 <script  src="../assets/js/select2.min.js"></script>
 </body>
 

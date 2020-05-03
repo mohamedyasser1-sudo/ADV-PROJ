@@ -6,12 +6,13 @@ $('document').ready(function()
 {
 
     /* validation */
-    $("#signina").validate({
+    $("#signin").validate({
         rules:
         {
             usernamea: {
                 required: true,
-                minlength: 3
+                minlength: 3,
+                lettersonly: true
             },
             passa: {
                 required: true,
@@ -26,6 +27,9 @@ $('document').ready(function()
                 required: true,
                 email: true
             },
+             countrya: {
+                required: true
+            },
             second_namea:
             {
                 required: true,
@@ -35,7 +39,7 @@ $('document').ready(function()
         },
         messages:
         {
-            usernamea: "Enter a Valid Username",
+            usernamea:  {required:"Enter a Valid Username"},
             passa:{
                 required: "Provide a Password",
                 minlength: "Password Needs To Be Minimum of 8 Characters"
@@ -45,6 +49,7 @@ $('document').ready(function()
                 required: "Retype Your Password",
                 equalTo: "Password Mismatch! Retype"
             },
+            countrya:{required:"Please select country"},
             second_namea:{required:"Enter a Valid Name"}
         },
         submitHandler: submitForma
@@ -67,7 +72,7 @@ second_namea=document.getElementById('second_namea').value;
        // window.alert("h");
     }
         console.log("Inside Submit");
-        var data = $("#signina").serialize();
+        var data = $("#signin").serialize();
 
         $.ajax({
 

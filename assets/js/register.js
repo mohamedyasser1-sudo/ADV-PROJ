@@ -11,7 +11,8 @@ $('document').ready(function()
         {
             username: {
                 required: true,
-                minlength: 3
+                minlength: 3,
+                lettersonly: true
             },
             pass: {
                 required: true,
@@ -26,6 +27,9 @@ $('document').ready(function()
                 required: true,
                 email: true
             },
+             country: {
+                required: true
+            },
             second_name:
             {
                 required: true,
@@ -35,16 +39,18 @@ $('document').ready(function()
         },
         messages:
         {
-            username: "Enter a Valid Username",
+            username: {required:"Enter a Valid Username"},
             pass:{
                 required: "Provide a Password",
                 minlength: "Password Needs To Be Minimum of 8 Characters"
             },
             email: "Enter a Valid Email",
+            country:"Please select country",
             confirmpass:{
                 required: "Retype Your Password",
                 equalTo: "Password Mismatch! Retype"
             },
+
             second_name:{required:"Enter a Valid Name"}
         },
         submitHandler: submitForm

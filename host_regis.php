@@ -143,7 +143,7 @@ include 'form_handlers/login.php';
 				
 					
 				 <select name="country" id="country">
-                            <option value="0" label="Select a country … " selected="selected">Select a country … </option>
+                            <option value="" disabled selected>Select your Category</option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
                             <option data-code="213" value="DZ" label="Algeria">Algeria</option>
                             <option data-code="244" value="AO" label="Angola">Angola</option>

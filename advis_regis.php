@@ -121,7 +121,7 @@ include 'form_handlers/login.php';
 	
 			<!-- //Sign In Form -->
 			<!-- Sign up Form-->
-			<form class="form-signin" method="post" id="signina">
+			<form class="form-signin" method="post" id="signin">
 				<h3>Register as Advertise</h3>
 				
 				<input type="text" name="usernamea" id="usernamea"  placeholder="User Name" />
@@ -141,7 +141,7 @@ include 'form_handlers/login.php';
 				
 					
 				 <select name="countrya" id="countrya">
-                            <option value="0" label="Select a country … " selected="selected">Select a country … </option>
+                            <option value="" disabled selected>Select your Category</option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
                             <option data-code="213" value="DZ" label="Algeria">Algeria</option>
                             <option data-code="244" value="AO" label="Angola">Angola</option>

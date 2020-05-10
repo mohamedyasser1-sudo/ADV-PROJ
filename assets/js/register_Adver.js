@@ -81,49 +81,52 @@ second_namea=document.getElementById('second_namea').value;
             data : data,
             beforeSend: function()
             {
-                $("#error").fadeOut();
-                $("#btn-submit").html('<span class="glyphicon glyphicon-transfer"></span>   sending ...');
+                /*$("#error").fadeOut();
+                $("#btn-submit").html('<span class="glyphicon glyphicon-transfer"></span>   sending ...');*/
             },
             success :  function(data)
             {
                 console.log("success");
                 console.log(data);
-             window.location = "confirmMsg.php";
-
+             //window.location = "confirmMsg.php";
+  console.log((data==1));
+    console.log((data.toString() == 'registered'));
                 if(data==1){
+  console.log((data==1));
 
-                    $("#error").fadeIn(1000, function(){
+  $('#clickhere .haveAcc').text('Sorry email already taken !');
+                   /* $("#error").fadeIn(1000, function(){
 
 
                         $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span>   Sorry email already taken !</div>');
 
                         $("#btn-submit").html('<span class="glyphicon glyphicon-log-in"></span>   Create Account');
 
-                    });
+                    });*/
 
                 }
-                else if(data=="registered")
+                else if(data==2)
                 {
-
+console.log((data=="registered"));
                    // $("#btn-submit").html('Signing Up');
                     
                     /*setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("./user_dashboard/examples/index.php"); }); ',5000);
                     */
-                    
+                      console.log("Inside RRRR");
                     window.location = "confirmMsg.php";
 
                     //alert("Good you registered")
 
                 }
                 else{
-
+/*
                     $("#error").fadeIn(1000, function(){
 
                         $("#error").html('<div class="alert alert-danger"><span class="glyphicon glyphicon-info-sign"></span>   '+data+' !</div>');
 
                         $("#btn-submit").html('<span class="glyphicon glyphicon-log-in"></span>   Create Account');
 
-                    });
+                    });*/
 
                 }
             }

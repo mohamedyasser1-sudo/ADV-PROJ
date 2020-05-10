@@ -92,7 +92,7 @@ include 'postadvhandler.php';
               <div class="col-md-4">
                 <div class="form-group">
                   
-                  <input type="text" name="pageurl" id="pageURL" class="form-control" placeholder="Enter your page URL">
+                  <input type="url" name="pageurl" id="pageURL" class="form-control" placeholder="Enter your page URL">
                 </div>
               </div>
               

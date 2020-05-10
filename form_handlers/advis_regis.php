@@ -43,7 +43,7 @@ if($_POST)
             
             if($stmt->execute())
             {
-                echo "registered";
+                echo "2";
                 $_SESSION['registered'] = $username;
                 send_Verification_Code($user_email,$token);
             

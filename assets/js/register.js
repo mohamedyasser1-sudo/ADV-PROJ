@@ -80,8 +80,8 @@ $('document').ready(function()
             data : data,
             beforeSend: function()
             {
-                $("#error").fadeOut();
-                $("#btn-submit").html('<span class="glyphicon glyphicon-transfer"></span>   sending ...');
+               /* $("#error").fadeOut();
+                $("#btn-submit").html('<span class="glyphicon glyphicon-transfer"></span>   sending ...');*/
             },
             success :  function(data)
             {
@@ -89,14 +89,15 @@ $('document').ready(function()
                 console.log(data);
                 if(data==1){
  console.log("Inside 111111");
-                    $("#error").fadeIn(1000, function(){
+   $('#clickhere .haveAcc').text('Sorry email already taken !');
+                   /* $("#error").fadeIn(1000, function(){
 
 
                         $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span>   Sorry email already taken !</div>');
 
                         $("#btn-submit").html('<span class="glyphicon glyphicon-log-in"></span>   Create Account');
 
-                    });
+                    });*/
 
                 }
                 else if(data=="registered")
@@ -114,13 +115,13 @@ $('document').ready(function()
                 }
                 else{
  console.log("Inside ELSE");
-                    $("#error").fadeIn(1000, function(){
+                    /*$("#error").fadeIn(1000, function(){
 
                         $("#error").html('<div class="alert alert-danger"><span class="glyphicon glyphicon-info-sign"></span>   '+data+' !</div>');
 
                         $("#btn-submit").html('<span class="glyphicon glyphicon-log-in"></span>   Create Account');
 
-                    });
+                    });*/
 
                 }
             }

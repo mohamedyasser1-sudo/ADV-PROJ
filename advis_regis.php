@@ -417,7 +417,8 @@ include 'form_handlers/login.php';
 				<label for="brand1"><span></span>I accept the terms of use</label> 
                 
         <button type="submit" class="btn btn-default" name="btn-save" id="btn-submit" >Sign Up</button>
-        <div id="clickhere">
+        <div id="clickhere"> 
+            <h4 class="haveAcc" style="color: red"></h4>
             <h4>You already have an account?
                <div><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Login Here</a></div>
             </h4>

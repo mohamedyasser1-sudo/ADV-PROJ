@@ -88,14 +88,11 @@ second_namea=document.getElementById('second_namea').value;
             {
                 console.log("success");
                 console.log(data);
-<<<<<<< HEAD
-                //window.location = "confirmMsg.php";
 
-=======
              //window.location = "confirmMsg.php";
   console.log((data==1));
     console.log((data.toString() == 'registered'));
->>>>>>> 5a91f279fc9d764cebc40717a4bce8a16cd8ffaa
+
                 if(data==1){
   console.log((data==1));
 

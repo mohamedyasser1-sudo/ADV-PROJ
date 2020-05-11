@@ -45,7 +45,7 @@ if($_POST)
             {
                 echo "2";
                 $_SESSION['registered'] = $username;
-                //send_Verification_Code($user_email,$token);
+                send_Verification_Code($user_email,$token);
             
             }
             else
@@ -56,7 +56,7 @@ if($_POST)
         }
         else{
 
-            echo "this email is already registered, you can try to log in" ; //  not available
+            echo "1" ; //  not available
         }
 
     }

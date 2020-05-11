@@ -88,7 +88,7 @@ second_namea=document.getElementById('second_namea').value;
             {
                 console.log("success");
                 console.log(data);
-             window.location = "confirmMsg.php";
+                //window.location = "confirmMsg.php";
 
                 if(data==1){
 

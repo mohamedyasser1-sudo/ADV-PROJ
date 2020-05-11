@@ -27,7 +27,7 @@ if($_POST)
         $count = $stmt->rowCount();
         
         if($count==0){
-            $stmt = $db_con->prepare("INSERT INTO users (username, first_name, second_name, email, password, country, phone, type, date,code, active) VALUES (:uname, :fname, :sname, :email, :pass, :country, :phone, :type, :date ,:code,:active)");
+            $stmt = $db_con->prepare("INSERT INTO users (username, first_name, second_name, email, password, country, phone, type, date,code, active) VALUES (:uname, :fname, :sname, :email, :pass, :country, :phone, :type, :date, :code, :active)");
             
             $stmt->bindParam(":uname",$username);
             $stmt->bindParam(":fname",$first_name);
@@ -45,7 +45,7 @@ if($_POST)
             {
                 echo "registered";
                 $_SESSION['registered'] = $username;
-                send_Verification_Code($user_email,$token);
+                //send_Verification_Code($user_email,$token);
             
             }
             else
@@ -56,7 +56,7 @@ if($_POST)
         }
         else{
 
-            echo "1"; //  not available
+            echo "this email is already registered, you can try to log in" ; //  not available
         }
 
     }

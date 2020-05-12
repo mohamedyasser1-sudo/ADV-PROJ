@@ -80,13 +80,17 @@ $(document).ready(function(){
                             echo '<td class="text-info"><a href="adDetails.php?adv_id='.$adv_id.'"><button class="btn btn-primary">Details </button></a></td>
                         </tr>';
                           }else {
-                            echo "<td id='copyContent'> $hostlink </td>";
+                            // echo  '<a href=""> link </a>';
+                            echo '<textarea placeholder="'.$hostlink.'"></textarea> ';
+                            //echo "<td id='copyContent'>".$hostlink."  </td>";
                             echo '<td class="text-info"><a id="copyContent" href="#" name="copy_pre" ><button class="btn btn-primary">Copy</button></a></td>
                         </tr>';
                           } ?>
-                                                    
+                             
+
                           <!--<td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id; ?>"><button class="btn btn-primary">Details </button></a></td>
                         </tr> -->
+                        <a href=""></a>
 
 
                         <?php 

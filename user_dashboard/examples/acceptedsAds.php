@@ -74,7 +74,7 @@ $(document).ready(function(){
                           <td><?= $acceptedAddData['pageurl']; ?></td>
                           <td><?= $acceptedAddData['pagedescription'];?></td>
                           <th><?= $acceptedAddData['period']  ?> Day</th>
-                          <?php 
+                    <?php 
                           if($hostlinksNum == 0){
                             echo "<td> Not started Yet</td>";
                             echo '<td class="text-info"><a href="adDetails.php?adv_id='.$adv_id.'"><button class="btn btn-primary">Details </button></a></td>

@@ -61,9 +61,12 @@
 class process_advertisment{
     private $real_id_of_advertisment;
     private $last_added_at_click_table;
-    private $db_name  ='topadn6_project';
-    private $user_name='topadn6_root';
-    private $user_password = '.)@[4jW.y0B7';
+    private $db_name  ='project';
+    private $user_name='root';
+    private $user_password = '';
+    // private $db_name  ='topadn6_project';
+    // private $user_name='topadn6_root';
+    // private $user_password = '.)@[4jW.y0B7';
     private $table_name    = 'clicks';   
     private $dvertisment_table='advertise'; 
     private $redirect_url  ='';
@@ -185,10 +188,19 @@ class process_advertisment{
      }
 
      function update_value_with_new_click($rows_data){
+     		$increase = $this->handle_hosts_before_update($rows_data);
+     		if($increase == 1){
 	        $this->hosts = json_encode( $this->handle_hosts_before_update($rows_data));
 	        
 	     	$updatesql   = "UPDATE $this->table_name SET hosts='$this->hosts' , parts='$this->count_of_hosts' , total = total+1 WHERE adv_id='$this->real_id_of_advertisment' ";
 		    $result      = mysqli_query($this->conn,$updatesql);
+		}else{
+		$this->hosts = json_encode( $this->handle_hosts_before_update($rows_data));
+	        
+	     	$updatesql   = "UPDATE $this->table_name SET hosts='$this->hosts' , parts='$this->count_of_hosts' , total = total WHERE adv_id='$this->real_id_of_advertisment' ";
+		    $result      = mysqli_query($this->conn,$updatesql);
+
+		}
 			if($result):
 			   $order_id = mysqli_insert_id($this->conn);
 			   header('Location:'.$this->redirect_url);

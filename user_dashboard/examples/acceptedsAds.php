@@ -77,16 +77,14 @@ $(document).ready(function(){
                     <?php 
                           if($hostlinksNum == 0){
                             echo "<td> Not started Yet</td>";
-                            echo '<td class="text-info"><a href="adDetails.php?adv_id='.$adv_id.'"><button class="btn btn-primary">Details </button></a></td>
-                        </tr>';
-                          }else {
-                            echo "<td id='copyContent'><pre> $hostlink </pre></td>";
-                            echo '<td class="text-info"><a href="adDetails.php?adv_id='.$adv_id.'"><button class="btn btn-primary">Details </button></a></td>
-                        </tr>';
-                          } ?>
+                          }
+                          else {
+                            echo "<td><pre> ".$hostlink." </pre></td>";
+                          } 
+                           ?>
                                                     
-                          <!--<td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id; ?>"><button class="btn btn-primary">Details </button></a></td>
-                        </tr> -->
+                      <td class="text-info"><a href="adDetails.php?adv_id=<?= $adv_id ?>"><button class="btn btn-primary">Details </button></a></td>
+                        </tr>
 
 
                         <?php 

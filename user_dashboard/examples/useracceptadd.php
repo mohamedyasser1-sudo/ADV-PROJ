@@ -59,7 +59,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 						foreach ($hosts_id as $host_id) {
 							if($host_id != 0){
 							$links = new generate_link($adv_id,$host_id);
-							$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+							$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 							$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 							header("Location: acceptedsAds.php");					
 							}					
@@ -77,7 +77,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					
@@ -92,7 +92,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					
@@ -111,7 +111,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					
@@ -126,7 +126,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					
@@ -183,7 +183,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 						foreach ($hosts_id as $host_id) {
 							if($host_id != 0){
 							$links = new generate_link($adv_id,$host_id);
-							$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+							$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 							$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 							header("Location: acceptedsAds.php");					
 							}					
@@ -201,7 +201,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					
@@ -216,7 +216,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					
@@ -235,7 +235,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					
@@ -250,7 +250,7 @@ $selectresult = mysqli_query($conn,"SELECT * FROM accepted_adds WHERE add_id ='$
 							foreach ($hosts_id as $host_id) {
 								if($host_id != 0){
 								$links = new generate_link($adv_id,$host_id);
-								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&sect='.$links->encryption_advertisment_id($adv_id);
+								$link  = $links->get_current_url().'/AdProject/process.php?pub='.$links->encryption_advertisment_id($host_id).'&ksect='.$links->encryption_advertisment_id($adv_id);
 								$save_link = mysqli_query($conn,"INSERT INTO `links`(`adv_id`, `host_id`, `link`) VALUES ('$adv_id','$host_id','$link')");						
 								header("Location: acceptedsAds.php");					
 								}					

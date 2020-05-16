@@ -6,7 +6,7 @@ class generate_link{
 	private $user_name;
 	function __construct($advertise_id,$publisher_id){
 		/* here change url of file to show user after click on hosts */
-        echo $this->get_current_url().'/preview/process.php?pub='.$this->encryption_advertisment_id($publisher_id).'&sect='.$this->encryption_advertisment_id($advertise_id);        
+        echo $this->get_current_url().'/preview/process.php?pub='.$this->encryption_advertisment_id($publisher_id).'&ksect='.$this->encryption_advertisment_id($advertise_id);        
 	}
 
 

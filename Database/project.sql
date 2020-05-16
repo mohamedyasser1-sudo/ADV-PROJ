@@ -186,10 +186,10 @@ CREATE TABLE `links` (
 --
 
 INSERT INTO `links` (`id`, `adv_id`, `host_id`, `link`) VALUES
-(20, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&sect=W3U'),
-(21, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&sect=W3U'),
-(22, 88, 96, 'http://localhost/AdProject/process.php?pub=Wns&sect=W3U'),
-(23, 88, 96, 'http://localhost/AdProject/process.php?pub=Wns&sect=W3U');
+(20, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&ksect=W3U'),
+(21, 88, 49, 'http://localhost/AdProject/process.php?pub=V3Q&ksect=W3U'),
+(22, 88, 96, 'http://localhost/AdProject/process.php?pub=Wns&ksect=W3U'),
+(23, 88, 96, 'http://localhost/AdProject/process.php?pub=Wns&ksect=W3U');
 
 -- --------------------------------------------------------
 
